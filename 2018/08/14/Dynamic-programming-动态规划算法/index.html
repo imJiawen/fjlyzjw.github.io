@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Dynamic programming,Algorithm summary," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
+<meta name="keywords" content="Dynamic programming,Algorithm summary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic programming 动态规划算法">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/Dynamic-programming-动态规划算法/index.html">
+<meta property="og:site_name" content="Jiawen and her funny friends">
+<meta property="og:description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHUPIA.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHUCad.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHUSqe.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHU9VH.jpg">
+<meta property="og:updated_time" content="2019-08-09T02:25:10.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamic programming 动态规划算法">
+<meta name="twitter:description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/09/eHUPIA.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/14/Dynamic-programming-动态规划算法/"/>
+
+
+
+
+
+  <title>Dynamic programming 动态规划算法 | Jiawen and her funny friends</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jiawen and her funny friends</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/Dynamic-programming-动态规划算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawen Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiawen and her funny friends">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Dynamic programming 动态规划算法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T23:08:47+08:00">
+                2018-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。</p>
+<a id="more"></a>
+<h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><p>动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种<strong>多阶段最优化决策解决问题的过程</strong>就称为动态规划。</p>
+<h2 id="二、基本思想与策略"><a href="#二、基本思想与策略" class="headerlink" title="二、基本思想与策略"></a>二、基本思想与策略</h2><p>动态规划算法与分治法的区别：<strong>适合于用动态规划法求解的问题，经分解后得到的子问题往往不是互相独立的（即下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解）</strong>。</p>
+<p>动态规划算法将待求解的问题分解为若干个子阶段，按顺序求解子阶段，前一子问题的解决为后一子问题的求解提供了有用信息。在求解任一子问题时，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解。</p>
+<p>由于动态规划解决的问题多数有重叠子问题这个特点，为减少重复计算，对每一个子问题只解一次，将其不同阶段的不同状态保存在一个二维数组中。</p>
+<h2 id="三、适用情况"><a href="#三、适用情况" class="headerlink" title="三、适用情况"></a>三、适用情况</h2><p>一般动态规划问题具有三个性质：</p>
+<ol>
+<li>最优化原理：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。</li>
+<li>无后效性：即某阶段状态一旦确定，就不受这个状态以后决策的影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。</li>
+<li>有重叠子问题：即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到。（该性质<strong>并不是动态规划适用的必要条件</strong>，但是如果没有这条性质，动态规划算法同其他算法相比就不具备优势）有些子问题会被重复计算多次。动态规划算法正是利用了这种子问题的重叠性质，对每一个子问题只计算一次，然后将其计算结果保存在一个<strong>表格</strong>中，当再次需要计算已经计算过的子问题时，只是在表格中简单地查看一下结果，从而获得较高的效率。</li>
+</ol>
+<p>note:先创建一个哈希表，将每次不同参数的计算结果存入哈希表，当遇到相同参数时，再从哈希表里取出，就避免了重复计算<strong>【备忘录算法】</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//上台阶问题中运用备忘录算法</span><br><span class="line">int getClimbingWays(int n, HashMap&lt;Integer, Integer&gt; map)&#123;</span><br><span class="line">    if(n&lt;1)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==1)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">     if(n==2)&#123;</span><br><span class="line">        return 2;</span><br><span class="line">    &#125;</span><br><span class="line">     if(map.contains(n))&#123;</span><br><span class="line">        return map.get(n);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        int value = getClimbingWays(n-1) + getClimbingWays(n-2);</span><br><span class="line">        map.put(n,value);</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四、求解的基本步骤"><a href="#四、求解的基本步骤" class="headerlink" title="四、求解的基本步骤"></a>四、求解的基本步骤</h2><p>动态规划所处理的问题是一个<strong>多阶段决策问题</strong>，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线(通常是求最优的活动路线)。如下所示。动态规划的设计都有着一定的模式，一般要经历以下几个步骤。</p>
+<p><strong>初始状态 -&gt; |决策1| -&gt; |决策2| -&gt; … |决策n| -&gt; 结束状态</strong></p>
+<ol>
+<li><strong>划分阶段</strong>：按照问题的时间或空间特征，把问题分为若干个阶段。在划分阶段时，注意<strong>划分后的阶段一定要是有序的或者是可排序的</strong>，否则问题就无法求解。</li>
+<li><strong>确定状态和状态变量</strong>：将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足<strong>无后效性</strong>。</li>
+<li><strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，<strong>状态转移就是根据上一阶段的状态和决策来导出本阶段的状态</strong> 。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，<strong>根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程</strong>。</li>
+<li><strong>寻找边界条件</strong>：给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</li>
+</ol>
+<p>一般，只要解决问题的<strong>阶段</strong>、<strong>状态</strong>和<strong>状态转移决策</strong>确定了，就可以写出状态转移方程（包括边界条件）。<br>实际应用中可以按以下几个简化的步骤进行设计：</p>
+<ol>
+<li>描述最优解的结构</li>
+<li>递归定义最优解的值</li>
+<li>按自底向上的方式计算最优解的值  //此三步构成动态规划解的基础</li>
+<li>由计算出的结果构造一个最优解  //若只要求计算最优解的值可省略</li>
+</ol>
+<h2 id="五、算法实现的说明"><a href="#五、算法实现的说明" class="headerlink" title="五、算法实现的说明"></a>五、算法实现的说明</h2><p>动态规划的主要难点在于理论上的设计，也就是上面4个步骤的确定，一旦设计完成，实现部分就会非常简单。</p>
+<pre><code> 使用动态规划求解问题，最重要的就是确定动态规划三要素：
+
+（1）问题的阶段 （2）每个阶段的状态
+
+（3）从前一个阶段转化到后一个阶段之间的递推关系。
+</code></pre><p>递推关系必须是从次小的问题开始到较大的问题之间的转化，从这个角度来说，动态规划往往可以用递归程序来实现，不过因为<strong>递推可以充分利用前面保存的子问题的解来减少重复计算，所以对于大规模问题来说，递归有不可比拟的优势</strong>，这也是动态规划算法的核心之处。</p>
+<p>确定了动态规划的这三要素，<strong>整个求解过程就可以用一个最优决策表来描述，最优决策表是一个二维表，其中行表示决策的阶段，列表示问题状态</strong>，表格需要<strong>填写的数据一般对应此问题的在某个阶段某个状态下的最优值</strong>（如最短路径，最长公共子序列，最大价值等），填表的过程就是根据递推关系，从1行1列开始，以行或者列优先的顺序，依次填写表格，最后根据整个表格的数据通过简单的取舍或者运算求得问题的最优解。</p>
+<p><em>f(n,m)=max{f(n-1,m), f(n-1,m-w[n])+P(n,m)}</em></p>
+<h2 id="六、经典动态算法题"><a href="#六、经典动态算法题" class="headerlink" title="六、经典动态算法题"></a>六、经典动态算法题</h2><p><strong>例题一：上台阶问题</strong></p>
+<p>有n级台阶，一个人每次上一级或者两级，问有多少种走完n级台阶的方法。</p>
+<p>分析：动态规划的实现的关键在于能不能准确合理的用动态规划表来抽象出 实际问题。在这个问题上，我们让f(n)表示走上n级台阶的方法数。</p>
+<p>那么当n为1时，f(n) = 1,n为2时，f(n) =2,就是说当台阶只有一级的时候，方法数是一种，台阶有两级的时候，方法数为2。那么当我们要走上n级台阶，必然是从n-1级台阶迈一步或者是从n-2级台阶迈两步，所以到达n级台阶的方法数必然是到达n-1级台阶的方法数加上到达n-2级台阶的方法数之和。即f(n) = f(n-1)+f(n-2)，我们用dp[n]来表示动态规划表，dp[i],i&gt;0,i&lt;=n,表示到达i级台阶的方法数。</p>
+<p><strong><em>迭代法（自顶向下）</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*dp是全局数组，大小为n,全部初始化为0，是题目中的动态规划表*/</span><br><span class="line">int fun(int n)&#123;</span><br><span class="line">	if (n==1||n==2)</span><br><span class="line">		return n;</span><br><span class="line">	/*判断n-1的状态有没有被计算过*/</span><br><span class="line">	if (!dp[n-1])</span><br><span class="line">		dp[n-1] = fun(n-1);</span><br><span class="line">	if(!dp[n-2])</span><br><span class="line">		dp[n-2]=fun(n-2);</span><br><span class="line">	return dp[n-1]+dp[n-2];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>LeetCode相关问题：<br><img src="https://s2.ax1x.com/2019/08/09/eHUPIA.jpg" alt="leetcode问题"><br><img src="https://s2.ax1x.com/2019/08/09/eHUCad.jpg" alt="解法"></p>
+<p><strong><em>动态规划求解（自底向上）</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int getClimbingWays(int n, HashMap&lt;Integer, Integer&gt; map)&#123;</span><br><span class="line">    if(n&lt;1)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==1)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==2)&#123;</span><br><span class="line">        return 2;</span><br><span class="line">    &#125;</span><br><span class="line">    int a = 1;</span><br><span class="line">    int b = 2;</span><br><span class="line">    int tmp = 0;</span><br><span class="line">    </span><br><span class="line">    for (int i = 3; i&lt;=n; i++)&#123;</span><br><span class="line">        tmp = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    return tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>例题二：国王与金矿（与01背包问题类似）</strong></p>
+<p>有一个国家发现了5座金矿，每座金矿的黄金储量不同，需要参与挖掘的工人数也不同。参与挖矿工人的总数是10人。每座金矿要么全挖，要么不挖，不能派出一半人挖取一半金矿。要求用程序求解出，要想得到尽可能多的黄金，应该选择挖取哪几座金矿？</p>
+<p>500金/5人；200金/3人；300金/4人；350金/3人；400金/5人</p>
+<p>问题的状态转移方程式：</p>
+<p>F(n,w) = 0 (n&lt;=1, w&lt;p[0]);  //若给定的工人数量不够挖取第一座金矿</p>
+<p>F(n,w) = g[0] (n==1, w&gt;=p[0]);</p>
+<p>F(n,w) = F(n-1,w) (n&gt;1, w&lt;p[n-1])</p>
+<p>F(n,w) = max(F(n-1,w), F(n-1,w-p[n-1])+g[n-1]) (n&gt;1, w&gt;=p[n-1]) //最后一个矿有选择不挖和挖两个选择，在其中选最优的选择</p>
+<p><strong><em>排列组合</em></strong></p>
+<p>每一座金矿都有挖与不挖两种选择，如果有N座金矿，排列组合起来就有2^N种选择。对所有可能性做遍历，排除那些使用工人数超过10的选择，在剩下的选择里找出获得金币数最多的选择。（O(2^N)）</p>
+<p><strong><em>简单递归</em></strong></p>
+<p>把状态转移方程式翻译成递归程序，递归的结束的条件就是方程式当中的边界。因为每个状态有两个最优子结构，所以递归的执行流程类似于一颗高度为N的二叉树。方法的时间复杂度是O(2^N)。</p>
+<p><strong><em>备忘录算法</em></strong></p>
+<p>在简单递归的基础上增加一个HashMap备忘录，用来存储中间结果。HashMap的Key是一个包含金矿数N和工人数W的对象，Value是最优选择获得的黄金数。方法的时间复杂度和空间复杂度相同，都等同于备忘录中不同Key的数量。</p>
+<p><strong><em>动态规划</em></strong></p>
+<p><img src="https://s2.ax1x.com/2019/08/09/eHUSqe.jpg" alt="计算过程，除了第一行以外，每个格子都是由前一行的一个或者两个格子推导而来"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">int getMostGold(int n, int w, int[] g, int[] p)&#123;</span><br><span class="line">    int[] preResults = new int[p.length];</span><br><span class="line">    int[] results = new int[p.length];</span><br><span class="line">    //填充边界格子的值</span><br><span class="line">    for(int i=0; i&lt;=n; i++)&#123;</span><br><span class="line">        if(i &lt; p[0])&#123;</span><br><span class="line">            preResults[i] = 0;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            preResults[i] = g[0];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //填充其余格子的值，外层循环是金矿数量，内层循环是工人数</span><br><span class="line">    for(int i=0; i&lt;=n; i++)&#123;</span><br><span class="line">        for(int j=0;j&lt;=w;j++)&#123;</span><br><span class="line">            if(j &lt; p[i])&#123;</span><br><span class="line">                results[j]=preResults[j]; //这里代码有问题，java中数组不能直接赋值，可改用clone方式赋值</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                results[j]=Math.max(preResults[j],preResults[j-p[i]]+g[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        preResults = results;</span><br><span class="line">    &#125;</span><br><span class="line">    return preResults[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法的时间复杂度是 O(n * w)，空间复杂度是(w)。需要注意的是，当金矿只有5座的时候，动态规划的性能优势还没有体现出来。当金矿有10座，甚至更多的时候，动态规划就明显具备了优势。由于动态规划方法的时间和空间都和W成正比，而简单递归却和W无关，所以当工人数量很多的时候，动态规划反而不如递归。</p>
+<p><strong>例题三：最长公共子序列</strong></p>
+<p>如果字符串一的所有字符按其在字符串中的顺序出现在另外一个字符串二中，<br>则字符串一称之为字符串二的子串。</p>
+<p>注意，并不要求子串（字符串一）的字符必须连续出现在字符串二中。<br>请编写一个函数，输入两个字符串，求它们的最长公共子串，并打印出最长公共子串。<br>例如：输入两个字符串BDCABA和ABCBDAB，字符串BCBA和BDAB都是是它们的最长公共子串，<br>则输出它们的长度4，并打印任意一个子串。</p>
+<p>LCS问题具有重叠子问题的性质，因此有些子问题可通过“查表”而直接得到。</p>
+<p>用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程<br><img src="https://s2.ax1x.com/2019/08/09/eHU9VH.jpg" alt="状态转移方程"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class LCSequence &#123;</span><br><span class="line">    //求解str1 和 str2 的最长公共子序列</span><br><span class="line">    public static int LCS(String str1, String str2)&#123;</span><br><span class="line">        int[][] c = new int[str1.length() + 1][str2.length() + 1];</span><br><span class="line">		//初始化</span><br><span class="line">        for(int row = 0; row &lt;= str1.length(); row++)</span><br><span class="line">            c[row][0] = 0;</span><br><span class="line">        for(int column = 0; column &lt;= str2.length(); column++)</span><br><span class="line">            c[0][column] = 0;</span><br><span class="line">        </span><br><span class="line">        for(int i = 1; i &lt;= str1.length(); i++)</span><br><span class="line">            for(int j = 1; j &lt;= str2.length(); j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(str1.charAt(i-1) == str2.charAt(j-1))</span><br><span class="line">                    c[i][j] = c[i-1][j-1] + 1;</span><br><span class="line">                else if(c[i][j-1] &gt; c[i-1][j])</span><br><span class="line">                    c[i][j] = c[i][j-1];</span><br><span class="line">                else</span><br><span class="line">                    c[i][j] = c[i-1][j];</span><br><span class="line">            &#125;</span><br><span class="line">        return c[str1.length()][str2.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h2><ol>
+<li><a href="http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html" target="_blank" rel="noopener">http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html</a></li>
+<li><a href="http://www.cnblogs.com/pengyingh/articles/2396427.html" target="_blank" rel="noopener">http://www.cnblogs.com/pengyingh/articles/2396427.html</a></li>
+<li><a href="https://www.sohu.com/a/153858619_466939" target="_blank" rel="noopener">https://www.sohu.com/a/153858619_466939</a></li>
+<li><a href="https://www.cnblogs.com/hapjin/p/5572483.html" target="_blank" rel="noopener">https://www.cnblogs.com/hapjin/p/5572483.html</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Dynamic-programming/" rel="tag"><i class="fa fa-tag"></i> Dynamic programming</a>
+          
+            <a href="/tags/Algorithm-summary/" rel="tag"><i class="fa fa-tag"></i> Algorithm summary</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/14/Algorithm-Design-and-Analysis-Overview/" rel="prev" title="Algorithm Design and Analysis - Overview">
+                Algorithm Design and Analysis - Overview <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg"
+                alt="Jiawen Zhang" />
+            
+              <p class="site-author-name" itemprop="name">Jiawen Zhang</p>
+              <p class="site-description motion-element" itemprop="description">Heroic dreams in exhausted life</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiawen.zhang96@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/fjlyzjw" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100012593228796" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/1904079292" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基本概念"><span class="nav-number">1.</span> <span class="nav-text">一、基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、基本思想与策略"><span class="nav-number">2.</span> <span class="nav-text">二、基本思想与策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、适用情况"><span class="nav-number">3.</span> <span class="nav-text">三、适用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、求解的基本步骤"><span class="nav-number">4.</span> <span class="nav-text">四、求解的基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、算法实现的说明"><span class="nav-number">5.</span> <span class="nav-text">五、算法实现的说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、经典动态算法题"><span class="nav-number">6.</span> <span class="nav-text">六、经典动态算法题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference："><span class="nav-number">7.</span> <span class="nav-text">Reference：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiawen Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

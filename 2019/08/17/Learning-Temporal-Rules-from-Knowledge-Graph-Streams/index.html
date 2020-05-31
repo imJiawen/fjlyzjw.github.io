@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Knowledge Graph,Temporal Rules,Link Prediction,Event Prediction,Data Stream," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="提出了一种从知识图形式的数据流中学习时序规则的方法。这种规则可以被用于对不同时间点的事件进行推理，特别是KG流中的链路预测和事件预测。 Accepted by: AAAI 2019Paper link：http://ceur-ws.org/Vol-2350/paper15.pdf">
+<meta name="keywords" content="Knowledge Graph,Temporal Rules,Link Prediction,Event Prediction,Data Stream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning Temporal Rules from Knowledge Graph Streams">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/Learning-Temporal-Rules-from-Knowledge-Graph-Streams/index.html">
+<meta property="og:site_name" content="Jiawen and her funny friends">
+<meta property="og:description" content="提出了一种从知识图形式的数据流中学习时序规则的方法。这种规则可以被用于对不同时间点的事件进行推理，特别是KG流中的链路预测和事件预测。 Accepted by: AAAI 2019Paper link：http://ceur-ws.org/Vol-2350/paper15.pdf">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/mnTc79.png">
+<meta property="og:image" content="http://www.cbdio.com/image/attachement/jpg/site2/20160830/94de80684e44192f379817.jpg">
+<meta property="og:image" content="http://www.cbdio.com/image/attachement/jpg/site2/20160830/94de80684e44192f380a1b.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/mnvRNF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/murDu6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/mur6ED.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/murrDK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/mursHO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/17/mur0jx.png">
+<meta property="og:updated_time" content="2019-08-18T04:38:24.296Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning Temporal Rules from Knowledge Graph Streams">
+<meta name="twitter:description" content="提出了一种从知识图形式的数据流中学习时序规则的方法。这种规则可以被用于对不同时间点的事件进行推理，特别是KG流中的链路预测和事件预测。 Accepted by: AAAI 2019Paper link：http://ceur-ws.org/Vol-2350/paper15.pdf">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/17/mnTc79.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/17/Learning-Temporal-Rules-from-Knowledge-Graph-Streams/"/>
+
+
+
+
+
+  <title>Learning Temporal Rules from Knowledge Graph Streams | Jiawen and her funny friends</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jiawen and her funny friends</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/Learning-Temporal-Rules-from-Knowledge-Graph-Streams/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawen Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiawen and her funny friends">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Learning Temporal Rules from Knowledge Graph Streams</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-17T18:36:15+08:00">
+                2019-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PaperReading/" itemprop="url" rel="index">
+                    <span itemprop="name">PaperReading</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>提出了一种从知识图形式的数据流中学习时序规则的方法。这种规则可以被用于对不同时间点的事件进行推理，特别是KG流中的链路预测和事件预测。</p>
+<p>Accepted by: AAAI 2019<br>Paper link：<a href="http://ceur-ws.org/Vol-2350/paper15.pdf" target="_blank" rel="noopener">http://ceur-ws.org/Vol-2350/paper15.pdf</a><br><a id="more"></a></p>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>在近几年，知识图成为了流行的数据管理方式，并且建立了广阔的应用场景。虽然已经提出了几种以逻辑规则的形式学习KGs模式信息的方法，但它们并不适用于有持续数据输入的KG。这篇论文首次提出了一种从KG流中学习时序规则的方法。学习到的时序规则可以被用于KG流的链路预测和事件预测。基于提出的规则，实现了一个名为StreamLearner的系统。实验结果显示StreamLearner能够高效学习到现实数据集的时序规则并且显著优于一些不考虑时间知识或演化数据的最先进系统。</p>
+<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p>从KG中抽取模式信息十分重要。然而，对于现存的规则学习系统而言KG是静态的，并且不适用于有连续数据加入的KG。<br>下图中描绘了KG流，其中结点为实体，边为事件。有一些事件在不同的时间点下在两个实体间发生。实体$e_0,e_1,e_2$代表三个国家，$e_3$代表导弹，有三种事件在过去发生：$e_0$在$\tau -4$时间点测试了导弹，接着在$\tau -3$结点与$e_1$达成了合作并且对$e_2$实施了制裁。</p>
+<p><img src="https://s2.ax1x.com/2019/08/17/mnTc79.png" alt="Example of KG Stream"></p>
+<center>Fig 1. Example of KG Stream.</center>
+
+<p>除了经典的链路预测问题，如“除了$e_0$以外什么国家测试过导弹？”或者一些带有时间知识的链路预测问题，如“哪个国家可能在时间$\tau$攻击$e_2$?”,还有一些模式层面上的有趣问题，如“在x国测试了导弹之后，紧接着第二天对y国实施了制裁，在多少天之后x最有可能攻打y？”。</p>
+<ul>
+<li><p>研究挑战</p>
+<ol>
+<li><p>时间知识要在模式信息中被表示出来。<br>$e.g. rule test(x, missile, t) \wedge imposeSanc(x, y, t + 1) \rightarrow attack(x, y, t + k)$</p>
+<p> 其中k为整数。学习一个具有特定k值和最高置信度的时态规则就可以回答上述问题。事实上，实验表明使用时序规则也可以提升传统链路预测问题在KG流上的精度。且现有的KG规则学习器无法直接用于学习时序规则。</p>
+</li>
+<li>仍然缺乏流学习和时间规则推理的框架。<br>对于该框架的应用，在实际问题中，我们所面对的这种动态数据忽略了它们的时间特性，使得所得到的模型不准确或没有作用。</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>这篇论文第一次尝试开发一种方法来从KG流中学习时序规则。在提出的方法中，一种已存的方法被用于从初始数据集中抽取静态的规则，即一个在最初一些时间点的事实集合。这些静态规则与结构规则有关，被用于用于构造候选时态规则空间。接着我们通过将静态规则的主要质量度量概括为时间规则来从规则空间中抽取时序规则。基于这种方式，我们实现了StreamLearner系统。它在流场景下的链路预测比一些最先进的静态KG学习器表现更好。它可以在可接受的精度下提前预测不同时间点的事件。</li>
+</ul>
+<h1 id="BACKGROUND"><a href="#BACKGROUND" class="headerlink" title="BACKGROUND"></a>BACKGROUND</h1><p>KG由一组RDF三元组$(e,P,e’)$组成。</p>
+<p>KG流由一组（有可能是无限大的）四元组组成$(e,P,e’,k)$,在时间点k，事件e与e’由关系P连接。我们使用一个三元谓词$P(e,e’,k)$来表示事件，e和e’是实体，k是时间常量。</p>
+<p>$$<br>\begin{aligned}<br>S &amp;: KG stream  \<br>S[i,j] &amp;= {P(e,e’,k)|P(e,e’,k) \in S, i \leq k \leq j} \<br>S[i] &amp;: when i = j \<br>S* &amp;: static KG by replacing P(e,e’,k) with P(e,e’) \<br>\end{aligned}<br>$$</p>
+<p>Closed path rules (or simply a rule) r :</p>
+<p>$$<br>\begin{aligned}<br>P_1 (x, z_1 ) \wedge P_2 (z_1 , z_2 ) &amp;\wedge … \wedge P_n(z_{n-1},y) \rightarrow P(x, y) \<br>head(r) &amp;: P(x, y) \<br>body(r) &amp;: P_1 (x, z_1 ) ,P_2 (z_1 , z_2 ),…, P_n(z_{n-1})\<br>\end{aligned}<br>$$</p>
+<p>在P(u,v)中，u是主体，v是客体。</p>
+<p>Temporal CP rules (or simply temporal rules) $\gamma$:<br>$$<br>P_1 (x, z_1,t ) \wedge P_2 (z_1 , z_2 ,t) \wedge … \wedge P_n(z_{n-1},y,t) \rightarrow P(x, y,t+k)<br>$$<br>Temporal CP rules要更加通用，允许不同时间点出现在同一条规则中。对Temporal CP rules的定义平衡了规则挖掘算法的表现力和效率，并希望可以基于当前数据流作出预测。</p>
+<h2 id="Path-Ranking-Algorithms"><a href="#Path-Ranking-Algorithms" class="headerlink" title="Path Ranking Algorithms"></a>Path Ranking Algorithms</h2><ul>
+<li><p>基本思想：<br>  将每种不同的关系路径作为一维特征，通过在知识图谱中统计大量的关系路径构建关系分类的特征向量，来预测两个实体之间的关系。</p>
+</li>
+<li><p>学习阶段：</p>
+<ul>
+<li>特征抽取</li>
+<li>特征计算</li>
+<li>构造分类器</li>
+</ul>
+</li>
+<li><p>预测阶段:</p>
+<ul>
+<li>预测阶段是使用分类器对任务进行预测。</li>
+</ul>
+</li>
+</ul>
+<p>Example：<br>路径排序算法的想法是将路径作为特征来进行预测。在知识图谱中路径是指链接两个实体的序列。如下图所示，左图中Tom与Paris之间可以走classMates、Bob、bornInCity这条路径。</p>
+<ol>
+<li>确定目标关系是bornInCity，需要判断两个实体之间是否有这个关系。左图是已经给定的知识图谱。</li>
+<li>找出实体之间有bornInCity关系的正例：（Tom、Paris）和（Bob、Paris）。</li>
+<li>构造负例。知识图谱中只有正例没有负例，我们采用随机替换实体的方式来人工构造负例，将正例中的Paris替换为Lyon，生成（Tom、Lyon）和（Bob、Lyon）两个负例。</li>
+<li>构造特征向量的集合，将两个实体之间的一条路径作为一个特征向量，枚举任意两个实体之间所有可能的路径，设定一个阈值，将长度不超过该阈值的全部路径放入特征集合。</li>
+<li>通过特征集合获得特征值。</li>
+<li>使用特征数据训练分类器。</li>
+</ol>
+<p><img src="http://www.cbdio.com/image/attachement/jpg/site2/20160830/94de80684e44192f379817.jpg" alt="PRA1"></p>
+<ul>
+<li><p>特征提取的常用方法</p>
+<ul>
+<li>Random walks</li>
+<li>breadth-first search</li>
+<li>depth-first search</li>
+</ul>
+</li>
+<li><p>特征值计算的常用方法</p>
+<ul>
+<li>Random walk probability</li>
+<li>路径出现/不出现的二值特征</li>
+<li>路径的出现频次</li>
+</ul>
+</li>
+<li><p>分类器的训练方法</p>
+<ul>
+<li>单任务学习法</li>
+<li>多任务学习法</li>
+</ul>
+</li>
+<li><p>优缺点：</p>
+<ul>
+<li><p>优点</p>
+<ul>
+<li>可解释性强</li>
+<li>可以从数据中自动发现关联规则</li>
+<li>准确率往往高于embedding方法</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>很难处理关系稀疏的数据</li>
+<li>很难处理低连通度的图</li>
+<li>路径特征提取的效率低且耗时</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自动发现关联规则<br><img src="http://www.cbdio.com/image/attachement/jpg/site2/20160830/94de80684e44192f380a1b.jpg" alt="inference rule"></p>
+</li>
+</ul>
+<p>我们的Target Relation是某个机构在哪个地方成立，通过分类器对全部特征的权重进行排序，这里列出了权重最高的五个特征，这是某些规则的展现。从第一个特征能够看出，某个地方如果包含这个机构，那么极有可能说明该机构是在这个地方成立的；第二条特征表明，如果某个机构在某个城市有总部，那么极有可能说明该机构是在这个城市成立的。</p>
+<h1 id="Temporal-Rule-Learning"><a href="#Temporal-Rule-Learning" class="headerlink" title="Temporal Rule Learning"></a>Temporal Rule Learning</h1><p>现存规则学习方法的两个元素：</p>
+<ol>
+<li>学习规则的架构（e.g. 通过搜索和改进）</li>
+<li>通过一定的质量标准过滤低质量的规则</li>
+</ol>
+<h2 id="规则结构的学习"><a href="#规则结构的学习" class="headerlink" title="规则结构的学习"></a>规则结构的学习</h2><p>使用$S*<a href="n \geq 0">0,n</a>$作为<strong>结构训练数据</strong>，它由从时间点0到n的事实组成。使用静态规则学习器(如RLvLR)来学习一组CP规则R。</p>
+<p>换句话说，结构规则是从结构训练数据中学习到的静态规则。</p>
+<p>对于每个整数$k \geq 0$而言，我们可以获得一个时序规则$r^{(k)}$:</p>
+<p>$$<br>P_1 (x, z_1,t ) \wedge P_2 (z_1 , z_2 ,t) \wedge … \wedge P_n(z_{n-1},y,t) \rightarrow P(x, y,t+k)<br>$$</p>
+<p>采用了几种标准度量来评估候选时态规则的质量：</p>
+<ul>
+<li>支持度(support)</li>
+<li>标准置信度(standard conﬁdence)</li>
+<li>头覆盖率(head coverage)</li>
+</ul>
+<h3 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h3><p>对于一个时态规则$r^{(k)}$而言，它在时间点$\tau$的支持度可以理解为$r^{(k)}$的head在$\tau$时间点实例化的同时$r^{(k)}$的body在$\tau-k$实例化的数量。</p>
+<p>规范化表示为：<br>$$<br>support(r^{(k)},\tau)=\begin{cases}<br>0, &amp; \text{if $\tau &lt; k$}\<br>\sharp(e,e’) :head(r,e,e’,\tau) \wedge body(r,e,e’,\tau -k), &amp; \text{otherwise} \<br>\end{cases}<br>$$</p>
+<p>$body(r,e,e’,\tau -k)$:在$S[\tau]$中存在事件$P_1 (e, e_1,\tau ) , P_2 (e_1 , e_2 ,\tau) , … , P_n(e_{n-1},e’,\tau) $</p>
+<p>$head(r,e,e’,\tau)$:在$S[\tau]$中存在事件$P_2 (e ,e’ ,\tau)$</p>
+<p>在$\tau = k = 0$的情况下则是静态的支持度，是特殊情况。</p>
+<h3 id="置信度-amp-头覆盖率"><a href="#置信度-amp-头覆盖率" class="headerlink" title="置信度 &amp; 头覆盖率"></a>置信度 &amp; 头覆盖率</h3><p>置信度和头覆盖性被引入以正则化支持度。</p>
+<p>在时间点$\tau$的时态规则$r^{(k)}$的标准置信度(SC)被定义为【在$\tau$时刻的支持度】与【在$\tau-k$时刻满足body的实体对的数量】之比。<br>$$<br>SC(r^{(k)},\tau) = \frac{support(r^{(k)},\tau)}{\sharp(e,e’) :body(r,e,e’,\tau-k)}<br>$$<br>类似的，在时间点$\tau$的时态规则$r^{(k)}$的头覆盖率(HC)被定义为【支持度】与【在$\tau$时刻满足head的实体对的数量】之比。<br>$$<br>HC(r^{(k)},\tau) = \frac{support(r^{(k)},\tau)}{\sharp(e,e’) :head(r,e,e’,\tau)}<br>$$<br>然而，SC和HC未考虑KG流的特性，仅考虑了一个时刻，而每个时刻都是独立的。KG流还需考虑将之前时刻的相应的SC值和HC值聚合在一起。</p>
+<p>因此，定义在$\tau$时刻的时态规则$\gamma$的动态标准置信度(dynamic standard conﬁdence ,DSC)：<br>$$<br>DSC(\gamma , \tau) =\begin{cases}<br>SC(\gamma , \tau), &amp; \text{if $\tau = k$}\<br>(1-\alpha) \times DSC(\gamma ,\tau -1) + \alpha \times SC(\gamma,\tau), &amp; \text{otherwise} \<br>\end{cases}<br>$$</p>
+<p>$0&lt; \alpha &lt;1$:调整之前聚合的DSC以及当前时间点的SC的权重的学习率。</p>
+<p>相似的，动态头覆盖率(dynamic head coverage ,DHC)被定义为：<br>$$<br>DHC(\gamma , \tau) =\begin{cases}<br>HC(\gamma , \tau), &amp; \text{if $\tau = k$}\<br>(1-\alpha) \times DHC(\gamma ,\tau -1) + \alpha \times HC(\gamma,\tau), &amp; \text{otherwise} \<br>\end{cases}<br>$$<br>我们使用DSC和DHC的分数来选择每个时间点的时序规则。</p>
+<p>虽然结构规则的集合总是相同的，并且候选时间规则也是如此，但是由于时间规则的DSC和DHC得分随时间的变化，每个点处的所选时间规则集通常是不同的。</p>
+<h1 id="Combine-Stream-Learning-and-Reasoning"><a href="#Combine-Stream-Learning-and-Reasoning" class="headerlink" title="Combine Stream Learning and Reasoning"></a>Combine Stream Learning and Reasoning</h1><p>这一节介绍了基于KG流，动态地将时态规则的学习和推理相结合的算法。</p>
+<h2 id="总体思想"><a href="#总体思想" class="headerlink" title="总体思想"></a>总体思想</h2><p><strong>input:</strong> S (四元组流)</p>
+<p>$S*[0,n]$存储了从初始时刻到n时刻的所有事实，$l, m \geq 0$代表最小\最大预测距离。</p>
+<p><strong>output:</strong> (1) a stream of 时序规则集合 (2) a stream of 衍生的事件</p>
+<p>特别地，对于每个结构规则r，通过上述方法获得一组候选时序规则的集合：$r^{(l)},r^{(l+1)},…,r^{(m)}$。对于每个时刻，基于DSC和DHC的打分来选择时序规则，并由此获得当前或者未来时刻的事件。</p>
+<h2 id="shifting-window"><a href="#shifting-window" class="headerlink" title="shifting window"></a>shifting window</h2><ul>
+<li>设置滑动窗口的作用：</li>
+</ul>
+<ol>
+<li>节省内存</li>
+<li>提高流处理的效率</li>
+</ol>
+<p>假设对于每个时刻$\tau$,只有一个w大小的时间段内的S被用于计算：$S[\tau-w+1,\tau]$。其中，$w\geq 0$,表示滑动窗口的大小。</p>
+<p>需要注意的是，结构规则可以离线学习，而时序规则的过滤以及规则应用需要在线上进行操作。</p>
+<h2 id="评估候选时态规则的质量"><a href="#评估候选时态规则的质量" class="headerlink" title="评估候选时态规则的质量"></a>评估候选时态规则的质量</h2><p>在$\tau$时刻，为了评估候选时态规则$r^{(k)}$的质量，我们假设在$\tau \geq k$的前提下已经获得了前一个时刻的$DSC(r^{(k)},\tau -1)$.<br>由以上方程可知，我们需要获取在$\tau$时刻和$\tau -1$时刻的事件。我们仅需要评估在滑动窗口内的事件，即$S[\tau-w+1,\tau]$。</p>
+<p>在这种情况下，若$k \leq w-1$,我们可以根据以上的方程来计算质量度量。</p>
+<p>否则，我们令<br>$$<br>\begin{aligned}<br>DSC(r^{(k)},\tau) = \beta \times DSC(r^{(k)},\tau - 1)\<br>HC(r^{(k)},\tau) = \beta \times HC(r^{(k)},\tau - 1)<br>\end{aligned}<br>$$<br>其中$0&lt; \beta &lt;1$用于调整先前聚合的DSC的权重，因为规则的质量在当前时间点无法评估。</p>
+<h2 id="产生新的事件"><a href="#产生新的事件" class="headerlink" title="产生新的事件"></a>产生新的事件</h2><p>从直觉上来说，推导出的事件应该具有更高的置信度。</p>
+<p>为了获得派生事件的置信度（CD），我们采用了score ∗ (·) function (Gal´arraga et al. 2015) ，通过聚合所有时间规则的DSC，从而以Noisy-OR的方式派生出事件。</p>
+<p>规范而言，对于一个事件$ \xi =P(e,e’,\tau)$，一组时态规则集合$\mathcal{T}$可以从KG流中推理出事件$\xi$,则事件$\xi$的CD定义为：<br>$$<br>CD(\xi) = 1 - \prod_{\gamma \in \mathcal{T}}(1-DSC(\gamma,\tau))<br>$$<br><img src="https://s2.ax1x.com/2019/08/17/mnvRNF.png" alt="Stream Learning and Reasoning"></p>
+<center>Fig 2. Stream Learning and Reasoning.</center>
+
+
+<pre><code>Algorithm 1 KG Stream Learning and Reasoning
+
+Input: A KG stream S and two integers m, n &gt;= 0 
+Output: A set of temporal rules Tt and a set of events Et at each time point t &gt;= 0 
+
+W := null, t := 0, Tt := null, Et := null 
+R := StaticLearner(S ∗ [0, n])  \\可以离线做
+T := CandidateConstruct(R, m) 
+loop 
+    W := W U S[t]  \\W包含当前窗口中的所有事件
+    if t &gt;= w then 
+        W := W \ S[t − w]  \\忘记超出窗口范围的事件
+    end if 
+    T t := Filter(T, W) \\基于DSC DHC，W做约束
+    stream out Tt  \\选择出的规则
+    for each l &lt;= k &lt;= m and each r(k) in Tt do \\派生事件增量增加
+        Et+k := Et+k U Apply(r (k) , S[t]) \\将规则应用到当前事件S[t]
+    end for 
+    stream out Et 
+    t := t + 1 
+end loop
+</code></pre><h1 id="EXPERIMENT"><a href="#EXPERIMENT" class="headerlink" title="EXPERIMENT"></a>EXPERIMENT</h1><p>验证了以下三种观察：</p>
+<ol>
+<li>StreamLearner在链路预测的精确度方面的表现大幅度优于现有的基线方法。</li>
+<li>学习和预测的过程非常高效。结构训练数据增加时，预测的精确度也增加，而不牺牲效率。</li>
+<li>窗口大小越大，或最小预测距离减少，链路预测的精确度增加。在小窗口和最小预测距离很长的情况下StreamLearner的表现也优于StreamLearner-S。</li>
+</ol>
+<p>使用了Integrated Crisis Early Warning System (ICEWS)数据集，里面记录了社会政治主体间的互动，从2014年的新闻中自动抽取。它以24小时为时间点间隔，一共有365个时间点。</p>
+<p>prediction accuracy用ﬁltered Mean Reciprocal Rank (MRR) 和 Hits@10衡量。</p>
+<p>下表中包含了：</p>
+<ul>
+<li>#R ：时态规则的数量</li>
+<li>#SR结构规则的数量</li>
+<li>MRR and Hits@10 (H@10) 分数</li>
+</ul>
+<p>对所有选择的时间点和目标预测进行求平均。</p>
+<center>Table 1. Temporal rules in link predition.</center>
+
+<p><img src="https://s2.ax1x.com/2019/08/17/murDu6.png" alt="Temporal rules in link predition"></p>
+<p><img src="https://s2.ax1x.com/2019/08/17/mur6ED.png" alt="Performance comparison"></p>
+<center>Figure 3: Performance comparison on link prediction over KG streams.</center>  
+
+<p>实验表明StreamLearner在链路预测的精确度方面的表现大幅度优于现有的基线方法(StreamLearner-S,TransE,HOLE)。且它有个主要优点是它们是人类可以理解的，并且可以获得更多时间知识。</p>
+<p>在链路预测中，学习到的时序规则的质量和它们的性能会被一些因素所影响，包括结构训练数据的大小，窗口大小，（最大、最小）预测距离等。在实验的第二部分将评估这些因素如何影响时序规则的性能。</p>
+<p>结构训练数据的大小将会影响结构规则的数量和质量，最终影响到学习时态规则的效率。下表中将不同的训练数据的大小n进行了对比，将其与结构规则数量、学习和推理的时间以及精确度进行了比较。总而言之，训练数据越多，得到的结构规则越多，准确度越高，但是相应的训练时间增加。因此需要在精度和效率之间做权衡。</p>
+<p>除此之外，实验结果表明数据量越少，加入时间规则的优势就越明显，因此当数据量越有限时，时序知识扮演的角色就越重要。</p>
+<center>Table 2: Performance on varying sizes of structure learning data.</center>  
+
+<p><img src="https://s2.ax1x.com/2019/08/17/murrDK.png" alt="Performance on varying sizes"></p>
+<p>窗口大小和预测距离决定了用于学习和预测的历史数据的数量，它将影响到性能。StreamLearner-S不受窗口大小的影响。</p>
+<p>总体而言，当滑动窗口的大小越大，MRR值与Hits@10值越大，并且存在局部最优点。在日常生活中，这可以用两个时间相隔的距离越远，它们之间的联系就越松散来解释。</p>
+<p><img src="https://s2.ax1x.com/2019/08/17/mursHO.png" alt="Temporal rules in link predition"></p>
+<center>Figure 4: Performance over varying window sizes.</center>
+
+<p>最小预测距离也对学习和预测造成了影响，且对预测的影响更大。当最小预测距离为0时，就允许预测当前时间点所发生的事件；而当最小预测距离越大时，对一定距离外的派生事件的预测将造成挑战。若最小预测距离为3，则意味着t事件的预测的事件将由t-3时刻的事件所派生。</p>
+<p>当最大预测距离不变，最小预测距离增加时，候选时态规则的数量将减少，为了减少规则数量对结果的影响，将最大和最小间的距离设为10.从下图中可以看出StreamLearner中最小预测距离对结果产生的影响。</p>
+<p>当最小距离增加时，性能开始下降，但是可以看到下降得不是很明显，且在时间点7存在着局部最优点。这可能表明在事件的联系中存在着一种周模式。</p>
+<p><img src="https://s2.ax1x.com/2019/08/17/mur0jx.png" alt="Temporal rules in link predition"></p>
+<center>Figure 5: Performance over varying minimum prediction distances.</center>
+
+<h1 id="DISCUSSION-AND-CONCLUSION"><a href="#DISCUSSION-AND-CONCLUSION" class="headerlink" title="DISCUSSION AND CONCLUSION"></a>DISCUSSION AND CONCLUSION</h1><p>有一些工作对数据流的表示和推理做了研究，但是并没有表明如和从数据流中抽取出规则。有许多从静态KG中学习规则的方法被提出，比如使用embedding的方法。也有大量的工作专注于研究链路预测问题。</p>
+<p>在我们的工作中，我们以一阶逻辑规则的形式学习结构信息。</p>
+<p>在这篇论文中，我们提出了一种从知识图形式的数据流中学习时序规则的方法。这种规则可以被用于对不同时间点的事件进行推理，特别是KG流中的链路预测和事件预测。</p>
+<p>基于已有的静态规则学习器(RLvLR),我们实现了StreamLearner系统，可以从KG数据流中学习时态规则，并且进行动态KG补全以及事件预测。我们的实验表明StreamLearner的性能优于基线系统，它能够处理大型KG，并且能够以KG的形式创建，维护和使用数据流。</p>
+<p>未来工作：处理更加复杂的事件，如带有起始时间和终止时间的事件，或带有发生位置标签的事件。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Knowledge-Graph/" rel="tag"><i class="fa fa-tag"></i> Knowledge Graph</a>
+          
+            <a href="/tags/Temporal-Rules/" rel="tag"><i class="fa fa-tag"></i> Temporal Rules</a>
+          
+            <a href="/tags/Link-Prediction/" rel="tag"><i class="fa fa-tag"></i> Link Prediction</a>
+          
+            <a href="/tags/Event-Prediction/" rel="tag"><i class="fa fa-tag"></i> Event Prediction</a>
+          
+            <a href="/tags/Data-Stream/" rel="tag"><i class="fa fa-tag"></i> Data Stream</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/14/ATOMIC-An-Atlas-of-Machine-Commonsense-for-If-Then-Reasoning/" rel="next" title="ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning">
+                <i class="fa fa-chevron-left"></i> ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/24/Multi-Task-Identiﬁcation-of-Entities-Relations-and-Coreference-for-Scientiﬁc-KG-Construction/" rel="prev" title="Multi-Task Identiﬁcation of Entities, Relations, and Coreference for Scientiﬁc KG Construction">
+                Multi-Task Identiﬁcation of Entities, Relations, and Coreference for Scientiﬁc KG Construction <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg"
+                alt="Jiawen Zhang" />
+            
+              <p class="site-author-name" itemprop="name">Jiawen Zhang</p>
+              <p class="site-description motion-element" itemprop="description">Heroic dreams in exhausted life</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiawen.zhang96@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/fjlyzjw" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100012593228796" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/1904079292" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BACKGROUND"><span class="nav-number">3.</span> <span class="nav-text">BACKGROUND</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Path-Ranking-Algorithms"><span class="nav-number">3.1.</span> <span class="nav-text">Path Ranking Algorithms</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Temporal-Rule-Learning"><span class="nav-number">4.</span> <span class="nav-text">Temporal Rule Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#规则结构的学习"><span class="nav-number">4.1.</span> <span class="nav-text">规则结构的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#支持度"><span class="nav-number">4.1.1.</span> <span class="nav-text">支持度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#置信度-amp-头覆盖率"><span class="nav-number">4.1.2.</span> <span class="nav-text">置信度 &amp; 头覆盖率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Combine-Stream-Learning-and-Reasoning"><span class="nav-number">5.</span> <span class="nav-text">Combine Stream Learning and Reasoning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总体思想"><span class="nav-number">5.1.</span> <span class="nav-text">总体思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shifting-window"><span class="nav-number">5.2.</span> <span class="nav-text">shifting window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估候选时态规则的质量"><span class="nav-number">5.3.</span> <span class="nav-text">评估候选时态规则的质量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生新的事件"><span class="nav-number">5.4.</span> <span class="nav-text">产生新的事件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EXPERIMENT"><span class="nav-number">6.</span> <span class="nav-text">EXPERIMENT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DISCUSSION-AND-CONCLUSION"><span class="nav-number">7.</span> <span class="nav-text">DISCUSSION AND CONCLUSION</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiawen Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

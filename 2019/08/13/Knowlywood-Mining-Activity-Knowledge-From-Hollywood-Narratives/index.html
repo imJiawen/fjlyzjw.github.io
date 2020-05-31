@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Knowledge Graph,Active Knowledge,Commonsense Knowledge Acquisition," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="基于叙事性文本(剧本和小说)拓展&amp;amp;自动构建【捕捉人类活动、参与者、以及典型时空场景】的语义框架，以填充一个全面的Active Knowledge Base. Accepted by: ACM 2015Paper link：https://dl.acm.org/citation.cfm?doid=2806416.2806583">
+<meta name="keywords" content="Knowledge Graph,Active Knowledge,Commonsense Knowledge Acquisition">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knowlywood: Mining Activity Knowledge From Hollywood Narratives">
+<meta property="og:url" content="http://yoursite.com/2019/08/13/Knowlywood-Mining-Activity-Knowledge-From-Hollywood-Narratives/index.html">
+<meta property="og:site_name" content="Jiawen and her funny friends">
+<meta property="og:description" content="基于叙事性文本(剧本和小说)拓展&amp;amp;自动构建【捕捉人类活动、参与者、以及典型时空场景】的语义框架，以填充一个全面的Active Knowledge Base. Accepted by: ACM 2015Paper link：https://dl.acm.org/citation.cfm?doid=2806416.2806583">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/mPvX6J.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/mip11O.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/mitmSP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/mitZWt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/miU5RI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/14/mitVJI.png">
+<meta property="og:updated_time" content="2019-08-14T03:31:45.439Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowlywood: Mining Activity Knowledge From Hollywood Narratives">
+<meta name="twitter:description" content="基于叙事性文本(剧本和小说)拓展&amp;amp;自动构建【捕捉人类活动、参与者、以及典型时空场景】的语义框架，以填充一个全面的Active Knowledge Base. Accepted by: ACM 2015Paper link：https://dl.acm.org/citation.cfm?doid=2806416.2806583">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/14/mPvX6J.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/13/Knowlywood-Mining-Activity-Knowledge-From-Hollywood-Narratives/"/>
+
+
+
+
+
+  <title>Knowlywood: Mining Activity Knowledge From Hollywood Narratives | Jiawen and her funny friends</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jiawen and her funny friends</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/Knowlywood-Mining-Activity-Knowledge-From-Hollywood-Narratives/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawen Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jiawen and her funny friends">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Knowlywood: Mining Activity Knowledge From Hollywood Narratives</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T17:06:33+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PaperReading/" itemprop="url" rel="index">
+                    <span itemprop="name">PaperReading</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基于叙事性文本(剧本和小说)拓展&amp;自动构建【捕捉人类活动、参与者、以及典型时空场景】的语义框架，以填充一个全面的Active Knowledge Base.</p>
+<p>Accepted by: ACM 2015<br>Paper link：<a href="https://dl.acm.org/citation.cfm?doid=2806416.2806583" target="_blank" rel="noopener">https://dl.acm.org/citation.cfm?doid=2806416.2806583</a></p>
+<a id="more"></a>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>尽管大型知识库取得了成功，但到目前为止尚未引起人们注意的一种知识是人类活动。这种活动的一个例子是proposing to someone（结婚）。对于计算机，知道这涉及两个成年人，通常但​​不一定是女人和男人，经常发生在某个浪漫的地方，通常涉及鲜花或珠宝，并且通常接着是接吻。它是自然语言对话，场景理解或视频搜索等任务的宝贵资产。</p>
+<p>这与捕获人类活动、其参与agent以及它们典型的时空背景的语义框架的挑战性任务有关。本文介绍了一种利用电影剧本和其他叙事文本的新方法。我们开发了一个用于语义分析和知识精炼的pipeline，以系统地编译语义上重新定义的活动框架。</p>
+<p>由此产生的知识库包含数十万个活动框架，从约200万场电影，电视剧和小说场景中挖掘出来。通过广泛的抽样和统计显着性测试进行的人工评估研究表明，框架及其属性值的准确度至少为80％。我们还通过电影场景搜索的外在用例来证明活动知识的有用性。</p>
+<h1 id="CONTRIBUTION"><a href="#CONTRIBUTION" class="headerlink" title="CONTRIBUTION"></a>CONTRIBUTION</h1><ul>
+<li>构造了一个pipeline（见下图）从电影脚本等叙事性文本中自动抽取并精炼语义框架</li>
+<li>新的多词短语消歧（映射到WordNet[1]）和分类归纳技巧</li>
+<li>一个以语义框架形式储存的关于active的大型知识集合<br><img src="https://s2.ax1x.com/2019/08/14/mPvX6J.png" alt="pipeline"></li>
+</ul>
+<h1 id="SYSTEM-OVERVIEW"><a href="#SYSTEM-OVERVIEW" class="headerlink" title="SYSTEM OVERVIEW"></a>SYSTEM OVERVIEW</h1><h2 id="Semantic-Parsing-语义解析"><a href="#Semantic-Parsing-语义解析" class="headerlink" title="Semantic Parsing 语义解析"></a>Semantic Parsing 语义解析</h2><p>用于抽取relations &amp; argument。</p>
+<ul>
+<li><p>ClausIE (Clause-based open information extraction[2])<br>  将句子分解成短语</p>
+</li>
+<li><p>OpenNLP[3]<br>  根据最大熵模型将每个短语分块</p>
+</li>
+<li><p>ILP(Integer Linear Programming) for WSD<br>  用于词义消歧和备选活动框架的构建</p>
+</li>
+</ul>
+<hr>
+<ol>
+<li>Sentence Analysis</li>
+</ol>
+<ul>
+<li><p>首先使用ClausIE工具将长句子分解成更短的子句</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Example： Bell, a telecommunication company, which is based in Los Angeles, makes and distributes electronic, computer and building products.</span><br><span class="line"></span><br><span class="line">result:</span><br><span class="line">&quot;Bell&quot;	&quot;is&quot;	&quot;a telecommunication company&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;is based&quot;	&quot;in Los Angeles&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;makes&quot;	&quot;electronic products&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;makes&quot;	&quot;computer products&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;makes&quot;	&quot;building products&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;distributes&quot;	&quot;electronic products&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;distributes&quot;	&quot;computer products&quot;</span><br><span class="line">&quot;Bell&quot;	&quot;distributes&quot;	&quot;building products&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用OpenNLP工具对子句进行进一步分割（分割结果见下表第一列）</p>
+</li>
+</ul>
+<ol start="2">
+<li>Sense and Argument Analysis</li>
+</ol>
+<ul>
+<li>将动词或动词短语映射到WordNet中，其与VerbNet相关联<ul>
+<li>VerbNet列出了相关的题元角色，论元的选择限制以及句法框架，可以帮助WordNet找到合适的映射<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Example： shoot#vn#1</span><br><span class="line">Agent.animate V Patient.animate PP Instrument.solid      =&gt;    He shot the man with a gun.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/08/14/mip11O.png" alt="table 1"></p>
+<ol start="3">
+<li>Word Sense Disambiguation (WSD) Priors 词义消歧先验</li>
+</ol>
+<ul>
+<li><p>使用了 state-of-the-art 的词义消歧系统 It-Makes-Sense (IMS)[5]<br>将单词 i 映射到含义 j 上将获得以下分数：<br>$$<br>\tau_{ij}=\begin{cases}<br>score \quad of \quad IMS, &amp; \text{for $j \in S_w$}\<br>\sum_{j’} \tau_{ij’}, &amp; \text{for $j \in S_V$ link to $j’ \in S_W$}<br>\end{cases}<br>$$<br>$S_W$: the set of candidate WordNet senses<br>$S_V$:  the set of candidate VerbNet senses</p>
+</li>
+<li><p>WordNet提供的最常出现的含义的排序<br>$$<br>\theta_{ij}=\begin{cases}<br>1/rank(j \quad for \quad i), &amp; \text{for $j \in S_w$}\<br>\sum_{j’} \theta_{ij’}, &amp; \text{for $j \in S_V$ link to $j’ \in S_W$}<br>\end{cases}<br>$$</p>
+</li>
+<li><p>对与VerbNet匹配的句法和语义的打分</p>
+<p>  $syn_{ij}$  frame match score for word i and VerbNet sense $j$</p>
+<p>  $sem_{ij}$  selectional restriction score of the roles in a VerbNet frame $j$ for word $i$</p>
+</li>
+</ul>
+<ol start="4">
+<li>ILP Model</li>
+</ol>
+<ul>
+<li>使用ILP对输入句子中的所有词进行联合消歧</li>
+<li>如果单词i映射的含义为j则xij为1</li>
+<li>每一个句子将实例化为一个单独的ILP</li>
+</ul>
+<p><strong>maximize</strong><br>$$<br>\sum_{i,j} x_{i,j} (\alpha \tau_{i,j} + \beta_1 \theta_{i,j} + \beta_2 syn_{i,j} + \beta_3 sem_{ij})<br>$$</p>
+<p><strong>subject to</strong><br>$$<br>\begin{aligned}<br>\sum_{j\in S_Vx_{ij}}x_{ij} &amp; \leq 1 &amp; \forall i \in V\<br>x_{ij} &amp; \leq x_{ij’} &amp; \forall i \in V,j \in S_W,j \quad mapped \quad to \quad j’ \in S_V\<br>x_{i_0j_0} &amp; \leq x_{ij} &amp; \forall i_0 \in V,j \in S_V,x_{ij} \in role-restr(x_{i_0j_0})\<br>\sum_{j}x_{ij} &amp; \leq 1 &amp; \forall i \notin V\<br>x_{ij} &amp; \in {0,1} \<br>\end{aligned}<br>$$</p>
+<h2 id="Graph-Inference-推理"><a href="#Graph-Inference-推理" class="headerlink" title="Graph Inference 推理"></a>Graph Inference 推理</h2><p>增加覆盖度，去除错误边，推理出缺失边。</p>
+<ul>
+<li>Statistical Priors<br>  估计活动的上下位关系与相似度，获得prior scores</li>
+<li>PSL[4] Inference<br>  使用该框架进行关系学习与推理</li>
+</ul>
+<hr>
+<p>将frame间的联系类型定为三类：父类型(T)、语义相似(S)、时间序列(P)<br>使用PSL框架来进行关系学习和推理</p>
+<ul>
+<li><p><strong>Edge Priors</strong>：将每个active定义为(verb-sense,noun-sense)对，来帮助我们估计active之间的上下位关系和相似度</p>
+<ul>
+<li><p>The prior for T (parent type) edges between (v1 , n1 ), (v2 , n2 )：<br>  t(v1 , v2 ) · t(n1 , n2 )</p>
+<ul>
+<li>对于名词含义，使用WordNet的hypernymy(上位词)，若父母与孩子连接，则得分为1，否则为0</li>
+<li>对于动词含义，使用WordNet 的hypernymy和VerbNet的动词层次结构</li>
+</ul>
+</li>
+<li><p>The prior for S (similarTo) edges between (v1 , n1 ), (v2 , n2 )：<br>sim(v1 , v2 ) · sim(n1 , n2 )</p>
+<ul>
+<li>使用WordNet路径相似性度 [6] 计算两个名词含义(n1，n2)之间的分类相关性得分</li>
+<li>使用WordNet动词组和VerbNet类的membership [7] 计算两个动词含义(v1，v2)之间的得分</li>
+</ul>
+</li>
+<li><p>P (previous) edges:</p>
+<ul>
+<li>使用了一种广义序列挖掘算法GSP(Generalized Sequential Pattern) [8] 来确定P edges</li>
+<li>minimum support=3 ; maximum gap = 4</li>
+<li>一个active a1先于a2的概率比例支持度为：$\frac{freq(\alpha_1 \quad prev \quad \alpha_2)}{freq(\alpha_1)freq(\alpha_2)}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Inference</strong><br>使用PSL模型的一阶逻辑规则获得干净、能反映依赖关系的图(soft rules)</p>
+</li>
+</ul>
+<h2 id="Taxonomy-Construction-分类构建"><a href="#Taxonomy-Construction-分类构建" class="headerlink" title="Taxonomy Construction 分类构建"></a>Taxonomy Construction 分类构建</h2><p>对活动框架进行合并和层级归纳。</p>
+<ul>
+<li>Activity Merging<br>  对同义集合(synset)进行合并</li>
+<li>Hierarchy Induction<br>  构建层级关系(hierarchy)结构</li>
+</ul>
+<hr>
+<ol>
+<li>Activity Merging(从S边出发)</li>
+</ol>
+<ul>
+<li><p>之前的活动产生了干净的活动框架，但是会产生过于具体的活动（e.g. “embrace spouse”, “hug wife”），这些活动具有足够的类似性，可以被组合为一个框架（一般化）</p>
+</li>
+<li><p>WordNet路径相似性可以视为语义距离的度量，在这里使用路径长度dist(vi,vj)。对于activities ai,aj，计算：<br>$$<br>\frac{1}{2} (\frac{1}{1+dist(v_i,v_j)} + \frac{1}{1+dist(o_i,o_j)})<br>$$</p>
+</li>
+<li><p>最后ai和aj间的距离是动词含义\物体含义距离的均值以及participants（这里应该是指除了object的其他名词）间的距离</p>
+</li>
+<li><p>将两个活动合并为一个synset的阈值是通过手动分组一小部分活动并计算实现样本中同义词的阈值来确定的。 只要距离低于调整阈值，我们就会将活动合并。</p>
+</li>
+</ul>
+<ol start="2">
+<li>Hierarchy Induction(从P边出发)</li>
+</ol>
+<ul>
+<li><p>活动分类法是活动同义词的DAG(有向无环图)</p>
+</li>
+<li><p>为了构建层次结构，再次使用WordNet路径相似性，但现在只考虑上位词关系（即忽略下位词），最终的分类图包含语义距离低于阈值的所有包含对</p>
+</li>
+<li><p>通过贪婪地去除低权重边来打破循环</p>
+</li>
+</ul>
+<h1 id="RESULTS"><a href="#RESULTS" class="headerlink" title="RESULTS"></a>RESULTS</h1><p><img src="https://s2.ax1x.com/2019/08/14/mitmSP.png" alt="example"></p>
+<center> Anecdotal Examples </center>
+
+<p>\<br><img src="https://s2.ax1x.com/2019/08/14/mitZWt.png" alt="table 2"></p>
+<p><img src="https://s2.ax1x.com/2019/08/14/miU5RI.png" alt="Table 3"></p>
+<p><img src="https://s2.ax1x.com/2019/08/14/mitVJI.png" alt="table 4"></p>
+<h1 id="USE-CASE"><a href="#USE-CASE" class="headerlink" title="USE CASE"></a>USE CASE</h1><ul>
+<li>Movie Scene Tagging</li>
+<li>Scene Search</li>
+</ul>
+<p>#CONCLUSION</p>
+<p>我们介绍了Knowlywood，这是人类活动的第一个全面的知识库。 它提供了语义上重新定义的活动类型，参与agent，时空背景，活动序列信息以及可视内容链接。 我们的算法确保条目完全消除歧义并删除不一致的属性。 我们的实验表明，Knowlywood与几个baseline相比具有优势，包括标签推荐等用例。 我们相信，由此产生的大约一百万个活动帧的集合是图像和视频理解等各种应用的重要资产。</p>
+<h1 id="REFERENCE"><a href="#REFERENCE" class="headerlink" title="REFERENCE"></a>REFERENCE</h1><p>[1] Christiane Fellbaum, editor. WordNet: An Electronic Lexical Database. The MIT Press, 1998.<br>[2] Luciano Del Corro and Rainer Gemulla. ClausIE:Clause-based open information extraction. 2013.<br>[3] opennlp.sourceforge.net<br>[4] Matthias Brocheler, Lilyana Mihalkova, and Lise Getoor. Probabilistic similarity logic. arXiv 1203.3469, 2012.<br>[5] Zhi Zhong and Hwee Tou Ng. It makes sense: A wide-coverage word sense disambiguation system for free text. In ACL, 2010.<br>[6] Ted Pedersen, Siddharth Patwardhan, and Jason Michelizzi. WordNet::Similarity: Measuring the relatedness of concepts. In NAACL, 2004.<br>[7] Karin Kipper Schuler, Anna Korhonen, and Susan Windisch Brown. VerbNet overview, extensions, mappings and applications. In HLT-NAACL, 2009.<br>[8] Ramakrishnan Srikant and Rakesh Agrawal. Mining sequential patterns: Generalizations and performance improvements. Springer, 1996.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Knowledge-Graph/" rel="tag"><i class="fa fa-tag"></i> Knowledge Graph</a>
+          
+            <a href="/tags/Active-Knowledge/" rel="tag"><i class="fa fa-tag"></i> Active Knowledge</a>
+          
+            <a href="/tags/Commonsense-Knowledge-Acquisition/" rel="tag"><i class="fa fa-tag"></i> Commonsense Knowledge Acquisition</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/06/Hello-world/" rel="next" title="Hello world">
+                <i class="fa fa-chevron-left"></i> Hello world
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/14/ATOMIC-An-Atlas-of-Machine-Commonsense-for-If-Then-Reasoning/" rel="prev" title="ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning">
+                ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg"
+                alt="Jiawen Zhang" />
+            
+              <p class="site-author-name" itemprop="name">Jiawen Zhang</p>
+              <p class="site-description motion-element" itemprop="description">Heroic dreams in exhausted life</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiawen.zhang96@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/fjlyzjw" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100012593228796" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/1904079292" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CONTRIBUTION"><span class="nav-number">2.</span> <span class="nav-text">CONTRIBUTION</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SYSTEM-OVERVIEW"><span class="nav-number">3.</span> <span class="nav-text">SYSTEM OVERVIEW</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Semantic-Parsing-语义解析"><span class="nav-number">3.1.</span> <span class="nav-text">Semantic Parsing 语义解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph-Inference-推理"><span class="nav-number">3.2.</span> <span class="nav-text">Graph Inference 推理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Taxonomy-Construction-分类构建"><span class="nav-number">3.3.</span> <span class="nav-text">Taxonomy Construction 分类构建</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RESULTS"><span class="nav-number">4.</span> <span class="nav-text">RESULTS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#USE-CASE"><span class="nav-number">5.</span> <span class="nav-text">USE CASE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REFERENCE"><span class="nav-number">6.</span> <span class="nav-text">REFERENCE</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiawen Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
