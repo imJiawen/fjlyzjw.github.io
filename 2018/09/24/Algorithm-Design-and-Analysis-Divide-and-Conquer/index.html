@@ -1,418 +1,514 @@
 <!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
 
-<script type="text/javascript"
-color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
 
 
 
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Algorithm Design and Analysis - Divide-and-Conquer | 
+        
+        Jiawen and her funny friends
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="Main message:
+
+从最简单的case入手
+看能否分，能否combine
+不求最优，只要次优
+">
+    <meta name="keywords" content=",Algorithm Design and Analysis,Basic algorithm design technique,Divide-and-Conquer,Sort Algorithm">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
   
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
 
 
-<html class="theme-next pisces use-motion" lang="">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+<!-- Theme Background Related-->
 
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Algorithm Design and Analysis,Basic algorithm design technique,Divide-and-Conquer,Sort Algorithm," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml" />
-
-
-
-
-
-
-<meta name="description" content="Main message:  从最简单的case入手 看能否分，能否combine 不求最优，只要次优">
-<meta name="keywords" content="Algorithm Design and Analysis,Basic algorithm design technique,Divide-and-Conquer,Sort Algorithm">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Algorithm Design and Analysis - Divide-and-Conquer">
-<meta property="og:url" content="http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html">
-<meta property="og:site_name" content="Jiawen and her funny friends">
-<meta property="og:description" content="Main message:  从最简单的case入手 看能否分，能否combine 不求最优，只要次优">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHaU6f.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHaN1P.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHawnS.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHatpt.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHa00g.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHaB7Q.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHarkj.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHasts.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHaaX8.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdn4s.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdKCn.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdM3q.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdQg0.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdlvV.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHd3uT.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdtUJ.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHd8DU.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdGbF.jpg">
-<meta property="og:image" content="https://s2.ax1x.com/2019/08/09/eHdYE4.jpg">
-<meta property="og:updated_time" content="2019-08-09T02:31:26.707Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Algorithm Design and Analysis - Divide-and-Conquer">
-<meta name="twitter:description" content="Main message:  从最简单的case入手 看能否分，能否combine 不求最优，只要次优">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/09/eHaU6f.jpg">
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Jiawen and her funny friends">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Jiawen and her funny friends">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    <meta name="baidu-site-verification" content="&lt;meta name=&#34;baidu-site-verification&#34; content=&#34;DCwhqVHr0D&#34; /&gt;" />
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Algorithm Design and Analysis - Divide-and-Conquer | Jiawen and her funny friends">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="Main message:
+
+从最简单的case入手
+看能否分，能否combine
+不求最优，只要次优
+">
+    <meta property="og:article:tag" content="Algorithm Design and Analysis"> <meta property="og:article:tag" content="Basic algorithm design technique"> <meta property="og:article:tag" content="Divide-and-Conquer"> <meta property="og:article:tag" content="Sort Algorithm"> 
+
+    
+        <meta property="article:published_time" content="Mon Sep 24 2018 14:44:42 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 22 2019 20:16:22 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html",
+    "headline": "Algorithm Design and Analysis - Divide-and-Conquer",
+    "datePublished": "Mon Sep 24 2018 14:44:42 GMT+0800",
+    "dateModified": "Fri Mar 22 2019 20:16:22 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Jiawen Zhang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/figure.png"
+        },
+        "description": "A heroic dream in the exhausted life."
     },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jiawen and her funny friends",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Algorithm Design and Analysis,Basic algorithm design technique,Divide-and-Conquer,Sort Algorithm",
+    "description": "Main message:
+
+从最简单的case入手
+看能否分，能否combine
+不求最优，只要次优
+",
+}
 </script>
 
 
+    
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/"/>
+    <!-- Analytics -->
+    
+    
+    
 
+    <!-- Custom Head -->
+    
 
-
-
-
-  <title>Algorithm Design and Analysis - Divide-and-Conquer | Jiawen and her funny friends</title>
-  
-
-
-
-
-
-
-
-
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jiawen and her funny friends</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            Search
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawen Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jiawen and her funny friends">
-    </span>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Algorithm Design and Analysis - Divide-and-Conquer</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-24T14:44:42+08:00">
-                2018-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">algorithm</span>
-                  </a>
-                </span>
-
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
-                
-              
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
             </span>
-          
+        </a>
+    </div>
+    -->
 
-          
-            
-          
 
-          
-          
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
 
-          
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、Remarks"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、Remarks</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、Sort-Problem"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、Sort Problem</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、迭代的时间复杂度的分析方法："><span class="post-toc-number">3.</span> <span class="post-toc-text">三、迭代的时间复杂度的分析方法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#technique-1-Unrolling-the-recurrence"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">technique 1: Unrolling the recurrence</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#technique-2-Guess-and-substitution"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">technique 2: Guess and substitution</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#technique-3-Master-theorem-主定理"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">technique 3:Master theorem  主定理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、Counting-Inversion-Problem-数逆序对"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、Counting Inversion Problem  数逆序对</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、The-general-Divide-and-Conquer-paradigm"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、The general Divide and Conquer paradigm</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Basic-Idea"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Basic Idea</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Three-Steps"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Three Steps</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Sort-algorithm"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Quick Sort algorithm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Analysis"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Modified-Quick-Sort"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Modified Quick Sort</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Selection-problem"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">Selection problem</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-to-choose-a-pivot"><span class="post-toc-number">5.6.1.</span> <span class="post-toc-text">How to choose a pivot?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-to-select-a-nearly-central-pivot"><span class="post-toc-number">5.6.2.</span> <span class="post-toc-text">How to select a nearly-central pivot?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot"><span class="post-toc-number">5.6.2.1.</span> <span class="post-toc-text">Strategy 1:BFPRT algorithm uses median of medians as pivot</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot"><span class="post-toc-number">5.6.2.2.</span> <span class="post-toc-text">Strategy 2: QuickSelect algorithm randomly select an element as pivot</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples"><span class="post-toc-number">5.6.2.3.</span> <span class="post-toc-text">Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#六、例题"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、例题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-ClosestPair-problem"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">1. ClosestPair problem</span></a></li></ol></li></ol>
+    </ul>
+    
 
-          
 
-          
 
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 15 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/head_pic/Unsplash-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Algorithm Design and Analysis - Divide-and-Conquer
+            </p>
         </div>
-      </header>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/figure.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Jiawen Zhang</strong>
+        <span>Sep 24, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Algorithm-Design-and-Analysis/" rel="tag">Algorithm Design and Analysis</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Basic-algorithm-design-technique/" rel="tag">Basic algorithm design technique</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Divide-and-Conquer/" rel="tag">Divide-and-Conquer</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Sort-Algorithm/" rel="tag">Sort Algorithm</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
     
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Algorithm Design and Analysis - Divide-and-Conquer&url=http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
 
-      
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Algorithm Design and Analysis - Divide-and-Conquer&url=http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html&via=Jiawen Zhang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
         <p>Main message:</p>
 <ol>
 <li>从最简单的case入手</li>
@@ -420,33 +516,35 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 <li>不求最优，只要次优</li>
 </ol>
 <a id="more"></a>
+
 <h1 id="一、Remarks"><a href="#一、Remarks" class="headerlink" title="一、Remarks"></a>一、Remarks</h1><p>1.对于ClosestPair问题，若暴力破解法将花费多项式时间，分治法通常可被用于节省运行时间：$O(n^2)$ $\implies$ $O(nlogn)$<br>2.这个技巧若与随机技巧结合将非常有威力</p>
 <p>在使用分治法之前，需要先检验输入（i.e.问题是否可以被分为结构相似，规模更小的子问题）以及输出（i.e.原问题的解是否能够用子问题的解组合而成）</p>
 <h1 id="二、Sort-Problem"><a href="#二、Sort-Problem" class="headerlink" title="二、Sort Problem"></a>二、Sort Problem</h1><p>将长度为n的数组排序</p>
 <pre><code>INPUT: An array of n integers, say A[0..n-1];
-OUTPUT: The items of A in increasing order.
-</code></pre><p><strong><em>方法1.将其分为n-1长度的数列和一个元素</em></strong></p>
+OUTPUT: The items of A in increasing order.</code></pre><p><strong><em>方法1.将其分为n-1长度的数列和一个元素</em></strong></p>
 <p>第一种方法可以从最简单的case入手，从n=2，n=3，到逐步解决原问题</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHaU6f.jpg" alt="分离出一个元素"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">InsertionSort( A, n )</span><br><span class="line">	for j = 0 to n - 1 do</span><br><span class="line">		key = A[j];</span><br><span class="line">		i = j - 1;</span><br><span class="line">		while i &gt;= 0 and A[i] &gt; key do</span><br><span class="line">			A[i + 1] = A[i];</span><br><span class="line">			i --;</span><br><span class="line">		end while</span><br><span class="line">		A[i + 1] = key;</span><br><span class="line">	end for</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fvl1co5hjuj20cw0atgmq.jpg" alt="分离出一个元素"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">InsertionSort( A, n )</span><br><span class="line">	for j &#x3D; 0 to n - 1 do</span><br><span class="line">		key &#x3D; A[j];</span><br><span class="line">		i &#x3D; j - 1;</span><br><span class="line">		while i &gt;&#x3D; 0 and A[i] &gt; key do</span><br><span class="line">			A[i + 1] &#x3D; A[i];</span><br><span class="line">			i --;</span><br><span class="line">		end while</span><br><span class="line">		A[i + 1] &#x3D; key;</span><br><span class="line">	end for</span><br></pre></td></tr></table></figure>
+
 <p>最差的情况：A数组里的元素为逆序</p>
 <p>时间复杂度： $T(n)=T(n-1)+O(n)=O(n^2)$</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHaN1P.jpg" alt="最差情况"></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fvl1cnv0q4j206e0a3ab1.jpg" alt="最差情况"></p>
 <p><strong><em>方法2.将其分为两个独立的子问题(MERGE SORT)</em></strong></p>
 <p>将数组$A[0..n-1]$分为两个数组$A[0..\frac{n}{2}-1]$以及$A[\frac{n}{2}-1..n-1]$</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHawnS.jpg" alt="分为子问题"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A; l; r) //从l到r之间排序</span><br><span class="line">	// To sort part of the array A[l::r]</span><br><span class="line">	if l &lt; r then</span><br><span class="line">		m = (l + r)=2; //m denotes the middle point</span><br><span class="line">		MergeSort(A; l; m );</span><br><span class="line">		MergeSort(A; m + 1; r);</span><br><span class="line">		Merge(A; l; m; r); //Combining the sorted arrays</span><br><span class="line">	end if</span><br><span class="line">Merge (A; l; m; r) //将左端最小与右端最小比较</span><br><span class="line">	//Merge A[l::m] (denoted as L) and A[m + 1::r](denoted as R).</span><br><span class="line">	i = 0; j = 0;</span><br><span class="line">	for k = l to r do</span><br><span class="line">		if L[i] &lt; R[j] then</span><br><span class="line">			A[k] = L[i];</span><br><span class="line">			i + +;</span><br><span class="line">		else</span><br><span class="line">			A[k] = R[j];</span><br><span class="line">			j + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fvl1cnxlrkj20f30armzr.jpg" alt="分为子问题"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A; l; r) &#x2F;&#x2F;从l到r之间排序</span><br><span class="line">	&#x2F;&#x2F; To sort part of the array A[l::r]</span><br><span class="line">	if l &lt; r then</span><br><span class="line">		m &#x3D; (l + r)&#x3D;2; &#x2F;&#x2F;m denotes the middle point</span><br><span class="line">		MergeSort(A; l; m );</span><br><span class="line">		MergeSort(A; m + 1; r);</span><br><span class="line">		Merge(A; l; m; r); &#x2F;&#x2F;Combining the sorted arrays</span><br><span class="line">	end if</span><br><span class="line">Merge (A; l; m; r) &#x2F;&#x2F;将左端最小与右端最小比较</span><br><span class="line">	&#x2F;&#x2F;Merge A[l::m] (denoted as L) and A[m + 1::r](denoted as R).</span><br><span class="line">	i &#x3D; 0; j &#x3D; 0;</span><br><span class="line">	for k &#x3D; l to r do</span><br><span class="line">		if L[i] &lt; R[j] then</span><br><span class="line">			A[k] &#x3D; L[i];</span><br><span class="line">			i + +;</span><br><span class="line">		else</span><br><span class="line">			A[k] &#x3D; R[j];</span><br><span class="line">			j + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br></pre></td></tr></table></figure>
+
 <p>时间复杂度：O(n)</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHatpt.jpg" alt="mergesort"></p>
+<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvl1cnuxq5j20ea02v74x.jpg" alt="mergesort"></p>
 <h1 id="三、迭代的时间复杂度的分析方法："><a href="#三、迭代的时间复杂度的分析方法：" class="headerlink" title="三、迭代的时间复杂度的分析方法："></a>三、迭代的时间复杂度的分析方法：</h1><ol>
 <li>Unrolling the recurrence 硬展开</li>
 <li>Guess and substitution 猜然后验证</li>
 <li>Master theorem</li>
 </ol>
 <h3 id="technique-1-Unrolling-the-recurrence"><a href="#technique-1-Unrolling-the-recurrence" class="headerlink" title="technique 1: Unrolling the recurrence"></a>technique 1: Unrolling the recurrence</h3><p>We have $T(n) = 2T(\frac{n}{2}) + O(n) &lt;= 2T(\frac{n}{2}) + cn$ for a constant c. Let unrolling a few levels to find a pattern, and then sum over all levels.</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHa00g.jpg" alt="Unrolling"></p>
+<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fvl1cnvn1mj20c408dt9u.jpg" alt="Unrolling"></p>
 <h3 id="technique-2-Guess-and-substitution"><a href="#technique-2-Guess-and-substitution" class="headerlink" title="technique 2: Guess and substitution"></a>technique 2: Guess and substitution</h3><p>Guess and substitution: guess a solution, substitute it into the recurrence relation, and justify that it works.</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHaB7Q.jpg" alt="Guess"></p>
+<p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fvl1cnxy0gj20gv08kq4g.jpg" alt="Guess"></p>
 <h3 id="technique-3-Master-theorem-主定理"><a href="#technique-3-Master-theorem-主定理" class="headerlink" title="technique 3:Master theorem  主定理"></a>technique 3:Master theorem  主定理</h3><p>Let T(n) be defined by $T(n)=aT(\frac{n}{b})+O(n^d)$ for a &gt; 1, b &gt; 1 and d &gt; 0, 其中n为问题规模，a为递推的子问题数量,$\frac{n}{b}$为每个子问题的规模（假设每个子问题的规模基本一样），  为递推以外进行的计算工作.<br>then T(n) can be bounded by:</p>
 <ol>
 <li>If d &lt; $\log_b a$, then $T(n)=O(n^{\log_b a})$;</li>
@@ -455,15 +553,15 @@ OUTPUT: The items of A in increasing order.
 </ol>
 <h1 id="四、Counting-Inversion-Problem-数逆序对"><a href="#四、Counting-Inversion-Problem-数逆序对" class="headerlink" title="四、Counting Inversion Problem  数逆序对"></a>四、Counting Inversion Problem  数逆序对</h1><p>To count inversions in an array of n integers</p>
 <pre><code>INPUT: An array $A[0..n]$ with n distinct numbers; 
-OUTPUT:the number of inversions. A pair of indices i and j constitutes an inversion if i &lt; j butA[i] &gt; A[j].
-</code></pre><p><img src="https://s2.ax1x.com/2019/08/09/eHarkj.jpg" alt="CountingInversion"></p>
+OUTPUT:the number of inversions. A pair of indices i and j constitutes an inversion if i &lt; j butA[i] &gt; A[j].</code></pre><p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvl1cnupelj20ak041aa8.jpg" alt="CountingInversion"></p>
 <p>可使用分治法解决数逆序对问题，其中Divide和Conquer部分与之前排序问题相同，即将问题分为两个独立的子问题。Combine部分有两种策略。</p>
 <p><strong>策略1</strong>：若$A[0..\frac{n}{2}-1]$以及$A[\frac{n}{2}..n-1]$没有特殊的结构，则我们需要检查所有可能的配对$(i,j)$去检查逆序。即若左右数都是任意的，就必须写For循环。</p>
 <p>时间复杂度为：$T(n)=2T(\frac{n}{2})+\frac{n^2}{4}=O(n^2)$</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHasts.jpg" alt="strategy1"></p>
+<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fvl1cnyqh7j20d007h0uj.jpg" alt="strategy1"></p>
 <p><strong>策略2</strong>：若每一部分为升序，则相对容易计算逆序</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHaaX8.jpg" alt="strategy2"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Sort-and-Count(A)</span><br><span class="line">	Divide A into two sub-sequences L and R;</span><br><span class="line">	(RCL, L) = Sort-and-Count(L);</span><br><span class="line">	(RCR, R) = Sort-and-Count(R);</span><br><span class="line">	(C, A) = Merge-and-Count(L, R);</span><br><span class="line">	return (RC = RCL + RCR + C, A);</span><br><span class="line">Merge-and-Count (L; R)</span><br><span class="line">	RC = 0; i = 0; j = 0;</span><br><span class="line">	for k = 0 to ∥L∥ + ∥R∥ - 1 do</span><br><span class="line">		if L[i] &gt; R[j] then</span><br><span class="line">			A[k] = R[j];</span><br><span class="line">			j + +;</span><br><span class="line">			RC+ = (n/2 - i);</span><br><span class="line">		else</span><br><span class="line">			A[k] = L[i];</span><br><span class="line">			i + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	return (RC, A);</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fvl1co2bztj20cv06bjsg.jpg" alt="strategy2"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Sort-and-Count(A)</span><br><span class="line">	Divide A into two sub-sequences L and R;</span><br><span class="line">	(RCL, L) &#x3D; Sort-and-Count(L);</span><br><span class="line">	(RCR, R) &#x3D; Sort-and-Count(R);</span><br><span class="line">	(C, A) &#x3D; Merge-and-Count(L, R);</span><br><span class="line">	return (RC &#x3D; RCL + RCR + C, A);</span><br><span class="line">Merge-and-Count (L; R)</span><br><span class="line">	RC &#x3D; 0; i &#x3D; 0; j &#x3D; 0;</span><br><span class="line">	for k &#x3D; 0 to ∥L∥ + ∥R∥ - 1 do</span><br><span class="line">		if L[i] &gt; R[j] then</span><br><span class="line">			A[k] &#x3D; R[j];</span><br><span class="line">			j + +;</span><br><span class="line">			RC+ &#x3D; (n&#x2F;2 - i);</span><br><span class="line">		else</span><br><span class="line">			A[k] &#x3D; L[i];</span><br><span class="line">			i + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	return (RC, A);</span><br></pre></td></tr></table></figure>
+
 <p>时间复杂度为：$T(n)=2T(\frac{n}{2})+O(n)=O(n\log n)$</p>
 <h1 id="五、The-general-Divide-and-Conquer-paradigm"><a href="#五、The-general-Divide-and-Conquer-paradigm" class="headerlink" title="五、The general Divide and Conquer paradigm"></a>五、The general Divide and Conquer paradigm</h1><h2 id="Basic-Idea"><a href="#Basic-Idea" class="headerlink" title="Basic Idea"></a>Basic Idea</h2><p>Many problems are recursive in structure, i.e., to solve a given problem, they call themselves several times to deal with closely related sub-problems. These sub-problems have the same form to the original problem but a smaller size.</p>
 <h2 id="Three-Steps"><a href="#Three-Steps" class="headerlink" title="Three Steps"></a>Three Steps</h2><ol>
@@ -472,7 +570,8 @@ OUTPUT:the number of inversions. A pair of indices i and j constitutes an invers
 <li><strong><em>Combine</em></strong> the solutions to the subproblems into the solution to the original problem.</li>
 </ol>
 <h2 id="Quick-Sort-algorithm"><a href="#Quick-Sort-algorithm" class="headerlink" title="Quick Sort algorithm"></a>Quick Sort algorithm</h2><p>Divide according to a randomly-selected pivot.根据随机选取的轴进行分割。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A)</span><br><span class="line">	S_ = &#123;&#125;; S+ = &#123;&#125;;</span><br><span class="line">	Choose a pivot A[j] uniformly at random;</span><br><span class="line">	for i = 0 to n - 1 do  //将比A[j]小的放在左边，大的放在右边</span><br><span class="line">		Put A[i] in S_ if A[i] &lt; A[j];</span><br><span class="line">		Put A[i] in S+ if A[i] &gt;= A[j];</span><br><span class="line">	end for</span><br><span class="line">	QuickSort(S+);</span><br><span class="line">	QuickSort(S_);</span><br><span class="line">	Output S_, then A[j], then S+;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A)</span><br><span class="line">	S_ &#x3D; &#123;&#125;; S+ &#x3D; &#123;&#125;;</span><br><span class="line">	Choose a pivot A[j] uniformly at random;</span><br><span class="line">	for i &#x3D; 0 to n - 1 do  &#x2F;&#x2F;将比A[j]小的放在左边，大的放在右边</span><br><span class="line">		Put A[i] in S_ if A[i] &lt; A[j];</span><br><span class="line">		Put A[i] in S+ if A[i] &gt;&#x3D; A[j];</span><br><span class="line">	end for</span><br><span class="line">	QuickSort(S+);</span><br><span class="line">	QuickSort(S_);</span><br><span class="line">	Output S_, then A[j], then S+;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>随机的操作使得这个算法变得简单而高效</li>
 <li>然而，随机增加了分析的难度，我们不能保证取到每个问题的第$\frac{n}{2}$个元素</li>
@@ -486,11 +585,14 @@ OUTPUT:the number of inversions. A pair of indices i and j constitutes an invers
 <h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p><strong>Observation 1:</strong> 对于任意i,j而言，$A[i]$和$A[j]$之间最多被比较一次。</p>
 <p><strong>Observation 2:</strong> 当处理包含$A[i..j]$的元素时，当且仅当$A[i]$或$A[j]$被选为枢轴时比较$A[i]$和$A[j]$。</p>
 <h2 id="Modified-Quick-Sort"><a href="#Modified-Quick-Sort" class="headerlink" title="Modified Quick Sort"></a>Modified Quick Sort</h2><p>在原算法上寻找一个好的分点（大于$/frac{n}{4}$小于$/frac{3n}{4}$的点）。它在所有项目都不同时有用，然而耗内存，且在比原算法更慢，因为当它偏离中心点时不运行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ModifiedQuickSort(A)</span><br><span class="line">	while TRUE do</span><br><span class="line">		Choose a pivot A[j] uniformly at random;</span><br><span class="line">		S_ = &#123;&#125;; S+ = &#123;&#125;;</span><br><span class="line">		for i = 0 to n - 1 do</span><br><span class="line">			Put A[i] in S_ if A[i] &lt; A[j];</span><br><span class="line">			Put A[i] in S+ if A[i] &gt; A[j];</span><br><span class="line">		end for</span><br><span class="line">		if ∥S+∥ &gt;= n/4 and ∥S_∥ &gt;= n/4 then</span><br><span class="line">			break;</span><br><span class="line">		end if</span><br><span class="line">	end while</span><br><span class="line">	ModifiedQuickSort(S+);</span><br><span class="line">	ModifiedQuickSort(S_);</span><br><span class="line">	Output S_, then A[j], and finally S+;</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHdn4s.jpg" alt="nearcenter"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ModifiedQuickSort(A)</span><br><span class="line">	while TRUE do</span><br><span class="line">		Choose a pivot A[j] uniformly at random;</span><br><span class="line">		S_ &#x3D; &#123;&#125;; S+ &#x3D; &#123;&#125;;</span><br><span class="line">		for i &#x3D; 0 to n - 1 do</span><br><span class="line">			Put A[i] in S_ if A[i] &lt; A[j];</span><br><span class="line">			Put A[i] in S+ if A[i] &gt; A[j];</span><br><span class="line">		end for</span><br><span class="line">		if ∥S+∥ &gt;&#x3D; n&#x2F;4 and ∥S_∥ &gt;&#x3D; n&#x2F;4 then</span><br><span class="line">			break;</span><br><span class="line">		end if</span><br><span class="line">	end while</span><br><span class="line">	ModifiedQuickSort(S+);</span><br><span class="line">	ModifiedQuickSort(S_);</span><br><span class="line">	Output S_, then A[j], and finally S+;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvnb5mr9sfj20bt04ojrv.jpg" alt="nearcenter"></p>
 <p>比起中心轴，近中心轴更容易获得。获得一个中心点为轴的概率是$frac{1}{n}$,而获得一个近中心轴的概率是$frac{1}{2}$。因此，找到一个近中心轴的期望时间为2n。此时我们不追求最优的pivot，只选择足够好。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">\\Lomuto’s implementation</span><br><span class="line">\\in-place sort 不花内存。</span><br><span class="line">QuickSort(A; l; h)</span><br><span class="line">	if l &lt; h then</span><br><span class="line">		p =Partition(A; l; h);</span><br><span class="line">		QuickSort(A; l; p - 1);</span><br><span class="line">		QuickSort(A; p + 1; h);</span><br><span class="line">	end if</span><br><span class="line">Partition(A; l; h)</span><br><span class="line">	pivot = A[h]; i = l - 1;</span><br><span class="line">	for j = l to h - 1 do</span><br><span class="line">			if A[j] &lt; pivot then</span><br><span class="line">			i + +;</span><br><span class="line">			Swap A[i] with A[j];</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if A[h] &lt; A[i + 1] then</span><br><span class="line">		Swap A[i + 1] with A[h];</span><br><span class="line">	end if</span><br><span class="line">	return i + 1;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">\\Hoare’s implementation</span><br><span class="line">QuickSort(A; l; h)</span><br><span class="line">	if l &lt; h then</span><br><span class="line">		p =Partition(A; l; h);</span><br><span class="line">		QuickSort(A; l; p); //Reason: A[p] might not be at its correct position</span><br><span class="line">		QuickSort(A; p + 1; h);</span><br><span class="line">	end if</span><br><span class="line">Partition(A; l; h)</span><br><span class="line">	i = l - 1; j = h + 1; pivot = A[l];</span><br><span class="line">	while TRUE do</span><br><span class="line">		repeat</span><br><span class="line">			j = j - 1;</span><br><span class="line">		until A[j] &lt;= pivot or j == l;</span><br><span class="line">		repeat</span><br><span class="line">			i = i + 1;</span><br><span class="line">		until A[i] &gt;= pivot or i == h;</span><br><span class="line">		if i &gt;= j then</span><br><span class="line">			return j;</span><br><span class="line">		end if</span><br><span class="line">		Swap A[i] with A[j];</span><br><span class="line">	end while</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">\\Lomuto’s implementation</span><br><span class="line">\\in-place sort 不花内存。</span><br><span class="line">QuickSort(A; l; h)</span><br><span class="line">	if l &lt; h then</span><br><span class="line">		p &#x3D;Partition(A; l; h);</span><br><span class="line">		QuickSort(A; l; p - 1);</span><br><span class="line">		QuickSort(A; p + 1; h);</span><br><span class="line">	end if</span><br><span class="line">Partition(A; l; h)</span><br><span class="line">	pivot &#x3D; A[h]; i &#x3D; l - 1;</span><br><span class="line">	for j &#x3D; l to h - 1 do</span><br><span class="line">			if A[j] &lt; pivot then</span><br><span class="line">			i + +;</span><br><span class="line">			Swap A[i] with A[j];</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if A[h] &lt; A[i + 1] then</span><br><span class="line">		Swap A[i + 1] with A[h];</span><br><span class="line">	end if</span><br><span class="line">	return i + 1;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">\\Hoare’s implementation</span><br><span class="line">QuickSort(A; l; h)</span><br><span class="line">	if l &lt; h then</span><br><span class="line">		p &#x3D;Partition(A; l; h);</span><br><span class="line">		QuickSort(A; l; p); &#x2F;&#x2F;Reason: A[p] might not be at its correct position</span><br><span class="line">		QuickSort(A; p + 1; h);</span><br><span class="line">	end if</span><br><span class="line">Partition(A; l; h)</span><br><span class="line">	i &#x3D; l - 1; j &#x3D; h + 1; pivot &#x3D; A[l];</span><br><span class="line">	while TRUE do</span><br><span class="line">		repeat</span><br><span class="line">			j &#x3D; j - 1;</span><br><span class="line">		until A[j] &lt;&#x3D; pivot or j &#x3D;&#x3D; l;</span><br><span class="line">		repeat</span><br><span class="line">			i &#x3D; i + 1;</span><br><span class="line">		until A[i] &gt;&#x3D; pivot or i &#x3D;&#x3D; h;</span><br><span class="line">		if i &gt;&#x3D; j then</span><br><span class="line">			return j;</span><br><span class="line">		end if</span><br><span class="line">		Swap A[i] with A[j];</span><br><span class="line">	end while</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <blockquote>
 <p>快速排序只在无重复元素时性能好，若有重复的元素，可用PARTITION算法来解决这个问题，即将数列分为三部分：比pivot大，与pivot相等，比pivot小。仅需对不等于pivot的partitions进行迭代排序。</p>
@@ -498,9 +600,9 @@ OUTPUT:the number of inversions. A pair of indices i and j constitutes an invers
 </blockquote>
 <h2 id="Selection-problem"><a href="#Selection-problem" class="headerlink" title="Selection problem"></a>Selection problem</h2><p>找到数组中第K小的item</p>
 <pre><code>INPUT:An array A = [A0, A1,.., An_1], and a number k &lt; n;
-OUTPUT:The k-th smallest item in general case (or the median of A as a specical case).
-</code></pre><p>若先将A排序再寻找第k个值，时间复杂度为$O(nlog n)$。相反地，若使用分治法，则有可能开发出更快的算法（e.g.deterministic linear algorithm by Blum et al.）。时间复杂度为$O(n)$。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Select(A; k)</span><br><span class="line">	Choose an element Ai from A as a pivot;</span><br><span class="line">	S+ = &#123;&#125;;</span><br><span class="line">	S_ = &#123;&#125;;</span><br><span class="line">	for j = 1 to n do</span><br><span class="line">		if Aj &gt; Ai then</span><br><span class="line">			S+ = S+ U &#123;Aj&#125;;</span><br><span class="line">		else</span><br><span class="line">			S_ = S_ U &#123;Aj&#125;;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if |S_| = k - 1 then</span><br><span class="line">		return Ai;</span><br><span class="line">	else if |S_| &gt; k - 1 then</span><br><span class="line">		return Select(S_; k);  \\S的size越小越好</span><br><span class="line">	else</span><br><span class="line">		return Select(S+; k - |S_| + 1);</span><br><span class="line">	end if</span><br></pre></td></tr></table></figure>
+OUTPUT:The k-th smallest item in general case (or the median of A as a specical case).</code></pre><p>若先将A排序再寻找第k个值，时间复杂度为$O(nlog n)$。相反地，若使用分治法，则有可能开发出更快的算法（e.g.deterministic linear algorithm by Blum et al.）。时间复杂度为$O(n)$。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Select(A; k)</span><br><span class="line">	Choose an element Ai from A as a pivot;</span><br><span class="line">	S+ &#x3D; &#123;&#125;;</span><br><span class="line">	S_ &#x3D; &#123;&#125;;</span><br><span class="line">	for j &#x3D; 1 to n do</span><br><span class="line">		if Aj &gt; Ai then</span><br><span class="line">			S+ &#x3D; S+ U &#123;Aj&#125;;</span><br><span class="line">		else</span><br><span class="line">			S_ &#x3D; S_ U &#123;Aj&#125;;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if |S_| &#x3D; k - 1 then</span><br><span class="line">		return Ai;</span><br><span class="line">	else if |S_| &gt; k - 1 then</span><br><span class="line">		return Select(S_; k);  \\S的size越小越好</span><br><span class="line">	else</span><br><span class="line">		return Select(S+; k - |S_| + 1);</span><br><span class="line">	end if</span><br></pre></td></tr></table></figure>
+
 <h3 id="How-to-choose-a-pivot"><a href="#How-to-choose-a-pivot" class="headerlink" title="How to choose a pivot?"></a>How to choose a pivot?</h3><p>对于pivot（中心元），我们有三种选择方式：</p>
 <p><strong>最差的选择</strong>：选取到了每个迭代中最小的元素(线性下降)</p>
 <p>$$T(n) = T(n - 1) + O(n) = O(n^2)$$</p>
@@ -514,336 +616,414 @@ OUTPUT:The k-th smallest item in general case (or the median of A as a specical 
 <li>Selecting a central pivot via <strong>randomly selecting an element</strong></li>
 <li>Selecting a central pivot via <strong>examining a random sample</strong></li>
 </ul>
-<h4 id="Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot"><a href="#Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot" class="headerlink" title="Strategy 1:BFPRT algorithm uses median of medians as pivot"></a>Strategy 1:BFPRT algorithm uses median of medians as pivot</h4><p><img src="https://s2.ax1x.com/2019/08/09/eHdKCn.jpg" alt="BFPRT"></p>
-<p>SelectMedian(A)<br>    Line up elements in groups of 5 elements;</p>
-<ol start="2">
-<li>Find the median of each group; //cost $\frac{6n}{5}$ time</li>
-<li>Find the median of medians (denoted as M)through recursively running Select over the group medians; // $T(\frac{n}{5})$ time</li>
-<li>Use M as pivot to partition A into S_ and S+; //$O(n)$ time</li>
-<li>if |S_| = k - 1 then</li>
-<li>return M;</li>
-<li>else if |S_| &gt; k - 1 then</li>
-<li>return Select(S_; k); //at most $T(\frac{7n}{10})$ time</li>
-<li>else</li>
-<li>return Select(S+; k - |S_| - 1); //at most $T(\frac{7n}{10})$ time</li>
-<li>end if</li>
-</ol>
+<h4 id="Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot"><a href="#Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot" class="headerlink" title="Strategy 1:BFPRT algorithm uses median of medians as pivot"></a>Strategy 1:BFPRT algorithm uses median of medians as pivot</h4><p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fw46ro5745j20g803wgnc.jpg" alt="BFPRT"></p>
+<p>SelectMedian(A)<br>    Line up elements in groups of 5 elements;<br>2. Find the median of each group; //cost $\frac{6n}{5}$ time<br>3. Find the median of medians (denoted as M)through recursively running Select over the group medians; // $T(\frac{n}{5})$ time<br>4. Use M as pivot to partition A into S_ and S+; //$O(n)$ time<br>5. if |S_| = k - 1 then<br>6. return M;<br>7. else if |S_| &gt; k - 1 then<br>8. return Select(S_; k); //at most $T(\frac{7n}{10})$ time<br>9. else<br>10. return Select(S+; k - |S_| - 1); //at most $T(\frac{7n}{10})$ time<br>11. end if</p>
 <p>这种方法较耗内存，我们也可以使用原位替换的算法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Select(A; l; r; k)</span><br><span class="line">	while TRUE do</span><br><span class="line">		if l == r then</span><br><span class="line">			return l;</span><br><span class="line">		end if</span><br><span class="line">		p =Pivot(A; l; r); //Use median of medians A[p] as pivot ;</span><br><span class="line">		pos =Partition(A; l; r; p); //pos represents the final position of the pivot, A[l..pos - 1] deposit S_ and A[pos + 1..r] deposit S+;</span><br><span class="line">		if (k - 1) == pos then</span><br><span class="line">			return k - 1;</span><br><span class="line">		else if (k - 1) &lt; pos then</span><br><span class="line">			r = pos - 1;</span><br><span class="line">		else</span><br><span class="line">			l = pos + 1;</span><br><span class="line">		end if</span><br><span class="line">	end while</span><br><span class="line">//</span><br><span class="line">Pivot(A, l, r)</span><br><span class="line">	if (r - l) &lt; 5 then</span><br><span class="line">		return Partition5(A, l, r); //Get median for 5 or less elements;</span><br><span class="line">	end if</span><br><span class="line">	for i = l to r by 5 do</span><br><span class="line">		right = i + 4;</span><br><span class="line">		if right &gt; r then</span><br><span class="line">			right = r;</span><br><span class="line">		end if</span><br><span class="line">		m =Partition5(A, i, right); //Get median of a group;</span><br><span class="line">		Swap A[m] and A[l + [(i-1)/5]];</span><br><span class="line">	end for</span><br><span class="line">	return Select(A, l, l + [(r-l)/5],(r-l)/10 + 1);</span><br><span class="line">//</span><br><span class="line">Partition(A, l, r, p)</span><br><span class="line">	pivot = A[p];</span><br><span class="line">	Swap A[p] and A[r]; //Move pivot to the right end;</span><br><span class="line">	i = l;</span><br><span class="line">	for j = l to r - 1 do</span><br><span class="line">		if A[j] &lt; pivot then</span><br><span class="line">			Swap A[i] and A[j];</span><br><span class="line">			i + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	Swap A[r] and A[i];</span><br><span class="line">	return i;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Select(A; l; r; k)</span><br><span class="line">	while TRUE do</span><br><span class="line">		if l &#x3D;&#x3D; r then</span><br><span class="line">			return l;</span><br><span class="line">		end if</span><br><span class="line">		p &#x3D;Pivot(A; l; r); &#x2F;&#x2F;Use median of medians A[p] as pivot ;</span><br><span class="line">		pos &#x3D;Partition(A; l; r; p); &#x2F;&#x2F;pos represents the final position of the pivot, A[l..pos - 1] deposit S_ and A[pos + 1..r] deposit S+;</span><br><span class="line">		if (k - 1) &#x3D;&#x3D; pos then</span><br><span class="line">			return k - 1;</span><br><span class="line">		else if (k - 1) &lt; pos then</span><br><span class="line">			r &#x3D; pos - 1;</span><br><span class="line">		else</span><br><span class="line">			l &#x3D; pos + 1;</span><br><span class="line">		end if</span><br><span class="line">	end while</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">Pivot(A, l, r)</span><br><span class="line">	if (r - l) &lt; 5 then</span><br><span class="line">		return Partition5(A, l, r); &#x2F;&#x2F;Get median for 5 or less elements;</span><br><span class="line">	end if</span><br><span class="line">	for i &#x3D; l to r by 5 do</span><br><span class="line">		right &#x3D; i + 4;</span><br><span class="line">		if right &gt; r then</span><br><span class="line">			right &#x3D; r;</span><br><span class="line">		end if</span><br><span class="line">		m &#x3D;Partition5(A, i, right); &#x2F;&#x2F;Get median of a group;</span><br><span class="line">		Swap A[m] and A[l + [(i-1)&#x2F;5]];</span><br><span class="line">	end for</span><br><span class="line">	return Select(A, l, l + [(r-l)&#x2F;5],(r-l)&#x2F;10 + 1);</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">Partition(A, l, r, p)</span><br><span class="line">	pivot &#x3D; A[p];</span><br><span class="line">	Swap A[p] and A[r]; &#x2F;&#x2F;Move pivot to the right end;</span><br><span class="line">	i &#x3D; l;</span><br><span class="line">	for j &#x3D; l to r - 1 do</span><br><span class="line">		if A[j] &lt; pivot then</span><br><span class="line">			Swap A[i] and A[j];</span><br><span class="line">			i + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	Swap A[r] and A[i];</span><br><span class="line">	return i;</span><br></pre></td></tr></table></figure>
+
 <p>图解：</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHdM3q.jpg" alt="part1"></p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHdQg0.jpg" alt="part2"></p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHdlvV.jpg" alt="part3"></p>
-<h4 id="Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot"><a href="#Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot" class="headerlink" title="Strategy 2: QuickSelect algorithm randomly select an element as pivot"></a>Strategy 2: QuickSelect algorithm randomly select an element as pivot</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">QuickSelect(A, k)</span><br><span class="line">	Choose an element Ai from A uniformly at random;</span><br><span class="line">	S+ = &#123;&#125;;</span><br><span class="line">	S_ = &#123;&#125;;</span><br><span class="line">	for all element Aj in A do</span><br><span class="line">		if Aj &gt; Ai then</span><br><span class="line">			S+ = S+ U &#123;Aj&#125;;</span><br><span class="line">		else</span><br><span class="line">			S_ = S_ U &#123;Aj&#125;;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if |S_| = k - 1 then</span><br><span class="line">		return Ai;</span><br><span class="line">	else if |S_| &gt; k - 1 then</span><br><span class="line">		return QuickSelect(S_; k);</span><br><span class="line">	else</span><br><span class="line">		return QuickSelect(S+; k - |S_| - 1);</span><br><span class="line">	end if</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro5k3wj20i50cw422.jpg" alt="part1"></p>
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro5sauj20ga0czado.jpg" alt="part2"></p>
+<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fw46ro5n6bj20gr0dc42f.jpg" alt="part3"></p>
+<h4 id="Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot"><a href="#Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot" class="headerlink" title="Strategy 2: QuickSelect algorithm randomly select an element as pivot"></a>Strategy 2: QuickSelect algorithm randomly select an element as pivot</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">QuickSelect(A, k)</span><br><span class="line">	Choose an element Ai from A uniformly at random;</span><br><span class="line">	S+ &#x3D; &#123;&#125;;</span><br><span class="line">	S_ &#x3D; &#123;&#125;;</span><br><span class="line">	for all element Aj in A do</span><br><span class="line">		if Aj &gt; Ai then</span><br><span class="line">			S+ &#x3D; S+ U &#123;Aj&#125;;</span><br><span class="line">		else</span><br><span class="line">			S_ &#x3D; S_ U &#123;Aj&#125;;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if |S_| &#x3D; k - 1 then</span><br><span class="line">		return Ai;</span><br><span class="line">	else if |S_| &gt; k - 1 then</span><br><span class="line">		return QuickSelect(S_; k);</span><br><span class="line">	else</span><br><span class="line">		return QuickSelect(S+; k - |S_| - 1);</span><br><span class="line">	end if</span><br></pre></td></tr></table></figure>
+
 <p><strong>Basic idea:</strong> when selecting an element uniformly at random, it is highly likely to get a good pivot since a fairly large fraction of the elements are nearly-central.</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHd3uT.jpg" alt="atRandom"></p>
+<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fw46ro56shj20fi07wwg5.jpg" alt="atRandom"></p>
 <p>The expected running time of QuickSelect: T(n) = O(n);</p>
-<h4 id="Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples"><a href="#Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples" class="headerlink" title="Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples"></a>Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples</h4><p><img src="https://s2.ax1x.com/2019/08/09/eHdtUJ.jpg" alt="Floyd-Rivest"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Floyd-Rivest-Select(A; k)</span><br><span class="line">	Select a small random sample S (with replacement) from A.</span><br><span class="line">	Select two pivots, denoted as u and v, from S through recursively calling Floyd-Rivest-Select. The interval [u, v], although small, is expected to cover the k-th smallest element of A.</span><br><span class="line">	Divide A into three dis-joint subsets: L contains the elements less than u, M contains elements in [u; v], and H contains the elements greater than v.</span><br><span class="line">	Partition A into these three sets through comparing each element Ai with u and v: if k &lt;= n2, Ai is compared with v first and then to u only if Ai &lt;= v. The order is reversed if k &gt; n2.</span><br><span class="line">	The k-th smallest element of A is selected through recursively running over an appropriate subset.</span><br></pre></td></tr></table></figure>
+<h4 id="Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples"><a href="#Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples" class="headerlink" title="Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples"></a>Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples</h4><p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fw46t80bu9j208605l0sw.jpg" alt="Floyd-Rivest"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Floyd-Rivest-Select(A; k)</span><br><span class="line">	Select a small random sample S (with replacement) from A.</span><br><span class="line">	Select two pivots, denoted as u and v, from S through recursively calling Floyd-Rivest-Select. The interval [u, v], although small, is expected to cover the k-th smallest element of A.</span><br><span class="line">	Divide A into three dis-joint subsets: L contains the elements less than u, M contains elements in [u; v], and H contains the elements greater than v.</span><br><span class="line">	Partition A into these three sets through comparing each element Ai with u and v: if k &lt;&#x3D; n2, Ai is compared with v first and then to u only if Ai &lt;&#x3D; v. The order is reversed if k &gt; n2.</span><br><span class="line">	The k-th smallest element of A is selected through recursively running over an appropriate subset.</span><br></pre></td></tr></table></figure>
+
 <h1 id="六、例题"><a href="#六、例题" class="headerlink" title="六、例题"></a>六、例题</h1><p>note:一般来说，对于1维问题而言，我们可以将其分为两部分来解决问题。对于二维问题而言，我们可以将其分为横纵四个子问题来解决。但这并不是对所有情况都适用。</p>
 <h2 id="1-ClosestPair-problem"><a href="#1-ClosestPair-problem" class="headerlink" title="1. ClosestPair problem"></a>1. ClosestPair problem</h2><p>Given a set of points in a plane, to find the closest pair.</p>
 <pre><code>INPUT: n points in a plane;
-OUTPUT: The pair with the least Euclidean distance.
-</code></pre><p>暴力做法的时间复杂度为$$T(n^2)$$,存在很多的冗余。<br>由于将平面分为四个部分会使点的分布不均，我们将平面分割为内含均匀数量的点的两个平面，分别计算两个平面内的最小对点距离，再计算跨越两个平面的最小距离。<br>我们可以观察到，我们仅需检查中线周围以两个平面中较小的最小距离为宽度的区域就足够。</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHd8DU.jpg" alt="ClosestPair1"></p>
+OUTPUT: The pair with the least Euclidean distance.</code></pre><p>暴力做法的时间复杂度为$$T(n^2)$$,存在很多的冗余。<br>由于将平面分为四个部分会使点的分布不均，我们将平面分割为内含均匀数量的点的两个平面，分别计算两个平面内的最小对点距离，再计算跨越两个平面的最小距离。<br>我们可以观察到，我们仅需检查中线周围以两个平面中较小的最小距离为宽度的区域就足够。</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro22y6j20df07vgm1.jpg" alt="ClosestPair1"></p>
 <p>并且，我们不需要检查条形区域内的所有点。检查它周围的11个点已足够。<br>我们将两倍宽度的长条分解成格子，每个格子中最多包含一个点，否则表明之前计算出的最小距离有误。 我们对y轴进行排序，然后仅需将每个点与其周围11个点进行比对。</p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHdGbF.jpg" alt="ClosestPair2"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ClosestPair(pl; :::; pr)</span><br><span class="line">	//To find the closest points within (pl; :::; pr). Here we assume that pl,...,pr have already been sorted according to x-coordinate;</span><br><span class="line">	if r - l == 1 then</span><br><span class="line">		return d(pl; pr);</span><br><span class="line">	end if</span><br><span class="line">	Use the x-coordinate of p((l+r)/2) to divide pl,...,pr into two halves;</span><br><span class="line">	d1 = ClosestPair(LeftHalf); //T(n2)</span><br><span class="line">	d2 = ClosestPair(RightHalf); //T(n2)</span><br><span class="line">	d = min(d1; d2);</span><br><span class="line">	Sort points within the 2d wide strip by y-coordinate; //O(n log n)</span><br><span class="line">	Scan points in y-order and calculate distance between each point with its next 11 neighbors. Update d if finding a distance less than d;  //O(n)</span><br></pre></td></tr></table></figure>
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro2bidj209b06qjrz.jpg" alt="ClosestPair2"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ClosestPair(pl; :::; pr)</span><br><span class="line">	&#x2F;&#x2F;To find the closest points within (pl; :::; pr). Here we assume that pl,...,pr have already been sorted according to x-coordinate;</span><br><span class="line">	if r - l &#x3D;&#x3D; 1 then</span><br><span class="line">		return d(pl; pr);</span><br><span class="line">	end if</span><br><span class="line">	Use the x-coordinate of p((l+r)&#x2F;2) to divide pl,...,pr into two halves;</span><br><span class="line">	d1 &#x3D; ClosestPair(LeftHalf); &#x2F;&#x2F;T(n2)</span><br><span class="line">	d2 &#x3D; ClosestPair(RightHalf); &#x2F;&#x2F;T(n2)</span><br><span class="line">	d &#x3D; min(d1; d2);</span><br><span class="line">	Sort points within the 2d wide strip by y-coordinate; &#x2F;&#x2F;O(n log n)</span><br><span class="line">	Scan points in y-order and calculate distance between each point with its next 11 neighbors. Update d if finding a distance less than d;  &#x2F;&#x2F;O(n)</span><br></pre></td></tr></table></figure>
+
 <p>Time-complexity: $$T(n) = 2T(\frac{n}{2}) + O(n log n) = O(n log^2 n)$$.</p>
 <p>为了是复杂度降到O(n),我们可以引入structure，使用merge将每一个子问题先排序。</p>
 <p><strong>实例：</strong></p>
-<p><img src="https://s2.ax1x.com/2019/08/09/eHdYE4.jpg" alt="ClosestPair3"></p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Algorithm-Design-and-Analysis/" rel="tag"><i class="fa fa-tag"></i> Algorithm Design and Analysis</a>
-          
-            <a href="/tags/Basic-algorithm-design-technique/" rel="tag"><i class="fa fa-tag"></i> Basic algorithm design technique</a>
-          
-            <a href="/tags/Divide-and-Conquer/" rel="tag"><i class="fa fa-tag"></i> Divide-and-Conquer</a>
-          
-            <a href="/tags/Sort-Algorithm/" rel="tag"><i class="fa fa-tag"></i> Sort Algorithm</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/09/14/Algorithm-Design-and-Analysis-Overview/" rel="next" title="Algorithm Design and Analysis - Overview">
-                <i class="fa fa-chevron-left"></i> Algorithm Design and Analysis - Overview
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/18/Algorithm-Design-and-Analysis-Dynamic-programming/" rel="prev" title="Algorithm Design and Analysis - Dynamic programming">
-                Algorithm Design and Analysis - Dynamic programming <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="https://s2.ax1x.com/2019/08/09/eHYSbj.jpg"
-                alt="Jiawen Zhang" />
-            
-              <p class="site-author-name" itemprop="name">Jiawen Zhang</p>
-              <p class="site-description motion-element" itemprop="description">Heroic dreams in exhausted life</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">11</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:jiawen.zhang96@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/fjlyzjw" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.facebook.com/profile.php?id=100012593228796" target="_blank" title="FB Page">
-                      
-                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://weibo.com/u/1904079292" target="_blank" title="Weibo">
-                      
-                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Remarks"><span class="nav-number">1.</span> <span class="nav-text">一、Remarks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Sort-Problem"><span class="nav-number">2.</span> <span class="nav-text">二、Sort Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、迭代的时间复杂度的分析方法："><span class="nav-number">3.</span> <span class="nav-text">三、迭代的时间复杂度的分析方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#technique-1-Unrolling-the-recurrence"><span class="nav-number">3.0.1.</span> <span class="nav-text">technique 1: Unrolling the recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#technique-2-Guess-and-substitution"><span class="nav-number">3.0.2.</span> <span class="nav-text">technique 2: Guess and substitution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#technique-3-Master-theorem-主定理"><span class="nav-number">3.0.3.</span> <span class="nav-text">technique 3:Master theorem  主定理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Counting-Inversion-Problem-数逆序对"><span class="nav-number">4.</span> <span class="nav-text">四、Counting Inversion Problem  数逆序对</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、The-general-Divide-and-Conquer-paradigm"><span class="nav-number">5.</span> <span class="nav-text">五、The general Divide and Conquer paradigm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Idea"><span class="nav-number">5.1.</span> <span class="nav-text">Basic Idea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Three-Steps"><span class="nav-number">5.2.</span> <span class="nav-text">Three Steps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Sort-algorithm"><span class="nav-number">5.3.</span> <span class="nav-text">Quick Sort algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">5.4.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modified-Quick-Sort"><span class="nav-number">5.5.</span> <span class="nav-text">Modified Quick Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selection-problem"><span class="nav-number">5.6.</span> <span class="nav-text">Selection problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-choose-a-pivot"><span class="nav-number">5.6.1.</span> <span class="nav-text">How to choose a pivot?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-select-a-nearly-central-pivot"><span class="nav-number">5.6.2.</span> <span class="nav-text">How to select a nearly-central pivot?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot"><span class="nav-number">5.6.2.1.</span> <span class="nav-text">Strategy 1:BFPRT algorithm uses median of medians as pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot"><span class="nav-number">5.6.2.2.</span> <span class="nav-text">Strategy 2: QuickSelect algorithm randomly select an element as pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples"><span class="nav-number">5.6.2.3.</span> <span class="nav-text">Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、例题"><span class="nav-number">6.</span> <span class="nav-text">六、例题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-ClosestPair-problem"><span class="nav-number">6.1.</span> <span class="nav-text">1. ClosestPair problem</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
+<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro5d4aj20d909r40m.jpg" alt="ClosestPair3"></p>
 
         
-      </div>
-    </main>
+    
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jiawen Zhang</span>
-
-  
+    
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+                
 
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+        <a href="/2018/10/18/Algorithm-Design-and-Analysis-Dynamic-programming/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/14/Algorithm-Design-and-Analysis-Overview/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_head1.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/figure.png" alt="Jiawen Zhang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jiawen2019@iscas.ac.cn
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
     
 
-  </div>
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
 
-  
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">info</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/cv" title="CV">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                CV
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/project" title="My projects">
+                
+                    <i class="material-icons sidebar-material-icons">school</i>
+                
+                My projects
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/fjlyzjw" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/jiawenjun2333/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/u/1904079292" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+        <a href="https://www.instagram.com/jiawen_zhang96/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <span class="visuallyhidden">Instagram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Jiawen and her funny friends
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
@@ -854,481 +1034,87 @@ OUTPUT: The pair with the least Euclidean distance.
 
 
 
-  
 
 
-  
 
 
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
 
+<!-- Import prettify js  -->
 
 
 
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
     });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
     });
-  </script>
+</script>
+
+<!-- Custom Footer -->
 
 
 
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
 
+    copyrightSince = 2018;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
 
-  
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-  
-
-  
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
         }
-      });
-    </script>
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>
