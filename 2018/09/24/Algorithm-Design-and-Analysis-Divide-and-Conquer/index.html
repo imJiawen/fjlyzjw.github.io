@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
     <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
@@ -314,13 +314,13 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
     
         <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
 
                 <!-- Main Container -->
@@ -516,16 +516,15 @@
 <li>不求最优，只要次优</li>
 </ol>
 <a id="more"></a>
-
 <h1 id="一、Remarks"><a href="#一、Remarks" class="headerlink" title="一、Remarks"></a>一、Remarks</h1><p>1.对于ClosestPair问题，若暴力破解法将花费多项式时间，分治法通常可被用于节省运行时间：$O(n^2)$ $\implies$ $O(nlogn)$<br>2.这个技巧若与随机技巧结合将非常有威力</p>
 <p>在使用分治法之前，需要先检验输入（i.e.问题是否可以被分为结构相似，规模更小的子问题）以及输出（i.e.原问题的解是否能够用子问题的解组合而成）</p>
 <h1 id="二、Sort-Problem"><a href="#二、Sort-Problem" class="headerlink" title="二、Sort Problem"></a>二、Sort Problem</h1><p>将长度为n的数组排序</p>
 <pre><code>INPUT: An array of n integers, say A[0..n-1];
-OUTPUT: The items of A in increasing order.</code></pre><p><strong><em>方法1.将其分为n-1长度的数列和一个元素</em></strong></p>
+OUTPUT: The items of A in increasing order.
+</code></pre><p><strong><em>方法1.将其分为n-1长度的数列和一个元素</em></strong></p>
 <p>第一种方法可以从最简单的case入手，从n=2，n=3，到逐步解决原问题</p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fvl1co5hjuj20cw0atgmq.jpg" alt="分离出一个元素"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">InsertionSort( A, n )</span><br><span class="line">	for j &#x3D; 0 to n - 1 do</span><br><span class="line">		key &#x3D; A[j];</span><br><span class="line">		i &#x3D; j - 1;</span><br><span class="line">		while i &gt;&#x3D; 0 and A[i] &gt; key do</span><br><span class="line">			A[i + 1] &#x3D; A[i];</span><br><span class="line">			i --;</span><br><span class="line">		end while</span><br><span class="line">		A[i + 1] &#x3D; key;</span><br><span class="line">	end for</span><br></pre></td></tr></table></figure>
-
 <p>最差的情况：A数组里的元素为逆序</p>
 <p>时间复杂度： $T(n)=T(n-1)+O(n)=O(n^2)$</p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fvl1cnv0q4j206e0a3ab1.jpg" alt="最差情况"></p>
@@ -533,7 +532,6 @@ OUTPUT: The items of A in increasing order.</code></pre><p><strong><em>方法1.�
 <p>将数组$A[0..n-1]$分为两个数组$A[0..\frac{n}{2}-1]$以及$A[\frac{n}{2}-1..n-1]$</p>
 <p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fvl1cnxlrkj20f30armzr.jpg" alt="分为子问题"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A; l; r) &#x2F;&#x2F;从l到r之间排序</span><br><span class="line">	&#x2F;&#x2F; To sort part of the array A[l::r]</span><br><span class="line">	if l &lt; r then</span><br><span class="line">		m &#x3D; (l + r)&#x3D;2; &#x2F;&#x2F;m denotes the middle point</span><br><span class="line">		MergeSort(A; l; m );</span><br><span class="line">		MergeSort(A; m + 1; r);</span><br><span class="line">		Merge(A; l; m; r); &#x2F;&#x2F;Combining the sorted arrays</span><br><span class="line">	end if</span><br><span class="line">Merge (A; l; m; r) &#x2F;&#x2F;将左端最小与右端最小比较</span><br><span class="line">	&#x2F;&#x2F;Merge A[l::m] (denoted as L) and A[m + 1::r](denoted as R).</span><br><span class="line">	i &#x3D; 0; j &#x3D; 0;</span><br><span class="line">	for k &#x3D; l to r do</span><br><span class="line">		if L[i] &lt; R[j] then</span><br><span class="line">			A[k] &#x3D; L[i];</span><br><span class="line">			i + +;</span><br><span class="line">		else</span><br><span class="line">			A[k] &#x3D; R[j];</span><br><span class="line">			j + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br></pre></td></tr></table></figure>
-
 <p>时间复杂度：O(n)</p>
 <p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvl1cnuxq5j20ea02v74x.jpg" alt="mergesort"></p>
 <h1 id="三、迭代的时间复杂度的分析方法："><a href="#三、迭代的时间复杂度的分析方法：" class="headerlink" title="三、迭代的时间复杂度的分析方法："></a>三、迭代的时间复杂度的分析方法：</h1><ol>
@@ -553,7 +551,8 @@ OUTPUT: The items of A in increasing order.</code></pre><p><strong><em>方法1.�
 </ol>
 <h1 id="四、Counting-Inversion-Problem-数逆序对"><a href="#四、Counting-Inversion-Problem-数逆序对" class="headerlink" title="四、Counting Inversion Problem  数逆序对"></a>四、Counting Inversion Problem  数逆序对</h1><p>To count inversions in an array of n integers</p>
 <pre><code>INPUT: An array $A[0..n]$ with n distinct numbers; 
-OUTPUT:the number of inversions. A pair of indices i and j constitutes an inversion if i &lt; j butA[i] &gt; A[j].</code></pre><p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvl1cnupelj20ak041aa8.jpg" alt="CountingInversion"></p>
+OUTPUT:the number of inversions. A pair of indices i and j constitutes an inversion if i &lt; j butA[i] &gt; A[j].
+</code></pre><p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvl1cnupelj20ak041aa8.jpg" alt="CountingInversion"></p>
 <p>可使用分治法解决数逆序对问题，其中Divide和Conquer部分与之前排序问题相同，即将问题分为两个独立的子问题。Combine部分有两种策略。</p>
 <p><strong>策略1</strong>：若$A[0..\frac{n}{2}-1]$以及$A[\frac{n}{2}..n-1]$没有特殊的结构，则我们需要检查所有可能的配对$(i,j)$去检查逆序。即若左右数都是任意的，就必须写For循环。</p>
 <p>时间复杂度为：$T(n)=2T(\frac{n}{2})+\frac{n^2}{4}=O(n^2)$</p>
@@ -561,7 +560,6 @@ OUTPUT:the number of inversions. A pair of indices i and j constitutes an invers
 <p><strong>策略2</strong>：若每一部分为升序，则相对容易计算逆序</p>
 <p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fvl1co2bztj20cv06bjsg.jpg" alt="strategy2"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Sort-and-Count(A)</span><br><span class="line">	Divide A into two sub-sequences L and R;</span><br><span class="line">	(RCL, L) &#x3D; Sort-and-Count(L);</span><br><span class="line">	(RCR, R) &#x3D; Sort-and-Count(R);</span><br><span class="line">	(C, A) &#x3D; Merge-and-Count(L, R);</span><br><span class="line">	return (RC &#x3D; RCL + RCR + C, A);</span><br><span class="line">Merge-and-Count (L; R)</span><br><span class="line">	RC &#x3D; 0; i &#x3D; 0; j &#x3D; 0;</span><br><span class="line">	for k &#x3D; 0 to ∥L∥ + ∥R∥ - 1 do</span><br><span class="line">		if L[i] &gt; R[j] then</span><br><span class="line">			A[k] &#x3D; R[j];</span><br><span class="line">			j + +;</span><br><span class="line">			RC+ &#x3D; (n&#x2F;2 - i);</span><br><span class="line">		else</span><br><span class="line">			A[k] &#x3D; L[i];</span><br><span class="line">			i + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	return (RC, A);</span><br></pre></td></tr></table></figure>
-
 <p>时间复杂度为：$T(n)=2T(\frac{n}{2})+O(n)=O(n\log n)$</p>
 <h1 id="五、The-general-Divide-and-Conquer-paradigm"><a href="#五、The-general-Divide-and-Conquer-paradigm" class="headerlink" title="五、The general Divide and Conquer paradigm"></a>五、The general Divide and Conquer paradigm</h1><h2 id="Basic-Idea"><a href="#Basic-Idea" class="headerlink" title="Basic Idea"></a>Basic Idea</h2><p>Many problems are recursive in structure, i.e., to solve a given problem, they call themselves several times to deal with closely related sub-problems. These sub-problems have the same form to the original problem but a smaller size.</p>
 <h2 id="Three-Steps"><a href="#Three-Steps" class="headerlink" title="Three Steps"></a>Three Steps</h2><ol>
@@ -571,28 +569,21 @@ OUTPUT:the number of inversions. A pair of indices i and j constitutes an invers
 </ol>
 <h2 id="Quick-Sort-algorithm"><a href="#Quick-Sort-algorithm" class="headerlink" title="Quick Sort algorithm"></a>Quick Sort algorithm</h2><p>Divide according to a randomly-selected pivot.根据随机选取的轴进行分割。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A)</span><br><span class="line">	S_ &#x3D; &#123;&#125;; S+ &#x3D; &#123;&#125;;</span><br><span class="line">	Choose a pivot A[j] uniformly at random;</span><br><span class="line">	for i &#x3D; 0 to n - 1 do  &#x2F;&#x2F;将比A[j]小的放在左边，大的放在右边</span><br><span class="line">		Put A[i] in S_ if A[i] &lt; A[j];</span><br><span class="line">		Put A[i] in S+ if A[i] &gt;&#x3D; A[j];</span><br><span class="line">	end for</span><br><span class="line">	QuickSort(S+);</span><br><span class="line">	QuickSort(S_);</span><br><span class="line">	Output S_, then A[j], then S+;</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>随机的操作使得这个算法变得简单而高效</li>
 <li>然而，随机增加了分析的难度，我们不能保证取到每个问题的第$\frac{n}{2}$个元素</li>
 </ul>
 <p><strong>最差的情况</strong>：选取到了每个迭代中最大/最小的元素</p>
-<p>$$T(n) = T(n - 1) + O(n) = O(n^2)$$</p>
-<p><strong>最好的情况</strong>：选取到了每个迭代中最中间的元素</p>
-<p>$$T(n) = 2T(\frac{n}{2}) + O(n) = O(n\log n)$$</p>
-<p><strong>大多数情况</strong>：选取到了一个接近中心的轴。这种情况我们认为期望的运行时间仍为：</p>
-<p>$$T(n) = O(n\log n)$$</p>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p><strong>Observation 1:</strong> 对于任意i,j而言，$A[i]$和$A[j]$之间最多被比较一次。</p>
+<script type="math/tex; mode=display">T(n) = T(n - 1) + O(n) = O(n^2)</script><p><strong>最好的情况</strong>：选取到了每个迭代中最中间的元素</p>
+<script type="math/tex; mode=display">T(n) = 2T(\frac{n}{2}) + O(n) = O(n\log n)</script><p><strong>大多数情况</strong>：选取到了一个接近中心的轴。这种情况我们认为期望的运行时间仍为：</p>
+<script type="math/tex; mode=display">T(n) = O(n\log n)</script><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p><strong>Observation 1:</strong> 对于任意i,j而言，$A[i]$和$A[j]$之间最多被比较一次。</p>
 <p><strong>Observation 2:</strong> 当处理包含$A[i..j]$的元素时，当且仅当$A[i]$或$A[j]$被选为枢轴时比较$A[i]$和$A[j]$。</p>
 <h2 id="Modified-Quick-Sort"><a href="#Modified-Quick-Sort" class="headerlink" title="Modified Quick Sort"></a>Modified Quick Sort</h2><p>在原算法上寻找一个好的分点（大于$/frac{n}{4}$小于$/frac{3n}{4}$的点）。它在所有项目都不同时有用，然而耗内存，且在比原算法更慢，因为当它偏离中心点时不运行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ModifiedQuickSort(A)</span><br><span class="line">	while TRUE do</span><br><span class="line">		Choose a pivot A[j] uniformly at random;</span><br><span class="line">		S_ &#x3D; &#123;&#125;; S+ &#x3D; &#123;&#125;;</span><br><span class="line">		for i &#x3D; 0 to n - 1 do</span><br><span class="line">			Put A[i] in S_ if A[i] &lt; A[j];</span><br><span class="line">			Put A[i] in S+ if A[i] &gt; A[j];</span><br><span class="line">		end for</span><br><span class="line">		if ∥S+∥ &gt;&#x3D; n&#x2F;4 and ∥S_∥ &gt;&#x3D; n&#x2F;4 then</span><br><span class="line">			break;</span><br><span class="line">		end if</span><br><span class="line">	end while</span><br><span class="line">	ModifiedQuickSort(S+);</span><br><span class="line">	ModifiedQuickSort(S_);</span><br><span class="line">	Output S_, then A[j], and finally S+;</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fvnb5mr9sfj20bt04ojrv.jpg" alt="nearcenter"></p>
 <p>比起中心轴，近中心轴更容易获得。获得一个中心点为轴的概率是$frac{1}{n}$,而获得一个近中心轴的概率是$frac{1}{2}$。因此，找到一个近中心轴的期望时间为2n。此时我们不追求最优的pivot，只选择足够好。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">\\Lomuto’s implementation</span><br><span class="line">\\in-place sort 不花内存。</span><br><span class="line">QuickSort(A; l; h)</span><br><span class="line">	if l &lt; h then</span><br><span class="line">		p &#x3D;Partition(A; l; h);</span><br><span class="line">		QuickSort(A; l; p - 1);</span><br><span class="line">		QuickSort(A; p + 1; h);</span><br><span class="line">	end if</span><br><span class="line">Partition(A; l; h)</span><br><span class="line">	pivot &#x3D; A[h]; i &#x3D; l - 1;</span><br><span class="line">	for j &#x3D; l to h - 1 do</span><br><span class="line">			if A[j] &lt; pivot then</span><br><span class="line">			i + +;</span><br><span class="line">			Swap A[i] with A[j];</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if A[h] &lt; A[i + 1] then</span><br><span class="line">		Swap A[i + 1] with A[h];</span><br><span class="line">	end if</span><br><span class="line">	return i + 1;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">\\Hoare’s implementation</span><br><span class="line">QuickSort(A; l; h)</span><br><span class="line">	if l &lt; h then</span><br><span class="line">		p &#x3D;Partition(A; l; h);</span><br><span class="line">		QuickSort(A; l; p); &#x2F;&#x2F;Reason: A[p] might not be at its correct position</span><br><span class="line">		QuickSort(A; p + 1; h);</span><br><span class="line">	end if</span><br><span class="line">Partition(A; l; h)</span><br><span class="line">	i &#x3D; l - 1; j &#x3D; h + 1; pivot &#x3D; A[l];</span><br><span class="line">	while TRUE do</span><br><span class="line">		repeat</span><br><span class="line">			j &#x3D; j - 1;</span><br><span class="line">		until A[j] &lt;&#x3D; pivot or j &#x3D;&#x3D; l;</span><br><span class="line">		repeat</span><br><span class="line">			i &#x3D; i + 1;</span><br><span class="line">		until A[i] &gt;&#x3D; pivot or i &#x3D;&#x3D; h;</span><br><span class="line">		if i &gt;&#x3D; j then</span><br><span class="line">			return j;</span><br><span class="line">		end if</span><br><span class="line">		Swap A[i] with A[j];</span><br><span class="line">	end while</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <blockquote>
 <p>快速排序只在无重复元素时性能好，若有重复的元素，可用PARTITION算法来解决这个问题，即将数列分为三部分：比pivot大，与pivot相等，比pivot小。仅需对不等于pivot的partitions进行迭代排序。</p>
@@ -600,49 +591,57 @@ OUTPUT:the number of inversions. A pair of indices i and j constitutes an invers
 </blockquote>
 <h2 id="Selection-problem"><a href="#Selection-problem" class="headerlink" title="Selection problem"></a>Selection problem</h2><p>找到数组中第K小的item</p>
 <pre><code>INPUT:An array A = [A0, A1,.., An_1], and a number k &lt; n;
-OUTPUT:The k-th smallest item in general case (or the median of A as a specical case).</code></pre><p>若先将A排序再寻找第k个值，时间复杂度为$O(nlog n)$。相反地，若使用分治法，则有可能开发出更快的算法（e.g.deterministic linear algorithm by Blum et al.）。时间复杂度为$O(n)$。</p>
+OUTPUT:The k-th smallest item in general case (or the median of A as a specical case).
+</code></pre><p>若先将A排序再寻找第k个值，时间复杂度为$O(nlog n)$。相反地，若使用分治法，则有可能开发出更快的算法（e.g.deterministic linear algorithm by Blum et al.）。时间复杂度为$O(n)$。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Select(A; k)</span><br><span class="line">	Choose an element Ai from A as a pivot;</span><br><span class="line">	S+ &#x3D; &#123;&#125;;</span><br><span class="line">	S_ &#x3D; &#123;&#125;;</span><br><span class="line">	for j &#x3D; 1 to n do</span><br><span class="line">		if Aj &gt; Ai then</span><br><span class="line">			S+ &#x3D; S+ U &#123;Aj&#125;;</span><br><span class="line">		else</span><br><span class="line">			S_ &#x3D; S_ U &#123;Aj&#125;;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if |S_| &#x3D; k - 1 then</span><br><span class="line">		return Ai;</span><br><span class="line">	else if |S_| &gt; k - 1 then</span><br><span class="line">		return Select(S_; k);  \\S的size越小越好</span><br><span class="line">	else</span><br><span class="line">		return Select(S+; k - |S_| + 1);</span><br><span class="line">	end if</span><br></pre></td></tr></table></figure>
-
 <h3 id="How-to-choose-a-pivot"><a href="#How-to-choose-a-pivot" class="headerlink" title="How to choose a pivot?"></a>How to choose a pivot?</h3><p>对于pivot（中心元），我们有三种选择方式：</p>
 <p><strong>最差的选择</strong>：选取到了每个迭代中最小的元素(线性下降)</p>
-<p>$$T(n) = T(n - 1) + O(n) = O(n^2)$$</p>
-<p><strong>最好的选择</strong>：选取到了每个迭代中最中间的元素（指数级下降）</p>
-<p>$$T(n) = T(\frac{n}{2}) + O(n) = O(n)$$</p>
-<p><strong>好的选择</strong>：选取到了一个接近中心的pivot。（子问题最坏的情况也是指数级下降）</p>
-<p>$$T(n) ≤ T((1 − ϵ)n) + O(n)<br>≤ cn + c(1 − ϵ)n + c(1 − ϵ)^2 + ….<br>=  O(n)$$</p>
-<h3 id="How-to-select-a-nearly-central-pivot"><a href="#How-to-select-a-nearly-central-pivot" class="headerlink" title="How to select a nearly-central pivot?"></a>How to select a nearly-central pivot?</h3><p>我们可以通过以下几种方式尝试获得一个完整集合的中间值：</p>
+<script type="math/tex; mode=display">T(n) = T(n - 1) + O(n) = O(n^2)</script><p><strong>最好的选择</strong>：选取到了每个迭代中最中间的元素（指数级下降）</p>
+<script type="math/tex; mode=display">T(n) = T(\frac{n}{2}) + O(n) = O(n)</script><p><strong>好的选择</strong>：选取到了一个接近中心的pivot。（子问题最坏的情况也是指数级下降）</p>
+<script type="math/tex; mode=display">T(n) ≤ T((1 − ϵ)n) + O(n) 
+≤ cn + c(1 − ϵ)n + c(1 − ϵ)^2 + ....
+=  O(n)</script><h3 id="How-to-select-a-nearly-central-pivot"><a href="#How-to-select-a-nearly-central-pivot" class="headerlink" title="How to select a nearly-central pivot?"></a>How to select a nearly-central pivot?</h3><p>我们可以通过以下几种方式尝试获得一个完整集合的中间值：</p>
 <ul>
 <li>Selecting a central pivot via <strong>examining medians of groups</strong></li>
 <li>Selecting a central pivot via <strong>randomly selecting an element</strong></li>
 <li>Selecting a central pivot via <strong>examining a random sample</strong></li>
 </ul>
 <h4 id="Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot"><a href="#Strategy-1-BFPRT-algorithm-uses-median-of-medians-as-pivot" class="headerlink" title="Strategy 1:BFPRT algorithm uses median of medians as pivot"></a>Strategy 1:BFPRT algorithm uses median of medians as pivot</h4><p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fw46ro5745j20g803wgnc.jpg" alt="BFPRT"></p>
-<p>SelectMedian(A)<br>    Line up elements in groups of 5 elements;<br>2. Find the median of each group; //cost $\frac{6n}{5}$ time<br>3. Find the median of medians (denoted as M)through recursively running Select over the group medians; // $T(\frac{n}{5})$ time<br>4. Use M as pivot to partition A into S_ and S+; //$O(n)$ time<br>5. if |S_| = k - 1 then<br>6. return M;<br>7. else if |S_| &gt; k - 1 then<br>8. return Select(S_; k); //at most $T(\frac{7n}{10})$ time<br>9. else<br>10. return Select(S+; k - |S_| - 1); //at most $T(\frac{7n}{10})$ time<br>11. end if</p>
+<p>SelectMedian(A)<br>    Line up elements in groups of 5 elements;</p>
+<ol>
+<li>Find the median of each group; //cost $\frac{6n}{5}$ time</li>
+<li>Find the median of medians (denoted as M)through recursively running Select over the group medians; // $T(\frac{n}{5})$ time</li>
+<li>Use M as pivot to partition A into S_ and S+; //$O(n)$ time</li>
+<li>if |S_| = k - 1 then</li>
+<li>return M;</li>
+<li>else if |S_| &gt; k - 1 then</li>
+<li>return Select(S_; k); //at most $T(\frac{7n}{10})$ time</li>
+<li>else</li>
+<li>return Select(S+; k - |S_| - 1); //at most $T(\frac{7n}{10})$ time</li>
+<li>end if</li>
+</ol>
 <p>这种方法较耗内存，我们也可以使用原位替换的算法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Select(A; l; r; k)</span><br><span class="line">	while TRUE do</span><br><span class="line">		if l &#x3D;&#x3D; r then</span><br><span class="line">			return l;</span><br><span class="line">		end if</span><br><span class="line">		p &#x3D;Pivot(A; l; r); &#x2F;&#x2F;Use median of medians A[p] as pivot ;</span><br><span class="line">		pos &#x3D;Partition(A; l; r; p); &#x2F;&#x2F;pos represents the final position of the pivot, A[l..pos - 1] deposit S_ and A[pos + 1..r] deposit S+;</span><br><span class="line">		if (k - 1) &#x3D;&#x3D; pos then</span><br><span class="line">			return k - 1;</span><br><span class="line">		else if (k - 1) &lt; pos then</span><br><span class="line">			r &#x3D; pos - 1;</span><br><span class="line">		else</span><br><span class="line">			l &#x3D; pos + 1;</span><br><span class="line">		end if</span><br><span class="line">	end while</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">Pivot(A, l, r)</span><br><span class="line">	if (r - l) &lt; 5 then</span><br><span class="line">		return Partition5(A, l, r); &#x2F;&#x2F;Get median for 5 or less elements;</span><br><span class="line">	end if</span><br><span class="line">	for i &#x3D; l to r by 5 do</span><br><span class="line">		right &#x3D; i + 4;</span><br><span class="line">		if right &gt; r then</span><br><span class="line">			right &#x3D; r;</span><br><span class="line">		end if</span><br><span class="line">		m &#x3D;Partition5(A, i, right); &#x2F;&#x2F;Get median of a group;</span><br><span class="line">		Swap A[m] and A[l + [(i-1)&#x2F;5]];</span><br><span class="line">	end for</span><br><span class="line">	return Select(A, l, l + [(r-l)&#x2F;5],(r-l)&#x2F;10 + 1);</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">Partition(A, l, r, p)</span><br><span class="line">	pivot &#x3D; A[p];</span><br><span class="line">	Swap A[p] and A[r]; &#x2F;&#x2F;Move pivot to the right end;</span><br><span class="line">	i &#x3D; l;</span><br><span class="line">	for j &#x3D; l to r - 1 do</span><br><span class="line">		if A[j] &lt; pivot then</span><br><span class="line">			Swap A[i] and A[j];</span><br><span class="line">			i + +;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	Swap A[r] and A[i];</span><br><span class="line">	return i;</span><br></pre></td></tr></table></figure>
-
 <p>图解：</p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro5k3wj20i50cw422.jpg" alt="part1"></p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro5sauj20ga0czado.jpg" alt="part2"></p>
 <p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fw46ro5n6bj20gr0dc42f.jpg" alt="part3"></p>
 <h4 id="Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot"><a href="#Strategy-2-QuickSelect-algorithm-randomly-select-an-element-as-pivot" class="headerlink" title="Strategy 2: QuickSelect algorithm randomly select an element as pivot"></a>Strategy 2: QuickSelect algorithm randomly select an element as pivot</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">QuickSelect(A, k)</span><br><span class="line">	Choose an element Ai from A uniformly at random;</span><br><span class="line">	S+ &#x3D; &#123;&#125;;</span><br><span class="line">	S_ &#x3D; &#123;&#125;;</span><br><span class="line">	for all element Aj in A do</span><br><span class="line">		if Aj &gt; Ai then</span><br><span class="line">			S+ &#x3D; S+ U &#123;Aj&#125;;</span><br><span class="line">		else</span><br><span class="line">			S_ &#x3D; S_ U &#123;Aj&#125;;</span><br><span class="line">		end if</span><br><span class="line">	end for</span><br><span class="line">	if |S_| &#x3D; k - 1 then</span><br><span class="line">		return Ai;</span><br><span class="line">	else if |S_| &gt; k - 1 then</span><br><span class="line">		return QuickSelect(S_; k);</span><br><span class="line">	else</span><br><span class="line">		return QuickSelect(S+; k - |S_| - 1);</span><br><span class="line">	end if</span><br></pre></td></tr></table></figure>
-
 <p><strong>Basic idea:</strong> when selecting an element uniformly at random, it is highly likely to get a good pivot since a fairly large fraction of the elements are nearly-central.</p>
 <p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fw46ro56shj20fi07wwg5.jpg" alt="atRandom"></p>
 <p>The expected running time of QuickSelect: T(n) = O(n);</p>
 <h4 id="Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples"><a href="#Strategy-3-Floyd-Rivest-algorithm-selects-a-pivot-based-on-random-samples" class="headerlink" title="Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples"></a>Strategy 3: Floyd-Rivest algorithm selects a pivot based on random samples</h4><p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fw46t80bu9j208605l0sw.jpg" alt="Floyd-Rivest"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Floyd-Rivest-Select(A; k)</span><br><span class="line">	Select a small random sample S (with replacement) from A.</span><br><span class="line">	Select two pivots, denoted as u and v, from S through recursively calling Floyd-Rivest-Select. The interval [u, v], although small, is expected to cover the k-th smallest element of A.</span><br><span class="line">	Divide A into three dis-joint subsets: L contains the elements less than u, M contains elements in [u; v], and H contains the elements greater than v.</span><br><span class="line">	Partition A into these three sets through comparing each element Ai with u and v: if k &lt;&#x3D; n2, Ai is compared with v first and then to u only if Ai &lt;&#x3D; v. The order is reversed if k &gt; n2.</span><br><span class="line">	The k-th smallest element of A is selected through recursively running over an appropriate subset.</span><br></pre></td></tr></table></figure>
-
 <h1 id="六、例题"><a href="#六、例题" class="headerlink" title="六、例题"></a>六、例题</h1><p>note:一般来说，对于1维问题而言，我们可以将其分为两部分来解决问题。对于二维问题而言，我们可以将其分为横纵四个子问题来解决。但这并不是对所有情况都适用。</p>
 <h2 id="1-ClosestPair-problem"><a href="#1-ClosestPair-problem" class="headerlink" title="1. ClosestPair problem"></a>1. ClosestPair problem</h2><p>Given a set of points in a plane, to find the closest pair.</p>
 <pre><code>INPUT: n points in a plane;
-OUTPUT: The pair with the least Euclidean distance.</code></pre><p>暴力做法的时间复杂度为$$T(n^2)$$,存在很多的冗余。<br>由于将平面分为四个部分会使点的分布不均，我们将平面分割为内含均匀数量的点的两个平面，分别计算两个平面内的最小对点距离，再计算跨越两个平面的最小距离。<br>我们可以观察到，我们仅需检查中线周围以两个平面中较小的最小距离为宽度的区域就足够。</p>
+OUTPUT: The pair with the least Euclidean distance.
+</code></pre><p>暴力做法的时间复杂度为<script type="math/tex">T(n^2)</script>,存在很多的冗余。<br>由于将平面分为四个部分会使点的分布不均，我们将平面分割为内含均匀数量的点的两个平面，分别计算两个平面内的最小对点距离，再计算跨越两个平面的最小距离。<br>我们可以观察到，我们仅需检查中线周围以两个平面中较小的最小距离为宽度的区域就足够。</p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro22y6j20df07vgm1.jpg" alt="ClosestPair1"></p>
 <p>并且，我们不需要检查条形区域内的所有点。检查它周围的11个点已足够。<br>我们将两倍宽度的长条分解成格子，每个格子中最多包含一个点，否则表明之前计算出的最小距离有误。 我们对y轴进行排序，然后仅需将每个点与其周围11个点进行比对。</p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro2bidj209b06qjrz.jpg" alt="ClosestPair2"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ClosestPair(pl; :::; pr)</span><br><span class="line">	&#x2F;&#x2F;To find the closest points within (pl; :::; pr). Here we assume that pl,...,pr have already been sorted according to x-coordinate;</span><br><span class="line">	if r - l &#x3D;&#x3D; 1 then</span><br><span class="line">		return d(pl; pr);</span><br><span class="line">	end if</span><br><span class="line">	Use the x-coordinate of p((l+r)&#x2F;2) to divide pl,...,pr into two halves;</span><br><span class="line">	d1 &#x3D; ClosestPair(LeftHalf); &#x2F;&#x2F;T(n2)</span><br><span class="line">	d2 &#x3D; ClosestPair(RightHalf); &#x2F;&#x2F;T(n2)</span><br><span class="line">	d &#x3D; min(d1; d2);</span><br><span class="line">	Sort points within the 2d wide strip by y-coordinate; &#x2F;&#x2F;O(n log n)</span><br><span class="line">	Scan points in y-order and calculate distance between each point with its next 11 neighbors. Update d if finding a distance less than d;  &#x2F;&#x2F;O(n)</span><br></pre></td></tr></table></figure>
-
-<p>Time-complexity: $$T(n) = 2T(\frac{n}{2}) + O(n log n) = O(n log^2 n)$$.</p>
+<p>Time-complexity: <script type="math/tex">T(n) = 2T(\frac{n}{2}) + O(n log n) = O(n log^2 n)</script>.</p>
 <p>为了是复杂度降到O(n),我们可以引入structure，使用merge将每一个子问题先排序。</p>
 <p><strong>实例：</strong></p>
 <p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fw46ro5d4aj20d909r40m.jpg" alt="ClosestPair3"></p>
@@ -772,7 +771,7 @@ OUTPUT: The pair with the least Euclidean distance.</code></pre><p>暴力做法�
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -790,7 +789,7 @@ OUTPUT: The pair with the least Euclidean distance.</code></pre><p>暴力做法�
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1115,6 +1114,22 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
     
 </html>

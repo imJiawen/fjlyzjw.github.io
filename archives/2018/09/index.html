@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="en">
     <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
@@ -266,13 +266,13 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
     
         <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
                 
 
                 <!-- Main Container -->
@@ -527,7 +527,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -545,7 +545,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -870,6 +870,22 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
     
 </html>

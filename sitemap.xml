@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/project/index.html</loc>
+    <loc>http://yoursite.com/2019/09/24/Multi-Task-Identi%EF%AC%81cation-of-Entities-Relations-and-Coreference-for-Scienti%EF%AC%81c-Knowledge-Graph-Construction/</loc>
     
-    <lastmod>2020-06-01T15:42:15.483Z</lastmod>
+    <lastmod>2020-06-05T02:16:42.318Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/08/06/Hello-world/</loc>
+    <loc>http://yoursite.com/2018/05/01/Hello-world/</loc>
     
-    <lastmod>2020-06-01T12:43:22.398Z</lastmod>
+    <lastmod>2020-06-05T02:11:56.192Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/project/index.html</loc>
+    
+    <lastmod>2020-06-01T15:42:15.483Z</lastmod>
     
   </url>
   
