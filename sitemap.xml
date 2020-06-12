@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/</loc>
+    
+    <lastmod>2020-06-12T12:19:38.633Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/cv/index.html</loc>
+    
+    <lastmod>2020-06-12T00:50:45.193Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/09/24/Multi-Task-Identi%EF%AC%81cation-of-Entities-Relations-and-Coreference-for-Scienti%EF%AC%81c-Knowledge-Graph-Construction/</loc>
     
-    <lastmod>2020-06-05T02:16:42.318Z</lastmod>
+    <lastmod>2020-06-05T02:39:53.097Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>http://yoursite.com/project/index.html</loc>
     
     <lastmod>2020-06-01T15:42:15.483Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/cv/index.html</loc>
-    
-    <lastmod>2020-06-01T10:00:50.289Z</lastmod>
     
   </url>
   

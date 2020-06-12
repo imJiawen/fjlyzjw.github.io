@@ -46,7 +46,7 @@
     
     <title>
         
-            Overview of Knowledge Graph | 
+            A Survey on Few-shot Learning | 
         
         Jiawen and her funny friends
     </title>
@@ -56,8 +56,8 @@
     <link rel="icon" href="/img/web_icon.jpg">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="在计算机世界中，节点和边的符号通过“符号具化（symbol grounding）”表征物理世界和认知世界中的对象，并作为不同个体对认知世界中信息和知识进行描述和交换的桥梁。这种使用统一形式描述的知识描述框架便于知识的分享与利用。">
-    <meta name="keywords" content=",Knowledge Graph">
+    <meta name="description" itemprop="description" content="最近开始研究利用少量样本进行机器学习。Wang et al. 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。">
+    <meta name="keywords" content=",Few-shot Learning,Transfer Learning,Meta Learning">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Jiawen and her funny friends">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Jiawen and her funny friends">
@@ -233,16 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/">
+    <meta property="og:url" content="http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Overview of Knowledge Graph | Jiawen and her funny friends">
+    <meta property="og:title" content="A Survey on Few-shot Learning | Jiawen and her funny friends">
     <meta property="og:image" content="/img/web_icon.jpg">
-    <meta property="og:description" content="在计算机世界中，节点和边的符号通过“符号具化（symbol grounding）”表征物理世界和认知世界中的对象，并作为不同个体对认知世界中信息和知识进行描述和交换的桥梁。这种使用统一形式描述的知识描述框架便于知识的分享与利用。">
-    <meta property="og:article:tag" content="Knowledge Graph"> 
+    <meta property="og:description" content="最近开始研究利用少量样本进行机器学习。Wang et al. 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。">
+    <meta property="og:article:tag" content="Few-shot Learning"> <meta property="og:article:tag" content="Transfer Learning"> <meta property="og:article:tag" content="Meta Learning"> 
 
     
-        <meta property="article:published_time" content="Fri Mar 22 2019 19:26:34 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 22 2019 20:17:29 GMT+0800">
+        <meta property="article:published_time" content="Fri Jun 12 2020 19:44:35 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jun 12 2020 20:19:38 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/index.html",
-    "headline": "Overview of Knowledge Graph",
-    "datePublished": "Fri Mar 22 2019 19:26:34 GMT+0800",
-    "dateModified": "Fri Mar 22 2019 20:17:29 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html",
+    "headline": "A Survey on Few-shot Learning",
+    "datePublished": "Fri Jun 12 2020 19:44:35 GMT+0800",
+    "dateModified": "Fri Jun 12 2020 20:19:38 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -283,8 +283,8 @@
             "url": "/img/web_icon.jpg"
         }
     },
-    "keywords": ",Knowledge Graph",
-    "description": "在计算机世界中，节点和边的符号通过“符号具化（symbol grounding）”表征物理世界和认知世界中的对象，并作为不同个体对认知世界中信息和知识进行描述和交换的桥梁。这种使用统一形式描述的知识描述框架便于知识的分享与利用。",
+    "keywords": ",Few-shot Learning,Transfer Learning,Meta Learning",
+    "description": "最近开始研究利用少量样本进行机器学习。Wang et al. 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。",
 }
 </script>
 
@@ -350,7 +350,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#知识图谱的类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">知识图谱的类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#知识图谱的生命周期"><span class="post-toc-number">2.</span> <span class="post-toc-text">知识图谱的生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识体系构建"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">知识体系构建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识获取"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">知识获取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体识别"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">实体识别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实体消歧"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">实体消歧</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关系抽取"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">关系抽取</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#事件抽取"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">事件抽取</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识融合"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">知识融合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识存储和查询"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">知识存储和查询</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#知识推理"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">知识推理</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#INTRODUCTION"><span class="post-toc-number">1.</span> <span class="post-toc-text">INTRODUCTION</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#METHODS"><span class="post-toc-number">2.</span> <span class="post-toc-text">METHODS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Data"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Model"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multitask-Learning"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Multitask Learning</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Parameter-Sharing"><span class="post-toc-number">2.2.1.1.</span> <span class="post-toc-text">Parameter Sharing</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Parameter-Tying"><span class="post-toc-number">2.2.1.2.</span> <span class="post-toc-text">Parameter Tying</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Embedding-Learning"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Embedding Learning</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Task-specific-embedding-model"><span class="post-toc-number">2.2.2.1.</span> <span class="post-toc-text">Task-specific embedding model</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Task-invariant-i-e-general-embedding-model"><span class="post-toc-number">2.2.2.2.</span> <span class="post-toc-text">Task-invariant (i.e., general) embedding model</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information"><span class="post-toc-number">2.2.2.3.</span> <span class="post-toc-text">Hybrid embedding model (encodes both task-specific and task-invariant information)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning-with-External-Memory"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Learning with External Memory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generative-Modeling"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">Generative Modeling</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Summary"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text">Summary</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ALGORITHM"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">ALGORITHM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Refining-Existing-Parameters"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Refining Existing Parameters</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Aggregating-a-Set-of-Parameters"><span class="post-toc-number">2.3.1.1.</span> <span class="post-toc-text">Aggregating a Set of Parameters</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fine-Tuning-Existing-Parameter-with-New-Parameters"><span class="post-toc-number">2.3.1.2.</span> <span class="post-toc-text">Fine-Tuning Existing Parameter with New Parameters</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Refining-meta-learned-parameters"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Refining meta-learned parameters</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning-the-optimizer"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">Learning the optimizer</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -382,7 +382,7 @@
         
     
             <p class="article-headline-p">
-                Overview of Knowledge Graph
+                A Survey on Few-shot Learning
             </p>
         </div>
 
@@ -401,7 +401,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jiawen Zhang</strong>
-        <span>Mar 22, 2019</span>
+        <span>Jun 12, 2020</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -425,7 +425,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Knowledge-Graph/" rel="tag">Knowledge Graph</a>
+        <a class="post_tag-link" href="/tags/Few-shot-Learning/" rel="tag">Few-shot Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Meta-Learning/" rel="tag">Meta Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Transfer-Learning/" rel="tag">Transfer Learning</a>
     </ul>
     
 
@@ -442,7 +442,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Overview of Knowledge Graph&url=http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/index.html&pic=http://yoursite.com/img/web_icon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=A Survey on Few-shot Learning&url=http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html&pic=http://yoursite.com/img/web_icon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -451,7 +451,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Overview of Knowledge Graph&url=http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/index.html&via=Jiawen Zhang" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=A Survey on Few-shot Learning&url=http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html&via=Jiawen Zhang" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -460,7 +460,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/22/Knowledge-Graph-Overview/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -494,77 +494,106 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>在计算机世界中，节点和边的符号通过“符号具化（symbol grounding）”表征物理世界和认知世界中的对象，并作为不同个体对认知世界中信息和知识进行描述和交换的桥梁。这种使用统一形式描述的知识描述框架便于知识的分享与利用。</p>
+        <p>最近开始研究利用少量样本进行机器学习。<a href="https://arxiv.org/abs/1904.05046v2" target="_blank" rel="noopener">Wang et al.</a> 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。</p>
 <a id="more"></a>
-<h2 id="知识图谱的类型"><a href="#知识图谱的类型" class="headerlink" title="知识图谱的类型"></a>知识图谱的类型</h2><ul>
-<li>语言知识图谱<br>主要是存储人类语言方面的知识，其中比较典型是英文词 汇知识图谱WordNet，它由同义词集和描述同义词集之间的关系构成。</li>
-<li>常识知识图谱<br>主要有 Cyc和 ConceptNet等。其中 Cyc 由大量实体和 关系以及支持推理的常识规则构成；ConceptNet 由大量概念以及描述 它们之间关系的常识构成。</li>
-<li>语言认知知识图谱<br>中文知网词库HowNet是一种典型的语言认知知识图谱（语言认知知识与常识知识区别不大，因为语言是人类表达和交换信息的主要载体），HowNet致力于描述认知世界中人们对词语概念的理解，基于词语义原，揭示词语的更小语义单元的含义。</li>
-<li>领域知识图谱<br>针对特定领域构建的知识图谱，专门为特定的领域服务， 例如：医学知识图谱 SIDER(Side Effect Resource) ，电影知识图谱 IMDB (Internet Movie Database)，音乐知识图谱MusicBrainz等，这些知识图谱在各自的领域都有着广泛的应用。</li>
-<li>百科知识图谱<br>主要以 Linked Open Data (LOD)项目支持的开放知识 图谱为核心，主要有 Freebase、DBpedia、YAGO和Wikidata等，它们在信息检索、问答系统等任务中有着重要应用。</li>
-</ul>
-<h2 id="知识图谱的生命周期"><a href="#知识图谱的生命周期" class="headerlink" title="知识图谱的生命周期"></a>知识图谱的生命周期</h2><h3 id="知识体系构建"><a href="#知识体系构建" class="headerlink" title="知识体系构建"></a>知识体系构建</h3><p>指采用什么样的方式表达知识，其核心是构建一个本体对目 标知识进行描述。   </p>
-<p><strong>输入</strong>：领域（医疗、金融…）、应用场景<br><strong>输出</strong>：领域知识本体<br><strong>关键技术</strong>：Ontology Engineering</p>
-<p>作为语义网的应用，知识图谱的知识建模采用语义网的知 识建模方式，分为概念、关系、概念关系三元组三个层次，并利用<strong>资源描述框架(RDF</strong>)进行描述。</p>
-<p>RDF 的基本数据模型包括了三个对象类型：  </p>
+<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p><strong>Main idea:</strong> Use <strong>prior knowledge</strong> to alleviate the problem of having an unreliable empirical risk minimizer in FSL supervised learning.</p>
+<p><a href="https://imgchr.com/i/tOlmqS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tOlmqS.md.png" alt="tOlmqS.md.png"></a></p>
+<h1 id="METHODS"><a href="#METHODS" class="headerlink" title="METHODS"></a>METHODS</h1><p>小样本学习的方法主要可以被归为三个方面：数据，模型，以及算法。其核心都是如何更好地利用先验知识。</p>
+<p>从数据入手，主要是利用先验知识产生更大数量的数据；从模型入手，主要思想是利用先验知识来限制假设空间的大小，从而更快的找到最优点；从算法入手，主要思想是利用先验知识来改变搜索策略。</p>
+<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p><a href="https://imgchr.com/i/tO1uy6" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1uy6.md.png" alt="tO1uy6.md.png"></a></p>
+<p>通过数据增强小样本的方法不改变搜索空间的大小，而是通过产生数据来帮助找到最优参数。它可以被归类为以下三种方法：<br><a href="https://imgchr.com/i/tO1ZWR" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1ZWR.md.png" alt="tO1ZWR.md.png"></a></p>
+<ol>
+<li>Transforming Samples from $D_{train}$ \<br>该类方法通过对原训练数据的操作（如图像领域中的翻转等）进行数据增强，从而达到扩充数据的效果。</li>
+<li>Transforming Samples from a Weakly Labeled or Unlabeled Data Set \<br>该类方法利用从训练数据中学习到的predictor对无监督或者弱监督的数据集进行标注，从而获得更大规模的数据集。</li>
+<li>Transforming Samples from Similar Data Sets \<br>该类方法从一个相似且更大规模的数据集上迁移input-output pairs，aggregation weight通常基于样本间的相似性。</li>
+</ol>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>Main idea: Use prior knowledge to constrain the complexity of ℋ, which results in a much smaller hypothesis space $\widetilde{H}$.</p>
+<p><a href="https://imgchr.com/i/tO1VY9" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1VY9.md.png" alt="tO1VY9.md.png"></a></p>
+<h3 id="Multitask-Learning"><a href="#Multitask-Learning" class="headerlink" title="Multitask Learning"></a>Multitask Learning</h3><p><strong>Multitask learning</strong> learns multiple related tasks simultaneously by exploiting both task-generic and task-specific information.</p>
+<p>Given $C$ related tasks $T_1,…,T_C$, each $T_c$ has a dataset$D_c=\{D_{train}^c, D_{test}^c\}$.</p>
+<p>The few-shot tasks are regarded as target tasks, and the rest as source tasks.<br>Multitask learning learns from $D_{train}^c$ to obtain $\theta_c$ for train each $T_c$.</p>
+<h4 id="Parameter-Sharing"><a href="#Parameter-Sharing" class="headerlink" title="Parameter Sharing"></a>Parameter Sharing</h4><p><strong>Parameter Sharing</strong> directly shares some parameters among tasks.</p>
+<p><a href="https://imgchr.com/i/tO1nQx" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1nQx.md.png" alt="tO1nQx.md.png"></a></p>
+<h4 id="Parameter-Tying"><a href="#Parameter-Tying" class="headerlink" title="Parameter Tying"></a>Parameter Tying</h4><p><strong>Parameter Tying</strong> encourages parameters of different tasks to be similar.<br>A popular approach is by regularizing the $\theta_c$.</p>
+<p><a href="https://imgchr.com/i/tO1mS1" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1mS1.md.png" alt="tO1mS1.md.png"></a></p>
+<h3 id="Embedding-Learning"><a href="#Embedding-Learning" class="headerlink" title="Embedding Learning"></a>Embedding Learning</h3><p><strong>Embedding learning</strong> embeds each sample $x_i \in \mathcal{X} \subseteq R^d$ to a lower-dimensional $z_i \in \mathcal{Z} \subseteq R^m$.</p>
+<p>It have three key components:</p>
 <ul>
-<li>资源<br>能够使用RDF表示的对象称之为资源，包括互联网上的实体、事件和 概念等。</li>
-<li>谓词 (Predicate)<br>主要描述资源本身的特征和资源之间的关系。每一个谓词可以定义元知识，例如，谓词的头尾部数据值的类型（如定义域和值域）、谓词与其他谓词的关系（如逆关系）。</li>
-<li>陈述 (Statements)<br>一条陈述包含三个部分，通常称之为RDF三元组&lt;主体(subject)，谓词(predicate)，宾语(object)&gt;。其中主体是被描述的资源，谓词可以表示主体的属性，也可以表示主体和宾语之间关系。当表示属性时，宾语就是属性值；当表示关系时，宾语也是一个资源。</li>
+<li>A function $f$ which embeds test sample $x_{test} \in D_test$ to $\mathcal{Z}$</li>
+<li>A function $g$ which embeds training sample $x_{train} \in  D_{train}$ to $\mathcal{Z}$</li>
+<li>A similarity function $s(·,·)$ which measures the similarity between $f(x_{test})$ and $g(x_I)$ in $\mathcal{Z}$</li>
 </ul>
-<h3 id="知识获取"><a href="#知识获取" class="headerlink" title="知识获取"></a>知识获取</h3><p>知识获取目标是从海量的文本数据中通过信息抽取的方式获 取知识，其方法根据所处理数据源的不同而不同。</p>
-<p>知识图谱中数据的主要来源有：</p>
-<ul>
-<li>结构化数据<br>置信度高，规模小，缺乏个性化的属性信息</li>
-<li>半结构化数据<br>置信度高，规模较大，个性化信息，形式多样，含有噪声</li>
-<li>非结构化文本数据  <ul>
-<li>纯文本<br>置信度低，复杂多样，规模大</li>
-</ul>
+<p><a href="https://imgchr.com/i/tO1QeO" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1QeO.md.png" alt="tO1QeO.md.png"></a></p>
+<h4 id="Task-specific-embedding-model"><a href="#Task-specific-embedding-model" class="headerlink" title="Task-specific embedding model"></a>Task-specific embedding model</h4><p>Learn an embedding function tailored for each task, by using only information from that task.</p>
+<h4 id="Task-invariant-i-e-general-embedding-model"><a href="#Task-invariant-i-e-general-embedding-model" class="headerlink" title="Task-invariant (i.e., general) embedding model"></a>Task-invariant (i.e., general) embedding model</h4><p>Learn a general embedding function from a large-scale data set containing sufficient samples with various outputs, and then directly use this on the new few-shot $D_{train}$  without retraining.</p>
+<p>E.g. Meta-learning (Matching Nets, Prototypical Networks, etc.), Siamese Net, etc.</p>
+<p><a href="https://imgchr.com/i/tO1KOK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1KOK.md.png" alt="tO1KOK.md.png"></a></p>
+<h4 id="Hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information"><a href="#Hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information" class="headerlink" title="Hybrid embedding model (encodes both task-specific and task-invariant information)"></a>Hybrid embedding model (encodes both task-specific and task-invariant information)</h4><p>Learn a function which takes information extracted from $D_{train}$  as input and returns an embedding which acts as the parameter for $f(·)$ .</p>
+<p><a href="https://imgchr.com/i/tO11Te" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO11Te.md.png" alt="tO11Te.md.png"></a></p>
+<h3 id="Learning-with-External-Memory"><a href="#Learning-with-External-Memory" class="headerlink" title="Learning with External Memory"></a>Learning with External Memory</h3><p><strong>Learning with external memory</strong> extracts knowledge from $D_{train}$, and stores it in an external memory. Each new sample $D_{test}$ is then represented by a weighted average of contents extracted from the memory. </p>
+<p>A <strong>key-value memory</strong> is usually used in FSL. \<br>Let the memory be $M \in R^{(b \times m)}$, with each of its $b$ memory slots $M(i) \in R^m$ consisting of a key-value pair $M(i)=(M_{key}(i),M_{value}(i))$. \<br>A test sample $x_{test}$ is first embedded by an embedding function $f$, and used to query for the similar memory slots.</p>
+<p>According to the functionality of the memory, it can be subdivided into two types.</p>
+<ol>
+<li>Refining Representations \<br>Put $x_{train}$  into the memory, such that the stored key-value pairs can represent $x_{test}$  more accurately.</li>
+<li>Refining Parameters \<br>Use a memory to parameterize the embedding function $g(·)$ for a new $x_{test}$ or classification model.</li>
+</ol>
+<p><a href="https://imgchr.com/i/tO1lwD" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1lwD.md.png" alt="tO1lwD.md.png"></a></p>
+<h3 id="Generative-Modeling"><a href="#Generative-Modeling" class="headerlink" title="Generative Modeling"></a>Generative Modeling</h3><p><strong>Generative modeling methods</strong> estimate the probability distribution $p(x)$ from the observed $x_i$ with the help of prior knowledge.</p>
+<p>The observed $x$ is assumed to be drawn from some distribution $p(x;\theta)$ parameterized by $\theta$. \<br>Usually, there exists a latent variable $z \backsim p(z;\gamma)$, so that $x \backsim \int p(x|z;\theta)p(z;\gamma)dz$. \<br>The prior distribution $p(z;\gamma)$ brings in prior knowledge.</p>
+<p>According to what the latent variable 𝑧 represents, it can be grouped into three types.</p>
+<ol>
+<li>Decomposable Components \<br>Samples may share some smaller decomposable components with samples from the other tasks. One then only needs to find the correct combination of these decomposable components, and decides which target class this combination belongs to.</li>
+<li>Groupwise Shared Prior \<br>Similar tasks have similar prior probabilities, and this can be utilized.</li>
+<li>Parameters of Inference Networks \<br>To find the best $\theta$, one has to maximize the posterior </li>
+</ol>
+<script type="math/tex; mode=display">p(z|x;\theta,\gamma)=\frac{p(x,z;\theta ,\gamma)}{p(x;\gamma)}=\frac{p(x|z;\theta)p(z;\gamma)}{\int p(x|z;\theta)p(z;\gamma)dz}</script><p><a href="https://imgchr.com/i/tO1tSI" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1tSI.md.png" alt="tO1tSI.md.png"></a></p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ol>
+<li><p>Multitask learning \<br><strong>Scenarios:</strong> Existing similar tasks or auxiliary tasks.\<br><strong>Limitations:</strong> Joint training of all the tasks together is required. Thus, when a new few-shot task arrives, the whole multitask model has to be trained again.</p>
 </li>
-</ul>
-<p><strong>输入</strong>：领域知识本体；海量数据：文本、垂直站点、百科<br><strong>输出</strong>：领域知识（实体集合，实体关系/属性）<br><strong>主要技术</strong>：信息抽取；文本挖掘</p>
-<h4 id="实体识别"><a href="#实体识别" class="headerlink" title="实体识别"></a>实体识别</h4><p>实体识别任务的目标是从文本中识别实体信息。早期有关实体识别的研究主要是针对命名实体的识别。在知识图谱领域，从文本中识别实体不仅仅局限于命名实体 ，还包括其他类别的实体，特别是领域实体。与实体识别相关的任务是实体抽取。</p>
-<h4 id="实体消歧"><a href="#实体消歧" class="headerlink" title="实体消歧"></a>实体消歧</h4><p>目标是消除指定实体的歧义。实体消歧对于知识图谱构建和应用有着重要的作用，也是建立语言表达和知识图谱联系的关键环节。从技术路线上划分，实体消歧任务可以分为<em>实体链接</em>和<em>实体聚类</em>两种类型。</p>
-<h4 id="关系抽取"><a href="#关系抽取" class="headerlink" title="关系抽取"></a>关系抽取</h4><p>目标是获取两个实体之间的语义关系。</p>
-<p>语义关系可以是一元关系（例如实体的类型），也可以是二元关系（例如实体的属性）甚至是更高阶的关系。在现有知识图谱中，所处理的语义关系通常指的是一元关系和二元关系。</p>
-<p>根据抽取目标的不同，关系抽取任务可以分为：</p>
-<ul>
-<li>关系分类任务：判别一句话中两个指定实体之间的语义关系。</li>
-<li>属性抽取任务：在给定一个实体以及一个预定义关系的条件下，抽取另外一个实体。</li>
-<li>关系实例抽取任务：给定关系类型，抽取满足该关系的实例数据。</li>
-</ul>
-<h4 id="事件抽取"><a href="#事件抽取" class="headerlink" title="事件抽取"></a>事件抽取</h4><p>目标是从描述事件信息的文本中抽取出用户感兴趣的事件信息并以结构化的形式呈现出来。</p>
-<p>事件是发生在某个特定的时间点或时间段、某个特定的地域范围内，由一个或者多个角色参与的，一个或者多个动作组 成的事情或者状态的改变。</p>
-<p>现有知识图谱大多以实体和实体之间的关系为核心，缺乏事件知识。事件知识能弥补现有以实体和实体关系为核心的知识图谱知识表达能力不足的问题，是构建知识图谱不可或缺的技术。事件结构本身的复杂性以及自然语言表达的歧义性和灵活性 ，对事件抽取提出了很大的挑战。</p>
-<p>根据抽取方法的不同，已有的事件抽取方法可以分为</p>
-<ul>
-<li>基于模式匹配的事件抽取</li>
-<li>基于机器学习的事件抽取</li>
-</ul>
-<h3 id="知识融合"><a href="#知识融合" class="headerlink" title="知识融合"></a>知识融合</h3><p>对不同来源、不同语言或不同结构的知识进行融合， 从而对于已有知识图谱进行补充、更新和去重。</p>
-<p><strong>输入</strong>：抽取出来的知识；现有知识库；知识本体<br><strong>输出</strong>：统一知识库；知识置信度<br><strong>关键技术</strong>：Ontology Matching；Entity Linking</p>
-<p>从融合的对象看：</p>
-<ul>
-<li>知识体系的融合：两个或多个异构知识体系进行融合，即对相同的 类别、属性、关系进行映射。</li>
-<li>实例的融合：对于两个不同知识图谱中的实例（实体实例、关系实例）进行融合，包括不同知识体系下的实例、不同语言的实例。</li>
-</ul>
-<p>从融合的知识图谱类型看：</p>
-<ul>
-<li>竖直方向的融合：融合（较）高层通用本体与（较）底层领域本体 或实例数据</li>
-<li>水平方向的融合：融合同层次的知识图谱，实现实例数据的互补。</li>
-</ul>
-<h3 id="知识存储和查询"><a href="#知识存储和查询" class="headerlink" title="知识存储和查询"></a>知识存储和查询</h3><p>因为目前知识图谱大多是基于图的数据结构，它的存储方式 主要有两种形式：</p>
-<ul>
-<li>RDF 格式存储：以三元组的形式存储数据</li>
-<li>图数据库 (Graph Database)</li>
-</ul>
-<p><strong>输入</strong>：大规模知识库知识<br><strong>输出</strong>：知识库存储和查询服务<br><strong>主要技术</strong>：知识表示；知识查询语言；存储/检索引擎</p>
-<h3 id="知识推理"><a href="#知识推理" class="headerlink" title="知识推理"></a>知识推理</h3><p>由于处理数据的不完备性，知识图谱中肯定存在知识缺失现象（包括实体缺失、关系缺失）。我们也很难利用抽取或者融合的方法对于缺失的知识进行补齐。因此，需要采用推理的手段发现已有知识中隐含的知识。</p>
-<p>目前知识推理的研究主要集中在针对知识图谱中缺失关系的补足，即挖掘两个实体之间隐含的语义关系。所采用的方法可以分为两种：</p>
-<ul>
-<li>基于传统逻辑规则的方法进行推理：研究热点在于如何自动学习推理规则，以及如何解决推理过程中的规则冲突问题。</li>
-<li>基于表示学习的推理：即采用学习的方式，将传统推理过程转化为基于分布式表示的语义向量相似度计算任务。这类方法优点是容错率高、可学习，缺点也显而易见，即不可解释，缺乏语义约束。</li>
-</ul>
+<li><p>Embedding learning \<br><strong>Scenarios:</strong> A large-scale data set containing sufficient samples of various classes is available. \<br><strong>Limitations:</strong> May not work well when the few-shot task is not closely related to the other tasks. </p>
+</li>
+<li><p>Learning with External Memory \<br><strong>Scenarios:</strong> A memory network is available.\<br><strong>Limitations:</strong> Incurs additional space and computational costs, which increase with memory size.</p>
+</li>
+<li><p>Generative modeling \<br><strong>Scenarios:</strong> Performing tasks such as generation and reconstruction. \<br><strong>Limitations:</strong> High inference cost, and more difficult to derive than deterministic models. </p>
+</li>
+</ol>
+<h2 id="ALGORITHM"><a href="#ALGORITHM" class="headerlink" title="ALGORITHM"></a>ALGORITHM</h2><p>The algorithm is the strategy to search in the hypothesis space $H$ for the parameter $\theta$ of the best hypothesis $h^*$.</p>
+<p>Methods in this section use prior knowledge to influence how $\theta$ is obtained, either by:</p>
+<ol>
+<li>providing a good initialized parameter $\theta_0$</li>
+<li>directly learning an optimizer to output search steps</li>
+</ol>
+<p>In terms of how the search strategy is affected by prior knowledge, the methods can be classified into three groups.</p>
+<p><a href="https://imgchr.com/i/tO5Z4S" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO5Z4S.md.png" alt="tO5Z4S.md.png"></a></p>
+<h3 id="Refining-Existing-Parameters"><a href="#Refining-Existing-Parameters" class="headerlink" title="Refining Existing Parameters"></a>Refining Existing Parameters</h3><p><strong>Refining existing parameters:</strong> An initial $\theta_0$ learned from other tasks, and is then refined using $D_{train}$ . \<br>The assumption is that $\theta_0$ captures some general structures of the large-scale data. Therefore, it can be adapted to $D$ with a few iterations.</p>
+<p>Given the few-shot $D_{train}$ , simply fine-tuning $\theta_0$ by gradient descent may lead to overfitting. Hence, methods fine-tune $\theta_0$ by regularization to prevent overfitting. They can be grouped as follows:</p>
+<ol>
+<li>Early-stopping . \<br>It requires separating a validation set from D train to monitor the training procedure. Learning is stopped when there is no performance improvement on the validation set.</li>
+<li>Selectively updating $\theta_0$ . \<br>Only a portion of $\theta_0$ is updated in order to avoid overfitting.</li>
+<li>Updating related parts of $\theta_0$ together.\<br>One can group elements of $\theta_0$ (such as the neurons in a deep neural network), and update each group jointly with the same update information.</li>
+<li>Using a model regression network.\<br>A model regression network captures the task-agnostic transformation which maps the parameter values obtained by training on a few examples to the parameter values that will be obtained by training on a lot of samples.</li>
+</ol>
+<h4 id="Aggregating-a-Set-of-Parameters"><a href="#Aggregating-a-Set-of-Parameters" class="headerlink" title="Aggregating a Set of Parameters"></a>Aggregating a Set of Parameters</h4><p>Sometimes, we do not have a suitable $\theta_0$ to start with. Instead, we have many models that are learned from related tasks.</p>
+<p><a href="https://imgchr.com/i/tO100S" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO100S.md.png" alt="tO100S.md.png"></a></p>
+<p>Instead of using the augmented data directly, the following methods use models (with parameters $\theta_0$’s) pre-trained from these data sets. The problem is then how to adapt them efficiently to the new task using $D_{train}$ .</p>
+<ol>
+<li>Unlabeled data set.\<br>One can pre-train functions from the unlabeled data to cluster and separate samples well. A neural network is then used to adapt them to the new task with the few-shot $D_{train}$.</li>
+<li>Similar data sets. \<br>few-shot object classification can be performed by leveraging samples and classifiers from similar classes. First, it replaces the features of samples from these similar classes by features from the new class. The learned classifier is then reused, and only the classification threshold is adjusted for the new class.</li>
+</ol>
+<h4 id="Fine-Tuning-Existing-Parameter-with-New-Parameters"><a href="#Fine-Tuning-Existing-Parameter-with-New-Parameters" class="headerlink" title="Fine-Tuning Existing Parameter with New Parameters"></a>Fine-Tuning Existing Parameter with New Parameters</h4><p>The pre-trained $\theta_0$ may not be enough to encode the new FSL task completely. Hence, an additional parameter(s) $\delta$ is used to take the specialty of D train into account. Specifically, this strategy expands the model parameter to become $\theta = \{\theta_0,\delta\}$, and fine-tunes $\theta_0$ while learning $\delta$.</p>
+<p><a href="https://imgchr.com/i/tO1Nlt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1Nlt.md.png" alt="tO1Nlt.md.png"></a></p>
+<h3 id="Refining-meta-learned-parameters"><a href="#Refining-meta-learned-parameters" class="headerlink" title="Refining meta-learned parameters"></a>Refining meta-learned parameters</h3><p>Methods in this section use meta-learning to refine the meta-learned parameter $\theta_0$.The $\theta_0$ is <strong>continuously optimized</strong> by the meta-learner according to performance of the learner.</p>
+<p><a href="https://imgchr.com/i/tO1aOf" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1aOf.md.png" alt="tO1aOf.md.png"></a></p>
+<p>The meta-learned $\theta_0$ is often refined by gradient descent. A representative method is the <a href="https://arxiv.org/abs/1703.03400" target="_blank" rel="noopener">ModelAgnostic Meta-Learning (MAML)</a>.</p>
+<p><a href="https://imgchr.com/i/tX3dSA" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tX3dSA.md.png" alt="tX3dSA.md.png"></a></p>
+<p>Recently, many improvements have been proposed for MAML, mainly along the following three aspects:</p>
+<ol>
+<li>Incorporating task-specific information. \<br>MAML provides the same initialization for all tasks. However, this neglects task-specific information, and is appropriate only when the set of tasks are all very similar.</li>
+<li>Modeling the uncertainty of using a meta-learned $\theta_0$.\<br>The ability to measure this uncertainty provides hints for active learning and further data collection . There are works that consider uncertainty for the meta-learned $\theta_0$, uncertainty for the task-specific $\phi_s$, and uncertainty for class n’s class-specific parameter$\phi_{s,n}$.</li>
+<li>Improving the refining procedure.\<br>Refinement by a few gradient descent steps may not be reliable. Regularization can be used to correct the descent direction.</li>
+</ol>
+<h3 id="Learning-the-optimizer"><a href="#Learning-the-optimizer" class="headerlink" title="Learning the optimizer"></a>Learning the optimizer</h3><p>Instead of using gradient descent, methods in this section learns an optimizer which can directly output the update ($\sum_{i=1}^t\Delta\theta^{i-1}$). There is then no need to tune the stepsize $\alpha$ or find the search direction, as the learning algorithm does that automatically.</p>
+<p><a href="https://imgchr.com/i/tO1wm8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1wm8.md.png" alt="tO1wm8.md.png"></a></p>
 
         
     
@@ -585,21 +614,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2019/03/22/Overview-of-Crawler-Technology/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/10/18/Algorithm-Design-and-Analysis-Dynamic-programming/" id="post_nav-older" class="next-content">
+        <a href="/2019/09/24/Multi-Task-Identi%EF%AC%81cation-of-Entities-Relations-and-Coreference-for-Scienti%EF%AC%81c-Knowledge-Graph-Construction/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

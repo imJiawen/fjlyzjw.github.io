@@ -244,7 +244,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
 
     
         <meta property="article:published_time" content="Tue Sep 24 2019 17:43:37 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jun 05 2020 10:16:42 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jun 05 2020 10:39:53 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -267,7 +267,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     "mainEntityOfPage": "http://yoursite.com/2019/09/24/Multi-Task-Identi%EF%AC%81cation-of-Entities-Relations-and-Coreference-for-Scienti%EF%AC%81c-Knowledge-Graph-Construction/index.html",
     "headline": "Multi-Task Identiﬁcation of Entities, Relations, and Coreference for Scientiﬁc Knowledge Graph Construction",
     "datePublished": "Tue Sep 24 2019 17:43:37 GMT+0800",
-    "dateModified": "Fri Jun 05 2020 10:16:42 GMT+0800",
+    "dateModified": "Fri Jun 05 2020 10:39:53 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -532,8 +532,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
 <center>Fig 2. 多任务设置，三个任务被看做是顶层共享Span表示的分类问题.</center>
 
 <h2 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h2><p>给定一组所有文档D，模型损失函数被定义为所有三个任务的负对数似然丢失的加权和：</p>
-<script type="math/tex; mode=display">-\sum_{(D,R^*,E^*,C^*) \in D} \{\lambda_E logP(E^* |D) + \lambda_R logP(R^*|D) + \lambda_C log P(C^*|D)\}</script><p>$R^<em>, E^</em>, C^*$ 为goal。</p>
-<p>令$C_i^*$ 为span i里所有正确的祖先。即：</p>
+<script type="math/tex; mode=display">-\sum_{(D,R^*,E^*,C^*) \in D} \{\lambda_E logP(E^* |D) + \lambda_R logP(R^*|D) + \lambda_C log P(C^*|D)\}</script><p>$R^<em>, E^</em>, C^<em>$ 为goal。<br>令$C_i^</em>$ 为span i里所有正确的祖先。即：</p>
 <script type="math/tex; mode=display">log P(C^*|D = \sum_{i=1...N}log\sum_{c \in C^*_i} P(c|D))</script><h2 id="打分结构"><a href="#打分结构" class="headerlink" title="打分结构"></a>打分结构</h2><ul>
 <li><p>在共享跨度表示g上使用前馈神经网络（FFNN）来计算一组跨度和成对跨度的分数。</p>
 <ul>
@@ -611,6 +610,14 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2020/06/12/Overview-of-Few-shot-Learning/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -710,7 +717,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -728,7 +735,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
