@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/</loc>
+    
+    <lastmod>2022-05-03T11:48:22.936Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2022/05/03/From-CNN-to-GCNN/</loc>
     
     <lastmod>2022-05-03T10:22:18.203Z</lastmod>
