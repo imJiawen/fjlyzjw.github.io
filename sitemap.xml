@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/</loc>
+    <loc>http://yoursite.com/2022/05/03/From-CNN-to-GCNN/</loc>
     
-    <lastmod>2020-06-12T12:19:38.633Z</lastmod>
+    <lastmod>2022-05-03T10:22:18.203Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/cv/index.html</loc>
     
-    <lastmod>2020-06-12T00:50:45.193Z</lastmod>
+    <lastmod>2022-05-03T09:45:20.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/</loc>
+    
+    <lastmod>2020-06-12T12:19:38.633Z</lastmod>
     
   </url>
   
