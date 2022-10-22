@@ -302,7 +302,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -526,7 +526,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
 <p>$S \times S$的关系R; </p>
 <p>S中所有span的共指关系C</p>
 <h2 id="模型定义"><a href="#模型定义" class="headerlink" title="模型定义"></a>模型定义</h2><p>将多任务学习定义为条件概率分布: $P(E,R,C|D)$</p>
-<p>为了高效地训练和推理，将该分部拆分成：<br>$P(E,R,C|D) = P(E,R,C,S|D) = \prod^N_{i=1} P(e_i |D) P(c_i | D)\prod^N_{j=1}P(r_{ij}|D)$</p>
+<p>为了高效地训练和推理，将该分部拆分成：<br>$P(E,R,C|D) = P(E,R,C,S|D) = \prod^N<em>{i=1} P(e_i |D) P(c_i | D)\prod^N</em>{j=1}P(r_{ij}|D)$</p>
 <p>其中每个随机变量的条件概率是独立标准化的：</p>
 <script type="math/tex; mode=display">P(e_i= e|D) = \frac{exp(\Phi_E (e,s_i))} {\sum_{e' \in L_E} exp(\Phi_E(e',s_i))}</script><script type="math/tex; mode=display">P(r_{ij}= r|D) = \frac{exp(\Phi_R (r,s_i,s_j))} {\sum_{r' \in L_R} exp(\Phi_R(r',s_i,s_j))}</script><script type="math/tex; mode=display">P(c_i= j|D) = \frac{exp(\Phi_C (s_i,s_j))} {\sum_{j' \in \{1,...,i-1,\epsilon \}} exp(\Phi_E(e',s_i))}</script><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdmFpZC5wbmc?x-oss-process=image/format,png#pic_center" alt="Overview"></p>
 <center>Fig 2. 多任务设置，三个任务被看做是顶层共享Span表示的分类问题.</center>
@@ -551,7 +551,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
 </ul>
 <h2 id="推理和剪枝"><a href="#推理和剪枝" class="headerlink" title="推理和剪枝"></a>推理和剪枝</h2><p>使用波束搜索，根据打分排序减少训练和测试中成对的span的数量以将计算复杂度降低到$O(n)$.</p>
 <p>使用$B_C$修剪共指消解任务中的span，使用$B_R$修剪关系抽取任务中的span。</p>
-<p>使用span score $\phi_{mc}$和 $\phi_{mr}$对波束中的span进行排序，波束的大小用$\lambda_Cn$和$\lambda_Rn$进行约束。span的最大宽度为W。</p>
+<p>使用span score $\phi<em>{mc}$和 $\phi</em>{mr}$对波束中的span进行排序，波束的大小用$\lambda_Cn$和$\lambda_Rn$进行约束。span的最大宽度为W。</p>
 <h1 id="KG-Construction"><a href="#KG-Construction" class="headerlink" title="KG Construction"></a>KG Construction</h1><p>为了构建整个语料库中的知识图，先将SCIIE用于单个文档（摘要），再将多个文档中的实体和关系集成。</p>
 <ul>
 <li><p>结点（实体）抽取</p>
@@ -1068,8 +1068,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
     
 </html>

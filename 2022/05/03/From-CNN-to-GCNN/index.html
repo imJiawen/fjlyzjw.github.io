@@ -299,7 +299,7 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -521,15 +521,15 @@
 </ol>
 <p>note：embedding嵌入什么空间取决于loss的设置。此外，若是需要在图中找pattern，则embedding的方式不适用，因为其找不到结构pattern。</p>
 <h2 id="图上的傅里叶basis"><a href="#图上的傅里叶basis" class="headerlink" title="图上的傅里叶basis"></a>图上的傅里叶basis</h2><p>图上的拉普拉斯L：对信号求导，越大越不平滑，是刻画图上平滑程度的算子。</p>
-<script type="math/tex; mode=display">L=D-W</script><p>D为对角阵，$D_{ii} = \sum_j W_{ij}$</p>
+<script type="math/tex; mode=display">L=D-W</script><p>D为对角阵，$D<em>{ii} = \sum_j W</em>{ij}$</p>
 <p>L为非负的，对应信号的平滑程度，当值等于0时信号平滑。</p>
 <p>Normalized graph Laplacien:</p>
 <script type="math/tex; mode=display">L = I - D^{- \frac{1}{2}} W D^{- \frac{1}{2}}</script><p>$I$:Identity matrix</p>
 <p>在傅里叶变换中，利用基组使空间域映射到频域，即利用正弦波对信号进行分解。</p>
 <p>图拉普拉斯可以被对角化为：</p>
-<script type="math/tex; mode=display">L = U \Lambda U^T</script><p>$\{u_l\}^{n-1}_{l=0}$ : 正交特征向量的完全集<br>$\{\lambda_l\}^{n-1}_{l=0}$ : 相应的非负特征值</p>
+<script type="math/tex; mode=display">L = U \Lambda U^T</script><p>${u<em>l}^{n-1}</em>{l=0}$ : 正交特征向量的完全集<br>${\lambda<em>l}^{n-1}</em>{l=0}$ : 相应的非负特征值</p>
 <p>需要注意的是，都是正交才能进行点积。</p>
-<p>其中$U=[u_0,…,u_{n-1}],\Lambda = diag([\lambda_0,…,\lambda_{n-1}])$</p>
+<p>其中$U=[u<em>0,…,u</em>{n-1}],\Lambda = diag([\lambda<em>0,…,\lambda</em>{n-1}])$</p>
 <h2 id="图傅里叶变换"><a href="#图傅里叶变换" class="headerlink" title="图傅里叶变换"></a>图傅里叶变换</h2><p>对于一个信号$x \in R^n$,傅里叶变换定义为：</p>
 <script type="math/tex; mode=display">\hat{x} = U^T x</script><p>傅里叶逆变换：</p>
 <script type="math/tex; mode=display">x =  U \hat{x}</script><p>傅里叶变换中的定理:卷积在进行傅里叶变换之后会变为点积</p>
@@ -1074,8 +1074,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
     
 </html>

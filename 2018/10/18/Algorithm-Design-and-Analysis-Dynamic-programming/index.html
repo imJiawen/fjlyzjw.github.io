@@ -314,7 +314,7 @@ Programming：tabular可以被用于避免子问题的重复计算
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -524,7 +524,7 @@ Programming：tabular可以被用于避免子问题的重复计算
 </ol>
 <p>与通用的分治法框架不同，动态规划算法通常<strong>枚举</strong>所有可能的分解策略。子问题的重复计算可以通过“programming”避免。</p>
 <h1 id="Matrix-Chain-Multiplication-problem-矩阵的链式乘法"><a href="#Matrix-Chain-Multiplication-problem-矩阵的链式乘法" class="headerlink" title="Matrix Chain Multiplication problem 矩阵的链式乘法"></a>Matrix Chain Multiplication problem 矩阵的链式乘法</h1><hr>
-<p>INPUT:A sequence of n matrices $A_1, A_2 , …, A_n$; matrix A i has dimension $p_{i-1} \times p_i$</p>
+<p>INPUT:A sequence of n matrices $A<em>1, A_2 , …, A_n$; matrix A i has dimension $p</em>{i-1} \times p_i$</p>
 <p>OUTPUT:Fully parenthesizing the product $A_1, A_2 , …, A_n$ in a way to minimize the number of scalar multiplications.</p>
 <hr>
 <script type="math/tex; mode=display">A_1 = \left[\begin{matrix} 1 & 2 \end{matrix}\right] A_2 = \left[ \begin{matrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{matrix} \right] A_3 =\left[\begin{matrix} 1 & 2 & 3 & 4\\ 4 & 5 & 6 & 7\\7 & 8 & 9 & 10\end{matrix} \right]</script><p>Solutions: </p>
@@ -556,7 +556,7 @@ Programming：tabular可以被用于避免子问题的重复计算
 <p>Step 2: $((A_1A_2)(A_3))(A_4)$</p>
 <p>Step 3: $(((A_1)(A_2)(A_3))(A_4)$</p>
 <h1 id="0-1-KNAPSACK-problem-0-1背包问题"><a href="#0-1-KNAPSACK-problem-0-1背包问题" class="headerlink" title="0/1 KNAPSACK problem 0/1背包问题"></a>0/1 KNAPSACK problem 0/1背包问题</h1><hr>
-<p>INPUT: A set of items $S = \{1, 2, …, n\}$. Item i has weight $w_i$ and value $v_i$ . A total weight limit W;<br>OUTPUT: A subset of items to maximize the total value with total weight below W.</p>
+<p>INPUT: A set of items $S = {1, 2, …, n}$. Item i has weight $w_i$ and value $v_i$ . A total weight limit W;<br>OUTPUT: A subset of items to maximize the total value with total weight below W.</p>
 <hr>
 <p>这里的0和1表示我们可以选择一个物品(1)或者放弃它(0)，我们不能选择物品的一部分。</p>
 <p>我们可以将将最优解表示为：$OPT({1,2,…,i},w)$</p>
@@ -1109,8 +1109,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
     
 </html>

@@ -299,7 +299,7 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -502,7 +502,7 @@
 <li>此外，若直接把encoder q中的参数拷贝到encoder k中，快速变化的encoder将降低表示的一致性。因此，该工作采取了momentum update的方式，仅对encoder k进行少量更新。</li>
 </ol>
 <h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p><a href="https://imgtu.com/i/IlFJGd" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/11/06/IlFJGd.png" alt="IlFJGd.png"></a></p>
-<p>InFoNCE: 选取$[k_1,…,k_{K+1}]$, 含一个正样本$k_+$, K个负样本$k_i$ (其他随便信号)。</p>
+<p>InFoNCE: 选取$[k<em>1,…,k</em>{K+1}]$, 含一个正样本$k_+$, K个负样本$k_i$ (其他随便信号)。</p>
 <script type="math/tex; mode=display">\mathcal{L}_q = - \rm{log} \frac{\rm{exp}(q \cdot k_{+} / \tau)}{\sum^{K}_{i=0} \exp (q \cdot k_i / \tau)}</script><p>Momentum Update</p>
 <script type="math/tex; mode=display">\theta_k \leftarrow m \theta_k + (1-m) \theta_q</script><h1 id="BYOL-Bootstrap-Your-Own-Latent-A-New-Approach-to-Self-Supervised-Learning-NIPS-2020"><a href="#BYOL-Bootstrap-Your-Own-Latent-A-New-Approach-to-Self-Supervised-Learning-NIPS-2020" class="headerlink" title="BYOL (Bootstrap Your Own Latent A New Approach to Self-Supervised Learning, NIPS 2020)"></a>BYOL (Bootstrap Your Own Latent A New Approach to Self-Supervised Learning, NIPS 2020)</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>现有的图片表示对比学习将同一图片的不同增强视图作为正样本，通过约束同一张图的不同形态之间的特征差异性来实现特征提取（一般通过数据增强实现）。<br>若仅有正样本，网络容易对所有输入都输出一个固定的值，这样特征差异性就是0，完美符合优化目标，但这不是我们想要的，即导致了Collapsing。</p>
 <p>负样本对解决了训练崩塌的问题，但对数量要求较大，因为只有这样才能训练出足够强的特征提取能力，因此往往需要较大的batch size才能有较好的效果。</p>
@@ -513,11 +513,11 @@
 <p>给定一个target network产生表示，用一个online network去预测target表示。若target与online同步更新，表现很差；若保持target不变，acc约18.8%。因此对target采用EMA（Exponential Moving Average）策略。</p>
 <p>给定a set of weights of online network $\theta$, a set of weight of target network $\xi$,  target decay rate $\tau \in [0, 1]$,在训练之后进行以下更新：</p>
 <script type="math/tex; mode=display">\xi \leftarrow \tau \xi + (1- \tau) \theta</script><p>A set of images: $\mathcal{D}$, an image $x~\mathcal{D}$ sampled uniformly.<br>图像增强分布$\mathcal{T}$ and $\mathcal{T}$. \<br>$v \triangleq t(x)$ and $v’ \triangleq t’(x)$: two augmented views from $x$.</p>
-<p>$y_{\theta} \triangleq f_{\theta} (v)$: online network产生的表示 \<br>$z_{\theta} \triangleq g_{\theta} (y)$: projection \<br>$q_{\theta}(z_{\theta})$: prediction of $z’_{\xi}$ \<br>分别对$q_{\theta}(z_{\theta})$和$z’_{\xi}$进行l2 归一化：<br>$\overline{q}_{\theta}(z_{\theta}) \triangleq q_{\theta}(z_{\theta}) / || q_{\theta}(z_{\theta}) ||_2$, $\overline{z}_{\theta} \triangleq z’_{\xi} / ||z’_{\xi}||_2$</p>
+<p>$y<em>{\theta} \triangleq f</em>{\theta} (v)$: online network产生的表示 \<br>$z<em>{\theta} \triangleq g</em>{\theta} (y)$: projection \<br>$q<em>{\theta}(z</em>{\theta})$: prediction of $z’<em>{\xi}$ \<br>分别对$q</em>{\theta}(z<em>{\theta})$和$z’</em>{\xi}$进行l2 归一化：<br>$\overline{q}<em>{\theta}(z</em>{\theta}) \triangleq q<em>{\theta}(z</em>{\theta}) / || q<em>{\theta}(z</em>{\theta}) ||<em>2$, $\overline{z}</em>{\theta} \triangleq z’<em>{\xi} / ||z’</em>{\xi}||_2$</p>
 <p>仅有online有predictor，两个branch之间是非对称的。</p>
 <p>计算online的prediction和target的projection的MSE。</p>
-<script type="math/tex; mode=display">\mathcal{L}_{\theta , \xi} \triangleq || \overline{q_{\theta}} - \overline{z_{\xi}}' ||_2^2 = 2-2 \cdot \frac{<q_{\theta}, z'_{\xi}>}{||q_{\theta}||_2 \cdot ||z'_{\xi}||_2}</script><p>分别将$v’$输入online network、$v$输入target network计算$\widetilde{\mathcal{L}}_{\theta , \xi}$，使得loss $\mathcal{L}_{\theta , \xi}$对称。</p>
-<p>在每个训练步进行随机优化，针对$\theta$最小化$\mathcal{L}^{BYOL}_{\theta, \xi}=\mathcal{L}_{\theta , \xi} + \widetilde{\mathcal{L}}_{\theta , \xi}$,而$\xi$则采取stop gradient策略。</p>
+<script type="math/tex; mode=display">\mathcal{L}_{\theta , \xi} \triangleq || \overline{q_{\theta}} - \overline{z_{\xi}}' ||_2^2 = 2-2 \cdot \frac{<q_{\theta}, z'_{\xi}>}{||q_{\theta}||_2 \cdot ||z'_{\xi}||_2}</script><p>分别将$v’$输入online network、$v$输入target network计算$\widetilde{\mathcal{L}}<em>{\theta , \xi}$，使得loss $\mathcal{L}</em>{\theta , \xi}$对称。</p>
+<p>在每个训练步进行随机优化，针对$\theta$最小化$\mathcal{L}^{BYOL}<em>{\theta, \xi}=\mathcal{L}</em>{\theta , \xi} + \widetilde{\mathcal{L}}_{\theta , \xi}$,而$\xi$则采取stop gradient策略。</p>
 <script type="math/tex; mode=display">\theta \leftarrow \rm{optimizer}(\theta, \nabla_{\theta} \mathcal{L}^{BYOL}_{\theta, \xi}, \eta) \xi \leftarrow \tau \xi + (1-\tau) \theta</script><p>其中$\eta$是个可学习参数。</p>
 <h1 id="ALBEF-Align-before-Fuse-Vision-and-Language-Representation-Learning-with-Momentum-Distillation-NIPS-2021"><a href="#ALBEF-Align-before-Fuse-Vision-and-Language-Representation-Learning-with-Momentum-Distillation-NIPS-2021" class="headerlink" title="ALBEF (Align before Fuse: Vision and Language Representation Learning with Momentum Distillation, NIPS 2021)"></a>ALBEF (Align before Fuse: Vision and Language Representation Learning with Momentum Distillation, NIPS 2021)</h1><h2 id="Main-idea-1"><a href="#Main-idea-1" class="headerlink" title="Main idea"></a>Main idea</h2><p>大多数现有基于transformer作为多模编码器的工作共同建模visual tokens和word tokens，然而token之间是非对齐的，往往难以捕捉它们之间的交互。<br>本文提出，</p>
 <ol>
@@ -526,7 +526,7 @@
 </ol>
 <h2 id="Method-2"><a href="#Method-2" class="headerlink" title="Method"></a>Method</h2><p><a href="https://imgtu.com/i/5XeMkt" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/10/29/5XeMkt.png" alt="5XeMkt.png"></a></p>
 <h3 id="Pre-training-Objectives"><a href="#Pre-training-Objectives" class="headerlink" title="Pre-training Objectives"></a>Pre-training Objectives</h3><h4 id="Image-Text-Contrastive-Learning"><a href="#Image-Text-Contrastive-Learning" class="headerlink" title="Image-Text Contrastive Learning"></a>Image-Text Contrastive Learning</h4><p>对比损失旨在在融合之前学习一个更好的单模表示。</p>
-<p>需要学习一个similarity function $s=g_v (\bold{v}_{cls})^{\top} g_w (\bold{w}_{cls})$。受MoCo启发，维护了两个队列来保存由momentum unimodal encoders产生的最近的M个图片-文本表示。由momentum encoders所产生的归一化的特征表示为$g’_v (\bold{v}_{cls}’)$和$g’_w (\bold{w}_{cls}’)$。<br>我们定义$s(I,T)=g_v (\bold{v}_{cls})^{\top}g_w’ (\bold{w}_{cls}’)$, $s(T,I)=g_w (\bold{w}_{cls})^{\top}g_v’ (\bold{v}_{cls}’)$.</p>
+<p>需要学习一个similarity function $s=g<em>v (\bold{v}</em>{cls})^{\top} g<em>w (\bold{w}</em>{cls})$。受MoCo启发，维护了两个队列来保存由momentum unimodal encoders产生的最近的M个图片-文本表示。由momentum encoders所产生的归一化的特征表示为$g’<em>v (\bold{v}</em>{cls}’)$和$g’<em>w (\bold{w}</em>{cls}’)$。<br>我们定义$s(I,T)=g<em>v (\bold{v}</em>{cls})^{\top}g<em>w’ (\bold{w}</em>{cls}’)$, $s(T,I)=g<em>w (\bold{w}</em>{cls})^{\top}g<em>v’ (\bold{v}</em>{cls}’)$.</p>
 <p>calculate the softmax-normalized image-to-text and text-to-image<br>similarity as:</p>
 <script type="math/tex; mode=display">p^{i2t}_m (I)=\frac{\exp (s(I,T_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(I, T_m)/\tau)}, 
 p^{t2i}_m (T)=\frac{\exp (s(T,I_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(T, I_m)/\tau)}</script><p>$\tau$: learnable temperature parameter</p>
@@ -540,7 +540,7 @@ p^{t2i}_m (T)=\frac{\exp (s(T,I_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(T, I_m)/\tau)}
 <script type="math/tex; mode=display">\mathcal{L}_{itm} = \rm{E}_{(I,T) \backsim D} \rm{H}(\bold{p}^{itm}(I, T), \bold{y}^{itm})$$$\bold{y}^{itm}$: 2维one-hot ground-truth label向量表示
 
 $$\mathcal{L} = \mathcal{L}_{itc} + \mathcal{L}_{mlm} + \mathcal{L}_{itm}</script><h3 id="Momentum-Distillation"><a href="#Momentum-Distillation" class="headerlink" title="Momentum Distillation"></a>Momentum Distillation</h3><p>正样本对往往弱相关，也会包含一些不相关的文本，或实体，而对于ITC学习来说，负文本可能也会包含一些匹配图片的信息。因此采用一个动量模型，它是一个exponential-moving-average<br>versions of the unimodal and multimodal encoders。</p>
-<p>For ITC,首先利用动量单模encoder产生的特征计算相似度：$s’(I,T)=g_v’(\bold{v}_{cls}’)^{\top} g_w’(\bold{w}_{cls}’)$以及$s’(T,I)=g_w’(\bold{w}_{cls}’)^{\top} g_v’(\bold{v}_{cls}’)$</p>
+<p>For ITC,首先利用动量单模encoder产生的特征计算相似度：$s’(I,T)=g<em>v’(\bold{v}</em>{cls}’)^{\top} g<em>w’(\bold{w}</em>{cls}’)$以及$s’(T,I)=g<em>w’(\bold{w}</em>{cls}’)^{\top} g<em>v’(\bold{v}</em>{cls}’)$</p>
 <p>之后，计算soft pseudo-targets$\bold{q}^{i2t}$和$\bold{q}^{t2i}$,计算损失：</p>
 <script type="math/tex; mode=display">\mathcal{L}^{\rm{mod}}_{\rm{itc}} = (1-\alpha) \mathcal{L}_{itc} + \frac{\alpha}{2} \rm{E}_{(I,T) \backsim D} [\rm{KL}(\bold{p}^{i2t}(I), \bold{q}^{i2t}(I)) + \rm{KL}(\bold{p}^{t2i}(T), \bold{q}^{t2i}(T))]</script><p>For MLM, $\bold{q}^{msk}(I,\hat{T})$表示momentum model’s prediction probability for the<br>masked token, 损失表示为：</p>
 <script type="math/tex; mode=display">\mathcal{L}^{\rm{mod}}_{\rm{mlm}} = (1-\alpha) \mathcal{L}_{mlm} + {\alpha} \rm{E}_{(I,\hat{T}) \backsim D} \rm{KL}(\bold{p}^{msk}(I,\hat{T}),\bold{q}^{msk}(I,\hat{T}))</script><h1 id="Barlow-Twins"><a href="#Barlow-Twins" class="headerlink" title="Barlow Twins"></a>Barlow Twins</h1><p><a href="https://imgtu.com/i/5XebBd" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/10/29/5XebBd.png" alt="5XebBd.png"></a></p>
@@ -1018,8 +1018,7 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
     
 </html>
