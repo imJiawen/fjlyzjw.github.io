@@ -57,7 +57,8 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="本文提出了一种基于共享span表示进行多任务分类的框架（实体分类、关系分类、共指消解），将科学文献摘要抽取成知识图。
-Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf">
+Accepted by: EMNLP 2018 Paper
+link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf">
     <meta name="keywords" content=",knowledge graph,multi-task learning,paper-reading">
     <meta name="theme-color" content="#0097A7">
 
@@ -239,12 +240,13 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     <meta property="og:title" content="Multi-Task Identiﬁcation of Entities, Relations, and Coreference for Scientiﬁc Knowledge Graph Construction | Jiawen and her funny friends">
     <meta property="og:image" content="/img/web_icon.jpg">
     <meta property="og:description" content="本文提出了一种基于共享span表示进行多任务分类的框架（实体分类、关系分类、共指消解），将科学文献摘要抽取成知识图。
-Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf">
+Accepted by: EMNLP 2018 Paper
+link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf">
     <meta property="og:article:tag" content="knowledge graph"> <meta property="og:article:tag" content="multi-task learning"> <meta property="og:article:tag" content="paper-reading"> 
 
     
         <meta property="article:published_time" content="Tue Sep 24 2019 17:43:37 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jun 05 2020 10:39:52 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 17:21:50 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -267,7 +269,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     "mainEntityOfPage": "http://yoursite.com/2019/09/24/Multi-Task-Identi%EF%AC%81cation-of-Entities-Relations-and-Coreference-for-Scienti%EF%AC%81c-Knowledge-Graph-Construction/index.html",
     "headline": "Multi-Task Identiﬁcation of Entities, Relations, and Coreference for Scientiﬁc Knowledge Graph Construction",
     "datePublished": "Tue Sep 24 2019 17:43:37 GMT+0800",
-    "dateModified": "Fri Jun 05 2020 10:39:52 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 17:21:50 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -287,7 +289,8 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     },
     "keywords": ",knowledge graph,multi-task learning,paper-reading",
     "description": "本文提出了一种基于共享span表示进行多任务分类的框架（实体分类、关系分类、共指消解），将科学文献摘要抽取成知识图。
-Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf",
+Accepted by: EMNLP 2018 Paper
+link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf",
 }
 </script>
 
@@ -302,7 +305,9 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -353,7 +358,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Challenge"><span class="post-toc-number">1.</span> <span class="post-toc-text">Challenge</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Contribution"><span class="post-toc-number">2.</span> <span class="post-toc-text">Contribution</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Dataset"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dataset</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Model"><span class="post-toc-number">4.</span> <span class="post-toc-text">Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要思想"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">主要思想</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题定义"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">问题定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型定义"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">模型定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标函数"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">目标函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打分结构"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">打分结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#推理和剪枝"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">推理和剪枝</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#KG-Construction"><span class="post-toc-number">5.</span> <span class="post-toc-text">KG Construction</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Results"><span class="post-toc-number">6.</span> <span class="post-toc-text">Results</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#KG-Analysis"><span class="post-toc-number">7.</span> <span class="post-toc-text">KG Analysis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#科学趋势分析"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">科学趋势分析</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#challenge"><span class="post-toc-number">1.</span> <span class="post-toc-text">Challenge</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#contribution"><span class="post-toc-number">2.</span> <span class="post-toc-text">Contribution</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dataset"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dataset</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#model"><span class="post-toc-number">4.</span> <span class="post-toc-text">Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%BB%E8%A6%81%E6%80%9D%E6%83%B3"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">主要思想</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">问题定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">模型定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">目标函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8E%A8%E7%90%86%E5%92%8C%E5%89%AA%E6%9E%9D"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">推理和剪枝</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#kg-construction"><span class="post-toc-number">5.</span> <span class="post-toc-text">KG Construction</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#results"><span class="post-toc-number">6.</span> <span class="post-toc-text">Results</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#kg-analysis"><span class="post-toc-number">7.</span> <span class="post-toc-text">KG Analysis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A7%91%E5%AD%A6%E8%B6%8B%E5%8A%BF%E5%88%86%E6%9E%90"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">科学趋势分析</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -428,7 +433,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/knowledge-graph/" rel="tag">knowledge graph</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/multi-task-learning/" rel="tag">multi-task learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/paper-reading/" rel="tag">paper-reading</a>
+        <a class="post_tag-none-link" href="/tags/knowledge-graph/" rel="tag">knowledge graph</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/multi-task-learning/" rel="tag">multi-task learning</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/paper-reading/" rel="tag">paper-reading</a>
     </ul>
     
 
@@ -498,99 +503,177 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>本文提出了一种基于共享span表示进行多任务分类的框架（实体分类、关系分类、共指消解），将科学文献摘要抽取成知识图。</p>
-<p>Accepted by: EMNLP 2018<br>Paper link：<a href="http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf" target="_blank" rel="noopener">http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf</a></p>
-<a id="more"></a>
-<h1 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h1><ul>
+<p>Accepted by: EMNLP 2018 Paper
+link：http://ssli.ee.washington.edu/~luanyi/YiLuan_files/EMNLP2018_YL_sciIE.pdf</p>
+<span id="more"></span>
+<h1 id="challenge">Challenge</h1>
+<ul>
 <li>尽管搜索引擎取得了进步，但仍然很难确定新技术及其与之前技术存在的关系</li>
 <li>科学文本的注释需要领域专业知识，这使得注释成本高昂并限制了资源</li>
 <li>大多数关系提取系统都是针对句内关系而设计的，但是从科学文章中提取信息需要提取句子之间的关系</li>
 </ul>
-<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><ul>
-<li>开发了一个统一的学习模型（科学信息提取器框架， SCIIE），用于提取科学实体、关系和共指消解</li>
-<li>创建了SCIERC数据库，包含科学名词、关系类别以及共指链接的标注（500个标注的科学摘要）<ul>
+<h1 id="contribution">Contribution</h1>
+<ul>
+<li>开发了一个统一的学习模型（科学信息提取器框架，
+SCIIE），用于提取科学实体、关系和共指消解</li>
+<li>创建了SCIERC数据库，包含科学名词、关系类别以及共指链接的标注（500个标注的科学摘要）
+<ul>
 <li>6种实体</li>
 <li>7种关系</li>
 <li>共指链接在实体间的标注</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h1><p>该论文提出了SCIERC数据集，包括了500个科学摘要，标记了其中的实体类型、实体间的关系以及共指关系。</p>
-<p>下载链接：<a href="http://nlp.cs.washington.edu/sciIE/" target="_blank" rel="noopener">http://nlp.cs.washington.edu/sciIE/</a></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdmRKQS5wbmc?x-oss-process=image/format,png#pic_center" alt="annotation"></p>
-<center>Fig 1.标注实例.</center>
-
-<h1 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h1><h2 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h2><p>在低级别任务间共享参数，将三个任务看成共享span表示的多项分类问题</p>
-<h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>输入：单词序列 $D = {w_1, …,w_n}$;</p>
-<p>所有可能的句内词序列span $S = {s_1, … , s_N}$</p>
-<p>输出：所有Span(即S)的实体类型E; </p>
-<p>$S \times S$的关系R; </p>
+<h1 id="dataset">Dataset</h1>
+<p>该论文提出了SCIERC数据集，包括了500个科学摘要，标记了其中的实体类型、实体间的关系以及共指关系。</p>
+<p>下载链接：http://nlp.cs.washington.edu/sciIE/</p>
+<figure>
+<img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdmRKQS5wbmc?x-oss-process=image/format,png#pic_center"
+alt="annotation" />
+<figcaption aria-hidden="true">annotation</figcaption>
+</figure>
+<center>
+Fig 1.标注实例.
+</center>
+<h1 id="model">Model</h1>
+<h2 id="主要思想">主要思想</h2>
+<p>在低级别任务间共享参数，将三个任务看成共享span表示的多项分类问题</p>
+<h2 id="问题定义">问题定义</h2>
+<p>输入：单词序列 <span class="math inline">\(D = {w_1,
+...,w_n}\)</span>;</p>
+<p>所有可能的句内词序列span <span class="math inline">\(S = {s_1, ... ,
+s_N}\)</span></p>
+<p>输出：所有Span(即S)的实体类型E;</p>
+<p><span class="math inline">\(S \times S\)</span>的关系R;</p>
 <p>S中所有span的共指关系C</p>
-<h2 id="模型定义"><a href="#模型定义" class="headerlink" title="模型定义"></a>模型定义</h2><p>将多任务学习定义为条件概率分布: $P(E,R,C|D)$</p>
-<p>为了高效地训练和推理，将该分部拆分成：<br>$P(E,R,C|D) = P(E,R,C,S|D) = \prod^N<em>{i=1} P(e_i |D) P(c_i | D)\prod^N</em>{j=1}P(r_{ij}|D)$</p>
-<p>其中每个随机变量的条件概率是独立标准化的：</p>
-<script type="math/tex; mode=display">P(e_i= e|D) = \frac{exp(\Phi_E (e,s_i))} {\sum_{e' \in L_E} exp(\Phi_E(e',s_i))}</script><script type="math/tex; mode=display">P(r_{ij}= r|D) = \frac{exp(\Phi_R (r,s_i,s_j))} {\sum_{r' \in L_R} exp(\Phi_R(r',s_i,s_j))}</script><script type="math/tex; mode=display">P(c_i= j|D) = \frac{exp(\Phi_C (s_i,s_j))} {\sum_{j' \in \{1,...,i-1,\epsilon \}} exp(\Phi_E(e',s_i))}</script><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdmFpZC5wbmc?x-oss-process=image/format,png#pic_center" alt="Overview"></p>
-<center>Fig 2. 多任务设置，三个任务被看做是顶层共享Span表示的分类问题.</center>
-
-<h2 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h2><p>给定一组所有文档D，模型损失函数被定义为所有三个任务的负对数似然丢失的加权和：</p>
-<script type="math/tex; mode=display">-\sum_{(D,R^*,E^*,C^*) \in D} \{\lambda_E logP(E^* |D) + \lambda_R logP(R^*|D) + \lambda_C log P(C^*|D)\}</script><p>$R^<em>, E^</em>, C^<em>$ 为goal。<br>令$C_i^</em>$ 为span i里所有正确的祖先。即：</p>
-<script type="math/tex; mode=display">log P(C^*|D = \sum_{i=1...N}log\sum_{c \in C^*_i} P(c|D))</script><h2 id="打分结构"><a href="#打分结构" class="headerlink" title="打分结构"></a>打分结构</h2><ul>
-<li><p>在共享跨度表示g上使用前馈神经网络（FFNN）来计算一组跨度和成对跨度的分数。</p>
-<ul>
-<li>$\phi_e(s_i)$:一个跨度$s_i$有一个实体类型e的可能性；        </li>
-<li>$\phi_{mr}(s_i)$跨度$s_i$在一个关系r中被提到的可能性；       </li>
-<li>$\phi_{mc}(s_i)$跨度$s_i$在一条共指链接中被提到的可能性</li>
-<li>$\phi_r(s_i,s_j)$两个跨度与一个关系相结合的可能性；</li>
-<li>$\phi_c(s_i,s_j)$两个跨度与一条共指链接相结合的可能性</li>
-<li>$g_i$：$s_i$的向量表示 (ELMo)：连接来自BiLSTM的输出的$s_i$的左端点和右端点，基于注意力的软词条，嵌入span的宽度特征</li>
-<li>span打分以及成对的span打分的计算方式：<script type="math/tex; mode=display">
+<h2 id="模型定义">模型定义</h2>
+<p>将多任务学习定义为条件概率分布: <span
+class="math inline">\(P(E,R,C|D)\)</span></p>
+<p>为了高效地训练和推理，将该分部拆分成： <span
+class="math inline">\(P(E,R,C|D) = P(E,R,C,S|D) = \prod^N_{i=1} P(e_i
+|D) P(c_i | D)\prod^N_{j=1}P(r_{ij}|D)\)</span></p>
+其中每个随机变量的条件概率是独立标准化的： <span
+class="math display">\[P(e_i= e|D) = \frac{exp(\Phi_E (e,s_i))}
+{\sum_{e&#39; \in L_E} exp(\Phi_E(e&#39;,s_i))}\]</span> <span
+class="math display">\[P(r_{ij}= r|D) = \frac{exp(\Phi_R (r,s_i,s_j))}
+{\sum_{r&#39; \in L_R} exp(\Phi_R(r&#39;,s_i,s_j))}\]</span> <span
+class="math display">\[P(c_i= j|D) = \frac{exp(\Phi_C (s_i,s_j))}
+{\sum_{j&#39; \in \{1,...,i-1,\epsilon \}}
+exp(\Phi_E(e&#39;,s_i))}\]</span> <img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdmFpZC5wbmc?x-oss-process=image/format,png#pic_center"
+alt="Overview" />
+<center>
+Fig 2. 多任务设置，三个任务被看做是顶层共享Span表示的分类问题.
+</center>
+<h2 id="目标函数">目标函数</h2>
+<p>给定一组所有文档D，模型损失函数被定义为所有三个任务的负对数似然丢失的加权和：</p>
+<p><span class="math display">\[-\sum_{(D,R^*,E^*,C^*) \in D}
+\{\lambda_E logP(E^* |D) + \lambda_R logP(R^*|D) + \lambda_C log
+P(C^*|D)\}\]</span></p>
+<p><span class="math inline">\(R^*, E^*, C^*\)</span> 为goal。 令<span
+class="math inline">\(C_i^*\)</span> 为span i里所有正确的祖先。即：
+<span class="math display">\[log P(C^*|D = \sum_{i=1...N}log\sum_{c \in
+C^*_i} P(c|D))\]</span> ## 打分结构 -
+在共享跨度表示g上使用前馈神经网络（FFNN）来计算一组跨度和成对跨度的分数。</p>
+<pre><code>- $\phi_e(s_i)$:一个跨度$s_i$有一个实体类型e的可能性；      
+- $\phi_&#123;mr&#125;(s_i)$跨度$s_i$在一个关系r中被提到的可能性；       
+- $\phi_&#123;mc&#125;(s_i)$跨度$s_i$在一条共指链接中被提到的可能性
+- $\phi_r(s_i,s_j)$两个跨度与一个关系相结合的可能性；
+- $\phi_c(s_i,s_j)$两个跨度与一条共指链接相结合的可能性
+- $g_i$：$s_i$的向量表示 (ELMo)：连接来自BiLSTM的输出的$s_i$的左端点和右端点，基于注意力的软词条，嵌入span的宽度特征
+- span打分以及成对的span打分的计算方式：
+$$
 \phi_x(s_i) = w_x \dot FFNN_x(g_i)
-\phi_y(s_i,s_j)=w_y \dot FFNN_y([g_i,g_j,g_i \odot g_j])</script></li>
-</ul>
-</li>
-<li>这些分数被用于计算最终打分:<script type="math/tex; mode=display">\Phi_E (e,s_i) = \phi_e(s_i)</script><script type="math/tex; mode=display">\Phi_R (r,s_i,s_j) = \phi_{mr}(s_i) + \phi_{mr}(s_j) + \phi_r(s_i,s_j)</script><script type="math/tex; mode=display">\Phi_C (s_i,s_j) = \phi_{mc}(s_i) + \phi_{mc}(s_j) + \phi_c(s_i,s_j)</script></li>
-</ul>
-<h2 id="推理和剪枝"><a href="#推理和剪枝" class="headerlink" title="推理和剪枝"></a>推理和剪枝</h2><p>使用波束搜索，根据打分排序减少训练和测试中成对的span的数量以将计算复杂度降低到$O(n)$.</p>
-<p>使用$B_C$修剪共指消解任务中的span，使用$B_R$修剪关系抽取任务中的span。</p>
-<p>使用span score $\phi<em>{mc}$和 $\phi</em>{mr}$对波束中的span进行排序，波束的大小用$\lambda_Cn$和$\lambda_Rn$进行约束。span的最大宽度为W。</p>
-<h1 id="KG-Construction"><a href="#KG-Construction" class="headerlink" title="KG Construction"></a>KG Construction</h1><p>为了构建整个语料库中的知识图，先将SCIIE用于单个文档（摘要），再将多个文档中的实体和关系集成。</p>
+\phi_y(s_i,s_j)=w_y \dot FFNN_y([g_i,g_j,g_i \odot g_j])
+$$</code></pre>
 <ul>
-<li><p>结点（实体）抽取</p>
+<li>这些分数被用于计算最终打分: <span class="math display">\[\Phi_E
+(e,s_i) = \phi_e(s_i)\]</span> <span class="math display">\[\Phi_R
+(r,s_i,s_j) = \phi_{mr}(s_i) + \phi_{mr}(s_j) + \phi_r(s_i,s_j)\]</span>
+<span class="math display">\[\Phi_C (s_i,s_j) = \phi_{mc}(s_i) +
+\phi_{mc}(s_j) + \phi_c(s_i,s_j)\]</span></li>
+</ul>
+<h2 id="推理和剪枝">推理和剪枝</h2>
+<p>使用波束搜索，根据打分排序减少训练和测试中成对的span的数量以将计算复杂度降低到<span
+class="math inline">\(O(n)\)</span>.</p>
+<p>使用<span
+class="math inline">\(B_C\)</span>修剪共指消解任务中的span，使用<span
+class="math inline">\(B_R\)</span>修剪关系抽取任务中的span。</p>
+<p>使用span score <span class="math inline">\(\phi_{mc}\)</span>和 <span
+class="math inline">\(\phi_{mr}\)</span>对波束中的span进行排序，波束的大小用<span
+class="math inline">\(\lambda_Cn\)</span>和<span
+class="math inline">\(\lambda_Rn\)</span>进行约束。span的最大宽度为W。</p>
+<h1 id="kg-construction">KG Construction</h1>
+<p>为了构建整个语料库中的知识图，先将SCIIE用于单个文档（摘要），再将多个文档中的实体和关系集成。</p>
 <ul>
-<li><p>句子被启发式地标准化</p>
+<li>结点（实体）抽取
+<ul>
+<li>句子被启发式地标准化
 <ul>
 <li>利用共指链接，将不通用词汇替换为通用词汇</li>
 <li>采用字符长度最长的实体名称（使用全名替代首字母缩略）</li>
 <li>使用单数标准化所有复数</li>
-</ul>
-</li>
-<li><p>计算整个语料库中的实体出现频率</p>
+</ul></li>
+<li>计算整个语料库中的实体出现频率
 <ul>
 <li>出现频率&gt;k的实体为它分配结点</li>
 <li>将频繁出现的、为子字符串的剩余实体进行合并</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>边（关系）分配</p>
+</ul></li>
+</ul></li>
+<li>边（关系）分配
 <ul>
 <li>在整个语料库中计算一对实体间的关系出现频率，选择频率最大的关系</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdnRkZS5wbmc?x-oss-process=image/format,png#pic_center" alt="知识图谱构建过程"></p>
-<center>Fig 3. 知识图谱的构建过程.</center>
-
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdndSSS5wbmc?x-oss-process=image/format,png#pic_center" alt="自动构建的知识图"></p>
-<center>Fig 4. 自动构建的知识图.</center>
-
-<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3Vrdk5JSC5wbmc?x-oss-process=image/format,png#pic_center" alt="RESULT"></p>
-<center>Table 1. 三个任务上与其他系统的性能对比.</center>
-
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdkRRUC5wbmc?x-oss-process=image/format,png#pic_center" alt="ablation"></p>
-<center>Table 2. 多任务学习的消融研究.</center>
-
-<h1 id="KG-Analysis"><a href="#KG-Analysis" class="headerlink" title="KG Analysis"></a>KG Analysis</h1><h2 id="科学趋势分析"><a href="#科学趋势分析" class="headerlink" title="科学趋势分析"></a>科学趋势分析</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdjB6dC5wbmc?x-oss-process=image/format,png#pic_center" alt="科学趋势分析"></p>
-<center>Fig 5. 关键词 神经网络 在NLP\speech\CV领域的历史研究趋势.Y轴：在该任务中使用神经网络的论文与使用其他论文的比例.</center>
+<figure>
+<img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdnRkZS5wbmc?x-oss-process=image/format,png#pic_center"
+alt="知识图谱构建过程" />
+<figcaption aria-hidden="true">知识图谱构建过程</figcaption>
+</figure>
+<center>
+Fig 3. 知识图谱的构建过程.
+</center>
+<figure>
+<img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdndSSS5wbmc?x-oss-process=image/format,png#pic_center"
+alt="自动构建的知识图" />
+<figcaption aria-hidden="true">自动构建的知识图</figcaption>
+</figure>
+<center>
+Fig 4. 自动构建的知识图.
+</center>
+<h1 id="results">Results</h1>
+<figure>
+<img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3Vrdk5JSC5wbmc?x-oss-process=image/format,png#pic_center"
+alt="RESULT" />
+<figcaption aria-hidden="true">RESULT</figcaption>
+</figure>
+<center>
+Table 1. 三个任务上与其他系统的性能对比.
+</center>
+<figure>
+<img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdkRRUC5wbmc?x-oss-process=image/format,png#pic_center"
+alt="ablation" />
+<figcaption aria-hidden="true">ablation</figcaption>
+</figure>
+<center>
+Table 2. 多任务学习的消融研究.
+</center>
+<h1 id="kg-analysis">KG Analysis</h1>
+<h2 id="科学趋势分析">科学趋势分析</h2>
+<figure>
+<img
+src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA5LzI0L3VrdjB6dC5wbmc?x-oss-process=image/format,png#pic_center"
+alt="科学趋势分析" />
+<figcaption aria-hidden="true">科学趋势分析</figcaption>
+</figure>
+<center>
+Fig 5. 关键词 神经网络
+在NLP.Y轴：在该任务中使用神经网络的论文与使用其他论文的比例.
+</center>
 
         
     
@@ -717,7 +800,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -735,7 +818,7 @@ Accepted by: EMNLP 2018Paper link：http://ssli.ee.washington.edu/~luanyi/YiLuan
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1005,6 +1088,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->

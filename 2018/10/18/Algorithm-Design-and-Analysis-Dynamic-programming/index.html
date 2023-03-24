@@ -56,12 +56,9 @@
     <link rel="icon" href="/img/web_icon.jpg">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="Main message:
-
-把子问题的求解想象成多步求解过程
-子问题的最优解可以组合成原问题的最优解
-Programming：tabular可以被用于避免子问题的重复计算
-">
+    <meta name="description" itemprop="description" content="Main message: 1. 把子问题的求解想象成多步求解过程 2.
+子问题的最优解可以组合成原问题的最优解 3.
+Programming：tabular可以被用于避免子问题的重复计算">
     <meta name="keywords" content=",Algorithm Design and Analysis,Basic algorithm design technique,Dynamic programming,Optimization">
     <meta name="theme-color" content="#0097A7">
 
@@ -242,17 +239,14 @@ Programming：tabular可以被用于避免子问题的重复计算
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Algorithm Design and Analysis - Dynamic programming | Jiawen and her funny friends">
     <meta property="og:image" content="/img/web_icon.jpg">
-    <meta property="og:description" content="Main message:
-
-把子问题的求解想象成多步求解过程
-子问题的最优解可以组合成原问题的最优解
-Programming：tabular可以被用于避免子问题的重复计算
-">
+    <meta property="og:description" content="Main message: 1. 把子问题的求解想象成多步求解过程 2.
+子问题的最优解可以组合成原问题的最优解 3.
+Programming：tabular可以被用于避免子问题的重复计算">
     <meta property="og:article:tag" content="Algorithm Design and Analysis"> <meta property="og:article:tag" content="Basic algorithm design technique"> <meta property="og:article:tag" content="Dynamic programming"> <meta property="og:article:tag" content="Optimization"> 
 
     
         <meta property="article:published_time" content="Thu Oct 18 2018 21:52:10 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 22 2019 20:17:02 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 17:17:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -275,7 +269,7 @@ Programming：tabular可以被用于避免子问题的重复计算
     "mainEntityOfPage": "http://yoursite.com/2018/10/18/Algorithm-Design-and-Analysis-Dynamic-programming/index.html",
     "headline": "Algorithm Design and Analysis - Dynamic programming",
     "datePublished": "Thu Oct 18 2018 21:52:10 GMT+0800",
-    "dateModified": "Fri Mar 22 2019 20:17:02 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 17:17:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -294,12 +288,9 @@ Programming：tabular可以被用于避免子问题的重复计算
         }
     },
     "keywords": ",Algorithm Design and Analysis,Basic algorithm design technique,Dynamic programming,Optimization",
-    "description": "Main message:
-
-把子问题的求解想象成多步求解过程
-子问题的最优解可以组合成原问题的最优解
-Programming：tabular可以被用于避免子问题的重复计算
-",
+    "description": "Main message: 1. 把子问题的求解想象成多步求解过程 2.
+子问题的最优解可以组合成原问题的最优解 3.
+Programming：tabular可以被用于避免子问题的重复计算",
 }
 </script>
 
@@ -314,7 +305,9 @@ Programming：tabular可以被用于避免子问题的重复计算
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -365,7 +358,10 @@ Programming：tabular可以被用于避免子问题的重复计算
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Dynamic-programming-VS-Divide-and-conquer"><span class="post-toc-number">1.</span> <span class="post-toc-text">Dynamic programming VS. Divide-and-conquer</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Matrix-Chain-Multiplication-problem-矩阵的链式乘法"><span class="post-toc-number">2.</span> <span class="post-toc-text">Matrix Chain Multiplication problem 矩阵的链式乘法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Trials"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Trials</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Trial-1"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Trial 1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Trial-2"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Trial 2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Trial-3"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Trial 3</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Backtracking"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Backtracking</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0-1-KNAPSACK-problem-0-1背包问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">0&#x2F;1 KNAPSACK problem 0&#x2F;1背包问题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Sequence-Alignment-problem"><span class="post-toc-number">4.</span> <span class="post-toc-text">Sequence Alignment problem</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Space-eﬃcient-algorithm"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">Space eﬃcient algorithm:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Time-complexity"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">Time complexity</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Local"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">Local</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#dynamic-programming-vs.-divide-and-conquer"><span class="post-toc-number">1.</span> <span class="post-toc-text">Dynamic programming
+VS. Divide-and-conquer</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#matrix-chain-multiplication-problem-%E7%9F%A9%E9%98%B5%E7%9A%84%E9%93%BE%E5%BC%8F%E4%B9%98%E6%B3%95"><span class="post-toc-number">2.</span> <span class="post-toc-text">Matrix Chain
+Multiplication problem 矩阵的链式乘法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#trials"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Trials</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#trial-1"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Trial 1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#trial-2"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Trial 2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#trial-3"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Trial 3</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#backtracking"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Backtracking</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#knapsack-problem-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98"><span class="post-toc-number">3.</span> <span class="post-toc-text">0&#x2F;1 KNAPSACK problem
+0&#x2F;1背包问题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sequence-alignment-problem"><span class="post-toc-number">4.</span> <span class="post-toc-text">Sequence Alignment problem</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BC%98%E5%8C%96"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#space-e%EF%AC%83cient-algorithm"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">Space eﬃcient algorithm:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#time-complexity"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">Time complexity</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#local"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">Local</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -440,7 +436,7 @@ Programming：tabular可以被用于避免子问题的重复计算
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Algorithm-Design-and-Analysis/" rel="tag">Algorithm Design and Analysis</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Basic-algorithm-design-technique/" rel="tag">Basic algorithm design technique</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Dynamic-programming/" rel="tag">Dynamic programming</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Optimization/" rel="tag">Optimization</a>
+        <a class="post_tag-none-link" href="/tags/Algorithm-Design-and-Analysis/" rel="tag">Algorithm Design and Analysis</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Basic-algorithm-design-technique/" rel="tag">Basic algorithm design technique</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Dynamic-programming/" rel="tag">Dynamic programming</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Optimization/" rel="tag">Optimization</a>
     </ul>
     
 
@@ -509,128 +505,215 @@ Programming：tabular可以被用于避免子问题的重复计算
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Main message:</p>
-<ol>
-<li>把子问题的求解想象成多步求解过程</li>
-<li>子问题的最优解可以组合成原问题的最优解</li>
-<li>Programming：tabular可以被用于避免子问题的重复计算</li>
-</ol>
-<a id="more"></a>
-<p>联动： <a  href ="http://imjiawen.com/2018/08/14/Dynamic-programming-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/#more">Dynamic Programming 动态规划算法</a></p>
-<h1 id="Dynamic-programming-VS-Divide-and-conquer"><a href="#Dynamic-programming-VS-Divide-and-conquer" class="headerlink" title="Dynamic programming VS. Divide-and-conquer"></a>Dynamic programming VS. Divide-and-conquer</h1><p>动态规划算法一般被用于解决优化问题。需满足以下几个特点：</p>
-<ol>
+        <p>Main message: 1. 把子问题的求解想象成多步求解过程 2.
+子问题的最优解可以组合成原问题的最优解 3.
+Programming：tabular可以被用于避免子问题的重复计算</p>
+<span id="more"></span>
+<p>联动：
+<a  href ="http://imjiawen.com/2018/08/14/Dynamic-programming-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/#more">Dynamic
+Programming 动态规划算法</a></p>
+<h1 id="dynamic-programming-vs.-divide-and-conquer">Dynamic programming
+VS. Divide-and-conquer</h1>
+<p>动态规划算法一般被用于解决优化问题。需满足以下几个特点：</p>
+<ol type="1">
 <li>原问题可以被分解成更小的子问题</li>
 <li>具有最优子结构性质，即最优解可以通过结合子问题的最优解得到。</li>
 </ol>
 <p>与通用的分治法框架不同，动态规划算法通常<strong>枚举</strong>所有可能的分解策略。子问题的重复计算可以通过“programming”避免。</p>
-<h1 id="Matrix-Chain-Multiplication-problem-矩阵的链式乘法"><a href="#Matrix-Chain-Multiplication-problem-矩阵的链式乘法" class="headerlink" title="Matrix Chain Multiplication problem 矩阵的链式乘法"></a>Matrix Chain Multiplication problem 矩阵的链式乘法</h1><hr>
-<p>INPUT:A sequence of n matrices $A<em>1, A_2 , …, A_n$; matrix A i has dimension $p</em>{i-1} \times p_i$</p>
-<p>OUTPUT:Fully parenthesizing the product $A_1, A_2 , …, A_n$ in a way to minimize the number of scalar multiplications.</p>
-<hr>
-<script type="math/tex; mode=display">A_1 = \left[\begin{matrix} 1 & 2 \end{matrix}\right] A_2 = \left[ \begin{matrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{matrix} \right] A_3 =\left[\begin{matrix} 1 & 2 & 3 & 4\\ 4 & 5 & 6 & 7\\7 & 8 & 9 & 10\end{matrix} \right]</script><p>Solutions: </p>
-<p>$((A_1)(A_2))(A_3) : (1 \times 2 \times 3) + (1 \times 3 \times 4)$ </p>
-<p>$(A_1)((A_2)(A_3)) : (2 \times 3 \times 4) + (1 \times 2 \times 4)$</p>
+<h1 id="matrix-chain-multiplication-problem-矩阵的链式乘法">Matrix Chain
+Multiplication problem 矩阵的链式乘法</h1>
+<hr />
+<p>INPUT:A sequence of n matrices <span class="math inline">\(A_1, A_2 ,
+..., A_n\)</span>; matrix A i has dimension <span
+class="math inline">\(p_{i-1} \times p_i\)</span></p>
+<p>OUTPUT:Fully parenthesizing the product <span
+class="math inline">\(A_1, A_2 , ..., A_n\)</span> in a way to minimize
+the number of scalar multiplications. ***</p>
+<p><span class="math display">\[A_1 = \left[\begin{matrix} 1 &amp; 2
+\end{matrix}\right] A_2 = \left[ \begin{matrix} 1 &amp; 2 &amp; 3 \\ 4
+&amp; 5 &amp; 6 \end{matrix} \right] A_3 =\left[\begin{matrix} 1 &amp; 2
+&amp; 3 &amp; 4\\ 4 &amp; 5 &amp; 6 &amp; 7\\7 &amp; 8 &amp; 9 &amp;
+10\end{matrix} \right]\]</span></p>
+<p>Solutions:</p>
+<p><span class="math inline">\(((A_1)(A_2))(A_3) : (1 \times 2 \times 3)
++ (1 \times 3 \times 4)\)</span></p>
+<p><span class="math inline">\((A_1)((A_2)(A_3)) : (2 \times 3 \times 4)
++ (1 \times 2 \times 4)\)</span></p>
 <p>我们要如何选取矩阵相乘的顺序来使乘的次数最小呢？</p>
 <p>若枚举所有可能的解法，时间复杂度是指数级的。我们可以将其想象成一个多步决策，将加括号看成子问题。我们使用OPT(i,j)来表示子问题，原问题可以通过计算OPT(1,n)解决。由于<strong>最优子结构</strong>性质，我们可以通过计算子问题的最优解计算出原问题的最优解。</p>
-<script type="math/tex; mode=display">OPT(1,n) = OPT(1,k) + OPT(k+1,n) + p_1p_{k+1}p_{n+1}</script><p>我们可以通过<strong>枚举</strong>所有可能的解来获得第一步决策。</p>
-<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fwesfnsyvnj20e405a0t4.jpg" alt="recursive slt"></p>
-<h2 id="Trials"><a href="#Trials" class="headerlink" title="Trials"></a>Trials</h2><h3 id="Trial-1"><a href="#Trial-1" class="headerlink" title="Trial 1"></a>Trial 1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RECURSIVE MATRIX CHAIN(i, j)</span><br><span class="line">    if i &#x3D;&#x3D; j then </span><br><span class="line">        return 0; </span><br><span class="line">    end if </span><br><span class="line">    OPT(i, j) &#x3D; +∞; </span><br><span class="line">    for k &#x3D; i to j − 1 do </span><br><span class="line">        q &#x3D; RECURSIVE MATRIX CHAIN(i, k) </span><br><span class="line">            + RECURSIVE MATRIX CHAIN(k + 1, j) + p_(i−1) p_k p_j ; </span><br><span class="line">        if q &lt; OPT(i, j) then </span><br><span class="line">            OPT(i, j) &#x3D; q; </span><br><span class="line">        end if </span><br><span class="line">    end for </span><br><span class="line">    return OPT(i, j);</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[OPT(1,n) = OPT(1,k) + OPT(k+1,n) +
+p_1p_{k+1}p_{n+1}\]</span>
+我们可以通过<strong>枚举</strong>所有可能的解来获得第一步决策。</p>
+<figure>
+<img
+src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fwesfnsyvnj20e405a0t4.jpg"
+alt="recursive slt" />
+<figcaption aria-hidden="true">recursive slt</figcaption>
+</figure>
+<h2 id="trials">Trials</h2>
+<h3 id="trial-1">Trial 1</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RECURSIVE MATRIX CHAIN(i, j)</span><br><span class="line">    if i == j then </span><br><span class="line">        return 0; </span><br><span class="line">    end if </span><br><span class="line">    OPT(i, j) = +∞; </span><br><span class="line">    for k = i to j − 1 do </span><br><span class="line">        q = RECURSIVE MATRIX CHAIN(i, k) </span><br><span class="line">            + RECURSIVE MATRIX CHAIN(k + 1, j) + p_(i−1) p_k p_j ; </span><br><span class="line">        if q &lt; OPT(i, j) then </span><br><span class="line">            OPT(i, j) = q; </span><br><span class="line">        end if </span><br><span class="line">    end for </span><br><span class="line">    return OPT(i, j);</span><br></pre></td></tr></table></figure>
 <p>最优解：RECURSIVE MATRIX CHAIN(1, n)</p>
-<p>然而，这种方式需要花费指数时间$O(n^2)$，且有大量的重复计算。我们可以开一个二维数组来存储subsolution，之后查表即可。</p>
-<h3 id="Trial-2"><a href="#Trial-2" class="headerlink" title="Trial 2"></a>Trial 2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">MEMORIZE_MATRIX_CHAIN(i, j) </span><br><span class="line">    if OPT[i, j] !&#x3D; NULL then </span><br><span class="line">        return OPT(i, j); </span><br><span class="line">    end if </span><br><span class="line">    if i &#x3D;&#x3D; j then </span><br><span class="line">        OPT[i, j] &#x3D; 0; </span><br><span class="line">        else </span><br><span class="line">        for k &#x3D; i to j − 1 do </span><br><span class="line">            q &#x3D; MEMORIZE MATRIX CHAIN(i, k) </span><br><span class="line">                +MEMORIZE MATRIX CHAIN(k + 1, j) </span><br><span class="line">                    +p i−1 p k p j ; </span><br><span class="line">            if q &lt; OPT[i, j] then </span><br><span class="line">                OPT[i, j] &#x3D; q; </span><br><span class="line">            end if </span><br><span class="line">        end for </span><br><span class="line">    end if </span><br><span class="line">    return OPT[i, j];</span><br></pre></td></tr></table></figure>
-<p>原问题可以通过调用MEMORIZE_MATRIX_CHAIN(1, n)并 将所有OPT[i,j]设为NULL来解决。时间复杂度为$O(n^3)$</p>
-<h3 id="Trial-3"><a href="#Trial-3" class="headerlink" title="Trial 3"></a>Trial 3</h3><p>更快的一种解决方式：自底向上迭代<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">MATRIX CHAIN MULTIPLICATION(p 0 , p 1 , ..., p n )</span><br><span class="line">    for i &#x3D; 1 to n do </span><br><span class="line">        OPT(i, i) &#x3D; 0; </span><br><span class="line">    end for </span><br><span class="line">    for l &#x3D; 2 to n do </span><br><span class="line">        for i &#x3D; 1 to n − l + 1 do </span><br><span class="line">            j &#x3D; i + l − 1; </span><br><span class="line">            OPT(i, j) &#x3D; +∞; </span><br><span class="line">            for k &#x3D; i to j − 1 do</span><br><span class="line">                q &#x3D; OPT(i, k) + OPT(k + 1, j) + p i−1 p k p j ; </span><br><span class="line">                if q &lt; OPT(i, j) then </span><br><span class="line">                    OPT(i, j) &#x3D; q; </span><br><span class="line">                    S(i, j) &#x3D; k; </span><br><span class="line">                end if </span><br><span class="line">            end for </span><br><span class="line">        end for </span><br><span class="line">    end for </span><br><span class="line">    return OPT(1, n);</span><br></pre></td></tr></table></figure><br><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesfntaifj20nb089dgw.jpg" alt=""></p>
-<p>解题顺序：红 $\Rightarrow$ 绿 $\Rightarrow$ 橙 $\Rightarrow$ 蓝，自底而上，先列出所有子问题</p>
-<p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fwesfnswo9j20f207rdge.jpg" alt=""></p>
+<p>然而，这种方式需要花费指数时间<span
+class="math inline">\(O(n^2)\)</span>，且有大量的重复计算。我们可以开一个二维数组来存储subsolution，之后查表即可。</p>
+<h3 id="trial-2">Trial 2</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">MEMORIZE_MATRIX_CHAIN(i, j) </span><br><span class="line">    if OPT[i, j] != NULL then </span><br><span class="line">        return OPT(i, j); </span><br><span class="line">    end if </span><br><span class="line">    if i == j then </span><br><span class="line">        OPT[i, j] = 0; </span><br><span class="line">        else </span><br><span class="line">        for k = i to j − 1 do </span><br><span class="line">            q = MEMORIZE MATRIX CHAIN(i, k) </span><br><span class="line">                +MEMORIZE MATRIX CHAIN(k + 1, j) </span><br><span class="line">                    +p i−1 p k p j ; </span><br><span class="line">            if q &lt; OPT[i, j] then </span><br><span class="line">                OPT[i, j] = q; </span><br><span class="line">            end if </span><br><span class="line">        end for </span><br><span class="line">    end if </span><br><span class="line">    return OPT[i, j];</span><br></pre></td></tr></table></figure>
+<p>原问题可以通过调用MEMORIZE_MATRIX_CHAIN(1, n)并
+将所有OPT[i,j]设为NULL来解决。时间复杂度为<span
+class="math inline">\(O(n^3)\)</span></p>
+<h3 id="trial-3">Trial 3</h3>
+<p>更快的一种解决方式：自底向上迭代 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">MATRIX CHAIN MULTIPLICATION(p 0 , p 1 , ..., p n )</span><br><span class="line">    for i = 1 to n do </span><br><span class="line">        OPT(i, i) = 0; </span><br><span class="line">    end for </span><br><span class="line">    for l = 2 to n do </span><br><span class="line">        for i = 1 to n − l + 1 do </span><br><span class="line">            j = i + l − 1; </span><br><span class="line">            OPT(i, j) = +∞; </span><br><span class="line">            for k = i to j − 1 do</span><br><span class="line">                q = OPT(i, k) + OPT(k + 1, j) + p i−1 p k p j ; </span><br><span class="line">                if q &lt; OPT(i, j) then </span><br><span class="line">                    OPT(i, j) = q; </span><br><span class="line">                    S(i, j) = k; </span><br><span class="line">                end if </span><br><span class="line">            end for </span><br><span class="line">        end for </span><br><span class="line">    end for </span><br><span class="line">    return OPT(1, n);</span><br></pre></td></tr></table></figure> <img
+src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesfntaifj20nb089dgw.jpg" /></p>
+<p>解题顺序：红 <span class="math inline">\(\Rightarrow\)</span> 绿
+<span class="math inline">\(\Rightarrow\)</span> 橙 <span
+class="math inline">\(\Rightarrow\)</span>
+蓝，自底而上，先列出所有子问题</p>
+<p><img
+src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fwesfnswo9j20f207rdge.jpg" /></p>
 <p><strong>step 1：</strong></p>
 <p>OPT[1,2],OPT[2,3],OPT[3,4]</p>
-<p><strong>step 2：</strong></p>
-<script type="math/tex; mode=display">OPT[1,3] = min \left\{ \begin{aligned} OPT[1,2] + OPT[3,3] + p_0 \times p_2 \times p_3 \\ OPT[1,1] + OPT[2,3] + p_0 \times p_1 \times p_3  \end{aligned} \right.</script><p>Thus, SPLITTER[1,2] = 2.</p>
-<script type="math/tex; mode=display">OPT[1,3] = min \left\{ \begin{aligned} OPT[2,2] + OPT[3,4] + p_1 \times p_2 \times p_4 \\ OPT[2,3] + OPT[4,4] + p_1 \times p_3 \times p_4  \end{aligned} \right.</script><p>Thus, SPLITTER[2,4] = 3.</p>
-<p><strong>step 3：</strong></p>
-<script type="math/tex; mode=display">OPT[1,3] = min \left\{ \begin{aligned} OPT[1,1] + OPT[2,4] + p_0 \times p_1 \times p_4 \\ OPT[1,2] + OPT[3,4] + p_0 \times p_2 \times p_4 \\ OPT[1,3] + OPT[4,4] + p_0 \times p_3 \times p_4  \end{aligned} \right.</script><p>Thus, SPLITTER[1,4] = 3.</p>
+<p><strong>step 2：</strong> <span class="math display">\[OPT[1,3] = min
+\left\{ \begin{aligned} OPT[1,2] + OPT[3,3] + p_0 \times p_2 \times p_3
+\\ OPT[1,1] + OPT[2,3] + p_0 \times p_1 \times p_3  \end{aligned}
+\right.\]</span> Thus, SPLITTER[1,2] = 2.</p>
+<p><span class="math display">\[OPT[1,3] = min \left\{ \begin{aligned}
+OPT[2,2] + OPT[3,4] + p_1 \times p_2 \times p_4 \\ OPT[2,3] + OPT[4,4] +
+p_1 \times p_3 \times p_4  \end{aligned} \right.\]</span> Thus,
+SPLITTER[2,4] = 3.</p>
+<p><strong>step 3：</strong> <span class="math display">\[OPT[1,3] = min
+\left\{ \begin{aligned} OPT[1,1] + OPT[2,4] + p_0 \times p_1 \times p_4
+\\ OPT[1,2] + OPT[3,4] + p_0 \times p_2 \times p_4 \\ OPT[1,3] +
+OPT[4,4] + p_0 \times p_3 \times p_4  \end{aligned} \right.\]</span>
+Thus, SPLITTER[1,4] = 3.</p>
 <p>在此方法中，只有子问题的最优解被计算，因此没有经过遍历，不是指数级的复杂度。</p>
-<h2 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h2><p>从OPT[1,n]开始回溯每一个决策阶段。</p>
-<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesfnst9hj20eo07fmxk.jpg" alt=""></p>
-<p>Step 1: $(A_1A_2A_3)(A_4)$</p>
-<p>Step 2: $((A_1A_2)(A_3))(A_4)$</p>
-<p>Step 3: $(((A_1)(A_2)(A_3))(A_4)$</p>
-<h1 id="0-1-KNAPSACK-problem-0-1背包问题"><a href="#0-1-KNAPSACK-problem-0-1背包问题" class="headerlink" title="0/1 KNAPSACK problem 0/1背包问题"></a>0/1 KNAPSACK problem 0/1背包问题</h1><hr>
-<p>INPUT: A set of items $S = {1, 2, …, n}$. Item i has weight $w_i$ and value $v_i$ . A total weight limit W;<br>OUTPUT: A subset of items to maximize the total value with total weight below W.</p>
-<hr>
-<p>这里的0和1表示我们可以选择一个物品(1)或者放弃它(0)，我们不能选择物品的一部分。</p>
-<p>我们可以将将最优解表示为：$OPT({1,2,…,i},w)$</p>
-<p>最优子结构：</p>
-<script type="math/tex; mode=display">OPT({1,2,...,n},W) = max \left\{\begin{array}{lr}OPT({1,2,...,n-1},W) \\OPT({1,2,...,n-1},W-w_n) + v_n\end{array}\right.</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Knapsack(n, W)</span><br><span class="line">    for w &#x3D; 1 to W do </span><br><span class="line">        OPT[0, w] &#x3D; 0; </span><br><span class="line">    end for </span><br><span class="line">    for i &#x3D; 1 to n do </span><br><span class="line">        for w &#x3D; 1 to W do </span><br><span class="line">            OPT[i, w] &#x3D; max&#123;OPT[i−1, w], vi +OPT[i−1, w−wi]&#125;; </span><br><span class="line">        end for </span><br><span class="line">    end for</span><br></pre></td></tr></table></figure>
-<p>我们使用OPT[I,w]来表示OPT({1,2,…,i},w).</p>
-<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesfnsy67j20bq05h74v.jpg" alt=""></p>
+<h2 id="backtracking">Backtracking</h2>
+<p>从OPT[1,n]开始回溯每一个决策阶段。</p>
+<p><img
+src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesfnst9hj20eo07fmxk.jpg" /></p>
+<p>Step 1: <span class="math inline">\((A_1A_2A_3)(A_4)\)</span></p>
+<p>Step 2: <span class="math inline">\(((A_1A_2)(A_3))(A_4)\)</span></p>
+<p>Step 3: <span
+class="math inline">\((((A_1)(A_2)(A_3))(A_4)\)</span></p>
+<h1 id="knapsack-problem-01背包问题">0/1 KNAPSACK problem
+0/1背包问题</h1>
+<hr />
+<p>INPUT: A set of items <span class="math inline">\(S = \{1, 2, ...,
+n\}\)</span>. Item i has weight <span class="math inline">\(w_i\)</span>
+and value <span class="math inline">\(v_i\)</span> . A total weight
+limit W; OUTPUT: A subset of items to maximize the total value with
+total weight below W. ***
+这里的0和1表示我们可以选择一个物品(1)或者放弃它(0)，我们不能选择物品的一部分。</p>
+<p>我们可以将将最优解表示为：<span
+class="math inline">\(OPT({1,2,...,i},w)\)</span></p>
+<p>最优子结构： <span class="math display">\[OPT({1,2,...,n},W) = max
+\left\{\begin{array}{lr}OPT({1,2,...,n-1},W) \\OPT({1,2,...,n-1},W-w_n)
++ v_n\end{array}\right.\]</span> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Knapsack(n, W)</span><br><span class="line">    for w = 1 to W do </span><br><span class="line">        OPT[0, w] = 0; </span><br><span class="line">    end for </span><br><span class="line">    for i = 1 to n do </span><br><span class="line">        for w = 1 to W do </span><br><span class="line">            OPT[i, w] = max&#123;OPT[i−1, w], vi +OPT[i−1, w−wi]&#125;; </span><br><span class="line">        end for </span><br><span class="line">    end for</span><br></pre></td></tr></table></figure>
+我们使用OPT[I,w]来表示OPT({1,2,...,i},w).</p>
+<p><img
+src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesfnsy67j20bq05h74v.jpg" /></p>
 <p><strong>step 1：</strong></p>
 <p>Initially all OPT[0, w] = 0.</p>
 <p><strong>step 2：</strong></p>
-<script type="math/tex; mode=display">OPT[1, 2] = max\{ OPT[0, 2], OPT[0, 0] + V_1 \} =2</script><p><strong>step 3：</strong></p>
-<script type="math/tex; mode=display">OPT[2, 4] = max\{ OPT[1, 4], OPT[1, 2] + V_2\} =4</script><p><strong>step 4：</strong></p>
-<script type="math/tex; mode=display">OPT[3, 3] = max\{OPT[2, 3], OPT[2, 0] + V_3\} =3</script><p><strong>backtracking</strong></p>
-<script type="math/tex; mode=display">OPT[3, 6] = max{ OPT[2, 6](= 4), OPT[2, 3] + V_3 (= 2 + 3)} =5</script><p>Decision: Select item 3</p>
-<script type="math/tex; mode=display">OPT[2, 3] = max{ OPT[1, 3](= 2), OPT[1, 1] + V_2 (= 0 + 2)} =2</script><p>Decision: Select item 2</p>
-<p>时间复杂度：$O(nW)$</p>
-<p>若将items看做是集合（recursion over sets），将花费指数倍的时间；但是若将items先进行排序（recursion over sequences），花费的时间为$O(nW)$。</p>
-<h1 id="Sequence-Alignment-problem"><a href="#Sequence-Alignment-problem" class="headerlink" title="Sequence Alignment problem"></a>Sequence Alignment problem</h1><p><strong>Alignment</strong> is introduced to describe the generating process of an erroneous word from the correct word using a series of INS/DEL/MUTATION operations.</p>
-<p>要比较两个序列，我们首先在合适的地方引入空格-。使得两个序列的长度相同，即$|S’ = T’|$</p>
-<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fwesfnrx4nj206s02rglr.jpg" alt=""></p>
-<p>对齐的字符可能有三种情况：</p>
-<ol>
-<li>S’[i] = “-“ : S’[i] is simply a DELETION of T’[i].</li>
-<li>T’[i] = “-“ : S’[i] is simply an INSERTION.</li>
-<li>Otherwise, S’[i] is a copy of T’[i] (with possible MUTATION).</li>
-</ol>
-<p>我们可以用以下方式来给s(a,b)打分：</p>
-<ol>
-<li>Match: +1 , e.g. s(‘C’ ,’C’ ) = 1.</li>
-<li>Mismatch: -1, e.g. s(‘E’ , ‘A’ ) = −1.</li>
-<li>Insertion/Deletion: -3, e.g. s(‘C’ , ‘-‘ ) = −3.</li>
-</ol>
+<p><span class="math display">\[OPT[1, 2] = max\{ OPT[0, 2], OPT[0, 0] +
+V_1 \} =2\]</span></p>
+<p><strong>step 3：</strong></p>
+<p><span class="math display">\[OPT[2, 4] = max\{ OPT[1, 4], OPT[1, 2] +
+V_2\} =4\]</span></p>
+<p><strong>step 4：</strong></p>
+<p><span class="math display">\[OPT[3, 3] = max\{OPT[2, 3], OPT[2, 0] +
+V_3\} =3\]</span></p>
+<p><strong>backtracking</strong></p>
+<p><span class="math display">\[OPT[3, 6] = max{ OPT[2, 6](= 4), OPT[2,
+3] + V_3 (= 2 + 3)} =5\]</span></p>
+<p>Decision: Select item 3</p>
+<p><span class="math display">\[OPT[2, 3] = max{ OPT[1, 3](= 2), OPT[1,
+1] + V_2 (= 0 + 2)} =2\]</span></p>
+<p>Decision: Select item 2</p>
+<p>时间复杂度：<span class="math inline">\(O(nW)\)</span></p>
+<p>若将items看做是集合（recursion over
+sets），将花费指数倍的时间；但是若将items先进行排序（recursion over
+sequences），花费的时间为<span
+class="math inline">\(O(nW)\)</span>。</p>
+<h1 id="sequence-alignment-problem">Sequence Alignment problem</h1>
+<p><strong>Alignment</strong> is introduced to describe the generating
+process of an erroneous word from the correct word using a series of
+INS/DEL/MUTATION operations.</p>
+<p>要比较两个序列，我们首先在合适的地方引入空格-。使得两个序列的长度相同，即<span
+class="math inline">\(|S&#39; = T&#39;|\)</span></p>
+<p><img
+src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fwesfnrx4nj206s02rglr.jpg" /></p>
+<p>对齐的字符可能有三种情况： 1. S'[i] = "-" : S'[i] is simply a
+DELETION of T'[i]. 2. T'[i] = "-" : S'[i] is simply an INSERTION. 3.
+Otherwise, S'[i] is a copy of T'[i] (with possible MUTATION).</p>
+<p>我们可以用以下方式来给s(a,b)打分： 1. Match: +1 , e.g. s('C' ,'C' ) =
+1. 2. Mismatch: -1, e.g. s('E' , 'A' ) = −1. 3. Insertion/Deletion: -3,
+e.g. s('C' , '-' ) = −3.</p>
 <p>使用对齐，我们可以找到最相似的来源，并且同样两个序列，通过不同的插入空格的方式我们可以得到不同的值。</p>
-<hr>
-<p>INPUT:Two sequences S and T, |S| = m, and |T| = n;<br>OUTPUT:To identify an alignment of S and T that maximizes a pre-deﬁned scoring function.</p>
-<hr>
-<p>这里也有三种需要考虑的情况：</p>
-<ol>
-<li>$S_m$ comes from $T_n$:S从T产生</li>
-<li>$S_m$ is an INSERTION：若S的最后一个字母多敲了</li>
-<li>$S_m$ comes from T[1..n − 1]：若S少敲了</li>
-</ol>
-<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesfnutixj20lg05hdgb.jpg" alt=""></p>
+<hr />
+<p>INPUT:Two sequences S and T, |S| = m, and |T| = n; OUTPUT:To identify
+an alignment of S and T that maximizes a pre-deﬁned scoring function.
+*** 这里也有三种需要考虑的情况： 1. <span
+class="math inline">\(S_m\)</span> comes from <span
+class="math inline">\(T_n\)</span>:S从T产生 2. <span
+class="math inline">\(S_m\)</span> is an
+INSERTION：若S的最后一个字母多敲了 3. <span
+class="math inline">\(S_m\)</span> comes from T[1..n − 1]：若S少敲了</p>
+<p><img
+src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesfnutixj20lg05hdgb.jpg" /></p>
 <p>note:蓝色框表示子问题</p>
-<p>因此，我们可以将子问题的一般式设计为S的前缀(S[1..i])和T的的前缀(T[1..j])。最优解可以被表示为OPT(i,j).</p>
-<script type="math/tex; mode=display">OPT(i,j) = max \left\{\begin{array}{lr}s(S_i,T_j) + OPT(i-1, j-1) \\s('-',T_j) + OPT(i, j-1) \\s(S_i,'-') + OPT(i-1, j)\end{array}\right.</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Needleman-Wunsch(S, T)</span><br><span class="line">    for i &#x3D; 0 to m; do   \\简单的初始化，为了方便计算</span><br><span class="line">        OPT[i, 0] &#x3D; −3 ∗ i; </span><br><span class="line">    end for </span><br><span class="line">    for j &#x3D; 0 to n; do </span><br><span class="line">        OPT[0, j] &#x3D; −3 ∗ j; </span><br><span class="line">    end for </span><br><span class="line">    for i &#x3D; 1 to m do </span><br><span class="line">        for j &#x3D; 1 to n do </span><br><span class="line">            \\从三个单元里各自取了一些分，取最大</span><br><span class="line">            OPT[i,j]&#x3D;max&#123;OPT[i−1,j−1]+s(Si,Tj),OPT[i-1,j]−3,OPT[i,j−1]−3&#125;;  </span><br><span class="line">        end for </span><br><span class="line">    end for </span><br><span class="line">    return OPT[m, n] ;</span><br></pre></td></tr></table></figure>
-<p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fwesfnwzbzj20dt0dgabl.jpg" alt=""></p>
+<p>因此，我们可以将子问题的一般式设计为S的前缀(S[1..i])和T的的前缀(T[1..j])。最优解可以被表示为OPT(i,j).
+<span class="math display">\[OPT(i,j) = max
+\left\{\begin{array}{lr}s(S_i,T_j) + OPT(i-1, j-1) \\s(&#39;-&#39;,T_j)
++ OPT(i, j-1) \\s(S_i,&#39;-&#39;) + OPT(i-1,
+j)\end{array}\right.\]</span> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Needleman-Wunsch(S, T)</span><br><span class="line">    for i = 0 to m; do   \\简单的初始化，为了方便计算</span><br><span class="line">        OPT[i, 0] = −3 ∗ i; </span><br><span class="line">    end for </span><br><span class="line">    for j = 0 to n; do </span><br><span class="line">        OPT[0, j] = −3 ∗ j; </span><br><span class="line">    end for </span><br><span class="line">    for i = 1 to m do </span><br><span class="line">        for j = 1 to n do </span><br><span class="line">            \\从三个单元里各自取了一些分，取最大</span><br><span class="line">            OPT[i,j]=max&#123;OPT[i−1,j−1]+s(Si,Tj),OPT[i-1,j]−3,OPT[i,j−1]−3&#125;;  </span><br><span class="line">        end for </span><br><span class="line">    end for </span><br><span class="line">    return OPT[m, n] ;</span><br></pre></td></tr></table></figure></p>
+<p><img
+src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fwesfnwzbzj20dt0dgabl.jpg" /></p>
 <p>之后通过<strong>回溯</strong>找到最优对齐方式（开一个表格方便回溯）：</p>
-<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesfnxbxaj20dm0dlgng.jpg" alt=""></p>
+<p><img
+src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesfnxbxaj20dm0dlgng.jpg" /></p>
 <p>在实践中，有许多中对齐方式可以达到与最优比对相似的效果，被称作次优比对。次优比对可以分为两类：1)类似的次优比对，2)不同的次优比对。</p>
 <p>为了找到类似的次优对齐，我们使用采样技术追溯动态编程矩阵，即，不是在每个步骤采用最高得分选项，而是基于三个选项的值进行概率选择。e.g.将4以一定的概率回到之前的三个点，找一百回，用聚类的算法找到聚类中心。（最robust）</p>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>若输入的数据很大（e.g.输入了两篇文章）这个算法面临了三个问题：</p>
-<ol>
-<li>占用空间太大</li>
-<li>用时太长</li>
-<li>Local</li>
-</ol>
-<h3 id="Space-eﬃcient-algorithm"><a href="#Space-eﬃcient-algorithm" class="headerlink" title="Space eﬃcient algorithm:"></a>Space eﬃcient algorithm:</h3><p>Reducing the space requirement from O(mn) to O(m + n) (D. S. Hirschberg, 1975).</p>
+<h2 id="优化">优化</h2>
+<p>若输入的数据很大（e.g.输入了两篇文章）这个算法面临了三个问题： 1.
+占用空间太大 2. 用时太长 3. Local</p>
+<h3 id="space-eﬃcient-algorithm">Space eﬃcient algorithm:</h3>
+<p>Reducing the space requirement from O(mn) to O(m + n) (D. S.
+Hirschberg, 1975).</p>
 <p>若只计算分数而不记录对齐信息，占用的空间很小。因为我们仅需占用2个数组。绿色数组：已填，蓝色数组：待填，一旦把蓝色的数组填完，绿色的数组就没用了。白色的部分都不需要存。</p>
-<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesg4xtq3j20d50data5.jpg" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Prefix Space Efficient Alignment(S, T, score)</span><br><span class="line">    for i &#x3D; 0 to m do </span><br><span class="line">        score[i] &#x3D; −3 ∗ i;   \\绿色数组</span><br><span class="line">    end for </span><br><span class="line">    for i &#x3D; 1 to m do </span><br><span class="line">        newscore[0] &#x3D; 0;      \\蓝色数组</span><br><span class="line">        for j &#x3D; 1 to n do </span><br><span class="line">            newscore[j] &#x3D; max&#123;score[j − 1] + s(S i , T j ), score[j] 3, newscore[j − 1] − 3&#125;; </span><br><span class="line">        end for </span><br><span class="line">        for j &#x3D; 1 to n do </span><br><span class="line">            score[j] &#x3D; newscore[j]; </span><br><span class="line">        end for </span><br><span class="line">    end for </span><br><span class="line">    return score[n];</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesg4xtq3j20d50data5.jpg" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Prefix Space Efficient Alignment(S, T, score)</span><br><span class="line">    for i = 0 to m do </span><br><span class="line">        score[i] = −3 ∗ i;   \\绿色数组</span><br><span class="line">    end for </span><br><span class="line">    for i = 1 to m do </span><br><span class="line">        newscore[0] = 0;      \\蓝色数组</span><br><span class="line">        for j = 1 to n do </span><br><span class="line">            newscore[j] = max&#123;score[j − 1] + s(S i , T j ), score[j] 3, newscore[j − 1] − 3&#125;; </span><br><span class="line">        end for </span><br><span class="line">        for j = 1 to n do </span><br><span class="line">            score[j] = newscore[j]; </span><br><span class="line">        end for </span><br><span class="line">    end for </span><br><span class="line">    return score[n];</span><br></pre></td></tr></table></figure>
 <p>相应地，我们也可以使用S和T的后缀获得分数和对齐方式。</p>
-<p><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesg4mo4ej20dc0dkjsx.jpg" alt=""></p>
-<p>但是这种方式无法回溯对齐信息。因此，一种更聪明的方式是我们可以将S分为两半(where $S_{\frac{m}{2}}$is aligned to,denoted as q)，分别计算对齐信息。</p>
-<script type="math/tex; mode=display">OPT(S,T) = OPT(S[1...\frac{m}{2}],T[1..q])+OPT(S[\frac{m}{2}+1..m],T[q+1..n])</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Linear Space Alignment( S, T )</span><br><span class="line">    Allocate two arrays f and b; each array has a size of m Prefix Space Efficient Alignment(S[1.. m ], T, f); </span><br><span class="line">    Suffix Space Efficient Alignment(S[ m + 1..m], T, b); </span><br><span class="line">    Let q &#x3D; argmaxi (f[i] + b[i]); </span><br><span class="line">    Free arrays f and b; </span><br><span class="line">    Record aligned-position &lt; m&#x2F;2 , q &gt; in an array A; </span><br><span class="line">    Linear Space Alignment(S[1.. m ], T[1..q]); </span><br><span class="line">    Linear Space Alignment(S[ m + 1..m], T[q + 1..n]); </span><br><span class="line">    return A;</span><br></pre></td></tr></table></figure>
-<p><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fwesg4o38wj20jp0f1mz5.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesg4nrcej20jq0f5gnj.jpg" alt=""></p>
-<p>先把S分为恰好左一半（前缀，forward）和右一半（后缀，backward），拿’OCUR’与T的总体作比较.从图中可以看出，分数一定是由S前一半的上半部分和后一半的下半部分产生。</p>
-<p>由此，所需的空间仅为$O(m+n)$.</p>
-<h3 id="Time-complexity"><a href="#Time-complexity" class="headerlink" title="Time complexity"></a>Time complexity</h3><p>我们可以发现，足够相似的是对角线，因此我们可以只关心条带内。<br>Banded DP仅需花费$O(\alpha n)$的时间复杂度。它为线性的算法，比原来快得多，条带外的部分我们可以不用考虑。</p>
-<h3 id="Local"><a href="#Local" class="headerlink" title="Local"></a>Local</h3><p>全局比对：识别两个完整序列之间的相似性。</p>
-<p>局部对齐：我们通常希望找到相似的段（子序列）。<br>局部对齐的目的是识别两个序列的相似区段。 其他区域可以被视为独立的，因此形成“随机匹配”。</p>
-<p>通过增加额外的概率来改变递归：</p>
-<script type="math/tex; mode=display">OPT(i,j) = max \left\{\begin{array}{lr}0 \\s(S_i,T_j) + OPT(i-1, j-1) \\s('-',T_j) + OPT(i, j-1) \\s(S_i,'-') + OPT(i-1, j)\end{array}\right.</script><p>其中0对应一个新的对齐。它与旧的对齐无关。</p>
-<p><img src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesg4n05xj20aa0b9q4v.jpg" alt=""></p>
+<p><img
+src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesg4mo4ej20dc0dkjsx.jpg" /></p>
+<p>但是这种方式无法回溯对齐信息。因此，一种更聪明的方式是我们可以将S分为两半(where
+<span class="math inline">\(S_{\frac{m}{2}}\)</span>is aligned
+to,denoted as q)，分别计算对齐信息。 <span
+class="math display">\[OPT(S,T) =
+OPT(S[1...\frac{m}{2}],T[1..q])+OPT(S[\frac{m}{2}+1..m],T[q+1..n])\]</span></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Linear Space Alignment( S, T )</span><br><span class="line">    Allocate two arrays f and b; each array has a size of m Prefix Space Efficient Alignment(S[1.. m ], T, f); </span><br><span class="line">    Suffix Space Efficient Alignment(S[ m + 1..m], T, b); </span><br><span class="line">    Let q = argmaxi (f[i] + b[i]); </span><br><span class="line">    Free arrays f and b; </span><br><span class="line">    Record aligned-position &lt; m/2 , q &gt; in an array A; </span><br><span class="line">    Linear Space Alignment(S[1.. m ], T[1..q]); </span><br><span class="line">    Linear Space Alignment(S[ m + 1..m], T[q + 1..n]); </span><br><span class="line">    return A;</span><br></pre></td></tr></table></figure>
+<p><img
+src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fwesg4o38wj20jp0f1mz5.jpg" />
+<img
+src="https://wx4.sinaimg.cn/mw690/83fd5bdely1fwesg4nrcej20jq0f5gnj.jpg" /></p>
+<p>先把S分为恰好左一半（前缀，forward）和右一半（后缀，backward），拿'OCUR'与T的总体作比较.从图中可以看出，分数一定是由S前一半的上半部分和后一半的下半部分产生。</p>
+<p>由此，所需的空间仅为<span class="math inline">\(O(m+n)\)</span>.</p>
+<h3 id="time-complexity">Time complexity</h3>
+<p>我们可以发现，足够相似的是对角线，因此我们可以只关心条带内。 Banded
+DP仅需花费<span class="math inline">\(O(\alpha
+n)\)</span>的时间复杂度。它为线性的算法，比原来快得多，条带外的部分我们可以不用考虑。</p>
+<h3 id="local">Local</h3>
+<p>全局比对：识别两个完整序列之间的相似性。</p>
+<p>局部对齐：我们通常希望找到相似的段（子序列）。
+局部对齐的目的是识别两个序列的相似区段。
+其他区域可以被视为独立的，因此形成“随机匹配”。</p>
+<p>通过增加额外的概率来改变递归： <span class="math display">\[OPT(i,j)
+= max \left\{\begin{array}{lr}0 \\s(S_i,T_j) + OPT(i-1, j-1)
+\\s(&#39;-&#39;,T_j) + OPT(i, j-1) \\s(S_i,&#39;-&#39;) + OPT(i-1,
+j)\end{array}\right.\]</span>
+其中0对应一个新的对齐。它与旧的对齐无关。</p>
+<p><img
+src="https://wx3.sinaimg.cn/mw690/83fd5bdely1fwesg4n05xj20aa0b9q4v.jpg" /></p>
 <p>与从右下角回溯不同，这里从最大的项开始回溯，13为相似的终点，右下角的7为相似+不同。</p>
 
         
@@ -758,7 +841,7 @@ Programming：tabular可以被用于避免子问题的重复计算
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -776,7 +859,7 @@ Programming：tabular可以被用于避免子问题的重复计算
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1046,6 +1129,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->

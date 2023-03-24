@@ -266,7 +266,9 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -420,70 +422,180 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <ul>
-<li><a href="#nature-language-processing">Nature Language Processing</a><ul>
-<li><a href="#knowledge-graph">Knowledge Graph</a><ul>
-<li><a href="#knowledge-graph-of-surgery-critical-events">Building and Iteratively Updating Medical Knowledge Graph</a></li>
-<li><a href="#recipe-related-question-answering-system">Recipe-related Question Answering System</a></li>
-</ul>
-</li>
-<li><a href="#polyphone-disambiguation-in-mandarin-chinese">Polyphone Disambiguation in Mandarin Chinese</a></li>
-<li><a href="#text-sentiment-classiﬁcation">Text Sentiment Classiﬁcation</a></li>
-</ul>
-</li>
-<li><a href="#human-computer-interaction">Human-Computer Interaction</a><ul>
+<li><a href="#nature-language-processing">Nature Language Processing</a>
+<ul>
+<li><a href="#knowledge-graph">Knowledge Graph</a>
+<ul>
+<li><a href="#knowledge-graph-of-surgery-critical-events">Building and
+Iteratively Updating Medical Knowledge Graph</a></li>
+<li><a href="#recipe-related-question-answering-system">Recipe-related
+Question Answering System</a></li>
+</ul></li>
+<li><a href="#polyphone-disambiguation-in-mandarin-chinese">Polyphone
+Disambiguation in Mandarin Chinese</a></li>
+<li><a href="#text-sentiment-classiﬁcation">Text Sentiment
+Classiﬁcation</a></li>
+</ul></li>
+<li><a href="#human-computer-interaction">Human-Computer Interaction</a>
+<ul>
 <li><a href="#eye-tracking-study">Eye-tracking Study</a></li>
 <li><a href="#augmented-reality">Augmented Reality</a></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h1 id="Nature-Language-Processing"><a href="#Nature-Language-Processing" class="headerlink" title="Nature Language Processing"></a>Nature Language Processing</h1><p><span id="nature-language-processing"></span></p>
-<h2 id="Knowledge-Graph"><a href="#Knowledge-Graph" class="headerlink" title="Knowledge Graph"></a>Knowledge Graph</h2><p><span id="knowledge-graph"></span></p>
-<div align=center> <img src="https://www.jeffbullas.com/wp-content/uploads/2018/02/the-knowledge-graph.jpg" alt="kg" width = "400" height = "300" /></div>
-
-<p>In computer science and information science, an ontology encompasses a representation, formal naming and definition of the categories, properties and relations between the concepts, data and entities that substantiate one, many or all domains of discourse. More simply, an ontology is a way of showing the properties of a subject area and how they are related, by defining a set of concepts and categories that represent the subject. (from <a href="https://en.wikipedia.org/wiki/Ontology_(information_science" target="_blank" rel="noopener">wiki</a>))</p>
-<h3 id="Building-and-Iteratively-Updating-Medical-Knowledge-Graph"><a href="#Building-and-Iteratively-Updating-Medical-Knowledge-Graph" class="headerlink" title="Building and Iteratively Updating Medical Knowledge Graph"></a>Building and Iteratively Updating Medical Knowledge Graph</h3><p><span id="knowledge-graph-of-surgery-critical-events"></span></p>
-<p><img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80" alt="medical"></p>
-<p>When numerous literature emerges, how can we quickly obtain the information we concerned about? \<br>For clinicians, it is necessary to pay attention to the latest medical progress while treating patients, and sometimes new decisions can be made based on new knowledge.</p>
-<p>In this project, we are researching on an automatic information extraction method to obtain medical knowledge from the up-to-date medical literature. Then, based on this knowledge graph, a system can be developed to assist clinicians to make decisions.</p>
-<h3 id="Recipe-related-Question-Answering-System"><a href="#Recipe-related-Question-Answering-System" class="headerlink" title="Recipe-related Question Answering System"></a>Recipe-related Question Answering System</h3><p><span id="recipe-related-question-answering-system"></span></p>
-<p><img src="https://s1.ax1x.com/2020/06/01/tJZ6te.png" alt="recipe_graph"></p>
+<h1 id="nature-language-processing">Nature Language Processing</h1>
+<p><span id="nature-language-processing"></span></p>
+<h2 id="knowledge-graph">Knowledge Graph</h2>
+<p><span id="knowledge-graph"></span></p>
+<div data-align="center">
+<img src="https://www.jeffbullas.com/wp-content/uploads/2018/02/the-knowledge-graph.jpg" alt="kg" width = "400" height = "300" />
+</div>
+<p>In computer science and information science, an ontology encompasses
+a representation, formal naming and definition of the categories,
+properties and relations between the concepts, data and entities that
+substantiate one, many or all domains of discourse. More simply, an
+ontology is a way of showing the properties of a subject area and how
+they are related, by defining a set of concepts and categories that
+represent the subject. (from <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Ontology_(information_science)">wiki</a>)</p>
+<h3
+id="building-and-iteratively-updating-medical-knowledge-graph">Building
+and Iteratively Updating Medical Knowledge Graph</h3>
+<p><span id="knowledge-graph-of-surgery-critical-events"></span></p>
+<figure>
+<img
+src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+alt="medical" />
+<figcaption aria-hidden="true">medical</figcaption>
+</figure>
+<p>When numerous literature emerges, how can we quickly obtain the
+information we concerned about?<br />
+For clinicians, it is necessary to pay attention to the latest medical
+progress while treating patients, and sometimes new decisions can be
+made based on new knowledge.</p>
+<p>In this project, we are researching on an automatic information
+extraction method to obtain medical knowledge from the up-to-date
+medical literature. Then, based on this knowledge graph, a system can be
+developed to assist clinicians to make decisions.</p>
+<h3 id="recipe-related-question-answering-system">Recipe-related
+Question Answering System</h3>
+<p><span id="recipe-related-question-answering-system"></span></p>
+<figure>
+<img src="https://s1.ax1x.com/2020/06/01/tJZ6te.png"
+alt="recipe_graph" />
+<figcaption aria-hidden="true">recipe_graph</figcaption>
+</figure>
 <p>How to make a delicious home-cooked dish?</p>
-<p>In this project, a small recipe domain knowledge graph was automatically constructed using the crawled data from <a href="http://www.xiachufang.com/" target="_blank" rel="noopener">Xiachufang</a>, and a recipe-related question answering system based on rule matching was implemented based on this knowledge graph (Neo4j+python).</p>
-<p>Here, I completed the whole process of knowledge graph construction and question answering system implementation dependently, including the web data crawling, data cleaning, knowledge graph construction, question analysis, graph-based query, etc.</p>
-<h2 id="Polyphone-Disambiguation-in-Mandarin-Chinese"><a href="#Polyphone-Disambiguation-in-Mandarin-Chinese" class="headerlink" title="Polyphone Disambiguation in Mandarin Chinese"></a>Polyphone Disambiguation in Mandarin Chinese</h2><p><span id="polyphone-disambiguation-in-mandarin-chinese"></span></p>
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJmPVf.md.png" alt="kg" width = "400" height = "300" /></div>
-
-<p>The text-to-speech (TTS) system is an essential component in the human-computer voice interaction framework, which aims to “translate” natural language texts into speech. Although most of Chinese characters have a fixed pronunciation, there are some special cases, i.e. the polyphonic characters.</p>
-<p>We propose a framework that can predict the pronunciations of Chinese characters, and the core model is trained in a distantly supervised way.\<br>Experimental results demonstrate that even without additional syntactic features and pre-trained embeddings, our approach achieves competitive prediction results, and especially improves the predictive accuracy for unbalanced polyphonic characters. In addition, compared with the manually annotated training datasets, the auto-generated one is more diversified and makes the results more consistent with the pronunciation habits of most people.</p>
-<h2 id="Text-Sentiment-Classiﬁcation"><a href="#Text-Sentiment-Classiﬁcation" class="headerlink" title="Text Sentiment Classiﬁcation"></a>Text Sentiment Classiﬁcation</h2><p><span id="text-sentiment-classiﬁcation"></span></p>
-<div align=center> <img src="https://miro.medium.com/max/689/1*jHzNpL-KagnaHUSHzPTPkA.jpeg" alt="kg" width = "300" height = "200" /></div>
-
+<p>In this project, a small recipe domain knowledge graph was
+automatically constructed using the crawled data from <a
+target="_blank" rel="noopener" href="http://www.xiachufang.com/">Xiachufang</a>, and a recipe-related
+question answering system based on rule matching was implemented based
+on this knowledge graph (Neo4j+python).</p>
+<p>Here, I completed the whole process of knowledge graph construction
+and question answering system implementation dependently, including the
+web data crawling, data cleaning, knowledge graph construction, question
+analysis, graph-based query, etc.</p>
+<h2 id="polyphone-disambiguation-in-mandarin-chinese">Polyphone
+Disambiguation in Mandarin Chinese</h2>
+<p><span id="polyphone-disambiguation-in-mandarin-chinese"></span></p>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJmPVf.md.png" alt="kg" width = "400" height = "300" />
+</div>
+<p>The text-to-speech (TTS) system is an essential component in the
+human-computer voice interaction framework, which aims to “translate”
+natural language texts into speech. Although most of Chinese characters
+have a fixed pronunciation, there are some special cases, i.e. the
+polyphonic characters.</p>
+<p>We propose a framework that can predict the pronunciations of Chinese
+characters, and the core model is trained in a distantly supervised
+way.<br />
+Experimental results demonstrate that even without additional syntactic
+features and pre-trained embeddings, our approach achieves competitive
+prediction results, and especially improves the predictive accuracy for
+unbalanced polyphonic characters. In addition, compared with the
+manually annotated training datasets, the auto-generated one is more
+diversified and makes the results more consistent with the pronunciation
+habits of most people.</p>
+<h2 id="text-sentiment-classiﬁcation">Text Sentiment Classiﬁcation</h2>
+<p><span id="text-sentiment-classiﬁcation"></span></p>
+<div data-align="center">
+<img src="https://miro.medium.com/max/689/1*jHzNpL-KagnaHUSHzPTPkA.jpeg" alt="kg" width = "300" height = "200" />
+</div>
 <p>How to determine the emotional polarity of a text?</p>
-<p>In this project, we implemented a sentimental polarity classification of commodity reviews based on <strong>sentiment dictionary</strong> and some <strong>traditional machine learning methods</strong> (KNN\SVM\maximum entropy).<br>The chi-square test was employed to select the features, and the weighted voting mechanism was utilized to improve the performance of the classifier (F1=0.896).</p>
-<h1 id="Human-Computer-Interaction"><a href="#Human-Computer-Interaction" class="headerlink" title="Human-Computer Interaction"></a>Human-Computer Interaction</h1><p><span id="human-computer-interaction"></span></p>
-<p><img src="https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80" alt="HCI"></p>
-<h2 id="Eye-tracking-Study"><a href="#Eye-tracking-Study" class="headerlink" title="Eye-tracking Study"></a>Eye-tracking Study</h2><p><span id="eye-tracking-study"></span></p>
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJ1BnJ.md.png" alt="kg" width = "330" height = "200" /></div>
-
-<p>Based on the eye-mind assumption that eye fixation locations reflect attention distributions <a href="https://psycnet.apa.org/record/1980-27123-001" target="_blank" rel="noopener">(Just, M. A., 1980)</a>, we using eye-tracking techniques to understand how teacher’s behaviour affects students’ distribution of visual attention.</p>
-<p>Eye tracking is the process of measuring either the point of gaze or the motion of an eye relative to the head. A simple calibration procedure is usually needed. In this project we used <a href="https://gaming.tobii.com/tobii-eye-tracker-4c/" target="_blank" rel="noopener">Tobii 4C eye tracker</a>, which can provide simultaneous eye and head tracking.</p>
-<p><strong>Areas of Interest</strong> and <strong>transitions</strong> are used as the measurements, and we employed the <strong>attention maps</strong> and <strong>temporal evolution</strong> of scanpaths to visualize the experimental results.</p>
-<h2 id="Augmented-Reality"><a href="#Augmented-Reality" class="headerlink" title="Augmented Reality"></a>Augmented Reality</h2><p><span id="augmented-reality"></span></p>
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJt1nU.md.png" alt="kg" width = "400" height = "200" /></div>
-
-<p>This project aims at applying Augmented Reality (AR) technology to distance education by creating an AR system with a three-dimensional virtual teaching agent (here is a <a href="https://www.softbankrobotics.com/us/pepper" target="_blank" rel="noopener">pepper robot</a>) to enhance students’ experience of distance learning.</p>
-<p>AR is a technique that combines virtual objects with real environments to provide information expansion and enhancement for real scene environments, which means it can “augmented” real-world environment by computer-generated perceptual information.</p>
-<p>Based on the results of <a href="#eye-tracking-study">eye-tracking study</a>, the movement of a pedagogical agents were redesigned, which only retain the body language that has been previously found to be effective in guiding students’ attention.<a href="https://www.blender.org/" target="_blank" rel="noopener">Blender</a> was used to model and animate the pedagogical agent, and the overall AR application was implemented in <a href="https://unity.com/" target="_blank" rel="noopener">Unity 3D</a>.</p>
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJIkRI.md.png" alt="kg" width = "350" height = "200" /></div>
-
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJY5k9.png" alt="kg" width = "350" height = "180" /></div>
-
-<p><a href="https://epson.com/For-Home/Smart-Glasses/Smart-Glasses/" target="_blank" rel="noopener">Epson smart glasses</a> were employed in this project, which can be classified as an optical see-through head-mounted display (S-HMD). S-HMD shows the virtual environment directly over the real world by placing optical combiners in front of the user’s eyes.</p>
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJ3C40.md.png" alt="kg" width = "350" height = "200" /></div>
-
-<p>We also recorded the teaching video of the real pepper robot and conducted a comparative experiment with the AR system, and obtained the feedback from the audiences through questionnaire.</p>
-<div align=center> <img src="https://s1.ax1x.com/2020/06/01/tJTm5Q.md.png" alt="kg" width = "700" height = "190" /></div>
-
+<p>In this project, we implemented a sentimental polarity classification
+of commodity reviews based on <strong>sentiment dictionary</strong> and
+some <strong>traditional machine learning methods</strong> (KNNentropy).
+The chi-square test was employed to select the features, and the
+weighted voting mechanism was utilized to improve the performance of the
+classifier (F1=0.896).</p>
+<h1 id="human-computer-interaction">Human-Computer Interaction</h1>
+<p><span id="human-computer-interaction"></span></p>
+<figure>
+<img
+src="https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+alt="HCI" />
+<figcaption aria-hidden="true">HCI</figcaption>
+</figure>
+<h2 id="eye-tracking-study">Eye-tracking Study</h2>
+<p><span id="eye-tracking-study"></span></p>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJ1BnJ.md.png" alt="kg" width = "330" height = "200" />
+</div>
+<p>Based on the eye-mind assumption that eye fixation locations reflect
+attention distributions <a
+target="_blank" rel="noopener" href="https://psycnet.apa.org/record/1980-27123-001">(Just, M. A.,
+1980)</a>, we using eye-tracking techniques to understand how teacher’s
+behaviour affects students’ distribution of visual attention.</p>
+<p>Eye tracking is the process of measuring either the point of gaze or
+the motion of an eye relative to the head. A simple calibration
+procedure is usually needed. In this project we used <a
+target="_blank" rel="noopener" href="https://gaming.tobii.com/tobii-eye-tracker-4c/">Tobii 4C eye
+tracker</a>, which can provide simultaneous eye and head tracking.</p>
+<p><strong>Areas of Interest</strong> and <strong>transitions</strong>
+are used as the measurements, and we employed the <strong>attention
+maps</strong> and <strong>temporal evolution</strong> of scanpaths to
+visualize the experimental results.</p>
+<h2 id="augmented-reality">Augmented Reality</h2>
+<p><span id="augmented-reality"></span></p>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJt1nU.md.png" alt="kg" width = "400" height = "200" />
+</div>
+<p>This project aims at applying Augmented Reality (AR) technology to
+distance education by creating an AR system with a three-dimensional
+virtual teaching agent (here is a <a
+target="_blank" rel="noopener" href="https://www.softbankrobotics.com/us/pepper">pepper robot</a>) to
+enhance students' experience of distance learning.</p>
+<p>AR is a technique that combines virtual objects with real
+environments to provide information expansion and enhancement for real
+scene environments, which means it can "augmented" real-world
+environment by computer-generated perceptual information.</p>
+<p>Based on the results of <a href="#eye-tracking-study">eye-tracking
+study</a>, the movement of a pedagogical agents were redesigned, which
+only retain the body language that has been previously found to be
+effective in guiding students' attention.<a
+target="_blank" rel="noopener" href="https://www.blender.org/">Blender</a> was used to model and
+animate the pedagogical agent, and the overall AR application was
+implemented in <a target="_blank" rel="noopener" href="https://unity.com/">Unity 3D</a>.</p>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJIkRI.md.png" alt="kg" width = "350" height = "200" />
+</div>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJY5k9.png" alt="kg" width = "350" height = "180" />
+</div>
+<p><a
+target="_blank" rel="noopener" href="https://epson.com/For-Home/Smart-Glasses/Smart-Glasses/">Epson
+smart glasses</a> were employed in this project, which can be classified
+as an optical see-through head-mounted display (S-HMD). S-HMD shows the
+virtual environment directly over the real world by placing optical
+combiners in front of the user's eyes.</p>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJ3C40.md.png" alt="kg" width = "350" height = "200" />
+</div>
+<p>We also recorded the teaching video of the real pepper robot and
+conducted a comparative experiment with the AR system, and obtained the
+feedback from the audiences through questionnaire.</p>
+<div data-align="center">
+<img src="https://s1.ax1x.com/2020/06/01/tJTm5Q.md.png" alt="kg" width = "700" height = "190" />
+</div>
 
         
     
@@ -594,7 +706,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -612,7 +724,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         

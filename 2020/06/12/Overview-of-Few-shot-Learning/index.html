@@ -56,7 +56,8 @@
     <link rel="icon" href="/img/web_icon.jpg">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="最近开始研究利用少量样本进行机器学习。Wang et al. 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。">
+    <meta name="description" itemprop="description" content="最近开始研究利用少量样本进行机器学习。Wang et al.
+系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。">
     <meta name="keywords" content=",Few-shot Learning,Transfer Learning,Meta Learning">
     <meta name="theme-color" content="#0097A7">
 
@@ -237,12 +238,13 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="A Survey on Few-shot Learning | Jiawen and her funny friends">
     <meta property="og:image" content="/img/web_icon.jpg">
-    <meta property="og:description" content="最近开始研究利用少量样本进行机器学习。Wang et al. 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。">
+    <meta property="og:description" content="最近开始研究利用少量样本进行机器学习。Wang et al.
+系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。">
     <meta property="og:article:tag" content="Few-shot Learning"> <meta property="og:article:tag" content="Transfer Learning"> <meta property="og:article:tag" content="Meta Learning"> 
 
     
         <meta property="article:published_time" content="Fri Jun 12 2020 19:44:35 GMT+0800">
-        <meta property="article:modified_time" content="Fri Jun 12 2020 20:19:38 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 17:21:55 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +267,7 @@
     "mainEntityOfPage": "http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/index.html",
     "headline": "A Survey on Few-shot Learning",
     "datePublished": "Fri Jun 12 2020 19:44:35 GMT+0800",
-    "dateModified": "Fri Jun 12 2020 20:19:38 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 17:21:55 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -284,7 +286,8 @@
         }
     },
     "keywords": ",Few-shot Learning,Transfer Learning,Meta Learning",
-    "description": "最近开始研究利用少量样本进行机器学习。Wang et al. 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。",
+    "description": "最近开始研究利用少量样本进行机器学习。Wang et al.
+系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。",
 }
 </script>
 
@@ -299,7 +302,9 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -350,7 +355,15 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#INTRODUCTION"><span class="post-toc-number">1.</span> <span class="post-toc-text">INTRODUCTION</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#METHODS"><span class="post-toc-number">2.</span> <span class="post-toc-text">METHODS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Data"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Model"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multitask-Learning"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Multitask Learning</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Parameter-Sharing"><span class="post-toc-number">2.2.1.1.</span> <span class="post-toc-text">Parameter Sharing</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Parameter-Tying"><span class="post-toc-number">2.2.1.2.</span> <span class="post-toc-text">Parameter Tying</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Embedding-Learning"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Embedding Learning</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Task-specific-embedding-model"><span class="post-toc-number">2.2.2.1.</span> <span class="post-toc-text">Task-specific embedding model</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Task-invariant-i-e-general-embedding-model"><span class="post-toc-number">2.2.2.2.</span> <span class="post-toc-text">Task-invariant (i.e., general) embedding model</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information"><span class="post-toc-number">2.2.2.3.</span> <span class="post-toc-text">Hybrid embedding model (encodes both task-specific and task-invariant information)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning-with-External-Memory"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Learning with External Memory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generative-Modeling"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">Generative Modeling</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Summary"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text">Summary</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ALGORITHM"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">ALGORITHM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Refining-Existing-Parameters"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Refining Existing Parameters</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Aggregating-a-Set-of-Parameters"><span class="post-toc-number">2.3.1.1.</span> <span class="post-toc-text">Aggregating a Set of Parameters</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fine-Tuning-Existing-Parameter-with-New-Parameters"><span class="post-toc-number">2.3.1.2.</span> <span class="post-toc-text">Fine-Tuning Existing Parameter with New Parameters</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Refining-meta-learned-parameters"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Refining meta-learned parameters</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Learning-the-optimizer"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">Learning the optimizer</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#introduction"><span class="post-toc-number">1.</span> <span class="post-toc-text">INTRODUCTION</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#methods"><span class="post-toc-number">2.</span> <span class="post-toc-text">METHODS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#data"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#model"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Model</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#multitask-learning"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Multitask Learning</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#parameter-sharing"><span class="post-toc-number">2.2.1.1.</span> <span class="post-toc-text">Parameter Sharing</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#parameter-tying"><span class="post-toc-number">2.2.1.2.</span> <span class="post-toc-text">Parameter Tying</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#embedding-learning"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Embedding Learning</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#task-specific-embedding-model"><span class="post-toc-number">2.2.2.1.</span> <span class="post-toc-text">Task-specific embedding
+model</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#task-invariant-i.e.-general-embedding-model"><span class="post-toc-number">2.2.2.2.</span> <span class="post-toc-text">Task-invariant
+(i.e., general) embedding model</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information"><span class="post-toc-number">2.2.2.3.</span> <span class="post-toc-text">Hybrid
+embedding model (encodes both task-specific and task-invariant
+information)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#learning-with-external-memory"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Learning with External
+Memory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#generative-modeling"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">Generative Modeling</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#summary"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text">Summary</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#algorithm"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">ALGORITHM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#refining-existing-parameters"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Refining Existing Parameters</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#aggregating-a-set-of-parameters"><span class="post-toc-number">2.3.1.1.</span> <span class="post-toc-text">Aggregating a Set of
+Parameters</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#fine-tuning-existing-parameter-with-new-parameters"><span class="post-toc-number">2.3.1.2.</span> <span class="post-toc-text">Fine-Tuning
+Existing Parameter with New Parameters</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#refining-meta-learned-parameters"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">Refining meta-learned
+parameters</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#learning-the-optimizer"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">Learning the optimizer</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -425,7 +438,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Few-shot-Learning/" rel="tag">Few-shot Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Meta-Learning/" rel="tag">Meta Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Transfer-Learning/" rel="tag">Transfer Learning</a>
+        <a class="post_tag-none-link" href="/tags/Few-shot-Learning/" rel="tag">Few-shot Learning</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Meta-Learning/" rel="tag">Meta Learning</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Transfer-Learning/" rel="tag">Transfer Learning</a>
     </ul>
     
 
@@ -494,106 +507,334 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>最近开始研究利用少量样本进行机器学习。<a href="https://arxiv.org/abs/1904.05046v2" target="_blank" rel="noopener">Wang et al.</a> 系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。</p>
-<a id="more"></a>
-<h1 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h1><p><strong>Main idea:</strong> Use <strong>prior knowledge</strong> to alleviate the problem of having an unreliable empirical risk minimizer in FSL supervised learning.</p>
-<p><a href="https://imgchr.com/i/tOlmqS" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tOlmqS.md.png" alt="tOlmqS.md.png"></a></p>
-<h1 id="METHODS"><a href="#METHODS" class="headerlink" title="METHODS"></a>METHODS</h1><p>小样本学习的方法主要可以被归为三个方面：数据，模型，以及算法。其核心都是如何更好地利用先验知识。</p>
+        <p>最近开始研究利用少量样本进行机器学习。<a
+target="_blank" rel="noopener" href="https://arxiv.org/abs/1904.05046v2">Wang et al.</a>
+系统性地对小样本学习的工作做了一个总结，本篇对该论文以及相关的工作进行了一个梳理。</p>
+<span id="more"></span>
+<h1 id="introduction">INTRODUCTION</h1>
+<p><strong>Main idea:</strong> Use <strong>prior knowledge</strong> to
+alleviate the problem of having an unreliable empirical risk minimizer
+in FSL supervised learning.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tOlmqS"><img
+src="https://s1.ax1x.com/2020/06/12/tOlmqS.md.png"
+alt="tOlmqS.md.png" /></a></p>
+<h1 id="methods">METHODS</h1>
+<p>小样本学习的方法主要可以被归为三个方面：数据，模型，以及算法。其核心都是如何更好地利用先验知识。</p>
 <p>从数据入手，主要是利用先验知识产生更大数量的数据；从模型入手，主要思想是利用先验知识来限制假设空间的大小，从而更快的找到最优点；从算法入手，主要思想是利用先验知识来改变搜索策略。</p>
-<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p><a href="https://imgchr.com/i/tO1uy6" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1uy6.md.png" alt="tO1uy6.md.png"></a></p>
-<p>通过数据增强小样本的方法不改变搜索空间的大小，而是通过产生数据来帮助找到最优参数。它可以被归类为以下三种方法：<br><a href="https://imgchr.com/i/tO1ZWR" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1ZWR.md.png" alt="tO1ZWR.md.png"></a></p>
-<ol>
-<li>Transforming Samples from $D_{train}$ \<br>该类方法通过对原训练数据的操作（如图像领域中的翻转等）进行数据增强，从而达到扩充数据的效果。</li>
-<li>Transforming Samples from a Weakly Labeled or Unlabeled Data Set \<br>该类方法利用从训练数据中学习到的predictor对无监督或者弱监督的数据集进行标注，从而获得更大规模的数据集。</li>
-<li>Transforming Samples from Similar Data Sets \<br>该类方法从一个相似且更大规模的数据集上迁移input-output pairs，aggregation weight通常基于样本间的相似性。</li>
+<h2 id="data">Data</h2>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1uy6"><img
+src="https://s1.ax1x.com/2020/06/12/tO1uy6.md.png"
+alt="tO1uy6.md.png" /></a></p>
+<p>通过数据增强小样本的方法不改变搜索空间的大小，而是通过产生数据来帮助找到最优参数。它可以被归类为以下三种方法：
+<a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1ZWR"><img
+src="https://s1.ax1x.com/2020/06/12/tO1ZWR.md.png"
+alt="tO1ZWR.md.png" /></a></p>
+<ol type="1">
+<li>Transforming Samples from <span
+class="math inline">\(D_{train}\)</span><br />
+该类方法通过对原训练数据的操作（如图像领域中的翻转等）进行数据增强，从而达到扩充数据的效果。</li>
+<li>Transforming Samples from a Weakly Labeled or Unlabeled Data
+Set<br />
+该类方法利用从训练数据中学习到的predictor对无监督或者弱监督的数据集进行标注，从而获得更大规模的数据集。</li>
+<li>Transforming Samples from Similar Data Sets<br />
+该类方法从一个相似且更大规模的数据集上迁移input-output
+pairs，aggregation weight通常基于样本间的相似性。</li>
 </ol>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>Main idea: Use prior knowledge to constrain the complexity of ℋ, which results in a much smaller hypothesis space $\widetilde{H}$.</p>
-<p><a href="https://imgchr.com/i/tO1VY9" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1VY9.md.png" alt="tO1VY9.md.png"></a></p>
-<h3 id="Multitask-Learning"><a href="#Multitask-Learning" class="headerlink" title="Multitask Learning"></a>Multitask Learning</h3><p><strong>Multitask learning</strong> learns multiple related tasks simultaneously by exploiting both task-generic and task-specific information.</p>
-<p>Given $C$ related tasks $T<em>1,…,T_C$, each $T_c$ has a dataset$D_c={D</em>{train}^c, D_{test}^c}$.</p>
-<p>The few-shot tasks are regarded as target tasks, and the rest as source tasks.<br>Multitask learning learns from $D_{train}^c$ to obtain $\theta_c$ for train each $T_c$.</p>
-<h4 id="Parameter-Sharing"><a href="#Parameter-Sharing" class="headerlink" title="Parameter Sharing"></a>Parameter Sharing</h4><p><strong>Parameter Sharing</strong> directly shares some parameters among tasks.</p>
-<p><a href="https://imgchr.com/i/tO1nQx" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1nQx.md.png" alt="tO1nQx.md.png"></a></p>
-<h4 id="Parameter-Tying"><a href="#Parameter-Tying" class="headerlink" title="Parameter Tying"></a>Parameter Tying</h4><p><strong>Parameter Tying</strong> encourages parameters of different tasks to be similar.<br>A popular approach is by regularizing the $\theta_c$.</p>
-<p><a href="https://imgchr.com/i/tO1mS1" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1mS1.md.png" alt="tO1mS1.md.png"></a></p>
-<h3 id="Embedding-Learning"><a href="#Embedding-Learning" class="headerlink" title="Embedding Learning"></a>Embedding Learning</h3><p><strong>Embedding learning</strong> embeds each sample $x_i \in \mathcal{X} \subseteq R^d$ to a lower-dimensional $z_i \in \mathcal{Z} \subseteq R^m$.</p>
-<p>It have three key components:</p>
-<ul>
-<li>A function $f$ which embeds test sample $x_{test} \in D_test$ to $\mathcal{Z}$</li>
-<li>A function $g$ which embeds training sample $x<em>{train} \in  D</em>{train}$ to $\mathcal{Z}$</li>
-<li>A similarity function $s(·,·)$ which measures the similarity between $f(x_{test})$ and $g(x_I)$ in $\mathcal{Z}$</li>
-</ul>
-<p><a href="https://imgchr.com/i/tO1QeO" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1QeO.md.png" alt="tO1QeO.md.png"></a></p>
-<h4 id="Task-specific-embedding-model"><a href="#Task-specific-embedding-model" class="headerlink" title="Task-specific embedding model"></a>Task-specific embedding model</h4><p>Learn an embedding function tailored for each task, by using only information from that task.</p>
-<h4 id="Task-invariant-i-e-general-embedding-model"><a href="#Task-invariant-i-e-general-embedding-model" class="headerlink" title="Task-invariant (i.e., general) embedding model"></a>Task-invariant (i.e., general) embedding model</h4><p>Learn a general embedding function from a large-scale data set containing sufficient samples with various outputs, and then directly use this on the new few-shot $D_{train}$  without retraining.</p>
-<p>E.g. Meta-learning (Matching Nets, Prototypical Networks, etc.), Siamese Net, etc.</p>
-<p><a href="https://imgchr.com/i/tO1KOK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1KOK.md.png" alt="tO1KOK.md.png"></a></p>
-<h4 id="Hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information"><a href="#Hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information" class="headerlink" title="Hybrid embedding model (encodes both task-specific and task-invariant information)"></a>Hybrid embedding model (encodes both task-specific and task-invariant information)</h4><p>Learn a function which takes information extracted from $D_{train}$  as input and returns an embedding which acts as the parameter for $f(·)$ .</p>
-<p><a href="https://imgchr.com/i/tO11Te" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO11Te.md.png" alt="tO11Te.md.png"></a></p>
-<h3 id="Learning-with-External-Memory"><a href="#Learning-with-External-Memory" class="headerlink" title="Learning with External Memory"></a>Learning with External Memory</h3><p><strong>Learning with external memory</strong> extracts knowledge from $D<em>{train}$, and stores it in an external memory. Each new sample $D</em>{test}$ is then represented by a weighted average of contents extracted from the memory. </p>
-<p>A <strong>key-value memory</strong> is usually used in FSL. \<br>Let the memory be $M \in R^{(b \times m)}$, with each of its $b$ memory slots $M(i) \in R^m$ consisting of a key-value pair $M(i)=(M<em>{key}(i),M</em>{value}(i))$. \<br>A test sample $x_{test}$ is first embedded by an embedding function $f$, and used to query for the similar memory slots.</p>
-<p>According to the functionality of the memory, it can be subdivided into two types.</p>
-<ol>
-<li>Refining Representations \<br>Put $x<em>{train}$  into the memory, such that the stored key-value pairs can represent $x</em>{test}$  more accurately.</li>
-<li>Refining Parameters \<br>Use a memory to parameterize the embedding function $g(·)$ for a new $x_{test}$ or classification model.</li>
+<h2 id="model">Model</h2>
+<p>Main idea: Use prior knowledge to constrain the complexity of ℋ,
+which results in a much smaller hypothesis space <span
+class="math inline">\(\widetilde{H}\)</span>.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1VY9"><img
+src="https://s1.ax1x.com/2020/06/12/tO1VY9.md.png"
+alt="tO1VY9.md.png" /></a></p>
+<h3 id="multitask-learning">Multitask Learning</h3>
+<p><strong>Multitask learning</strong> learns multiple related tasks
+simultaneously by exploiting both task-generic and task-specific
+information.</p>
+<p>Given <span class="math inline">\(C\)</span> related tasks <span
+class="math inline">\(T_1,…,T_C\)</span>, each <span
+class="math inline">\(T_c\)</span> has a dataset<span
+class="math inline">\(D_c=\{D_{train}^c, D_{test}^c\}\)</span>.</p>
+<p>The few-shot tasks are regarded as target tasks, and the rest as
+source tasks. Multitask learning learns from <span
+class="math inline">\(D_{train}^c\)</span> to obtain <span
+class="math inline">\(\theta_c\)</span> for train each <span
+class="math inline">\(T_c\)</span>.</p>
+<h4 id="parameter-sharing">Parameter Sharing</h4>
+<p><strong>Parameter Sharing</strong> directly shares some parameters
+among tasks.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1nQx"><img
+src="https://s1.ax1x.com/2020/06/12/tO1nQx.md.png"
+alt="tO1nQx.md.png" /></a></p>
+<h4 id="parameter-tying">Parameter Tying</h4>
+<p><strong>Parameter Tying</strong> encourages parameters of different
+tasks to be similar. A popular approach is by regularizing the <span
+class="math inline">\(\theta_c\)</span>.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1mS1"><img
+src="https://s1.ax1x.com/2020/06/12/tO1mS1.md.png"
+alt="tO1mS1.md.png" /></a></p>
+<h3 id="embedding-learning">Embedding Learning</h3>
+<p><strong>Embedding learning</strong> embeds each sample <span
+class="math inline">\(x_i \in \mathcal{X} \subseteq R^d\)</span> to a
+lower-dimensional <span class="math inline">\(z_i \in \mathcal{Z}
+\subseteq R^m\)</span>.</p>
+<p>It have three key components: - A function <span
+class="math inline">\(f\)</span> which embeds test sample <span
+class="math inline">\(x_{test} \in D_test\)</span> to <span
+class="math inline">\(\mathcal{Z}\)</span> - A function <span
+class="math inline">\(g\)</span> which embeds training sample <span
+class="math inline">\(x_{train} \in D_{train}\)</span> to <span
+class="math inline">\(\mathcal{Z}\)</span> - A similarity function <span
+class="math inline">\(s(·,·)\)</span> which measures the similarity
+between <span class="math inline">\(f(x_{test})\)</span> and <span
+class="math inline">\(g(x_I)\)</span> in <span
+class="math inline">\(\mathcal{Z}\)</span></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1QeO"><img
+src="https://s1.ax1x.com/2020/06/12/tO1QeO.md.png"
+alt="tO1QeO.md.png" /></a></p>
+<h4 id="task-specific-embedding-model">Task-specific embedding
+model</h4>
+<p>Learn an embedding function tailored for each task, by using only
+information from that task.</p>
+<h4 id="task-invariant-i.e.-general-embedding-model">Task-invariant
+(i.e., general) embedding model</h4>
+<p>Learn a general embedding function from a large-scale data set
+containing sufficient samples with various outputs, and then directly
+use this on the new few-shot <span
+class="math inline">\(D_{train}\)</span> without retraining.</p>
+<p>E.g. Meta-learning (Matching Nets, Prototypical Networks, etc.),
+Siamese Net, etc.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1KOK"><img
+src="https://s1.ax1x.com/2020/06/12/tO1KOK.md.png"
+alt="tO1KOK.md.png" /></a></p>
+<h4
+id="hybrid-embedding-model-encodes-both-task-specific-and-task-invariant-information">Hybrid
+embedding model (encodes both task-specific and task-invariant
+information)</h4>
+<p>Learn a function which takes information extracted from <span
+class="math inline">\(D_{train}\)</span> as input and returns an
+embedding which acts as the parameter for <span
+class="math inline">\(f(·)\)</span> .</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO11Te"><img
+src="https://s1.ax1x.com/2020/06/12/tO11Te.md.png"
+alt="tO11Te.md.png" /></a></p>
+<h3 id="learning-with-external-memory">Learning with External
+Memory</h3>
+<p><strong>Learning with external memory</strong> extracts knowledge
+from <span class="math inline">\(D_{train}\)</span>, and stores it in an
+external memory. Each new sample <span
+class="math inline">\(D_{test}\)</span> is then represented by a
+weighted average of contents extracted from the memory.</p>
+<p>A <strong>key-value memory</strong> is usually used in FSL.<br />
+Let the memory be <span class="math inline">\(M \in R^{(b \times
+m)}\)</span>, with each of its <span class="math inline">\(b\)</span>
+memory slots <span class="math inline">\(M(i) \in R^m\)</span>
+consisting of a key-value pair <span
+class="math inline">\(M(i)=(M_{key}(i),M_{value}(i))\)</span>.<br />
+A test sample <span class="math inline">\(x_{test}\)</span> is first
+embedded by an embedding function <span
+class="math inline">\(f\)</span>, and used to query for the similar
+memory slots.</p>
+<p>According to the functionality of the memory, it can be subdivided
+into two types. 1. Refining Representations<br />
+Put <span class="math inline">\(x_{train}\)</span> into the memory, such
+that the stored key-value pairs can represent <span
+class="math inline">\(x_{test}\)</span> more accurately. 2. Refining
+Parameters<br />
+Use a memory to parameterize the embedding function <span
+class="math inline">\(g(·)\)</span> for a new <span
+class="math inline">\(x_{test}\)</span> or classification model.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1lwD"><img
+src="https://s1.ax1x.com/2020/06/12/tO1lwD.md.png"
+alt="tO1lwD.md.png" /></a></p>
+<h3 id="generative-modeling">Generative Modeling</h3>
+<p><strong>Generative modeling methods</strong> estimate the probability
+distribution <span class="math inline">\(p(x)\)</span> from the observed
+<span class="math inline">\(x_i\)</span> with the help of prior
+knowledge.</p>
+<p>The observed <span class="math inline">\(x\)</span> is assumed to be
+drawn from some distribution <span
+class="math inline">\(p(x;\theta)\)</span> parameterized by <span
+class="math inline">\(\theta\)</span>.<br />
+Usually, there exists a latent variable <span class="math inline">\(z
+\backsim p(z;\gamma)\)</span>, so that <span class="math inline">\(x
+\backsim \int p(x|z;\theta)p(z;\gamma)dz\)</span>.<br />
+The prior distribution <span class="math inline">\(p(z;\gamma)\)</span>
+brings in prior knowledge.</p>
+<p>According to what the latent variable 𝑧 represents, it can be grouped
+into three types. 1. Decomposable Components<br />
+Samples may share some smaller decomposable components with samples from
+the other tasks. One then only needs to find the correct combination of
+these decomposable components, and decides which target class this
+combination belongs to. 2. Groupwise Shared Prior<br />
+Similar tasks have similar prior probabilities, and this can be
+utilized. 3. Parameters of Inference Networks<br />
+To find the best <span class="math inline">\(\theta\)</span>, one has to
+maximize the posterior</p>
+<p><span class="math display">\[p(z|x;\theta,\gamma)=\frac{p(x,z;\theta
+,\gamma)}{p(x;\gamma)}=\frac{p(x|z;\theta)p(z;\gamma)}{\int
+p(x|z;\theta)p(z;\gamma)dz}\]</span></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1tSI"><img
+src="https://s1.ax1x.com/2020/06/12/tO1tSI.md.png"
+alt="tO1tSI.md.png" /></a></p>
+<h3 id="summary">Summary</h3>
+<ol type="1">
+<li><p>Multitask learning<br />
+<strong>Scenarios:</strong> Existing similar tasks or auxiliary
+tasks.<br />
+<strong>Limitations:</strong> Joint training of all the tasks together
+is required. Thus, when a new few-shot task arrives, the whole multitask
+model has to be trained again.</p></li>
+<li><p>Embedding learning<br />
+<strong>Scenarios:</strong> A large-scale data set containing sufficient
+samples of various classes is available.<br />
+<strong>Limitations:</strong> May not work well when the few-shot task
+is not closely related to the other tasks.</p></li>
+<li><p>Learning with External Memory<br />
+<strong>Scenarios:</strong> A memory network is available.<br />
+<strong>Limitations:</strong> Incurs additional space and computational
+costs, which increase with memory size.</p></li>
+<li><p>Generative modeling<br />
+<strong>Scenarios:</strong> Performing tasks such as generation and
+reconstruction.<br />
+<strong>Limitations:</strong> High inference cost, and more difficult to
+derive than deterministic models.</p></li>
 </ol>
-<p><a href="https://imgchr.com/i/tO1lwD" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1lwD.md.png" alt="tO1lwD.md.png"></a></p>
-<h3 id="Generative-Modeling"><a href="#Generative-Modeling" class="headerlink" title="Generative Modeling"></a>Generative Modeling</h3><p><strong>Generative modeling methods</strong> estimate the probability distribution $p(x)$ from the observed $x_i$ with the help of prior knowledge.</p>
-<p>The observed $x$ is assumed to be drawn from some distribution $p(x;\theta)$ parameterized by $\theta$. \<br>Usually, there exists a latent variable $z \backsim p(z;\gamma)$, so that $x \backsim \int p(x|z;\theta)p(z;\gamma)dz$. \<br>The prior distribution $p(z;\gamma)$ brings in prior knowledge.</p>
-<p>According to what the latent variable 𝑧 represents, it can be grouped into three types.</p>
-<ol>
-<li>Decomposable Components \<br>Samples may share some smaller decomposable components with samples from the other tasks. One then only needs to find the correct combination of these decomposable components, and decides which target class this combination belongs to.</li>
-<li>Groupwise Shared Prior \<br>Similar tasks have similar prior probabilities, and this can be utilized.</li>
-<li>Parameters of Inference Networks \<br>To find the best $\theta$, one has to maximize the posterior </li>
+<h2 id="algorithm">ALGORITHM</h2>
+<p>The algorithm is the strategy to search in the hypothesis space <span
+class="math inline">\(H\)</span> for the parameter <span
+class="math inline">\(\theta\)</span> of the best hypothesis <span
+class="math inline">\(h^*\)</span>.</p>
+<p>Methods in this section use prior knowledge to influence how <span
+class="math inline">\(\theta\)</span> is obtained, either by: 1.
+providing a good initialized parameter <span
+class="math inline">\(\theta_0\)</span> 2. directly learning an
+optimizer to output search steps</p>
+<p>In terms of how the search strategy is affected by prior knowledge,
+the methods can be classified into three groups.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO5Z4S"><img
+src="https://s1.ax1x.com/2020/06/12/tO5Z4S.md.png"
+alt="tO5Z4S.md.png" /></a></p>
+<h3 id="refining-existing-parameters">Refining Existing Parameters</h3>
+<p><strong>Refining existing parameters:</strong> An initial <span
+class="math inline">\(\theta_0\)</span> learned from other tasks, and is
+then refined using <span class="math inline">\(D_{train}\)</span>
+.<br />
+The assumption is that <span class="math inline">\(\theta_0\)</span>
+captures some general structures of the large-scale data. Therefore, it
+can be adapted to <span class="math inline">\(D\)</span> with a few
+iterations.</p>
+<p>Given the few-shot <span class="math inline">\(D_{train}\)</span> ,
+simply fine-tuning <span class="math inline">\(\theta_0\)</span> by
+gradient descent may lead to overfitting. Hence, methods fine-tune <span
+class="math inline">\(\theta_0\)</span> by regularization to prevent
+overfitting. They can be grouped as follows:</p>
+<ol type="1">
+<li>Early-stopping .<br />
+It requires separating a validation set from D train to monitor the
+training procedure. Learning is stopped when there is no performance
+improvement on the validation set.</li>
+<li>Selectively updating <span class="math inline">\(\theta_0\)</span>
+.<br />
+Only a portion of <span class="math inline">\(\theta_0\)</span> is
+updated in order to avoid overfitting.</li>
+<li>Updating related parts of <span
+class="math inline">\(\theta_0\)</span> together.<br />
+One can group elements of <span class="math inline">\(\theta_0\)</span>
+(such as the neurons in a deep neural network), and update each group
+jointly with the same update information.</li>
+<li>Using a model regression network.<br />
+A model regression network captures the task-agnostic transformation
+which maps the parameter values obtained by training on a few examples
+to the parameter values that will be obtained by training on a lot of
+samples.</li>
 </ol>
-<script type="math/tex; mode=display">p(z|x;\theta,\gamma)=\frac{p(x,z;\theta ,\gamma)}{p(x;\gamma)}=\frac{p(x|z;\theta)p(z;\gamma)}{\int p(x|z;\theta)p(z;\gamma)dz}</script><p><a href="https://imgchr.com/i/tO1tSI" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1tSI.md.png" alt="tO1tSI.md.png"></a></p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ol>
-<li><p>Multitask learning \<br><strong>Scenarios:</strong> Existing similar tasks or auxiliary tasks.\<br><strong>Limitations:</strong> Joint training of all the tasks together is required. Thus, when a new few-shot task arrives, the whole multitask model has to be trained again.</p>
-</li>
-<li><p>Embedding learning \<br><strong>Scenarios:</strong> A large-scale data set containing sufficient samples of various classes is available. \<br><strong>Limitations:</strong> May not work well when the few-shot task is not closely related to the other tasks. </p>
-</li>
-<li><p>Learning with External Memory \<br><strong>Scenarios:</strong> A memory network is available.\<br><strong>Limitations:</strong> Incurs additional space and computational costs, which increase with memory size.</p>
-</li>
-<li><p>Generative modeling \<br><strong>Scenarios:</strong> Performing tasks such as generation and reconstruction. \<br><strong>Limitations:</strong> High inference cost, and more difficult to derive than deterministic models. </p>
-</li>
+<h4 id="aggregating-a-set-of-parameters">Aggregating a Set of
+Parameters</h4>
+<p>Sometimes, we do not have a suitable <span
+class="math inline">\(\theta_0\)</span> to start with. Instead, we have
+many models that are learned from related tasks.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO100S"><img
+src="https://s1.ax1x.com/2020/06/12/tO100S.md.png"
+alt="tO100S.md.png" /></a></p>
+<p>Instead of using the augmented data directly, the following methods
+use models (with parameters <span
+class="math inline">\(\theta_0\)</span>’s) pre-trained from these data
+sets. The problem is then how to adapt them efficiently to the new task
+using <span class="math inline">\(D_{train}\)</span> .</p>
+<ol type="1">
+<li>Unlabeled data set.<br />
+One can pre-train functions from the unlabeled data to cluster and
+separate samples well. A neural network is then used to adapt them to
+the new task with the few-shot <span
+class="math inline">\(D_{train}\)</span>.</li>
+<li>Similar data sets.<br />
+few-shot object classification can be performed by leveraging samples
+and classifiers from similar classes. First, it replaces the features of
+samples from these similar classes by features from the new class. The
+learned classifier is then reused, and only the classification threshold
+is adjusted for the new class.</li>
 </ol>
-<h2 id="ALGORITHM"><a href="#ALGORITHM" class="headerlink" title="ALGORITHM"></a>ALGORITHM</h2><p>The algorithm is the strategy to search in the hypothesis space $H$ for the parameter $\theta$ of the best hypothesis $h^*$.</p>
-<p>Methods in this section use prior knowledge to influence how $\theta$ is obtained, either by:</p>
-<ol>
-<li>providing a good initialized parameter $\theta_0$</li>
-<li>directly learning an optimizer to output search steps</li>
+<h4 id="fine-tuning-existing-parameter-with-new-parameters">Fine-Tuning
+Existing Parameter with New Parameters</h4>
+<p>The pre-trained <span class="math inline">\(\theta_0\)</span> may not
+be enough to encode the new FSL task completely. Hence, an additional
+parameter(s) <span class="math inline">\(\delta\)</span> is used to take
+the specialty of D train into account. Specifically, this strategy
+expands the model parameter to become <span class="math inline">\(\theta
+= \{\theta_0,\delta\}\)</span>, and fine-tunes <span
+class="math inline">\(\theta_0\)</span> while learning <span
+class="math inline">\(\delta\)</span>.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1Nlt"><img
+src="https://s1.ax1x.com/2020/06/12/tO1Nlt.md.png"
+alt="tO1Nlt.md.png" /></a></p>
+<h3 id="refining-meta-learned-parameters">Refining meta-learned
+parameters</h3>
+<p>Methods in this section use meta-learning to refine the meta-learned
+parameter <span class="math inline">\(\theta_0\)</span>.The <span
+class="math inline">\(\theta_0\)</span> is <strong>continuously
+optimized</strong> by the meta-learner according to performance of the
+learner.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1aOf"><img
+src="https://s1.ax1x.com/2020/06/12/tO1aOf.md.png"
+alt="tO1aOf.md.png" /></a></p>
+<p>The meta-learned <span class="math inline">\(\theta_0\)</span> is
+often refined by gradient descent. A representative method is the <a
+target="_blank" rel="noopener" href="https://arxiv.org/abs/1703.03400">ModelAgnostic Meta-Learning
+(MAML)</a>.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tX3dSA"><img
+src="https://s1.ax1x.com/2020/06/12/tX3dSA.md.png"
+alt="tX3dSA.md.png" /></a></p>
+<p>Recently, many improvements have been proposed for MAML, mainly along
+the following three aspects:</p>
+<ol type="1">
+<li>Incorporating task-specific information.<br />
+MAML provides the same initialization for all tasks. However, this
+neglects task-specific information, and is appropriate only when the set
+of tasks are all very similar.</li>
+<li>Modeling the uncertainty of using a meta-learned <span
+class="math inline">\(\theta_0\)</span>.<br />
+The ability to measure this uncertainty provides hints for active
+learning and further data collection . There are works that consider
+uncertainty for the meta-learned <span
+class="math inline">\(\theta_0\)</span>, uncertainty for the
+task-specific <span class="math inline">\(\phi_s\)</span>, and
+uncertainty for class n’s class-specific parameter<span
+class="math inline">\(\phi_{s,n}\)</span>.</li>
+<li>Improving the refining procedure.<br />
+Refinement by a few gradient descent steps may not be reliable.
+Regularization can be used to correct the descent direction.</li>
 </ol>
-<p>In terms of how the search strategy is affected by prior knowledge, the methods can be classified into three groups.</p>
-<p><a href="https://imgchr.com/i/tO5Z4S" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO5Z4S.md.png" alt="tO5Z4S.md.png"></a></p>
-<h3 id="Refining-Existing-Parameters"><a href="#Refining-Existing-Parameters" class="headerlink" title="Refining Existing Parameters"></a>Refining Existing Parameters</h3><p><strong>Refining existing parameters:</strong> An initial $\theta<em>0$ learned from other tasks, and is then refined using $D</em>{train}$ . \<br>The assumption is that $\theta_0$ captures some general structures of the large-scale data. Therefore, it can be adapted to $D$ with a few iterations.</p>
-<p>Given the few-shot $D_{train}$ , simply fine-tuning $\theta_0$ by gradient descent may lead to overfitting. Hence, methods fine-tune $\theta_0$ by regularization to prevent overfitting. They can be grouped as follows:</p>
-<ol>
-<li>Early-stopping . \<br>It requires separating a validation set from D train to monitor the training procedure. Learning is stopped when there is no performance improvement on the validation set.</li>
-<li>Selectively updating $\theta_0$ . \<br>Only a portion of $\theta_0$ is updated in order to avoid overfitting.</li>
-<li>Updating related parts of $\theta_0$ together.\<br>One can group elements of $\theta_0$ (such as the neurons in a deep neural network), and update each group jointly with the same update information.</li>
-<li>Using a model regression network.\<br>A model regression network captures the task-agnostic transformation which maps the parameter values obtained by training on a few examples to the parameter values that will be obtained by training on a lot of samples.</li>
-</ol>
-<h4 id="Aggregating-a-Set-of-Parameters"><a href="#Aggregating-a-Set-of-Parameters" class="headerlink" title="Aggregating a Set of Parameters"></a>Aggregating a Set of Parameters</h4><p>Sometimes, we do not have a suitable $\theta_0$ to start with. Instead, we have many models that are learned from related tasks.</p>
-<p><a href="https://imgchr.com/i/tO100S" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO100S.md.png" alt="tO100S.md.png"></a></p>
-<p>Instead of using the augmented data directly, the following methods use models (with parameters $\theta<em>0$’s) pre-trained from these data sets. The problem is then how to adapt them efficiently to the new task using $D</em>{train}$ .</p>
-<ol>
-<li>Unlabeled data set.\<br>One can pre-train functions from the unlabeled data to cluster and separate samples well. A neural network is then used to adapt them to the new task with the few-shot $D_{train}$.</li>
-<li>Similar data sets. \<br>few-shot object classification can be performed by leveraging samples and classifiers from similar classes. First, it replaces the features of samples from these similar classes by features from the new class. The learned classifier is then reused, and only the classification threshold is adjusted for the new class.</li>
-</ol>
-<h4 id="Fine-Tuning-Existing-Parameter-with-New-Parameters"><a href="#Fine-Tuning-Existing-Parameter-with-New-Parameters" class="headerlink" title="Fine-Tuning Existing Parameter with New Parameters"></a>Fine-Tuning Existing Parameter with New Parameters</h4><p>The pre-trained $\theta_0$ may not be enough to encode the new FSL task completely. Hence, an additional parameter(s) $\delta$ is used to take the specialty of D train into account. Specifically, this strategy expands the model parameter to become $\theta = {\theta_0,\delta}$, and fine-tunes $\theta_0$ while learning $\delta$.</p>
-<p><a href="https://imgchr.com/i/tO1Nlt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1Nlt.md.png" alt="tO1Nlt.md.png"></a></p>
-<h3 id="Refining-meta-learned-parameters"><a href="#Refining-meta-learned-parameters" class="headerlink" title="Refining meta-learned parameters"></a>Refining meta-learned parameters</h3><p>Methods in this section use meta-learning to refine the meta-learned parameter $\theta_0$.The $\theta_0$ is <strong>continuously optimized</strong> by the meta-learner according to performance of the learner.</p>
-<p><a href="https://imgchr.com/i/tO1aOf" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1aOf.md.png" alt="tO1aOf.md.png"></a></p>
-<p>The meta-learned $\theta_0$ is often refined by gradient descent. A representative method is the <a href="https://arxiv.org/abs/1703.03400" target="_blank" rel="noopener">ModelAgnostic Meta-Learning (MAML)</a>.</p>
-<p><a href="https://imgchr.com/i/tX3dSA" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tX3dSA.md.png" alt="tX3dSA.md.png"></a></p>
-<p>Recently, many improvements have been proposed for MAML, mainly along the following three aspects:</p>
-<ol>
-<li>Incorporating task-specific information. \<br>MAML provides the same initialization for all tasks. However, this neglects task-specific information, and is appropriate only when the set of tasks are all very similar.</li>
-<li>Modeling the uncertainty of using a meta-learned $\theta<em>0$.\<br>The ability to measure this uncertainty provides hints for active learning and further data collection . There are works that consider uncertainty for the meta-learned $\theta_0$, uncertainty for the task-specific $\phi_s$, and uncertainty for class n’s class-specific parameter$\phi</em>{s,n}$.</li>
-<li>Improving the refining procedure.\<br>Refinement by a few gradient descent steps may not be reliable. Regularization can be used to correct the descent direction.</li>
-</ol>
-<h3 id="Learning-the-optimizer"><a href="#Learning-the-optimizer" class="headerlink" title="Learning the optimizer"></a>Learning the optimizer</h3><p>Instead of using gradient descent, methods in this section learns an optimizer which can directly output the update ($\sum_{i=1}^t\Delta\theta^{i-1}$). There is then no need to tune the stepsize $\alpha$ or find the search direction, as the learning algorithm does that automatically.</p>
-<p><a href="https://imgchr.com/i/tO1wm8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/12/tO1wm8.md.png" alt="tO1wm8.md.png"></a></p>
+<h3 id="learning-the-optimizer">Learning the optimizer</h3>
+<p>Instead of using gradient descent, methods in this section learns an
+optimizer which can directly output the update (<span
+class="math inline">\(\sum_{i=1}^t\Delta\theta^{i-1}\)</span>). There is
+then no need to tune the stepsize <span
+class="math inline">\(\alpha\)</span> or find the search direction, as
+the learning algorithm does that automatically.</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/tO1wm8"><img
+src="https://s1.ax1x.com/2020/06/12/tO1wm8.md.png"
+alt="tO1wm8.md.png" /></a></p>
 
         
     
@@ -720,7 +961,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -738,7 +979,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1008,6 +1249,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->

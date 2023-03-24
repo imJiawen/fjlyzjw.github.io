@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Tue May 03 2022 17:49:46 GMT+0800">
-        <meta property="article:modified_time" content="Tue May 03 2022 18:22:20 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 17:17:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2022/05/03/From-CNN-to-GCNN/index.html",
     "headline": "From CNN to GCNN",
     "datePublished": "Tue May 03 2022 17:49:46 GMT+0800",
-    "dateModified": "Tue May 03 2022 18:22:20 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 17:17:16 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -299,7 +299,9 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -350,7 +352,8 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CNN的性质"><span class="post-toc-number">1.</span> <span class="post-toc-text">CNN的性质</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#傅里叶变换"><span class="post-toc-number">2.</span> <span class="post-toc-text">傅里叶变换</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#谱域的CNN方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">谱域的CNN方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图上的傅里叶basis"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">图上的傅里叶basis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图傅里叶变换"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">图傅里叶变换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ChebyNet"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ChebyNet</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Graph-wavelet-neural-network-GWNN"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Graph wavelet neural network(GWNN)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#空间域CNN方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">空间域CNN方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类比方法"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">类比方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GraphSAGE"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">GraphSAGE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GCN"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">GCN</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MoNet"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">MoNet</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Graph-pooling"><span class="post-toc-number">5.</span> <span class="post-toc-text">Graph pooling</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#cnn%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="post-toc-number">1.</span> <span class="post-toc-text">CNN的性质</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="post-toc-number">2.</span> <span class="post-toc-text">傅里叶变换</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%B0%B1%E5%9F%9F%E7%9A%84cnn%E6%96%B9%E6%B3%95"><span class="post-toc-number">3.</span> <span class="post-toc-text">谱域的CNN方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%BE%E4%B8%8A%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6basis"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">图上的傅里叶basis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%BE%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">图傅里叶变换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#chebynet"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">ChebyNet</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#graph-wavelet-neural-networkgwnn"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Graph wavelet neural
+network(GWNN)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%A9%BA%E9%97%B4%E5%9F%9Fcnn%E6%96%B9%E6%B3%95"><span class="post-toc-number">4.</span> <span class="post-toc-text">空间域CNN方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%B1%BB%E6%AF%94%E6%96%B9%E6%B3%95"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">类比方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#graphsage"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">GraphSAGE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gcn"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">GCN</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#monet"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">MoNet</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#graph-pooling"><span class="post-toc-number">5.</span> <span class="post-toc-text">Graph pooling</span></a></li></ol>
     </ul>
     
 
@@ -425,7 +428,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/GCN/" rel="tag">GCN</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Graph/" rel="tag">Graph</a>
+        <a class="post_tag-none-link" href="/tags/GCN/" rel="tag">GCN</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Graph/" rel="tag">Graph</a>
     </ul>
     
 
@@ -495,105 +498,153 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>CNN无法处理非欧式数据，又希望在拓扑图上有效地提取空间特征来进行机器学习。因此GCNN成为了研究重点。</p>
-<a id="more"></a>
-<h1 id="CNN的性质"><a href="#CNN的性质" class="headerlink" title="CNN的性质"></a>CNN的性质</h1><p>CNN具有局部平稳(i.e.与位置无关，满足平移不变形) 以及多尺度的特点。</p>
+<span id="more"></span>
+<h1 id="cnn的性质">CNN的性质</h1>
+<p>CNN具有局部平稳(i.e.与位置无关，满足平移不变形)
+以及多尺度的特点。</p>
 <p>在图像领域，数据以格子的形式分布，非常规律，对其进行处理时需要处理的是每个格子上的信号而非结构。</p>
 <p>然而，CNN仅在欧式数据上能够发挥作用，对于图、流形等非欧式数据而言，需要进行一定的变换。</p>
-<p>欧式数据的特点：</p>
-<ol>
-<li>非负</li>
-<li>对称</li>
-<li>满足三角不等式</li>
-</ol>
-<h1 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h1><p>在连续的空间上：</p>
-<script type="math/tex; mode=display">h(t) = (f * g)(t) \overset{def}\Longrightarrow \int f(t)g(t - \tau) d \tau</script><p>在离散的空间上：</p>
-<script type="math/tex; mode=display">h(x,y) = (f * g)(x,y) \overset{def}\Longrightarrow \sum_{m,n} f(x-m,y-n)g(m,n)</script><p>不同域的CNN:</p>
+<p>欧式数据的特点： 1. 非负 2. 对称 3. 满足三角不等式</p>
+<h1 id="傅里叶变换">傅里叶变换</h1>
+<p>在连续的空间上：</p>
+<p><span class="math display">\[h(t) = (f * g)(t)
+\overset{def}\Longrightarrow \int f(t)g(t - \tau) d \tau\]</span></p>
+<p>在离散的空间上：</p>
+<p><span class="math display">\[h(x,y) = (f * g)(x,y)
+\overset{def}\Longrightarrow \sum_{m,n} f(x-m,y-n)g(m,n)\]</span></p>
+<p>不同域的CNN:</p>
 <ul>
 <li>对于频域而言，卷积核若定义在频域，则它不是local的，对一个地方的修改会影响到全局。</li>
 <li>对于空间域而言，在节点上定义卷积，对节点周围的邻居节点做平滑。但对于大多数节点而言，度很小，而小部分节点的度很大。</li>
 </ul>
-<h1 id="谱域的CNN方法"><a href="#谱域的CNN方法" class="headerlink" title="谱域的CNN方法"></a>谱域的CNN方法</h1><p>一个图可以被定义为$G = (V,E,W)$,其中$n = |V|$为节点的个数，$W \in R^{n \times n}$为权重邻接矩阵。</p>
-<p>每个节点有$d$个feature，$X \in R^{n \times d}$ 为节点的特征矩阵。</p>
-<p>对于在非欧式距空间中对数据进行处理，我们可以考虑两种方法：</p>
-<ol>
-<li>将图嵌入到欧式空间，再使用CNN对其进行处理，即embedding的方法</li>
-<li>对CNN进行修改，使其能够用于图结构，即GCNN的方法</li>
-</ol>
+<h1 id="谱域的cnn方法">谱域的CNN方法</h1>
+<p>一个图可以被定义为<span class="math inline">\(G =
+(V,E,W)\)</span>,其中<span class="math inline">\(n =
+|V|\)</span>为节点的个数，<span class="math inline">\(W \in R^{n \times
+n}\)</span>为权重邻接矩阵。</p>
+<p>每个节点有<span class="math inline">\(d\)</span>个feature，<span
+class="math inline">\(X \in R^{n \times d}\)</span>
+为节点的特征矩阵。</p>
+<p>对于在非欧式距空间中对数据进行处理，我们可以考虑两种方法： 1.
+将图嵌入到欧式空间，再使用CNN对其进行处理，即embedding的方法 2.
+对CNN进行修改，使其能够用于图结构，即GCNN的方法</p>
 <p>note：embedding嵌入什么空间取决于loss的设置。此外，若是需要在图中找pattern，则embedding的方式不适用，因为其找不到结构pattern。</p>
-<h2 id="图上的傅里叶basis"><a href="#图上的傅里叶basis" class="headerlink" title="图上的傅里叶basis"></a>图上的傅里叶basis</h2><p>图上的拉普拉斯L：对信号求导，越大越不平滑，是刻画图上平滑程度的算子。</p>
-<script type="math/tex; mode=display">L=D-W</script><p>D为对角阵，$D<em>{ii} = \sum_j W</em>{ij}$</p>
+<h2 id="图上的傅里叶basis">图上的傅里叶basis</h2>
+<p>图上的拉普拉斯L：对信号求导，越大越不平滑，是刻画图上平滑程度的算子。</p>
+<p><span class="math display">\[L=D-W\]</span> D为对角阵，<span
+class="math inline">\(D_{ii} = \sum_j W_{ij}\)</span></p>
 <p>L为非负的，对应信号的平滑程度，当值等于0时信号平滑。</p>
 <p>Normalized graph Laplacien:</p>
-<script type="math/tex; mode=display">L = I - D^{- \frac{1}{2}} W D^{- \frac{1}{2}}</script><p>$I$:Identity matrix</p>
+<p><span class="math display">\[L = I - D^{- \frac{1}{2}} W D^{-
+\frac{1}{2}}\]</span> <span class="math inline">\(I\)</span>:Identity
+matrix</p>
 <p>在傅里叶变换中，利用基组使空间域映射到频域，即利用正弦波对信号进行分解。</p>
 <p>图拉普拉斯可以被对角化为：</p>
-<script type="math/tex; mode=display">L = U \Lambda U^T</script><p>${u<em>l}^{n-1}</em>{l=0}$ : 正交特征向量的完全集<br>${\lambda<em>l}^{n-1}</em>{l=0}$ : 相应的非负特征值</p>
+<p><span class="math display">\[L = U \Lambda U^T\]</span></p>
+<p><span class="math inline">\(\{u_l\}^{n-1}_{l=0}\)</span> :
+正交特征向量的完全集 <span
+class="math inline">\(\{\lambda_l\}^{n-1}_{l=0}\)</span> :
+相应的非负特征值</p>
 <p>需要注意的是，都是正交才能进行点积。</p>
-<p>其中$U=[u<em>0,…,u</em>{n-1}],\Lambda = diag([\lambda<em>0,…,\lambda</em>{n-1}])$</p>
-<h2 id="图傅里叶变换"><a href="#图傅里叶变换" class="headerlink" title="图傅里叶变换"></a>图傅里叶变换</h2><p>对于一个信号$x \in R^n$,傅里叶变换定义为：</p>
-<script type="math/tex; mode=display">\hat{x} = U^T x</script><p>傅里叶逆变换：</p>
-<script type="math/tex; mode=display">x =  U \hat{x}</script><p>傅里叶变换中的定理:卷积在进行傅里叶变换之后会变为点积</p>
+<p>其中<span class="math inline">\(U=[u_0,...,u_{n-1}],\Lambda =
+diag([\lambda_0,...,\lambda_{n-1}])\)</span></p>
+<h2 id="图傅里叶变换">图傅里叶变换</h2>
+<p>对于一个信号<span class="math inline">\(x \in
+R^n\)</span>,傅里叶变换定义为：</p>
+<p><span class="math display">\[\hat{x} = U^T x\]</span></p>
+<p>傅里叶逆变换：</p>
+<p><span class="math display">\[ x =  U \hat{x} \]</span></p>
+<p>傅里叶变换中的定理:卷积在进行傅里叶变换之后会变为点积</p>
 <p>因此，x与y的卷积可以表示为：</p>
-<script type="math/tex; mode=display">x \ast_G y = U (( U^T x) \odot ( U^T y))</script><p>卷积的过程可以被拆解成三步：</p>
-<ol>
-<li>对x做傅里叶变换: $U^T x$</li>
-<li>乘以卷积核:$g_{\theta} U^T x$</li>
-<li>做傅里叶逆变换: $U g_{\theta} U^T x$</li>
+<p><span class="math display">\[x \ast_G y = U (( U^T x) \odot ( U^T y))
+\]</span></p>
+<p>卷积的过程可以被拆解成三步：</p>
+<ol type="1">
+<li>对x做傅里叶变换: <span class="math inline">\(U^T x\)</span></li>
+<li>乘以卷积核:<span class="math inline">\(g_{\theta} U^T
+x\)</span></li>
+<li>做傅里叶逆变换: <span class="math inline">\(U g_{\theta} U^T
+x\)</span></li>
 </ol>
 <p>因此卷积可以被写为：</p>
-<script type="math/tex; mode=display">x \*_G y = U g_{\theta} U^T x</script><script type="math/tex; mode=display">x_{k+1,j} = h(\sum^{f_k}_{i=1} U F_{k,i,j} U^T x_{k,i})</script><p>$x_{k,i}$:k+h 信号</p>
-<p>缺点：</p>
-<ol>
-<li>要进行特征分解</li>
-<li>需要大量计算。U的复杂度为$O(N^2)$</li>
-<li>不是localized</li>
-</ol>
-<h2 id="ChebyNet"><a href="#ChebyNet" class="headerlink" title="ChebyNet"></a>ChebyNet</h2><p>思想：参数化滤波器</p>
-<script type="math/tex; mode=display">g_{\theta} = diag([\theta_0,...,\theta_{n-1}]) \Rightarrow g_\beta(\Lambda) = \sum^{K-1}_{k = 0} \beta_k \Lambda^k</script><p>参数由n个减少为k个($\beta_k$)</p>
-<p>ChebyNet:</p>
-<script type="math/tex; mode=display">x *\ast_G y = U g_\beta (\Lambda) U^T x = \sum_{k=0}^{K-1} \beta_k L^k x</script><p>U被约了，只留下了L，而L是稀疏的。<br>通过约束空间，来使使其变成local。</p>
-<p>优点：</p>
-<ol>
-<li>无需特征分解</li>
-<li>卷积核是local的</li>
-<li>计算复杂度：$O(n^2) \rightarrow O(|E|)$</li>
-</ol>
-<h2 id="Graph-wavelet-neural-network-GWNN"><a href="#Graph-wavelet-neural-network-GWNN" class="headerlink" title="Graph wavelet neural network(GWNN)"></a>Graph wavelet neural network(GWNN)</h2><p>ChebyNet通过特征值矩阵$\Lambda$的多项式方程来限制图滤波器的空间来达到localized卷积：</p>
-<script type="math/tex; mode=display">g_\theta(\Lambda) = \sum^{K-1}_{k=0} \theta_k \Lambda^k</script><p>GWNN通过使用小波基对基进行替换来达到localized图卷积的效果。</p>
-<p>傅里叶basis $U$：</p>
-<ul>
-<li>稠密</li>
-<li>非局部</li>
-<li>高计算成本</li>
-</ul>
-<p>小波basis $\psi_s = U e^{\lambda_s} U^T$：</p>
-<ul>
-<li>稀疏</li>
-<li>局部</li>
-<li>低计算成本</li>
-</ul>
+<p><span class="math display">\[x \*_G y = U g_{\theta} U^T x
+\]</span></p>
+<p><span class="math display">\[x_{k+1,j} = h(\sum^{f_k}_{i=1} U
+F_{k,i,j} U^T x_{k,i})\]</span> <span
+class="math inline">\(x_{k,i}\)</span>:k+h 信号</p>
+<p>缺点： 1. 要进行特征分解 2. 需要大量计算。U的复杂度为<span
+class="math inline">\(O(N^2)\)</span> 3. 不是localized</p>
+<h2 id="chebynet">ChebyNet</h2>
+<p>思想：参数化滤波器 <span class="math display">\[ g_{\theta} =
+diag([\theta_0,...,\theta_{n-1}]) \Rightarrow g_\beta(\Lambda) =
+\sum^{K-1}_{k = 0} \beta_k \Lambda^k \]</span></p>
+<p>参数由n个减少为k个(<span class="math inline">\(\beta_k\)</span>)</p>
+<p>ChebyNet: <span class="math display">\[ x *\ast_G y = U g_\beta
+(\Lambda) U^T x = \sum_{k=0}^{K-1} \beta_k L^k x \]</span></p>
+<p>U被约了，只留下了L，而L是稀疏的。
+通过约束空间，来使使其变成local。</p>
+<p>优点： 1. 无需特征分解 2. 卷积核是local的 3. 计算复杂度：<span
+class="math inline">\(O(n^2) \rightarrow O(|E|)\)</span></p>
+<h2 id="graph-wavelet-neural-networkgwnn">Graph wavelet neural
+network(GWNN)</h2>
+<p>ChebyNet通过特征值矩阵<span
+class="math inline">\(\Lambda\)</span>的多项式方程来限制图滤波器的空间来达到localized卷积：</p>
+<p><span class="math display">\[ g_\theta(\Lambda) = \sum^{K-1}_{k=0}
+\theta_k \Lambda^k \]</span></p>
+<p>GWNN通过使用小波基对基进行替换来达到localized图卷积的效果。</p>
+<p>傅里叶basis <span class="math inline">\(U\)</span>： - 稠密 - 非局部
+- 高计算成本</p>
+<p>小波basis <span class="math inline">\(\psi_s = U e^{\lambda_s}
+U^T\)</span>： - 稀疏 - 局部 - 低计算成本</p>
 <p>主要思想：从特征变换中剥离图卷积</p>
-<script type="math/tex; mode=display">x_{k+1,j} = h(\sum^p_{i=1} \psi_s F_{k,i,j} \psi^{-1}_s x_{k,i}), \quad j = 1,...,q</script><p>特征变换部分：</p>
-<script type="math/tex; mode=display">y_{k,j} = \sum^{p}_{i=1} T_{ji} x_{k,i}</script><p>图卷积部分：</p>
-<script type="math/tex; mode=display">x_{k+1,j} = h(\psi_s F_k \psi^{-1}_s y_{k,j})</script><h1 id="空间域CNN方法"><a href="#空间域CNN方法" class="headerlink" title="空间域CNN方法"></a>空间域CNN方法</h1><h2 id="类比方法"><a href="#类比方法" class="headerlink" title="类比方法"></a>类比方法</h2><p>将卷积过程拆分成三步：</p>
-<ol>
-<li>确定邻居</li>
-<li>确定邻居的顺序</li>
-<li>参数共享（卷积核里，在定序的基础上）</li>
-</ol>
-<p>问题：邻居的数量不同（有的多有的少），然而卷积核的大小是固定的。\<br>解决方式：给定中心节点，确定其到其他节点的<strong>距离函数</strong>，选前TOP K个邻居。</p>
-<h2 id="GraphSAGE"><a href="#GraphSAGE" class="headerlink" title="GraphSAGE"></a>GraphSAGE</h2><p>分为两步：</p>
-<ol>
-<li>以某个节点为中心对其邻居节点进行采样</li>
-<li>做aggregate（带权平均）</li>
-</ol>
-<script type="math/tex; mode=display">a_v^{(k)} = AGGREGATE^{(k)}(\{h_u^{(k-1)} : U \in N(v) \})</script><script type="math/tex; mode=display">h_v^(k) = COMBINE^{(k)} (h_v^{(k-1)}, a_v^{(k)})</script><h2 id="GCN"><a href="#GCN" class="headerlink" title="GCN"></a>GCN</h2><script type="math/tex; mode=display">Z = f(X,A) = softmax(\hat{A} ReLU(\hat{A}XW^{(0)})) W^{(1)})</script><p>$\hat{A}$ : 邻接矩阵的变形，给定，与结构有关 \<br>$W^{(0)}, W^{(1)}$: 特征变换参数\<br>$X$ : feature</p>
-<p>对$\hat{A}$进行参数化 $\rightarrow$ 加attention机制：</p>
-<script type="math/tex; mode=display">\alpha_{ij} = \frac{exp(Leaky \quad ReLU(\overset{\sim}a [W \vec{h}_i ||W \vec{h}_j]))}{\sum_{k \in N_i} exp(Leaky \quad ReLU(\overset{\sim}a [W \vec{h}_i ||W \vec{h}_j]))}</script><p>本质上是求节点i和j的相似度。</p>
-<h2 id="MoNet"><a href="#MoNet" class="headerlink" title="MoNet"></a>MoNet</h2><p>是所有空间方法的通用形式。</p>
-<script type="math/tex; mode=display">(f*g)(x) = \sum_{j=1}^J g_j D_j (x)f</script><p>$D_j (x)$ : kernel function,在频域中为基 \<br>$g_j$:kernel,可以定义为相似度函数。整个公式看做是相似度函数的加权</p>
-<p>谱域：显式定义变换<br>空间域：不显式定义变换</p>
-<h1 id="Graph-pooling"><a href="#Graph-pooling" class="headerlink" title="Graph pooling"></a>Graph pooling</h1><ol>
+<p><span class="math display">\[x_{k+1,j} = h(\sum^p_{i=1} \psi_s
+F_{k,i,j} \psi^{-1}_s x_{k,i}), \quad j = 1,...,q \]</span></p>
+<p>特征变换部分：</p>
+<p><span class="math display">\[y_{k,j} = \sum^{p}_{i=1} T_{ji}
+x_{k,i}\]</span></p>
+<p>图卷积部分：</p>
+<p><span class="math display">\[x_{k+1,j} = h(\psi_s F_k \psi^{-1}_s
+y_{k,j})\]</span></p>
+<h1 id="空间域cnn方法">空间域CNN方法</h1>
+<h2 id="类比方法">类比方法</h2>
+<p>将卷积过程拆分成三步： 1. 确定邻居 2. 确定邻居的顺序 3.
+参数共享（卷积核里，在定序的基础上）</p>
+<p>问题：邻居的数量不同（有的多有的少），然而卷积核的大小是固定的。<br />
+解决方式：给定中心节点，确定其到其他节点的<strong>距离函数</strong>，选前TOP
+K个邻居。</p>
+<h2 id="graphsage">GraphSAGE</h2>
+<p>分为两步： 1. 以某个节点为中心对其邻居节点进行采样 2.
+做aggregate（带权平均）</p>
+<p><span class="math display">\[a_v^{(k)} =
+AGGREGATE^{(k)}(\{h_u^{(k-1)} : U \in N(v) \}) \]</span> <span
+class="math display">\[h_v^(k) = COMBINE^{(k)} (h_v^{(k-1)},
+a_v^{(k)})\]</span></p>
+<h2 id="gcn">GCN</h2>
+<p><span class="math display">\[Z = f(X,A) = softmax(\hat{A}
+ReLU(\hat{A}XW^{(0)})) W^{(1)})\]</span></p>
+<p><span class="math inline">\(\hat{A}\)</span> :
+邻接矩阵的变形，给定，与结构有关<br />
+<span class="math inline">\(W^{(0)}, W^{(1)}\)</span>:
+特征变换参数<br />
+<span class="math inline">\(X\)</span> : feature</p>
+<p>对<span class="math inline">\(\hat{A}\)</span>进行参数化 <span
+class="math inline">\(\rightarrow\)</span> 加attention机制：</p>
+<p><span class="math display">\[\alpha_{ij} = \frac{exp(Leaky \quad
+ReLU(\overset{\sim}a [W \vec{h}_i ||W \vec{h}_j]))}{\sum_{k \in N_i}
+exp(Leaky \quad ReLU(\overset{\sim}a [W \vec{h}_i ||W
+\vec{h}_j]))}\]</span></p>
+<p>本质上是求节点i和j的相似度。</p>
+<h2 id="monet">MoNet</h2>
+<p>是所有空间方法的通用形式。</p>
+<p><span class="math display">\[(f*g)(x) = \sum_{j=1}^J g_j D_j
+(x)f\]</span></p>
+<p><span class="math inline">\(D_j (x)\)</span> : kernel
+function,在频域中为基<br />
+<span
+class="math inline">\(g_j\)</span>:kernel,可以定义为相似度函数。整个公式看做是相似度函数的加权</p>
+<p>谱域：显式定义变换 空间域：不显式定义变换</p>
+<h1 id="graph-pooling">Graph pooling</h1>
+<ol type="1">
 <li>节点粗化</li>
 <li>节点选择</li>
 </ol>
@@ -723,7 +774,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -741,7 +792,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -1011,6 +1062,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->

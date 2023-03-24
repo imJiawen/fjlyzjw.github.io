@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Tue May 03 2022 19:31:22 GMT+0800">
-        <meta property="article:modified_time" content="Tue May 03 2022 19:48:24 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 17:11:50 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html",
     "headline": "Summary of Self-Supervised Learning",
     "datePublished": "Tue May 03 2022 19:31:22 GMT+0800",
-    "dateModified": "Tue May 03 2022 19:48:24 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 17:11:50 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -299,7 +299,9 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -350,7 +352,14 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MoCo-Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning-CVPR-2020"><span class="post-toc-number">1.</span> <span class="post-toc-text">MoCo (Momentum Contrast for Unsupervised Visual Representation Learning, CVPR 2020)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Main-idea"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Main idea</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Method"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Method</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#BYOL-Bootstrap-Your-Own-Latent-A-New-Approach-to-Self-Supervised-Learning-NIPS-2020"><span class="post-toc-number">2.</span> <span class="post-toc-text">BYOL (Bootstrap Your Own Latent A New Approach to Self-Supervised Learning, NIPS 2020)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Problem"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Motivation"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Motivation</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Method-1"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Method</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ALBEF-Align-before-Fuse-Vision-and-Language-Representation-Learning-with-Momentum-Distillation-NIPS-2021"><span class="post-toc-number">3.</span> <span class="post-toc-text">ALBEF (Align before Fuse: Vision and Language Representation Learning with Momentum Distillation, NIPS 2021)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Main-idea-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Main idea</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Method-2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Method</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pre-training-Objectives"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">Pre-training Objectives</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Image-Text-Contrastive-Learning"><span class="post-toc-number">3.2.1.1.</span> <span class="post-toc-text">Image-Text Contrastive Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Masked-Language-Modeling"><span class="post-toc-number">3.2.1.2.</span> <span class="post-toc-text">Masked Language Modeling</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Image-Text-Matching"><span class="post-toc-number">3.2.1.3.</span> <span class="post-toc-text">Image-Text Matching</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Momentum-Distillation"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">Momentum Distillation</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Barlow-Twins"><span class="post-toc-number">4.</span> <span class="post-toc-text">Barlow Twins</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#moco-momentum-contrast-for-unsupervised-visual-representation-learning-cvpr-2020"><span class="post-toc-number">1.</span> <span class="post-toc-text">MoCo
+(Momentum Contrast for Unsupervised Visual Representation Learning, CVPR
+2020)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#main-idea"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Main idea</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#method"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Method</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#byol-bootstrap-your-own-latent-a-new-approach-to-self-supervised-learning-nips-2020"><span class="post-toc-number">2.</span> <span class="post-toc-text">BYOL
+(Bootstrap Your Own Latent A New Approach to Self-Supervised Learning,
+NIPS 2020)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#problem"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#motivation"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Motivation</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#method-1"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Method</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#albef-align-before-fuse-vision-and-language-representation-learning-with-momentum-distillation-nips-2021"><span class="post-toc-number">3.</span> <span class="post-toc-text">ALBEF
+(Align before Fuse: Vision and Language Representation Learning with
+Momentum Distillation, NIPS 2021)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#main-idea-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Main idea</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#method-2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Method</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pre-training-objectives"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">Pre-training Objectives</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#image-text-contrastive-learning"><span class="post-toc-number">3.2.1.1.</span> <span class="post-toc-text">Image-Text Contrastive
+Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#masked-language-modeling"><span class="post-toc-number">3.2.1.2.</span> <span class="post-toc-text">Masked Language Modeling</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#image-text-matching"><span class="post-toc-number">3.2.1.3.</span> <span class="post-toc-text">Image-Text Matching</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#momentum-distillation"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">Momentum Distillation</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#barlow-twins"><span class="post-toc-number">4.</span> <span class="post-toc-text">Barlow Twins</span></a></li></ol>
     </ul>
     
 
@@ -425,7 +434,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Contrasive-Learning/" rel="tag">Contrasive Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Self-supervised-Learning/" rel="tag">Self-supervised Learning</a>
+        <a class="post_tag-none-link" href="/tags/Contrasive-Learning/" rel="tag">Contrasive Learning</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Self-supervised-Learning/" rel="tag">Self-supervised Learning</a>
     </ul>
     
 
@@ -495,60 +504,211 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>近期自监督学习论文总结。</p>
-<a id="more"></a>
-<h1 id="MoCo-Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning-CVPR-2020"><a href="#MoCo-Momentum-Contrast-for-Unsupervised-Visual-Representation-Learning-CVPR-2020" class="headerlink" title="MoCo (Momentum Contrast for Unsupervised Visual Representation Learning, CVPR 2020)"></a>MoCo (Momentum Contrast for Unsupervised Visual Representation Learning, CVPR 2020)</h1><h2 id="Main-idea"><a href="#Main-idea" class="headerlink" title="Main idea"></a>Main idea</h2><p>采用对比学习的方式学习图片表征，其核心是引入了具有队列的动态字典以及移动平均编码器。</p>
-<ol>
-<li>它将dict size与mini-batch size解耦，将队列的大小作为超参数，而字典中的样本将被渐进替换。</li>
-<li>此外，若直接把encoder q中的参数拷贝到encoder k中，快速变化的encoder将降低表示的一致性。因此，该工作采取了momentum update的方式，仅对encoder k进行少量更新。</li>
+<span id="more"></span>
+<h1
+id="moco-momentum-contrast-for-unsupervised-visual-representation-learning-cvpr-2020">MoCo
+(Momentum Contrast for Unsupervised Visual Representation Learning, CVPR
+2020)</h1>
+<h2 id="main-idea">Main idea</h2>
+<p>采用对比学习的方式学习图片表征，其核心是引入了具有队列的动态字典以及移动平均编码器。</p>
+<ol type="1">
+<li>它将dict size与mini-batch
+size解耦，将队列的大小作为超参数，而字典中的样本将被渐进替换。</li>
+<li>此外，若直接把encoder q中的参数拷贝到encoder
+k中，快速变化的encoder将降低表示的一致性。因此，该工作采取了momentum
+update的方式，仅对encoder k进行少量更新。</li>
 </ol>
-<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p><a href="https://imgtu.com/i/IlFJGd" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/11/06/IlFJGd.png" alt="IlFJGd.png"></a></p>
-<p>InFoNCE: 选取$[k<em>1,…,k</em>{K+1}]$, 含一个正样本$k_+$, K个负样本$k_i$ (其他随便信号)。</p>
-<script type="math/tex; mode=display">\mathcal{L}_q = - \rm{log} \frac{\rm{exp}(q \cdot k_{+} / \tau)}{\sum^{K}_{i=0} \exp (q \cdot k_i / \tau)}</script><p>Momentum Update</p>
-<script type="math/tex; mode=display">\theta_k \leftarrow m \theta_k + (1-m) \theta_q</script><h1 id="BYOL-Bootstrap-Your-Own-Latent-A-New-Approach-to-Self-Supervised-Learning-NIPS-2020"><a href="#BYOL-Bootstrap-Your-Own-Latent-A-New-Approach-to-Self-Supervised-Learning-NIPS-2020" class="headerlink" title="BYOL (Bootstrap Your Own Latent A New Approach to Self-Supervised Learning, NIPS 2020)"></a>BYOL (Bootstrap Your Own Latent A New Approach to Self-Supervised Learning, NIPS 2020)</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>现有的图片表示对比学习将同一图片的不同增强视图作为正样本，通过约束同一张图的不同形态之间的特征差异性来实现特征提取（一般通过数据增强实现）。<br>若仅有正样本，网络容易对所有输入都输出一个固定的值，这样特征差异性就是0，完美符合优化目标，但这不是我们想要的，即导致了Collapsing。</p>
-<p>负样本对解决了训练崩塌的问题，但对数量要求较大，因为只有这样才能训练出足够强的特征提取能力，因此往往需要较大的batch size才能有较好的效果。</p>
+<h2 id="method">Method</h2>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlFJGd"><img
+src="https://z3.ax1x.com/2021/11/06/IlFJGd.png"
+alt="IlFJGd.png" /></a></p>
+<p>InFoNCE: 选取<span class="math inline">\([k_1,...,k_{K+1}]\)</span>,
+含一个正样本<span class="math inline">\(k_+\)</span>, K个负样本<span
+class="math inline">\(k_i\)</span> (其他随便信号)。</p>
+<p><span class="math display">\[\mathcal{L}_q = - \rm{log}
+\frac{\rm{exp}(q \cdot k_{+} / \tau)}{\sum^{K}_{i=0} \exp (q \cdot k_i /
+\tau)}\]</span></p>
+<p>Momentum Update</p>
+<p><span class="math display">\[\theta_k \leftarrow m \theta_k + (1-m)
+\theta_q\]</span></p>
+<h1
+id="byol-bootstrap-your-own-latent-a-new-approach-to-self-supervised-learning-nips-2020">BYOL
+(Bootstrap Your Own Latent A New Approach to Self-Supervised Learning,
+NIPS 2020)</h1>
+<h2 id="problem">Problem</h2>
+<p>现有的图片表示对比学习将同一图片的不同增强视图作为正样本，通过约束同一张图的不同形态之间的特征差异性来实现特征提取（一般通过数据增强实现）。
+若仅有正样本，网络容易对所有输入都输出一个固定的值，这样特征差异性就是0，完美符合优化目标，但这不是我们想要的，即导致了Collapsing。</p>
+<p>负样本对解决了训练崩塌的问题，但对数量要求较大，因为只有这样才能训练出足够强的特征提取能力，因此往往需要较大的batch
+size才能有较好的效果。</p>
 <p>BYOL无负样本对，通过增加prediction和stop-gradient避免训练退化。</p>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>作者首先展示了一个实验，一个网络参数随机初始化且固定的target network的top1准确率只有1.4%，而target network输出feature作为另一个叫online network的训练目标，等这个online network训练好之后，online network的top1准确率可以达到18.8%。</p>
-<p>假如将target network替换为效果更好的网络参数（比如此时的online network），然后再迭代一次，也就是再训练一轮online network，去学习新的target network输出的feature，那效果应该是不断上升的，类似左右脚踩楼梯不断上升一样。</p>
-<h2 id="Method-1"><a href="#Method-1" class="headerlink" title="Method"></a>Method</h2><p><a href="https://imgtu.com/i/5XeZOH" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/10/29/5XeZOH.png" alt="5XeZOH.png"></a></p>
-<p>给定一个target network产生表示，用一个online network去预测target表示。若target与online同步更新，表现很差；若保持target不变，acc约18.8%。因此对target采用EMA（Exponential Moving Average）策略。</p>
-<p>给定a set of weights of online network $\theta$, a set of weight of target network $\xi$,  target decay rate $\tau \in [0, 1]$,在训练之后进行以下更新：</p>
-<script type="math/tex; mode=display">\xi \leftarrow \tau \xi + (1- \tau) \theta</script><p>A set of images: $\mathcal{D}$, an image $x~\mathcal{D}$ sampled uniformly.<br>图像增强分布$\mathcal{T}$ and $\mathcal{T}$. \<br>$v \triangleq t(x)$ and $v’ \triangleq t’(x)$: two augmented views from $x$.</p>
-<p>$y<em>{\theta} \triangleq f</em>{\theta} (v)$: online network产生的表示 \<br>$z<em>{\theta} \triangleq g</em>{\theta} (y)$: projection \<br>$q<em>{\theta}(z</em>{\theta})$: prediction of $z’<em>{\xi}$ \<br>分别对$q</em>{\theta}(z<em>{\theta})$和$z’</em>{\xi}$进行l2 归一化：<br>$\overline{q}<em>{\theta}(z</em>{\theta}) \triangleq q<em>{\theta}(z</em>{\theta}) / || q<em>{\theta}(z</em>{\theta}) ||<em>2$, $\overline{z}</em>{\theta} \triangleq z’<em>{\xi} / ||z’</em>{\xi}||_2$</p>
+<h2 id="motivation">Motivation</h2>
+<p>作者首先展示了一个实验，一个网络参数随机初始化且固定的target
+network的top1准确率只有1.4%，而target
+network输出feature作为另一个叫online network的训练目标，等这个online
+network训练好之后，online network的top1准确率可以达到18.8%。</p>
+<p>假如将target network替换为效果更好的网络参数（比如此时的online
+network），然后再迭代一次，也就是再训练一轮online
+network，去学习新的target
+network输出的feature，那效果应该是不断上升的，类似左右脚踩楼梯不断上升一样。</p>
+<h2 id="method-1">Method</h2>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5XeZOH"><img
+src="https://z3.ax1x.com/2021/10/29/5XeZOH.png"
+alt="5XeZOH.png" /></a></p>
+<p>给定一个target network产生表示，用一个online
+network去预测target表示。若target与online同步更新，表现很差；若保持target不变，acc约18.8%。因此对target采用EMA（Exponential
+Moving Average）策略。</p>
+<p>给定a set of weights of online network <span
+class="math inline">\(\theta\)</span>, a set of weight of target network
+<span class="math inline">\(\xi\)</span>, target decay rate <span
+class="math inline">\(\tau \in [0,
+1]\)</span>,在训练之后进行以下更新：</p>
+<p><span class="math display">\[\xi \leftarrow \tau \xi + (1- \tau)
+\theta\]</span></p>
+<p>A set of images: <span class="math inline">\(\mathcal{D}\)</span>, an
+image <span class="math inline">\(x~\mathcal{D}\)</span> sampled
+uniformly. 图像增强分布<span class="math inline">\(\mathcal{T}\)</span>
+and <span class="math inline">\(\mathcal{T}\)</span>.<br />
+<span class="math inline">\(v \triangleq t(x)\)</span> and <span
+class="math inline">\(v&#39; \triangleq t&#39;(x)\)</span>: two
+augmented views from <span class="math inline">\(x\)</span>.</p>
+<p><span class="math inline">\(y_{\theta} \triangleq f_{\theta}
+(v)\)</span>: online network产生的表示<br />
+<span class="math inline">\(z_{\theta} \triangleq g_{\theta}
+(y)\)</span>: projection<br />
+<span class="math inline">\(q_{\theta}(z_{\theta})\)</span>: prediction
+of <span class="math inline">\(z&#39;_{\xi}\)</span><br />
+分别对<span class="math inline">\(q_{\theta}(z_{\theta})\)</span>和<span
+class="math inline">\(z&#39;_{\xi}\)</span>进行l2 归一化： <span
+class="math inline">\(\overline{q}_{\theta}(z_{\theta}) \triangleq
+q_{\theta}(z_{\theta}) / || q_{\theta}(z_{\theta}) ||_2\)</span>, <span
+class="math inline">\(\overline{z}_{\theta} \triangleq z&#39;_{\xi} /
+||z&#39;_{\xi}||_2\)</span></p>
 <p>仅有online有predictor，两个branch之间是非对称的。</p>
 <p>计算online的prediction和target的projection的MSE。</p>
-<script type="math/tex; mode=display">\mathcal{L}_{\theta , \xi} \triangleq || \overline{q_{\theta}} - \overline{z_{\xi}}' ||_2^2 = 2-2 \cdot \frac{<q_{\theta}, z'_{\xi}>}{||q_{\theta}||_2 \cdot ||z'_{\xi}||_2}</script><p>分别将$v’$输入online network、$v$输入target network计算$\widetilde{\mathcal{L}}<em>{\theta , \xi}$，使得loss $\mathcal{L}</em>{\theta , \xi}$对称。</p>
-<p>在每个训练步进行随机优化，针对$\theta$最小化$\mathcal{L}^{BYOL}<em>{\theta, \xi}=\mathcal{L}</em>{\theta , \xi} + \widetilde{\mathcal{L}}_{\theta , \xi}$,而$\xi$则采取stop gradient策略。</p>
-<script type="math/tex; mode=display">\theta \leftarrow \rm{optimizer}(\theta, \nabla_{\theta} \mathcal{L}^{BYOL}_{\theta, \xi}, \eta) \xi \leftarrow \tau \xi + (1-\tau) \theta</script><p>其中$\eta$是个可学习参数。</p>
-<h1 id="ALBEF-Align-before-Fuse-Vision-and-Language-Representation-Learning-with-Momentum-Distillation-NIPS-2021"><a href="#ALBEF-Align-before-Fuse-Vision-and-Language-Representation-Learning-with-Momentum-Distillation-NIPS-2021" class="headerlink" title="ALBEF (Align before Fuse: Vision and Language Representation Learning with Momentum Distillation, NIPS 2021)"></a>ALBEF (Align before Fuse: Vision and Language Representation Learning with Momentum Distillation, NIPS 2021)</h1><h2 id="Main-idea-1"><a href="#Main-idea-1" class="headerlink" title="Main idea"></a>Main idea</h2><p>大多数现有基于transformer作为多模编码器的工作共同建模visual tokens和word tokens，然而token之间是非对齐的，往往难以捕捉它们之间的交互。<br>本文提出，</p>
-<ol>
-<li>采用对比损失在cross-modal attention fusing之前对图像和文本进行对齐。</li>
-<li>为了应对噪声，提出momentum distillation，从momentum model所产生的伪标签中学习。</li>
-</ol>
-<h2 id="Method-2"><a href="#Method-2" class="headerlink" title="Method"></a>Method</h2><p><a href="https://imgtu.com/i/5XeMkt" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/10/29/5XeMkt.png" alt="5XeMkt.png"></a></p>
-<h3 id="Pre-training-Objectives"><a href="#Pre-training-Objectives" class="headerlink" title="Pre-training Objectives"></a>Pre-training Objectives</h3><h4 id="Image-Text-Contrastive-Learning"><a href="#Image-Text-Contrastive-Learning" class="headerlink" title="Image-Text Contrastive Learning"></a>Image-Text Contrastive Learning</h4><p>对比损失旨在在融合之前学习一个更好的单模表示。</p>
-<p>需要学习一个similarity function $s=g<em>v (\bold{v}</em>{cls})^{\top} g<em>w (\bold{w}</em>{cls})$。受MoCo启发，维护了两个队列来保存由momentum unimodal encoders产生的最近的M个图片-文本表示。由momentum encoders所产生的归一化的特征表示为$g’<em>v (\bold{v}</em>{cls}’)$和$g’<em>w (\bold{w}</em>{cls}’)$。<br>我们定义$s(I,T)=g<em>v (\bold{v}</em>{cls})^{\top}g<em>w’ (\bold{w}</em>{cls}’)$, $s(T,I)=g<em>w (\bold{w}</em>{cls})^{\top}g<em>v’ (\bold{v}</em>{cls}’)$.</p>
-<p>calculate the softmax-normalized image-to-text and text-to-image<br>similarity as:</p>
-<script type="math/tex; mode=display">p^{i2t}_m (I)=\frac{\exp (s(I,T_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(I, T_m)/\tau)}, 
-p^{t2i}_m (T)=\frac{\exp (s(T,I_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(T, I_m)/\tau)}</script><p>$\tau$: learnable temperature parameter</p>
-<p>$\bold{y}^{i2t}(I)$ and $\bold{y}^{t2i}(T)$: ground-truth<br>one-hot similarity</p>
-<p>对比损失被定义为$\bold{p}$和$\bold{y}$的交叉熵。</p>
-<script type="math/tex; mode=display">\mathcal{L}_{itc} = \frac{1}{2} \rm{E}_{(I,T) \backsim D} [\rm{H}(\bold{p}^{i2t}(I), \bold{y}^{i2t}(I)) + \rm{H}(\bold{p}^{t2i}(T), \bold{y}^{t2i}(T))]</script><h4 id="Masked-Language-Modeling"><a href="#Masked-Language-Modeling" class="headerlink" title="Masked Language Modeling"></a>Masked Language Modeling</h4><p>利用图片和上下文文本信息去预测masked words。</p>
-<p>$\hat{T}$: masked text \<br>$\bold{p}^{msk} (I, \hat{T})$: model’s predicted<br>probability for a masked token.</p>
+<p><span class="math display">\[\mathcal{L}_{\theta , \xi} \triangleq ||
+\overline{q_{\theta}} - \overline{z_{\xi}}&#39; ||_2^2 = 2-2 \cdot
+\frac{&lt;q_{\theta}, z&#39;_{\xi}&gt;}{||q_{\theta}||_2 \cdot
+||z&#39;_{\xi}||_2}\]</span></p>
+<p>分别将<span class="math inline">\(v&#39;\)</span>输入online
+network、<span class="math inline">\(v\)</span>输入target
+network计算<span class="math inline">\(\widetilde{\mathcal{L}}_{\theta ,
+\xi}\)</span>，使得loss <span class="math inline">\(\mathcal{L}_{\theta
+, \xi}\)</span>对称。</p>
+<p>在每个训练步进行随机优化，针对<span
+class="math inline">\(\theta\)</span>最小化<span
+class="math inline">\(\mathcal{L}^{BYOL}_{\theta,
+\xi}=\mathcal{L}_{\theta , \xi} + \widetilde{\mathcal{L}}_{\theta ,
+\xi}\)</span>,而<span class="math inline">\(\xi\)</span>则采取stop
+gradient策略。</p>
+<p><span class="math display">\[\theta \leftarrow \rm{optimizer}(\theta,
+\nabla_{\theta} \mathcal{L}^{BYOL}_{\theta, \xi}, \eta) \xi \leftarrow
+\tau \xi + (1-\tau) \theta\]</span> 其中<span
+class="math inline">\(\eta\)</span>是个可学习参数。</p>
+<h1
+id="albef-align-before-fuse-vision-and-language-representation-learning-with-momentum-distillation-nips-2021">ALBEF
+(Align before Fuse: Vision and Language Representation Learning with
+Momentum Distillation, NIPS 2021)</h1>
+<h2 id="main-idea-1">Main idea</h2>
+<p>大多数现有基于transformer作为多模编码器的工作共同建模visual
+tokens和word
+tokens，然而token之间是非对齐的，往往难以捕捉它们之间的交互。 本文提出，
+1. 采用对比损失在cross-modal attention fusing之前对图像和文本进行对齐。
+2. 为了应对噪声，提出momentum distillation，从momentum
+model所产生的伪标签中学习。</p>
+<h2 id="method-2">Method</h2>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5XeMkt"><img
+src="https://z3.ax1x.com/2021/10/29/5XeMkt.png"
+alt="5XeMkt.png" /></a></p>
+<h3 id="pre-training-objectives">Pre-training Objectives</h3>
+<h4 id="image-text-contrastive-learning">Image-Text Contrastive
+Learning</h4>
+<p>对比损失旨在在融合之前学习一个更好的单模表示。</p>
+<p>需要学习一个similarity function <span class="math inline">\(s=g_v
+(\bold{v}_{cls})^{\top} g_w
+(\bold{w}_{cls})\)</span>。受MoCo启发，维护了两个队列来保存由momentum
+unimodal encoders产生的最近的M个图片-文本表示。由momentum
+encoders所产生的归一化的特征表示为<span class="math inline">\(g&#39;_v
+(\bold{v}_{cls}&#39;)\)</span>和<span class="math inline">\(g&#39;_w
+(\bold{w}_{cls}&#39;)\)</span>。 我们定义<span
+class="math inline">\(s(I,T)=g_v (\bold{v}_{cls})^{\top}g_w&#39;
+(\bold{w}_{cls}&#39;)\)</span>, <span class="math inline">\(s(T,I)=g_w
+(\bold{w}_{cls})^{\top}g_v&#39; (\bold{v}_{cls}&#39;)\)</span>.</p>
+<p>calculate the softmax-normalized image-to-text and text-to-image
+similarity as:</p>
+<p><span class="math display">\[p^{i2t}_m (I)=\frac{\exp (s(I,T_m)/
+\tau)}{\sum_{m=1}^{M} \exp (s(I, T_m)/\tau)},
+p^{t2i}_m (T)=\frac{\exp (s(T,I_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(T,
+I_m)/\tau)}\]</span></p>
+<p><span class="math inline">\(\tau\)</span>: learnable temperature
+parameter</p>
+<p><span class="math inline">\(\bold{y}^{i2t}(I)\)</span> and <span
+class="math inline">\(\bold{y}^{t2i}(T)\)</span>: ground-truth one-hot
+similarity</p>
+<p>对比损失被定义为<span class="math inline">\(\bold{p}\)</span>和<span
+class="math inline">\(\bold{y}\)</span>的交叉熵。</p>
+<p><span class="math display">\[\mathcal{L}_{itc} = \frac{1}{2}
+\rm{E}_{(I,T) \backsim D} [\rm{H}(\bold{p}^{i2t}(I), \bold{y}^{i2t}(I))
++ \rm{H}(\bold{p}^{t2i}(T), \bold{y}^{t2i}(T))]\]</span></p>
+<h4 id="masked-language-modeling">Masked Language Modeling</h4>
+<p>利用图片和上下文文本信息去预测masked words。</p>
+<p><span class="math inline">\(\hat{T}\)</span>: masked text<br />
+<span class="math inline">\(\bold{p}^{msk} (I, \hat{T})\)</span>:
+model’s predicted probability for a masked token.</p>
 <p>MLM 最小化交叉熵:</p>
-<script type="math/tex; mode=display">\mathcal{L}_{mlm}=\rm{E}_{(I,\hat{T})\backsim D} \rm{H} (\bold{p}^{msk} (I, \hat{T}, \bold{y}^{msk})</script><p>$\bold{y}^{msk}$: one-hot vocabulary distribution,真实token的概率是1</p>
-<h4 id="Image-Text-Matching"><a href="#Image-Text-Matching" class="headerlink" title="Image-Text Matching"></a>Image-Text Matching</h4><p>预测一组图文对为正（匹配）或负（不匹配）。仅采用[CLS] token的embedding。</p>
-<script type="math/tex; mode=display">\mathcal{L}_{itm} = \rm{E}_{(I,T) \backsim D} \rm{H}(\bold{p}^{itm}(I, T), \bold{y}^{itm})$$$\bold{y}^{itm}$: 2维one-hot ground-truth label向量表示
-
-$$\mathcal{L} = \mathcal{L}_{itc} + \mathcal{L}_{mlm} + \mathcal{L}_{itm}</script><h3 id="Momentum-Distillation"><a href="#Momentum-Distillation" class="headerlink" title="Momentum Distillation"></a>Momentum Distillation</h3><p>正样本对往往弱相关，也会包含一些不相关的文本，或实体，而对于ITC学习来说，负文本可能也会包含一些匹配图片的信息。因此采用一个动量模型，它是一个exponential-moving-average<br>versions of the unimodal and multimodal encoders。</p>
-<p>For ITC,首先利用动量单模encoder产生的特征计算相似度：$s’(I,T)=g<em>v’(\bold{v}</em>{cls}’)^{\top} g<em>w’(\bold{w}</em>{cls}’)$以及$s’(T,I)=g<em>w’(\bold{w}</em>{cls}’)^{\top} g<em>v’(\bold{v}</em>{cls}’)$</p>
-<p>之后，计算soft pseudo-targets$\bold{q}^{i2t}$和$\bold{q}^{t2i}$,计算损失：</p>
-<script type="math/tex; mode=display">\mathcal{L}^{\rm{mod}}_{\rm{itc}} = (1-\alpha) \mathcal{L}_{itc} + \frac{\alpha}{2} \rm{E}_{(I,T) \backsim D} [\rm{KL}(\bold{p}^{i2t}(I), \bold{q}^{i2t}(I)) + \rm{KL}(\bold{p}^{t2i}(T), \bold{q}^{t2i}(T))]</script><p>For MLM, $\bold{q}^{msk}(I,\hat{T})$表示momentum model’s prediction probability for the<br>masked token, 损失表示为：</p>
-<script type="math/tex; mode=display">\mathcal{L}^{\rm{mod}}_{\rm{mlm}} = (1-\alpha) \mathcal{L}_{mlm} + {\alpha} \rm{E}_{(I,\hat{T}) \backsim D} \rm{KL}(\bold{p}^{msk}(I,\hat{T}),\bold{q}^{msk}(I,\hat{T}))</script><h1 id="Barlow-Twins"><a href="#Barlow-Twins" class="headerlink" title="Barlow Twins"></a>Barlow Twins</h1><p><a href="https://imgtu.com/i/5XebBd" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/10/29/5XebBd.png" alt="5XebBd.png"></a></p>
+<p><span
+class="math display">\[\mathcal{L}_{mlm}=\rm{E}_{(I,\hat{T})\backsim D}
+\rm{H} (\bold{p}^{msk} (I, \hat{T}, \bold{y}^{msk})\]</span> <span
+class="math inline">\(\bold{y}^{msk}\)</span>: one-hot vocabulary
+distribution,真实token的概率是1</p>
+<h4 id="image-text-matching">Image-Text Matching</h4>
+<p>预测一组图文对为正（匹配）或负（不匹配）。仅采用[CLS]
+token的embedding。</p>
+<p><span class="math display">\[\mathcal{L}_{itm} = \rm{E}_{(I,T)
+\backsim D} \rm{H}(\bold{p}^{itm}(I, T), \bold{y}^{itm})\]</span><span
+class="math inline">\(\bold{y}^{itm}\)</span>: 2维one-hot ground-truth
+label向量表示</p>
+<p><span class="math display">\[\mathcal{L} = \mathcal{L}_{itc} +
+\mathcal{L}_{mlm} + \mathcal{L}_{itm}\]</span></p>
+<h3 id="momentum-distillation">Momentum Distillation</h3>
+<p>正样本对往往弱相关，也会包含一些不相关的文本，或实体，而对于ITC学习来说，负文本可能也会包含一些匹配图片的信息。因此采用一个动量模型，它是一个exponential-moving-average
+versions of the unimodal and multimodal encoders。</p>
+<p>For ITC,首先利用动量单模encoder产生的特征计算相似度：<span
+class="math inline">\(s&#39;(I,T)=g_v&#39;(\bold{v}_{cls}&#39;)^{\top}
+g_w&#39;(\bold{w}_{cls}&#39;)\)</span>以及<span
+class="math inline">\(s&#39;(T,I)=g_w&#39;(\bold{w}_{cls}&#39;)^{\top}
+g_v&#39;(\bold{v}_{cls}&#39;)\)</span></p>
+<p>之后，计算soft pseudo-targets<span
+class="math inline">\(\bold{q}^{i2t}\)</span>和<span
+class="math inline">\(\bold{q}^{t2i}\)</span>,计算损失：</p>
+<p><span class="math display">\[\mathcal{L}^{\rm{mod}}_{\rm{itc}} =
+(1-\alpha) \mathcal{L}_{itc} + \frac{\alpha}{2} \rm{E}_{(I,T) \backsim
+D} [\rm{KL}(\bold{p}^{i2t}(I), \bold{q}^{i2t}(I)) +
+\rm{KL}(\bold{p}^{t2i}(T), \bold{q}^{t2i}(T))]\]</span></p>
+<p>For MLM, <span
+class="math inline">\(\bold{q}^{msk}(I,\hat{T})\)</span>表示momentum
+model’s prediction probability for the masked token, 损失表示为：</p>
+<p><span class="math display">\[\mathcal{L}^{\rm{mod}}_{\rm{mlm}} =
+(1-\alpha) \mathcal{L}_{mlm} + {\alpha} \rm{E}_{(I,\hat{T}) \backsim D}
+\rm{KL}(\bold{p}^{msk}(I,\hat{T}),\bold{q}^{msk}(I,\hat{T}))\]</span></p>
+<h1 id="barlow-twins">Barlow Twins</h1>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5XebBd"><img
+src="https://z3.ax1x.com/2021/10/29/5XebBd.png"
+alt="5XebBd.png" /></a></p>
 <p>将样本经过不同增广送入同一网络中得到两种表示，利用损失函数迫使它们的互相关矩阵接近于恒等矩阵：这意味着同一样本不同的增广版本下提取出的特征表示非常类似，同时特征向量分量间的冗余最小化。</p>
-<p>损失函数如下所示，C为互相关矩阵，其中invariance term使得对角元素接近于1，促使同一样本在不同失真版本下的特征一致性，redundancy reduction term使非对角元素接近0，解耦特征表示的不同向量分量</p>
-<p><img src="https://img-blog.csdnimg.cn/20210320234759199.png" alt="损失函数"></p>
+<p>损失函数如下所示，C为互相关矩阵，其中invariance
+term使得对角元素接近于1，促使同一样本在不同失真版本下的特征一致性，redundancy
+reduction term使非对角元素接近0，解耦特征表示的不同向量分量</p>
+<figure>
+<img src="https://img-blog.csdnimg.cn/20210320234759199.png"
+alt="损失函数" />
+<figcaption aria-hidden="true">损失函数</figcaption>
+</figure>
 <p>文中还给出了互相关矩阵C的详细计算公式，如下所示：</p>
-<p><img src="https://img-blog.csdnimg.cn/20210320234825598.png" alt="互相关矩阵"></p>
+<figure>
+<img src="https://img-blog.csdnimg.cn/20210320234825598.png"
+alt="互相关矩阵" />
+<figcaption aria-hidden="true">互相关矩阵</figcaption>
+</figure>
 
         
     
@@ -568,6 +728,14 @@ $$\mathcal{L} = \mathcal{L}_{itc} + \mathcal{L}_{mlm} + \mathcal{L}_{itm}</scrip
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2023/03/24/Deep-Generative-Models/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -667,7 +835,7 @@ $$\mathcal{L} = \mathcal{L}_{itc} + \mathcal{L}_{mlm} + \mathcal{L}_{itm}</scrip
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -685,7 +853,7 @@ $$\mathcal{L} = \mathcal{L}_{itc} + \mathcal{L}_{mlm} + \mathcal{L}_{itm}</scrip
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -955,6 +1123,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->

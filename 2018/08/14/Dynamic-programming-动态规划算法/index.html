@@ -56,7 +56,8 @@
     <link rel="icon" href="/img/web_icon.jpg">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
+    <meta name="description" itemprop="description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:(
+)，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
     <meta name="keywords" content=",Dynamic programming,Algorithm summary">
     <meta name="theme-color" content="#0097A7">
 
@@ -237,12 +238,13 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Dynamic programming 动态规划算法 | Jiawen and her funny friends">
     <meta property="og:image" content="/img/web_icon.jpg">
-    <meta property="og:description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
+    <meta property="og:description" content="动态规划算法在编程题中运用场景很广(我觉得也有点难:(
+)，这篇博文主要总结了动态规划算法的基本思想以及一些例题。">
     <meta property="og:article:tag" content="Dynamic programming"> <meta property="og:article:tag" content="Algorithm summary"> 
 
     
         <meta property="article:published_time" content="Tue Aug 14 2018 23:08:47 GMT+0800">
-        <meta property="article:modified_time" content="Sat Sep 08 2018 22:20:34 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 17:17:13 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +267,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/08/14/Dynamic-programming-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/index.html",
     "headline": "Dynamic programming 动态规划算法",
     "datePublished": "Tue Aug 14 2018 23:08:47 GMT+0800",
-    "dateModified": "Sat Sep 08 2018 22:20:34 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 17:17:13 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -284,7 +286,8 @@
         }
     },
     "keywords": ",Dynamic programming,Algorithm summary",
-    "description": "动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。",
+    "description": "动态规划算法在编程题中运用场景很广(我觉得也有点难:(
+)，这篇博文主要总结了动态规划算法的基本思想以及一些例题。",
 }
 </script>
 
@@ -299,7 +302,9 @@
     <!-- Custom Head -->
     
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jiawen and her funny friends" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -350,7 +355,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、基本思想与策略"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、基本思想与策略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、适用情况"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、适用情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、求解的基本步骤"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、求解的基本步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五、算法实现的说明"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、算法实现的说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#六、经典动态算法题"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、经典动态算法题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reference："><span class="post-toc-number">7.</span> <span class="post-toc-text">Reference：</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%E4%B8%8E%E7%AD%96%E7%95%A5"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、基本思想与策略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、适用情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B%E6%B1%82%E8%A7%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、求解的基本步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%94%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%AF%B4%E6%98%8E"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、算法实现的说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AD%E7%BB%8F%E5%85%B8%E5%8A%A8%E6%80%81%E7%AE%97%E6%B3%95%E9%A2%98"><span class="post-toc-number">6.</span> <span class="post-toc-text">六、经典动态算法题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#reference"><span class="post-toc-number">7.</span> <span class="post-toc-text">Reference：</span></a></li></ol>
     </ul>
     
 
@@ -425,7 +430,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Algorithm-summary/" rel="tag">Algorithm summary</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Dynamic-programming/" rel="tag">Dynamic programming</a>
+        <a class="post_tag-none-link" href="/tags/Algorithm-summary/" rel="tag">Algorithm summary</a></li><li class="mdl-menu__item"><a class="post_tag-none-link" href="/tags/Dynamic-programming/" rel="tag">Dynamic programming</a>
     </ul>
     
 
@@ -494,81 +499,116 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>动态规划算法在编程题中运用场景很广(我觉得也有点难:( )，这篇博文主要总结了动态规划算法的基本思想以及一些例题。</p>
-<a id="more"></a>
-<h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><p>动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种<strong>多阶段最优化决策解决问题的过程</strong>就称为动态规划。</p>
-<h2 id="二、基本思想与策略"><a href="#二、基本思想与策略" class="headerlink" title="二、基本思想与策略"></a>二、基本思想与策略</h2><p>动态规划算法与分治法的区别：<strong>适合于用动态规划法求解的问题，经分解后得到的子问题往往不是互相独立的（即下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解）</strong>。</p>
+        <p>动态规划算法在编程题中运用场景很广(我觉得也有点难:(
+)，这篇博文主要总结了动态规划算法的基本思想以及一些例题。</p>
+<span id="more"></span>
+<h2 id="一基本概念">一、基本概念</h2>
+<p>动态规划过程是：每次决策依赖于当前状态，又随即引起状态的转移。一个决策序列就是在变化的状态中产生出来的，所以，这种<strong>多阶段最优化决策解决问题的过程</strong>就称为动态规划。</p>
+<h2 id="二基本思想与策略">二、基本思想与策略</h2>
+<p>动态规划算法与分治法的区别：<strong>适合于用动态规划法求解的问题，经分解后得到的子问题往往不是互相独立的（即下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解）</strong>。</p>
 <p>动态规划算法将待求解的问题分解为若干个子阶段，按顺序求解子阶段，前一子问题的解决为后一子问题的求解提供了有用信息。在求解任一子问题时，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解。</p>
 <p>由于动态规划解决的问题多数有重叠子问题这个特点，为减少重复计算，对每一个子问题只解一次，将其不同阶段的不同状态保存在一个二维数组中。</p>
-<h2 id="三、适用情况"><a href="#三、适用情况" class="headerlink" title="三、适用情况"></a>三、适用情况</h2><p>一般动态规划问题具有三个性质：</p>
-<ol>
+<h2 id="三适用情况">三、适用情况</h2>
+<p>一般动态规划问题具有三个性质：</p>
+<ol type="1">
 <li>最优化原理：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。</li>
 <li>无后效性：即某阶段状态一旦确定，就不受这个状态以后决策的影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。</li>
 <li>有重叠子问题：即子问题之间是不独立的，一个子问题在下一阶段决策中可能被多次使用到。（该性质<strong>并不是动态规划适用的必要条件</strong>，但是如果没有这条性质，动态规划算法同其他算法相比就不具备优势）有些子问题会被重复计算多次。动态规划算法正是利用了这种子问题的重叠性质，对每一个子问题只计算一次，然后将其计算结果保存在一个<strong>表格</strong>中，当再次需要计算已经计算过的子问题时，只是在表格中简单地查看一下结果，从而获得较高的效率。</li>
 </ol>
 <p>note:先创建一个哈希表，将每次不同参数的计算结果存入哈希表，当遇到相同参数时，再从哈希表里取出，就避免了重复计算<strong>【备忘录算法】</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;上台阶问题中运用备忘录算法</span><br><span class="line">int getClimbingWays(int n, HashMap&lt;Integer, Integer&gt; map)&#123;</span><br><span class="line">    if(n&lt;1)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n&#x3D;&#x3D;1)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">     if(n&#x3D;&#x3D;2)&#123;</span><br><span class="line">        return 2;</span><br><span class="line">    &#125;</span><br><span class="line">     if(map.contains(n))&#123;</span><br><span class="line">        return map.get(n);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        int value &#x3D; getClimbingWays(n-1) + getClimbingWays(n-2);</span><br><span class="line">        map.put(n,value);</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="四、求解的基本步骤"><a href="#四、求解的基本步骤" class="headerlink" title="四、求解的基本步骤"></a>四、求解的基本步骤</h2><p>动态规划所处理的问题是一个<strong>多阶段决策问题</strong>，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线(通常是求最优的活动路线)。如下所示。动态规划的设计都有着一定的模式，一般要经历以下几个步骤。</p>
-<p><strong>初始状态 -&gt; |决策1| -&gt; |决策2| -&gt; … |决策n| -&gt; 结束状态</strong></p>
-<ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//上台阶问题中运用备忘录算法</span><br><span class="line">int getClimbingWays(int n, HashMap&lt;Integer, Integer&gt; map)&#123;</span><br><span class="line">    if(n&lt;1)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==1)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">     if(n==2)&#123;</span><br><span class="line">        return 2;</span><br><span class="line">    &#125;</span><br><span class="line">     if(map.contains(n))&#123;</span><br><span class="line">        return map.get(n);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        int value = getClimbingWays(n-1) + getClimbingWays(n-2);</span><br><span class="line">        map.put(n,value);</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四求解的基本步骤">四、求解的基本步骤</h2>
+<p>动态规划所处理的问题是一个<strong>多阶段决策问题</strong>，一般由初始状态开始，通过对中间阶段决策的选择，达到结束状态。这些决策形成了一个决策序列，同时确定了完成整个过程的一条活动路线(通常是求最优的活动路线)。如下所示。动态规划的设计都有着一定的模式，一般要经历以下几个步骤。</p>
+<p><strong>初始状态 -&gt; |决策1| -&gt; |决策2| -&gt; ... |决策n| -&gt;
+结束状态</strong></p>
+<ol type="1">
 <li><strong>划分阶段</strong>：按照问题的时间或空间特征，把问题分为若干个阶段。在划分阶段时，注意<strong>划分后的阶段一定要是有序的或者是可排序的</strong>，否则问题就无法求解。</li>
 <li><strong>确定状态和状态变量</strong>：将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足<strong>无后效性</strong>。</li>
-<li><strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，<strong>状态转移就是根据上一阶段的状态和决策来导出本阶段的状态</strong> 。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，<strong>根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程</strong>。</li>
+<li><strong>确定决策并写出状态转移方程</strong>：因为决策和状态转移有着天然的联系，<strong>状态转移就是根据上一阶段的状态和决策来导出本阶段的状态</strong>
+。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，<strong>根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程</strong>。</li>
 <li><strong>寻找边界条件</strong>：给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</li>
 </ol>
-<p>一般，只要解决问题的<strong>阶段</strong>、<strong>状态</strong>和<strong>状态转移决策</strong>确定了，就可以写出状态转移方程（包括边界条件）。<br>实际应用中可以按以下几个简化的步骤进行设计：</p>
-<ol>
+<p>一般，只要解决问题的<strong>阶段</strong>、<strong>状态</strong>和<strong>状态转移决策</strong>确定了，就可以写出状态转移方程（包括边界条件）。
+实际应用中可以按以下几个简化的步骤进行设计：</p>
+<ol type="1">
 <li>描述最优解的结构</li>
 <li>递归定义最优解的值</li>
-<li>按自底向上的方式计算最优解的值  //此三步构成动态规划解的基础</li>
-<li>由计算出的结果构造一个最优解  //若只要求计算最优解的值可省略</li>
+<li>按自底向上的方式计算最优解的值 //此三步构成动态规划解的基础</li>
+<li>由计算出的结果构造一个最优解 //若只要求计算最优解的值可省略</li>
 </ol>
-<h2 id="五、算法实现的说明"><a href="#五、算法实现的说明" class="headerlink" title="五、算法实现的说明"></a>五、算法实现的说明</h2><p>动态规划的主要难点在于理论上的设计，也就是上面4个步骤的确定，一旦设计完成，实现部分就会非常简单。</p>
+<h2 id="五算法实现的说明">五、算法实现的说明</h2>
+<p>动态规划的主要难点在于理论上的设计，也就是上面4个步骤的确定，一旦设计完成，实现部分就会非常简单。</p>
 <pre><code> 使用动态规划求解问题，最重要的就是确定动态规划三要素：
 
 （1）问题的阶段 （2）每个阶段的状态
 
-（3）从前一个阶段转化到后一个阶段之间的递推关系。
-</code></pre><p>递推关系必须是从次小的问题开始到较大的问题之间的转化，从这个角度来说，动态规划往往可以用递归程序来实现，不过因为<strong>递推可以充分利用前面保存的子问题的解来减少重复计算，所以对于大规模问题来说，递归有不可比拟的优势</strong>，这也是动态规划算法的核心之处。</p>
+（3）从前一个阶段转化到后一个阶段之间的递推关系。</code></pre>
+<p>递推关系必须是从次小的问题开始到较大的问题之间的转化，从这个角度来说，动态规划往往可以用递归程序来实现，不过因为<strong>递推可以充分利用前面保存的子问题的解来减少重复计算，所以对于大规模问题来说，递归有不可比拟的优势</strong>，这也是动态规划算法的核心之处。</p>
 <p>确定了动态规划的这三要素，<strong>整个求解过程就可以用一个最优决策表来描述，最优决策表是一个二维表，其中行表示决策的阶段，列表示问题状态</strong>，表格需要<strong>填写的数据一般对应此问题的在某个阶段某个状态下的最优值</strong>（如最短路径，最长公共子序列，最大价值等），填表的过程就是根据递推关系，从1行1列开始，以行或者列优先的顺序，依次填写表格，最后根据整个表格的数据通过简单的取舍或者运算求得问题的最优解。</p>
 <p><em>f(n,m)=max{f(n-1,m), f(n-1,m-w[n])+P(n,m)}</em></p>
-<h2 id="六、经典动态算法题"><a href="#六、经典动态算法题" class="headerlink" title="六、经典动态算法题"></a>六、经典动态算法题</h2><p><strong>例题一：上台阶问题</strong></p>
+<h2 id="六经典动态算法题">六、经典动态算法题</h2>
+<p><strong>例题一：上台阶问题</strong></p>
 <p>有n级台阶，一个人每次上一级或者两级，问有多少种走完n级台阶的方法。</p>
-<p>分析：动态规划的实现的关键在于能不能准确合理的用动态规划表来抽象出 实际问题。在这个问题上，我们让f(n)表示走上n级台阶的方法数。</p>
-<p>那么当n为1时，f(n) = 1,n为2时，f(n) =2,就是说当台阶只有一级的时候，方法数是一种，台阶有两级的时候，方法数为2。那么当我们要走上n级台阶，必然是从n-1级台阶迈一步或者是从n-2级台阶迈两步，所以到达n级台阶的方法数必然是到达n-1级台阶的方法数加上到达n-2级台阶的方法数之和。即f(n) = f(n-1)+f(n-2)，我们用dp[n]来表示动态规划表，dp[i],i&gt;0,i&lt;=n,表示到达i级台阶的方法数。</p>
-<p><strong><em>迭代法（自顶向下）</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*dp是全局数组，大小为n,全部初始化为0，是题目中的动态规划表*&#x2F;</span><br><span class="line">int fun(int n)&#123;</span><br><span class="line">	if (n&#x3D;&#x3D;1||n&#x3D;&#x3D;2)</span><br><span class="line">		return n;</span><br><span class="line">	&#x2F;*判断n-1的状态有没有被计算过*&#x2F;</span><br><span class="line">	if (!dp[n-1])</span><br><span class="line">		dp[n-1] &#x3D; fun(n-1);</span><br><span class="line">	if(!dp[n-2])</span><br><span class="line">		dp[n-2]&#x3D;fun(n-2);</span><br><span class="line">	return dp[n-1]+dp[n-2];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>LeetCode相关问题：<br><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fv2hkwxy7kj20ez0c4q32.jpg" alt="leetcode问题"><br><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fv2hkwpb75j20dv06kdfs.jpg" alt="解法"></p>
+<p>分析：动态规划的实现的关键在于能不能准确合理的用动态规划表来抽象出
+实际问题。在这个问题上，我们让f(n)表示走上n级台阶的方法数。</p>
+<p>那么当n为1时，f(n) = 1,n为2时，f(n)
+=2,就是说当台阶只有一级的时候，方法数是一种，台阶有两级的时候，方法数为2。那么当我们要走上n级台阶，必然是从n-1级台阶迈一步或者是从n-2级台阶迈两步，所以到达n级台阶的方法数必然是到达n-1级台阶的方法数加上到达n-2级台阶的方法数之和。即f(n)
+=
+f(n-1)+f(n-2)，我们用dp[n]来表示动态规划表，dp[i],i&gt;0,i&lt;=n,表示到达i级台阶的方法数。</p>
+<p><strong><em>迭代法（自顶向下）</em></strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*dp是全局数组，大小为n,全部初始化为0，是题目中的动态规划表*/</span><br><span class="line">int fun(int n)&#123;</span><br><span class="line">	if (n==1||n==2)</span><br><span class="line">		return n;</span><br><span class="line">	/*判断n-1的状态有没有被计算过*/</span><br><span class="line">	if (!dp[n-1])</span><br><span class="line">		dp[n-1] = fun(n-1);</span><br><span class="line">	if(!dp[n-2])</span><br><span class="line">		dp[n-2]=fun(n-2);</span><br><span class="line">	return dp[n-1]+dp[n-2];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>LeetCode相关问题： <img
+src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fv2hkwxy7kj20ez0c4q32.jpg"
+alt="leetcode问题" /> <img
+src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fv2hkwpb75j20dv06kdfs.jpg"
+alt="解法" /></p>
 <p><strong><em>动态规划求解（自底向上）</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int getClimbingWays(int n, HashMap&lt;Integer, Integer&gt; map)&#123;</span><br><span class="line">    if(n&lt;1)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n&#x3D;&#x3D;1)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n&#x3D;&#x3D;2)&#123;</span><br><span class="line">        return 2;</span><br><span class="line">    &#125;</span><br><span class="line">    int a &#x3D; 1;</span><br><span class="line">    int b &#x3D; 2;</span><br><span class="line">    int tmp &#x3D; 0;</span><br><span class="line">    </span><br><span class="line">    for (int i &#x3D; 3; i&lt;&#x3D;n; i++)&#123;</span><br><span class="line">        tmp &#x3D; a + b;</span><br><span class="line">        a &#x3D; b;</span><br><span class="line">        b &#x3D; tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    return tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int getClimbingWays(int n, HashMap&lt;Integer, Integer&gt; map)&#123;</span><br><span class="line">    if(n&lt;1)&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==1)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n==2)&#123;</span><br><span class="line">        return 2;</span><br><span class="line">    &#125;</span><br><span class="line">    int a = 1;</span><br><span class="line">    int b = 2;</span><br><span class="line">    int tmp = 0;</span><br><span class="line">    </span><br><span class="line">    for (int i = 3; i&lt;=n; i++)&#123;</span><br><span class="line">        tmp = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    return tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>例题二：国王与金矿（与01背包问题类似）</strong></p>
 <p>有一个国家发现了5座金矿，每座金矿的黄金储量不同，需要参与挖掘的工人数也不同。参与挖矿工人的总数是10人。每座金矿要么全挖，要么不挖，不能派出一半人挖取一半金矿。要求用程序求解出，要想得到尽可能多的黄金，应该选择挖取哪几座金矿？</p>
 <p>500金/5人；200金/3人；300金/4人；350金/3人；400金/5人</p>
 <p>问题的状态转移方程式：</p>
-<p>F(n,w) = 0 (n&lt;=1, w&lt;p[0]);  //若给定的工人数量不够挖取第一座金矿</p>
+<p>F(n,w) = 0 (n&lt;=1, w&lt;p[0]);
+//若给定的工人数量不够挖取第一座金矿</p>
 <p>F(n,w) = g[0] (n==1, w&gt;=p[0]);</p>
 <p>F(n,w) = F(n-1,w) (n&gt;1, w&lt;p[n-1])</p>
-<p>F(n,w) = max(F(n-1,w), F(n-1,w-p[n-1])+g[n-1]) (n&gt;1, w&gt;=p[n-1]) //最后一个矿有选择不挖和挖两个选择，在其中选最优的选择</p>
+<p>F(n,w) = max(F(n-1,w), F(n-1,w-p[n-1])+g[n-1]) (n&gt;1, w&gt;=p[n-1])
+//最后一个矿有选择不挖和挖两个选择，在其中选最优的选择</p>
 <p><strong><em>排列组合</em></strong></p>
-<p>每一座金矿都有挖与不挖两种选择，如果有N座金矿，排列组合起来就有2^N种选择。对所有可能性做遍历，排除那些使用工人数超过10的选择，在剩下的选择里找出获得金币数最多的选择。（O(2^N)）</p>
+<p>每一座金矿都有挖与不挖两种选择，如果有N座金矿，排列组合起来就有2<sup>N种选择。对所有可能性做遍历，排除那些使用工人数超过10的选择，在剩下的选择里找出获得金币数最多的选择。（O(2</sup>N)）</p>
 <p><strong><em>简单递归</em></strong></p>
 <p>把状态转移方程式翻译成递归程序，递归的结束的条件就是方程式当中的边界。因为每个状态有两个最优子结构，所以递归的执行流程类似于一颗高度为N的二叉树。方法的时间复杂度是O(2^N)。</p>
 <p><strong><em>备忘录算法</em></strong></p>
 <p>在简单递归的基础上增加一个HashMap备忘录，用来存储中间结果。HashMap的Key是一个包含金矿数N和工人数W的对象，Value是最优选择获得的黄金数。方法的时间复杂度和空间复杂度相同，都等同于备忘录中不同Key的数量。</p>
 <p><strong><em>动态规划</em></strong></p>
-<p><img src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fv28bf1ocoj20hz04djti.jpg" alt="计算过程，除了第一行以外，每个格子都是由前一行的一个或者两个格子推导而来"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">int getMostGold(int n, int w, int[] g, int[] p)&#123;</span><br><span class="line">    int[] preResults &#x3D; new int[p.length];</span><br><span class="line">    int[] results &#x3D; new int[p.length];</span><br><span class="line">    &#x2F;&#x2F;填充边界格子的值</span><br><span class="line">    for(int i&#x3D;0; i&lt;&#x3D;n; i++)&#123;</span><br><span class="line">        if(i &lt; p[0])&#123;</span><br><span class="line">            preResults[i] &#x3D; 0;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            preResults[i] &#x3D; g[0];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;填充其余格子的值，外层循环是金矿数量，内层循环是工人数</span><br><span class="line">    for(int i&#x3D;0; i&lt;&#x3D;n; i++)&#123;</span><br><span class="line">        for(int j&#x3D;0;j&lt;&#x3D;w;j++)&#123;</span><br><span class="line">            if(j &lt; p[i])&#123;</span><br><span class="line">                results[j]&#x3D;preResults[j]; &#x2F;&#x2F;这里代码有问题，java中数组不能直接赋值，可改用clone方式赋值</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                results[j]&#x3D;Math.max(preResults[j],preResults[j-p[i]]+g[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        preResults &#x3D; results;</span><br><span class="line">    &#125;</span><br><span class="line">    return preResults[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>方法的时间复杂度是 O(n * w)，空间复杂度是(w)。需要注意的是，当金矿只有5座的时候，动态规划的性能优势还没有体现出来。当金矿有10座，甚至更多的时候，动态规划就明显具备了优势。由于动态规划方法的时间和空间都和W成正比，而简单递归却和W无关，所以当工人数量很多的时候，动态规划反而不如递归。</p>
+<figure>
+<img
+src="https://wx2.sinaimg.cn/mw690/83fd5bdely1fv28bf1ocoj20hz04djti.jpg"
+alt="计算过程，除了第一行以外，每个格子都是由前一行的一个或者两个格子推导而来" />
+<figcaption
+aria-hidden="true">计算过程，除了第一行以外，每个格子都是由前一行的一个或者两个格子推导而来</figcaption>
+</figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">int getMostGold(int n, int w, int[] g, int[] p)&#123;</span><br><span class="line">    int[] preResults = new int[p.length];</span><br><span class="line">    int[] results = new int[p.length];</span><br><span class="line">    //填充边界格子的值</span><br><span class="line">    for(int i=0; i&lt;=n; i++)&#123;</span><br><span class="line">        if(i &lt; p[0])&#123;</span><br><span class="line">            preResults[i] = 0;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            preResults[i] = g[0];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //填充其余格子的值，外层循环是金矿数量，内层循环是工人数</span><br><span class="line">    for(int i=0; i&lt;=n; i++)&#123;</span><br><span class="line">        for(int j=0;j&lt;=w;j++)&#123;</span><br><span class="line">            if(j &lt; p[i])&#123;</span><br><span class="line">                results[j]=preResults[j]; //这里代码有问题，java中数组不能直接赋值，可改用clone方式赋值</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                results[j]=Math.max(preResults[j],preResults[j-p[i]]+g[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        preResults = results;</span><br><span class="line">    &#125;</span><br><span class="line">    return preResults[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法的时间复杂度是 O(n *
+w)，空间复杂度是(w)。需要注意的是，当金矿只有5座的时候，动态规划的性能优势还没有体现出来。当金矿有10座，甚至更多的时候，动态规划就明显具备了优势。由于动态规划方法的时间和空间都和W成正比，而简单递归却和W无关，所以当工人数量很多的时候，动态规划反而不如递归。</p>
 <p><strong>例题三：最长公共子序列</strong></p>
-<p>如果字符串一的所有字符按其在字符串中的顺序出现在另外一个字符串二中，<br>则字符串一称之为字符串二的子串。</p>
-<p>注意，并不要求子串（字符串一）的字符必须连续出现在字符串二中。<br>请编写一个函数，输入两个字符串，求它们的最长公共子串，并打印出最长公共子串。<br>例如：输入两个字符串BDCABA和ABCBDAB，字符串BCBA和BDAB都是是它们的最长公共子串，<br>则输出它们的长度4，并打印任意一个子串。</p>
+<p>如果字符串一的所有字符按其在字符串中的顺序出现在另外一个字符串二中，
+则字符串一称之为字符串二的子串。</p>
+<p>注意，并不要求子串（字符串一）的字符必须连续出现在字符串二中。
+请编写一个函数，输入两个字符串，求它们的最长公共子串，并打印出最长公共子串。
+例如：输入两个字符串BDCABA和ABCBDAB，字符串BCBA和BDAB都是是它们的最长公共子串，
+则输出它们的长度4，并打印任意一个子串。</p>
 <p>LCS问题具有重叠子问题的性质，因此有些子问题可通过“查表”而直接得到。</p>
-<p>用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程<br><img src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fv2hb144upj20gf03kwfd.jpg" alt="状态转移方程"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class LCSequence &#123;</span><br><span class="line">    &#x2F;&#x2F;求解str1 和 str2 的最长公共子序列</span><br><span class="line">    public static int LCS(String str1, String str2)&#123;</span><br><span class="line">        int[][] c &#x3D; new int[str1.length() + 1][str2.length() + 1];</span><br><span class="line">		&#x2F;&#x2F;初始化</span><br><span class="line">        for(int row &#x3D; 0; row &lt;&#x3D; str1.length(); row++)</span><br><span class="line">            c[row][0] &#x3D; 0;</span><br><span class="line">        for(int column &#x3D; 0; column &lt;&#x3D; str2.length(); column++)</span><br><span class="line">            c[0][column] &#x3D; 0;</span><br><span class="line">        </span><br><span class="line">        for(int i &#x3D; 1; i &lt;&#x3D; str1.length(); i++)</span><br><span class="line">            for(int j &#x3D; 1; j &lt;&#x3D; str2.length(); j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(str1.charAt(i-1) &#x3D;&#x3D; str2.charAt(j-1))</span><br><span class="line">                    c[i][j] &#x3D; c[i-1][j-1] + 1;</span><br><span class="line">                else if(c[i][j-1] &gt; c[i-1][j])</span><br><span class="line">                    c[i][j] &#x3D; c[i][j-1];</span><br><span class="line">                else</span><br><span class="line">                    c[i][j] &#x3D; c[i-1][j];</span><br><span class="line">            &#125;</span><br><span class="line">        return c[str1.length()][str2.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h2><ol>
-<li><a href="http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html" target="_blank" rel="noopener">http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html</a></li>
-<li><a href="http://www.cnblogs.com/pengyingh/articles/2396427.html" target="_blank" rel="noopener">http://www.cnblogs.com/pengyingh/articles/2396427.html</a></li>
-<li><a href="https://www.sohu.com/a/153858619_466939" target="_blank" rel="noopener">https://www.sohu.com/a/153858619_466939</a></li>
-<li><a href="https://www.cnblogs.com/hapjin/p/5572483.html" target="_blank" rel="noopener">https://www.cnblogs.com/hapjin/p/5572483.html</a></li>
+<p>用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程
+<img
+src="https://wx1.sinaimg.cn/mw690/83fd5bdely1fv2hb144upj20gf03kwfd.jpg"
+alt="状态转移方程" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class LCSequence &#123;</span><br><span class="line">    //求解str1 和 str2 的最长公共子序列</span><br><span class="line">    public static int LCS(String str1, String str2)&#123;</span><br><span class="line">        int[][] c = new int[str1.length() + 1][str2.length() + 1];</span><br><span class="line">		//初始化</span><br><span class="line">        for(int row = 0; row &lt;= str1.length(); row++)</span><br><span class="line">            c[row][0] = 0;</span><br><span class="line">        for(int column = 0; column &lt;= str2.length(); column++)</span><br><span class="line">            c[0][column] = 0;</span><br><span class="line">        </span><br><span class="line">        for(int i = 1; i &lt;= str1.length(); i++)</span><br><span class="line">            for(int j = 1; j &lt;= str2.length(); j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(str1.charAt(i-1) == str2.charAt(j-1))</span><br><span class="line">                    c[i][j] = c[i-1][j-1] + 1;</span><br><span class="line">                else if(c[i][j-1] &gt; c[i-1][j])</span><br><span class="line">                    c[i][j] = c[i][j-1];</span><br><span class="line">                else</span><br><span class="line">                    c[i][j] = c[i-1][j];</span><br><span class="line">            &#125;</span><br><span class="line">        return c[str1.length()][str2.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="reference">Reference：</h2>
+<ol type="1">
+<li>http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html</li>
+<li>http://www.cnblogs.com/pengyingh/articles/2396427.html</li>
+<li>https://www.sohu.com/a/153858619_466939</li>
+<li>https://www.cnblogs.com/hapjin/p/5572483.html</li>
 </ol>
 
         
@@ -696,7 +736,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -714,7 +754,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/categories/algorithm/">algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/crawler/">crawler<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graph/">graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/knowledge-graph/">knowledge graph<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/life/">life<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/paper-reading/">paper-reading<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/survey/">survey<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -984,6 +1024,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->
