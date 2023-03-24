@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Tue May 03 2022 19:31:22 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 24 2023 17:11:50 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 24 2023 22:06:11 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html",
     "headline": "Summary of Self-Supervised Learning",
     "datePublished": "Tue May 03 2022 19:31:22 GMT+0800",
-    "dateModified": "Fri Mar 24 2023 17:11:50 GMT+0800",
+    "dateModified": "Fri Mar 24 2023 22:06:11 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -624,15 +624,15 @@ alt="5XeMkt.png" /></a></p>
 Learning</h4>
 <p>对比损失旨在在融合之前学习一个更好的单模表示。</p>
 <p>需要学习一个similarity function <span class="math inline">\(s=g_v
-(\bold{v}_{cls})^{\top} g_w
-(\bold{w}_{cls})\)</span>。受MoCo启发，维护了两个队列来保存由momentum
+(\bf{v}_{cls})^{\top} g_w
+(\bf{w}_{cls})\)</span>。受MoCo启发，维护了两个队列来保存由momentum
 unimodal encoders产生的最近的M个图片-文本表示。由momentum
 encoders所产生的归一化的特征表示为<span class="math inline">\(g&#39;_v
-(\bold{v}_{cls}&#39;)\)</span>和<span class="math inline">\(g&#39;_w
-(\bold{w}_{cls}&#39;)\)</span>。 我们定义<span
-class="math inline">\(s(I,T)=g_v (\bold{v}_{cls})^{\top}g_w&#39;
-(\bold{w}_{cls}&#39;)\)</span>, <span class="math inline">\(s(T,I)=g_w
-(\bold{w}_{cls})^{\top}g_v&#39; (\bold{v}_{cls}&#39;)\)</span>.</p>
+(\bf{v}_{cls}&#39;)\)</span>和<span class="math inline">\(g&#39;_w
+(\bf{w}_{cls}&#39;)\)</span>。 我们定义<span
+class="math inline">\(s(I,T)=g_v (\bf{v}_{cls})^{\top}g_w&#39;
+(\bf{w}_{cls}&#39;)\)</span>, <span class="math inline">\(s(T,I)=g_w
+(\bf{w}_{cls})^{\top}g_v&#39; (\bf{v}_{cls}&#39;)\)</span>.</p>
 <p>calculate the softmax-normalized image-to-text and text-to-image
 similarity as:</p>
 <p><span class="math display">\[p^{i2t}_m (I)=\frac{\exp (s(I,T_m)/
@@ -641,31 +641,31 @@ p^{t2i}_m (T)=\frac{\exp (s(T,I_m)/ \tau)}{\sum_{m=1}^{M} \exp (s(T,
 I_m)/\tau)}\]</span></p>
 <p><span class="math inline">\(\tau\)</span>: learnable temperature
 parameter</p>
-<p><span class="math inline">\(\bold{y}^{i2t}(I)\)</span> and <span
-class="math inline">\(\bold{y}^{t2i}(T)\)</span>: ground-truth one-hot
+<p><span class="math inline">\(\bf{y}^{i2t}(I)\)</span> and <span
+class="math inline">\(\bf{y}^{t2i}(T)\)</span>: ground-truth one-hot
 similarity</p>
-<p>对比损失被定义为<span class="math inline">\(\bold{p}\)</span>和<span
-class="math inline">\(\bold{y}\)</span>的交叉熵。</p>
+<p>对比损失被定义为<span class="math inline">\(\bf{p}\)</span>和<span
+class="math inline">\(\bf{y}\)</span>的交叉熵。</p>
 <p><span class="math display">\[\mathcal{L}_{itc} = \frac{1}{2}
-\rm{E}_{(I,T) \backsim D} [\rm{H}(\bold{p}^{i2t}(I), \bold{y}^{i2t}(I))
-+ \rm{H}(\bold{p}^{t2i}(T), \bold{y}^{t2i}(T))]\]</span></p>
+\rm{E}_{(I,T) \backsim D} [\rm{H}(\bf{p}^{i2t}(I), \bf{y}^{i2t}(I)) +
+\rm{H}(\bf{p}^{t2i}(T), \bf{y}^{t2i}(T))]\]</span></p>
 <h4 id="masked-language-modeling">Masked Language Modeling</h4>
 <p>利用图片和上下文文本信息去预测masked words。</p>
 <p><span class="math inline">\(\hat{T}\)</span>: masked text<br />
-<span class="math inline">\(\bold{p}^{msk} (I, \hat{T})\)</span>:
-model’s predicted probability for a masked token.</p>
+<span class="math inline">\(\bf{p}^{msk} (I, \hat{T})\)</span>: model’s
+predicted probability for a masked token.</p>
 <p>MLM 最小化交叉熵:</p>
 <p><span
 class="math display">\[\mathcal{L}_{mlm}=\rm{E}_{(I,\hat{T})\backsim D}
-\rm{H} (\bold{p}^{msk} (I, \hat{T}, \bold{y}^{msk})\]</span> <span
-class="math inline">\(\bold{y}^{msk}\)</span>: one-hot vocabulary
+\rm{H} (\bf{p}^{msk} (I, \hat{T}, \bf{y}^{msk})\]</span> <span
+class="math inline">\(\bf{y}^{msk}\)</span>: one-hot vocabulary
 distribution,真实token的概率是1</p>
 <h4 id="image-text-matching">Image-Text Matching</h4>
 <p>预测一组图文对为正（匹配）或负（不匹配）。仅采用[CLS]
 token的embedding。</p>
 <p><span class="math display">\[\mathcal{L}_{itm} = \rm{E}_{(I,T)
-\backsim D} \rm{H}(\bold{p}^{itm}(I, T), \bold{y}^{itm})\]</span><span
-class="math inline">\(\bold{y}^{itm}\)</span>: 2维one-hot ground-truth
+\backsim D} \rm{H}(\bf{p}^{itm}(I, T), \bf{y}^{itm})\]</span><span
+class="math inline">\(\bf{y}^{itm}\)</span>: 2维one-hot ground-truth
 label向量表示</p>
 <p><span class="math display">\[\mathcal{L} = \mathcal{L}_{itc} +
 \mathcal{L}_{mlm} + \mathcal{L}_{itm}\]</span></p>
@@ -673,23 +673,23 @@ label向量表示</p>
 <p>正样本对往往弱相关，也会包含一些不相关的文本，或实体，而对于ITC学习来说，负文本可能也会包含一些匹配图片的信息。因此采用一个动量模型，它是一个exponential-moving-average
 versions of the unimodal and multimodal encoders。</p>
 <p>For ITC,首先利用动量单模encoder产生的特征计算相似度：<span
-class="math inline">\(s&#39;(I,T)=g_v&#39;(\bold{v}_{cls}&#39;)^{\top}
-g_w&#39;(\bold{w}_{cls}&#39;)\)</span>以及<span
-class="math inline">\(s&#39;(T,I)=g_w&#39;(\bold{w}_{cls}&#39;)^{\top}
-g_v&#39;(\bold{v}_{cls}&#39;)\)</span></p>
+class="math inline">\(s&#39;(I,T)=g_v&#39;(\bf{v}_{cls}&#39;)^{\top}
+g_w&#39;(\bf{w}_{cls}&#39;)\)</span>以及<span
+class="math inline">\(s&#39;(T,I)=g_w&#39;(\bf{w}_{cls}&#39;)^{\top}
+g_v&#39;(\bf{v}_{cls}&#39;)\)</span></p>
 <p>之后，计算soft pseudo-targets<span
-class="math inline">\(\bold{q}^{i2t}\)</span>和<span
-class="math inline">\(\bold{q}^{t2i}\)</span>,计算损失：</p>
+class="math inline">\(\bf{q}^{i2t}\)</span>和<span
+class="math inline">\(\bf{q}^{t2i}\)</span>,计算损失：</p>
 <p><span class="math display">\[\mathcal{L}^{\rm{mod}}_{\rm{itc}} =
 (1-\alpha) \mathcal{L}_{itc} + \frac{\alpha}{2} \rm{E}_{(I,T) \backsim
-D} [\rm{KL}(\bold{p}^{i2t}(I), \bold{q}^{i2t}(I)) +
-\rm{KL}(\bold{p}^{t2i}(T), \bold{q}^{t2i}(T))]\]</span></p>
+D} [\rm{KL}(\bf{p}^{i2t}(I), \bf{q}^{i2t}(I)) + \rm{KL}(\bf{p}^{t2i}(T),
+\bf{q}^{t2i}(T))]\]</span></p>
 <p>For MLM, <span
-class="math inline">\(\bold{q}^{msk}(I,\hat{T})\)</span>表示momentum
+class="math inline">\(\bf{q}^{msk}(I,\hat{T})\)</span>表示momentum
 model’s prediction probability for the masked token, 损失表示为：</p>
 <p><span class="math display">\[\mathcal{L}^{\rm{mod}}_{\rm{mlm}} =
 (1-\alpha) \mathcal{L}_{mlm} + {\alpha} \rm{E}_{(I,\hat{T}) \backsim D}
-\rm{KL}(\bold{p}^{msk}(I,\hat{T}),\bold{q}^{msk}(I,\hat{T}))\]</span></p>
+\rm{KL}(\bf{p}^{msk}(I,\hat{T}),\bf{q}^{msk}(I,\hat{T}))\]</span></p>
 <h1 id="barlow-twins">Barlow Twins</h1>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5XebBd"><img
 src="https://z3.ax1x.com/2021/10/29/5XebBd.png"
@@ -1123,26 +1123,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
-
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
 
 
 <!-- Bing Background -->
