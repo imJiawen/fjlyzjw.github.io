@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="en">
+<html style="display: none;" lang="zh">
     <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <!--
@@ -68,7 +68,7 @@
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
-            <script src="/js/ie-blocker.en.js"></script>
+            <script src="/js/ie-blocker.zhCN.js"></script>
         
     <![endif]-->
 
@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Fri Mar 24 2023 17:01:34 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 24 2023 22:02:06 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 26 2023 16:55:39 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2023/03/24/Deep-Generative-Models/index.html",
     "headline": "Deep Generative Models",
     "datePublished": "Fri Mar 24 2023 17:01:34 GMT+0800",
-    "dateModified": "Fri Mar 24 2023 22:02:06 GMT+0800",
+    "dateModified": "Sun Mar 26 2023 16:55:39 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -360,7 +360,16 @@ divergence (KL-divergence)</span></a></li><li class="post-toc-item post-toc-leve
 Estimation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#properties-of-the-monte-carlo-estimate"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">Properties of the Monte
 Carlo Estimate</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#empirical-risk-and-overfitting"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">Empirical Risk and
 Overfitting</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#avoid-overfitting"><span class="post-toc-number">1.3.4.1.</span> <span class="post-toc-text">Avoid overfitting</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#latent-variable-models"><span class="post-toc-number">2.</span> <span class="post-toc-text">Latent Variable Models</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mixture-of-gaussians-a-shallow-latent-variable-model"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Mixture of
-Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#variational-autoencoder"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Variational Autoencoder</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#reference"><span class="post-toc-number">3.</span> <span class="post-toc-text">Reference</span></a></li></ol>
+Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#variational-autoencoder"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Variational Autoencoder</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#marginal-likelihood-%E8%BE%B9%E7%BC%98%E4%BC%BC%E7%84%B6"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Marginal Likelihood 边缘似然</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#evidence-lower-bound"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Evidence Lower Bound</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#variational-inference"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Variational inference</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#normalizing-flow-models"><span class="post-toc-number">3.</span> <span class="post-toc-text">Normalizing Flow Models</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#change-of-variables-formula"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Change of Variables formula</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#generalized-change-of-variables"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Generalized change of
+variables</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#learning-and-inference"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Learning and Inference</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#invertible-transformations-with-diagonal-jacobians"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Invertible
+transformations with diagonal Jacobians</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nonlinear-independent-components-estimation-nice"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">Nonlinear
+Independent Components Estimation (NICE)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#real-nvp-non-volume-preserving-extension-of-nice"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">Real-NVP:
+Non-volume preserving extension of NICE</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#autoregressive-models-as-normalizing-flow-models"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Autoregressive
+Models as Normalizing Flow Models</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#masked-autoregressive-flow-maf"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">Masked Autoregressive Flow
+(MAF)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#inverse-autoregressive-flow-iaf"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">Inverse Autoregressive Flow
+(IAF)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iaf-vs.-maf"><span class="post-toc-number">3.5.3.</span> <span class="post-toc-text">IAF vs. MAF</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#energy-based-models-ebms"><span class="post-toc-number">4.</span> <span class="post-toc-text">Energy-Based Models (EBMs)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#parameterizing-probability-distributions"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Parameterizing
+probability distributions</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#likelihood-based-learning"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Likelihood based learning</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sampling-from-energy-based-models"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Sampling from energy-based
+models</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#training-without-sampling"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Training without sampling</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#score-function"><span class="post-toc-number">4.4.1.</span> <span class="post-toc-text">Score Function</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#score-matching"><span class="post-toc-number">4.4.2.</span> <span class="post-toc-text">Score Matching</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#summary"><span class="post-toc-number">5.</span> <span class="post-toc-text">Summary</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#reference"><span class="post-toc-number">6.</span> <span class="post-toc-text">Reference</span></a></li></ol>
     </ul>
     
 
@@ -411,7 +420,7 @@ Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-it
     <!-- Author Name & Date -->
     <div>
         <strong>Jiawen Zhang</strong>
-        <span>Mar 24, 2023</span>
+        <span>3月 24, 2023</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -454,7 +463,7 @@ Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-it
     
         <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Deep Generative Models&url=http://yoursite.com/2023/03/24/Deep-Generative-Models/index.html&pic=http://yoursite.com/img/web_icon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
-                Share to Weibo
+                分享到微博
             </li>
         </a>
     
@@ -463,7 +472,7 @@ Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-it
     
         <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Deep Generative Models&url=http://yoursite.com/2023/03/24/Deep-Generative-Models/index.html&via=Jiawen Zhang" target="_blank">
             <li class="mdl-menu__item">
-                Share to Twitter
+                分享到 Twitter
             </li>
         </a>
     
@@ -472,7 +481,7 @@ Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-it
     
         <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2023/03/24/Deep-Generative-Models/index.html" target="_blank">
             <li class="mdl-menu__item">
-                Share to Facebook
+                分享到 Facebook
             </li>
         </a>
     
@@ -481,7 +490,7 @@ Gaussians: a Shallow Latent Variable Model</span></a></li><li class="post-toc-it
     
         <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2023/03/24/Deep-Generative-Models/index.html" target="_blank">
             <li class="mdl-menu__item">
-                Share to Google+
+                分享到 Google+
             </li>
         </a>
     
@@ -531,16 +540,22 @@ regression.</p>
 <p><span class="math display">\[\hat{x}_i = p(x_i | x_1, \cdots,
 x_{i-1}; A_i,c_i, \bf{\alpha}_i, b_i) = \sigma (\bf{\alpha}_i h_i +
 b_i)\]</span></p>
-<p><strong>Autoregressive models vs. autoencoders:</strong> - A vanilla
-autoencoder is not a generative model: it does not define a distribution
-over x we can sample from to generate new data points. - For
-autoregressive autoencoders: We need to make sure it corresponds to a
-valid Bayesian Network (DAG structure), i.e., we need an
-<em>ordering</em>. - <span class="math inline">\(\hat{x}_1\)</span>
-cannot depend on any input <span class="math inline">\(x\)</span>. Then
-at generation time we don’t need any input to get started. - <span
-class="math inline">\(\hat{x}_2\)</span> can only depend on <span
-class="math inline">\(x_1\)</span></p>
+<p><strong>Autoregressive models vs. autoencoders:</strong></p>
+<ul>
+<li>A vanilla autoencoder is not a generative model: it does not define
+a distribution over x we can sample from to generate new data
+points.</li>
+<li>For autoregressive autoencoders: We need to make sure it corresponds
+to a valid Bayesian Network (DAG structure), i.e., we need an
+<em>ordering</em>.
+<ul>
+<li><span class="math inline">\(\hat{x}_1\)</span> cannot depend on any
+input <span class="math inline">\(x\)</span>. Then at generation time we
+don’t need any input to get started.</li>
+<li><span class="math inline">\(\hat{x}_2\)</span> can only depend on
+<span class="math inline">\(x_1\)</span></li>
+</ul></li>
+</ul>
 <h3 id="masked-autoencoder-for-distribution-estimation-made">Masked
 Autoencoder for Distribution Estimation (MADE)</h3>
 <p><a target="_blank" rel="noopener" href="https://imgse.com/i/pS53XRJ"><img
@@ -599,16 +614,17 @@ P_{data}}  [P_{\theta}(x) ]\]</span></p>
 class="math inline">\(P_{\theta}\)</span>, then minimizing KL divergence
 is equivalent to maximizing the expected log-likelihood</p>
 <p><span class="math display">\[\arg \min_{P_{\theta}} D(P_{data} ||
-P_{\theta}) = \arg \min_{P_{\theta}} - E_{x \backsim P_{data}} [\log
+P_{\theta}) = \arg \min_{P_{\theta}} + E_{x \backsim P_{data}} [\log
 P_{\theta} (x)] = \arg \max_{P_{\theta}} E_{x \backsim P_{data}} [\log
 P_{\theta}]\]</span></p>
 <p><strong>Empirical log-likelihood:</strong></p>
-<p><span class="math display">\[E_{\scr{D}} [\log P_{\theta} (x)] =
-\frac{1}{|\scr{D}|} \sum_{x \in \scr{D}} \log P_{\theta}
+<p><span class="math display">\[E_{\mathscr{D}} [\log P_{\theta} (x)] =
+\frac{1}{|\mathscr{D}|} \sum_{x \in \mathscr{D}} \log P_{\theta}
 (x)\]</span></p>
 <p><strong>Maximum likelihood learning:</strong></p>
-<p><span class="math display">\[\max_{P_{\theta}} \frac{1}{|\scr{D}|}
-\sum_{x \in \scr{D}} \log P_{\theta} (x)\]</span></p>
+<p><span class="math display">\[\max_{P_{\theta}}
+\frac{1}{|\mathscr{D}|} \sum_{x \in \mathscr{D}} \log P_{\theta}
+(x)\]</span></p>
 <h3 id="main-idea-in-monte-carlo-estimation">Main idea in Monte Carlo
 Estimation</h3>
 <ol type="1">
@@ -659,7 +675,7 @@ represent better the data. (<strong>variance</strong>)
 <ul>
 <li>When we have small amount of data, multiple models can fit well, or
 even better than the true model. Moreover, small perturbations on <span
-class="math inline">\(\scr{D}\)</span> will result in very different
+class="math inline">\(\mathscr{D}\)</span> will result in very different
 estimates</li>
 </ul></li>
 </ul>
@@ -680,34 +696,642 @@ set</li>
 <h2 id="mixture-of-gaussians-a-shallow-latent-variable-model">Mixture of
 Gaussians: a Shallow Latent Variable Model</h2>
 <p>Mixture of Gaussians. Bayes net: <span class="math inline">\(z
-\rightarrow x\)</span>. - <span class="math inline">\(z \backsim
-\rm{Categorical}(1,...,K)\)</span> - <span
-class="math inline">\(p(x|z=k) = \scr{N}(\mu_k, \Sigma_k)\)</span></p>
-<p>Generative process: 1. Pick a mixture component <span
-class="math inline">\(k\)</span> by sampling <span
-class="math inline">\(z\)</span> 2. Generate a data point by sampling
-from that Gaussian</p>
+\rightarrow x\)</span>.</p>
+<ul>
+<li><span class="math inline">\(z \backsim
+\rm{Categorical}(1,...,K)\)</span></li>
+<li><span class="math inline">\(p(x|z=k) = \mathscr{N}(\mu_k,
+\Sigma_k)\)</span></li>
+</ul>
+<p>Generative process:</p>
+<ol type="1">
+<li>Pick a mixture component <span class="math inline">\(k\)</span> by
+sampling <span class="math inline">\(z\)</span></li>
+<li>Generate a data point by sampling from that Gaussian</li>
+</ol>
 <h2 id="variational-autoencoder">Variational Autoencoder</h2>
-<p>A mixture of an infinite number of Gaussians: 1. <span
-class="math inline">\(z \backsim \scr{N}(0,I)\)</span> 2. <span
-class="math inline">\(p(x|z) = \scr{N}(\mu_{\theta}(z), \Sigma_{\theta}
-(z))\)</span> where <span class="math inline">\(\mu_{\theta},
-\Sigma_{\theta}\)</span> are neural networks - <span
-class="math inline">\(\mu_{\theta} (z) - \sigma(Az + c) = (\sigma (a_1 z
-+ c_1), \sigma (a_2 z + c_2)) = (\mu_1 (z), \mu_2 (z))\)</span> - $_{}
-(z) = \bf{z})))]$. - Pros: - Two sample tests. Can optimize
-f-divergences and the Wasserstein distance. - Very flexible model
-architectures. - Samples typically have better quality - Cons: - Require
-adversarial training. Training instability and mode collapse. - No
-principled way to compare different models - No principled termination
-criteria for training</p>
+<p>A mixture of an infinite number of Gaussians:</p>
+<ol type="1">
+<li><span class="math inline">\(z \backsim
+\mathscr{N}(0,I)\)</span></li>
+<li><span class="math inline">\(p(x|z) = \mathscr{N}(\mu_{\theta}(z),
+\Sigma_{\theta} (z))\)</span> where <span
+class="math inline">\(\mu_{\theta}, \Sigma_{\theta}\)</span> are neural
+networks
+<ul>
+<li>$ _{} (z) - (Az + c) = ((a_1 z + c_1), (a_2 z + c_2)) = (_1 (z), _2
+(z))$</li>
+<li>$ _{} (z) = \rm{diag} (((B z + d))) = $</li>
+<li>$ = (A,B,c,d)$</li>
+</ul></li>
+<li>Even though <span class="math inline">\(p(x | z)\)</span> is simple,
+the marginal <span class="math inline">\(p(x)\)</span> is very
+complex/flexible</li>
+</ol>
+<p>隐变量z是一个多维高斯分布，<span
+class="math inline">\(p(x|z)\)</span>
+是一个神经网络，也是一个高斯分布。整个隐变量模型可以视为无数个高斯分布的组合，<span
+class="math inline">\(x\)</span>在不同的地方对应不同的高斯分布：</p>
+<p><span class="math display">\[p(x) = \int p(x|z)p(z)dz\]</span></p>
+<p>MLE目标是</p>
+<p><span class="math display">\[\theta \leftarrow \arg \max_{\theta}
+\frac{1}{N} \sum_i \log (\int p_{\theta} (x_i|z)p(z)dz)\]</span></p>
+<p>上述积分不可计算，我们先把积分写成期望形式，假设 <span
+class="math inline">\(z \backsim p(z|x_i)\)</span></p>
+<p><span class="math display">\[\theta \leftarrow \arg \max_{\theta}
+\frac{1}{N} \sum_i E_{z \backsim p(z|x_i)} [ \log p_{\theta}
+(x_i|z)]\]</span></p>
+<p>我们不需要对所有这都计算<span class="math inline">\(p_{\theta}
+(x_i|z)\)</span>,只有少部分z会导致<span
+class="math inline">\(x_i\)</span>的产生,这少部分z的分布为<span
+class="math inline">\(p(z|x_i)\)</span>，可记为<span
+class="math inline">\(q_i(z)\)</span>,其分布可能非常复杂（后面令其神经网络化）。
+<span class="math inline">\(q_i (z)\)</span>无法被用于精确计算<span
+class="math inline">\(\log p_{\theta}(x_i)\)</span>，但可求其下界，i.e.,
+变分推断。</p>
+<h3 id="marginal-likelihood-边缘似然">Marginal Likelihood 边缘似然</h3>
+<pre><code>概率：已知一些参数的情况下，预测接下来观测所得到的结果。
+似然性：已知的某些观测所得到的结果时，对有关事物的性质的参数进行估计。</code></pre>
+<p>在统计学中，边缘似然函数（marginal likelihood
+function），或者积分似然（integrated
+likelihood），是一个某些参数变量边缘化的似然函数（likelihood
+function）。在贝叶斯统计范畴，它可以被称作为证据或者模型证据的。</p>
+<h3 id="evidence-lower-bound">Evidence Lower Bound</h3>
+<p>Log-Likelihood function for Partially Observed Data is hard to
+compute:</p>
+<p><span class="math display">\[\log (\sum_{z \in \mathscr{Z}}
+p_{\theta} (\bf{x}, \bf{z})) = \log (\sum_{z \in \mathscr{Z}}
+\frac{q(z)}{q(z)} p_{\theta (\bf{x}, \bf{z})}) = \log (E_{z \backsim
+q(z)} [ \frac{p_{\theta} (\bf{x}, \bf{z})}{q(z)} ])\]</span></p>
+<ul>
+<li>log() is a concave function. <span class="math inline">\(\log(px +
+(1 − p)x^′) ≥ p \log(x) + (1 − p) log(x^′)\)</span>.</li>
+<li>Idea: use Jensen Inequality (for concave functions):<span
+class="math inline">\(\log E[y] \geq E[\log y]\)</span>:</li>
+</ul>
+<p><span class="math display">\[\log (E_{z \backsim q(z)} [f(z)]) = \log
+(\sum_z q(z)f(z)) ≥ \sum_z q(z) \log f(z)\]</span></p>
+<p>Choosing <span
+class="math inline">\(f(z)=\frac{p_{\theta}(\bf{x},\bf{z})}{q(z)}\)</span></p>
+<p><span class="math display">\[\log (E_{z \backsim q(z)}
+[\frac{p_{\theta}(\bf{x}, \bf{z})}{q(z)}]) ≥ E_{z \backsim q(z)} [\log
+(\frac{p_{\theta (\bf{x}, \bf{z})}}{q(z)})]\]</span> Called Evidence
+Lower Bound (<strong>ELBO</strong>).</p>
+<h3 id="variational-inference">Variational inference</h3>
+<p>Suppose <span class="math inline">\(q(z)\)</span> is any probability
+distribution over the hidden variables, evidence lower bound (ELBO)
+holds for any <span class="math inline">\(q\)</span></p>
+<p><span class="math display">\[\begin{aligned}
+\log p(x;\theta) &amp;\geq \sum_z q(z) \log
+(\frac{p_{\theta}(\bf{x},\bf{z})}{q(z)}) \\ &amp;= \sum_xq(z) \log
+p_{\theta} (\bf{x},\bf{z}) - \sum_z q(z) \log q(z) \\ &amp;=\sum_z q(z)
+\log p_{\theta} (\bf{x},\bf{z}) + H(q)
+\end{aligned}\]</span></p>
+<p>Equality holds if <span class="math inline">\(q =
+p(z|x;\theta)\)</span></p>
+<p><span class="math display">\[\log p(x;\theta) = \sum_z q(z) \log
+p(z,x;\theta) + H(q)\]</span></p>
+<p>In general, <span class="math inline">\(\log p(x;theta) = \rm{ELBO} +
+D_{KL} (q(z) || p(z|x;\theta))\)</span>, the closer <span
+class="math inline">\(q(z)\)</span> is to the posterior <span
+class="math inline">\(p(z|x;\theta)\)</span> the closer the ELBO is to
+the ture log-likelihood.</p>
+<p><span class="math display">\[\begin{aligned}
+\log p(x;\theta) &amp;\geq \sum_z q(z;\phi) \log p(z,x;\theta) +
+H(q(z;\phi)) \\
+&amp;= \mathscr{L}(x;\theta,\phi) + D_{KL} (q(z;\phi)|| p(z|x;\theta))
+\end{aligned}\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\begin{aligned}
+\mathscr{L} = E_{z \backsim q_{\phi}(z|x)} [\log p_{\theta} (x|z) + \log
+p(z)] + H(q_{\phi}(z|x))
+\end{aligned}\]</span></p>
+<p><span
+class="math inline">\(\mathscr{L}(x;\theta,\phi)\)</span>为ELBO，通过最大化ELBO将下界推高。
+由于KL散度永远大于0，<span class="math inline">\(\log
+p(x_i)\)</span>的值不随<span class="math inline">\(q_i
+(z)\)</span>的变化而变化。当使<span class="math inline">\(q_i
+(z)\)</span>逼近<span class="math inline">\(p(z|x_i)\)</span>时，<span
+class="math inline">\(\mathscr{L}(x;\theta,\phi)\)</span>能取最大值，因此我们需要最小化<span
+class="math inline">\(D_{KL} (q(z;\phi)|| p(z|x;\theta))\)</span></p>
+<h1 id="normalizing-flow-models">Normalizing Flow Models</h1>
+<p><strong>Key idea behind flow models:</strong> Map simple
+distributions (easy to sample and evaluate densities) to complex
+distributions through an invertible transformation.</p>
+<ul>
+<li>Typically consider parameterized densities:
+<ul>
+<li>Gaussian: <span class="math inline">\(X \backsim \mathscr{N}
+(\mu,\sigma)\)</span> if <span class="math inline">\(p_x
+(x)=\frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-\mu)^2
+/2\sigma^2}\)</span></li>
+<li>Uniform: <span class="math inline">\(X \backsim
+\mathscr{U}(a,b)\)</span> if <span class="math inline">\(p_x
+(x)=\frac{1}{b-a} 1[a \leq x \leq b]\)</span></li>
+</ul></li>
+<li>If <span class="math inline">\(X\)</span> is a continuous random
+vector, we can usually represent it using its <strong>joint probability
+density function</strong>:
+<ul>
+<li>Gaussian: if <span class="math inline">\(p_x (x) =
+\frac{1}{\sqrt{(2\pi)^n} |\Sigma|} \exp (-\frac{1}{2} (x - \mu )^T
+\Sigma^{-1} (x - \mu))\)</span></li>
+</ul></li>
+</ul>
+<h2 id="change-of-variables-formula">Change of Variables formula</h2>
+<p>Change of variables (1D case): If <span
+class="math inline">\(X=f(Z)\)</span> and <span
+class="math inline">\(f(·)\)</span> is monotone with inverse <span
+class="math inline">\(Z=f^{−1}(X)=h(X)\)</span>, then: <span
+class="math display">\[p_X (x) = p_Z (h(x)) |h^{&#39;} (x)|\]</span>
+Note that the ”shape” of <span class="math inline">\(p_X(x)\)</span> is
+different (more complex) from that of the prior <span
+class="math inline">\(p_Z(z)\)</span>. Letting <span
+class="math inline">\(z=h(x)=f^{−1}(x)\)</span> we can also write <span
+class="math display">\[p_X (x) = p_Z (z) \frac{1}{f^{&#39;}
+(z)}\]</span></p>
+<h2 id="generalized-change-of-variables">Generalized change of
+variables</h2>
+<ul>
+<li>For linear transformations specified via <span
+class="math inline">\(A\)</span>, change in volume is given by the
+determinant of <span class="math inline">\(A\)</span></li>
+<li>For non-linear transformations <span
+class="math inline">\(f(·)\)</span>, the linearized change in volume is
+given by the determinant of the Jacobian of <span
+class="math inline">\(f(·)\)</span></li>
+<li><strong>Change of variables (General case):</strong> The mapping
+between <span class="math inline">\(Z\)</span> and <span
+class="math inline">\(X\)</span>, given by <span
+class="math inline">\(f:{\Bbb{R}}^n \mapsto \Bbb{R}^n\)</span>, is
+invertible such that <span class="math inline">\(X = f(Z)\)</span> and
+<span class="math inline">\(Z = f^{−1}(X)\)</span>. <span
+class="math display">\[p_{X}(x) = p_{Z} (f^{-1}(x)) |\det
+(\frac{\partial f^{-1} (x)}{\partial x})|\]</span></li>
+<li><span class="math inline">\(x, z\)</span> need to be continuous and
+have the same dimension.</li>
+<li>For any invertible matrix <span class="math inline">\(A\)</span>,
+<span class="math inline">\(\det(A^{−1}) = \det(A)^{−1}\)</span> <span
+class="math display">\[p_{X}(x) = p_{Z} (z) |\det (\frac{\partial f
+(z)}{\partial z})|^{-1}\]</span></li>
+</ul>
+<p>In a <strong>normalizing flow model</strong>, the mapping between
+<span class="math inline">\(Z\)</span> and <span
+class="math inline">\(X\)</span>, given by <span
+class="math inline">\(f_{\theta}:{\Bbb{R}}^n \mapsto \Bbb{R}^n\)</span>,
+is deterministic and invertible such that <span class="math inline">\(X=
+f_{\theta}(Z)\)</span> and <span class="math inline">\(Z =
+f^{−1}_{\theta}(X)\)</span>. the marginal likelihood p(x) is given by
+<span class="math display">\[p_{X}(x;\theta) = p_{Z} (f^{-1}_\theta(x))
+|\det (\frac{\partial f_\theta^{-1} (x)}{\partial x})|\]</span></p>
+<p><strong>Normalizing:</strong> Change of variables gives a normalized
+density after applying an invertible transformation
+<strong>Flow:</strong> Invertible transformations can be composed with
+each other <span class="math display">\[z_m = f^m_\theta \circ \cdots
+\circ f^1_\theta (z_0) = f^m_\theta (f^{m-1}_\theta (\cdots (f^1_\theta
+(z_0)))) \triangleq f_\theta (z_0)\]</span></p>
+<ul>
+<li>Start with a simple distribution for <span
+class="math inline">\(z_0\)</span> (e.g., Gaussian)</li>
+<li>Apply a sequence of M invertible transformations to finally obtain
+<span class="math inline">\(x = z_M\)</span></li>
+<li>By change of variables <span class="math display">\[p_{X}(x;\theta)
+= p_{Z} (f^{-1}_\theta(x)) \prod^M_{m=1} |\det (\frac{\partial
+({f^m_\theta})^{-1} (z_m)}{\partial z_m})|\]</span></li>
+</ul>
+<h2 id="learning-and-inference">Learning and Inference</h2>
+<p>Learning via <strong>maximum likelihood</strong> over the dataset
+<span class="math inline">\(\mathscr{D}\)</span> <span
+class="math display">\[\max_\theta \log p_{X}(\mathscr{D};\theta) =
+\sum_{x \in \mathscr{D}} \log p_{Z} (f^{-1}_\theta(x)) + \log |\det
+(\frac{\partial f^{-1}_\theta (x)}{\partial x})|\]</span> <strong>Exact
+likelihood evaluation</strong> via inverse tranformation <span
+class="math inline">\(x \mapsto z\)</span> and change of variables
+formula <strong>Sampling</strong> via forward transformation <span
+class="math inline">\(z \mapsto x\)</span> <span
+class="math display">\[z \backsim p_{Z} (z) \quad x = f_{\theta}
+(z)\]</span> <strong>Latent representations</strong> inferred via
+inverse transformation (no inference network required!) <span
+class="math display">\[z = f^{-1}_{\theta} (x)\]</span></p>
+<p>Computing likelihoods also requires the evaluation of determinants of
+n × n Jacobian matrices, where n is the data dimensionality: <span
+class="math inline">\(O(n^3)\)</span> =&gt; <strong>Key idea:</strong>
+Choose tranformations so that the resulting Jacobian matrix has special
+structure. For example, the determinant of a triangular matrix is the
+product of the diagonal entries, i.e., an O(n) operation.</p>
+<h2 id="invertible-transformations-with-diagonal-jacobians">Invertible
+transformations with diagonal Jacobians</h2>
+<h3 id="nonlinear-independent-components-estimation-nice">Nonlinear
+Independent Components Estimation (NICE)</h3>
+<ol type="1">
+<li>Additive coupling layers Partition the variables <span
+class="math inline">\(z\)</span> into two disjoint subsets, say <span
+class="math inline">\(z_{1:d}\)</span> and <span
+class="math inline">\(z_{d+1:n}\)</span> for any <span
+class="math inline">\(1 ≤ d &lt; n\)</span>
+<ul>
+<li>Forward mapping <span class="math inline">\(z \mapsto x\)</span>
+<ul>
+<li><span class="math inline">\(x_{1:d} = z_{1:d}\)</span> (identity
+transformation)</li>
+<li><span class="math inline">\(x_{d+1:n} = z_{d+1:n} + m_\theta
+(z_{1:d})\)</span> (<span class="math inline">\(m_\theta
+(\cdot)\)</span> is a neural network with parameters <span
+class="math inline">\(\theta\)</span>, <span
+class="math inline">\(d\)</span> input units, and <span
+class="math inline">\(n − d\)</span> output units)</li>
+</ul></li>
+<li>Inverse mapping <span class="math inline">\(x \mapsto z\)</span>
+<ul>
+<li><span class="math inline">\(z_{1:d} = x_{1:d}\)</span> (identity
+transformation)</li>
+<li><span class="math inline">\(z_{d+1:n} = x_{d+1:n} - m_\theta
+(x_{1:d})\)</span></li>
+</ul></li>
+<li>Jacobian of forward mapping <span class="math display">\[    J =
+\frac{\partial x}{\partial z} \left( \begin{matrix} I_d, 0 \\
+\frac{\partial x_{d+1:n}}{\partial z_{1:d}} , I_{n-d} \end{matrix}
+\right) \\
+\det (J) = 1\]</span></li>
+<li><strong>Volume preserving transformation</strong> since determinant
+is 1.</li>
+</ul></li>
+<li>Rescaling layers
+<ul>
+<li>Additive coupling layers are composed together (with arbitrary
+partitions of variables in each layer)</li>
+<li>Final layer of NICE applies a rescaling transformation</li>
+<li>Forward mapping <span class="math inline">\(z \mapsto x\)</span>:
+<span class="math display">\[    x_i = s_i z_i\]</span> where <span
+class="math inline">\(s_i &gt; 0\)</span> is the scaling factor for the
+i-th dimension.</li>
+<li>Inverse mapping <span class="math inline">\(x \mapsto z\)</span>:
+<span class="math display">\[    z_i = \frac{x_i}{s_i}\]</span></li>
+<li>Jacobian of forward mapping: <span class="math display">\[    J =
+\rm{diag} (s) \\
+\det (J) = \prod^n_{i=1} s_i\]</span></li>
+</ul></li>
+</ol>
+<h3 id="real-nvp-non-volume-preserving-extension-of-nice">Real-NVP:
+Non-volume preserving extension of NICE</h3>
+<ul>
+<li>Forward mapping <span class="math inline">\(z \mapsto x\)</span>
+<ul>
+<li><span class="math inline">\(x_{1:d} = z_{1:d}\)</span> (identity
+transformation)</li>
+<li><span class="math inline">\(x_{d+1:n} = z_{d+1:n} \odot \exp
+(\alpha_\theta (z_{1:d})) + \mu_{\theta} (z_{1:d})\)</span></li>
+<li><span class="math inline">\(\mu_\theta (\cdot),
+\alpha_\theta\)</span> are both neural network with parameters <span
+class="math inline">\(\theta\)</span> <span
+class="math inline">\(d\)</span> input units, and <span
+class="math inline">\(n − d\)</span> output units, <span
+class="math inline">\(\odot\)</span> denotes elementwise product</li>
+</ul></li>
+<li>Inverse mapping <span class="math inline">\(x \mapsto z\)</span>
+<ul>
+<li><span class="math inline">\(z_{1:d} = x_{1:d}\)</span> (identity
+transformation)</li>
+<li><span class="math inline">\(z_{d+1:n} = (x_{d+1:n} - \mu_\theta
+(x_{1:d})) \odot (\exp (-\alpha_\theta (x_{1:d})))\)</span></li>
+</ul></li>
+<li>Jacobian of forward mapping <span class="math display">\[J =
+\frac{\partial x}{\partial z} \left( \begin{matrix} I_d, 0 \\
+\frac{\partial x_{d+1:n}}{\partial z_{1:d}} , \rm{diag}(\exp
+(\alpha_{\theta (z_{1:d})})) \end{matrix} \right) \\
+\det (J) = \prod^n_{i=d+1} \exp (\alpha_\theta (z_{1:d})_i) = \exp
+(\sum^n_{i=d+1} \alpha_\theta (z_{1:d})_i)\]</span></li>
+<li><strong>Non-volume preserving transformation</strong> in general
+since determinant can be less than or greater than 1</li>
+</ul>
+<h2 id="autoregressive-models-as-normalizing-flow-models">Autoregressive
+Models as Normalizing Flow Models</h2>
+<ul>
+<li>Consider a Gaussian autoregressive model: <span
+class="math display">\[    p(x) = \prod^n_{i=1} p(x_i |
+x_{&lt;i})\]</span> such that <span
+class="math inline">\(p(x_i|x_{&lt;i})=\mathscr{N} (\mu_i
+(x_1,...,x_{i-1}), \exp (\alpha_i (x_1,...,x_{i-1}))^2)\)</span>.<span
+class="math inline">\(\mu_i (\cdot), \alpha_i (\cdot)\)</span> are
+neural networks for <span class="math inline">\(i &gt; 1\)</span> and
+constants for <span class="math inline">\(i = 1\)</span>.</li>
+<li>Sampler for this model:
+<ul>
+<li>Sample <span class="math inline">\(z_i \backsim \mathscr{N}
+(0,1)\)</span> for <span class="math inline">\(i=1,...,n\)</span></li>
+<li>Let <span class="math inline">\(x_1 = \exp (\alpha_1) z_1 +
+\mu_1\)</span>. Compute <span class="math inline">\(\mu_2(x_1),\alpha_2
+(x_1)\)</span></li>
+<li>Let <span class="math inline">\(x_2 = \exp (\alpha_2) z_2 +
+\mu_2\)</span>. Compute <span
+class="math inline">\(\mu_3(x_1,x_2),\alpha_3 (x_1,x_2)\)</span></li>
+<li>Let <span class="math inline">\(x_3 = \exp (\alpha_3) z_3 +
+\mu_3\)</span>...</li>
+</ul></li>
+<li><strong>Flow interpretation:</strong> transforms samples from the
+standard Gaussian <span class="math inline">\((z_1,z_2,...,z_n)\)</span>
+to those generated from the model <span
+class="math inline">\((x_1,x_2,...,x_n)\)</span> via invertible
+transformations (parameterized by <span class="math inline">\(\mu_i
+(\cdot), \alpha_i (\cdot)\)</span></li>
+</ul>
+<h3 id="masked-autoregressive-flow-maf">Masked Autoregressive Flow
+(MAF)</h3>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pSIWBi8"><img
+src="https://s1.ax1x.com/2023/02/13/pSIWBi8.md.png"
+alt="fwd.png" /></a></p>
+<ul>
+<li>Forward mapping <span class="math inline">\(z \mapsto x\)</span>
+<ul>
+<li>Let <span class="math inline">\(x_1 = \exp (\alpha_1)z_1 +
+\mu_1\)</span>. Compute <span class="math inline">\(\mu_2(x_1),
+\alpha_2(x_1)\)</span></li>
+<li>Let <span class="math inline">\(x_2 = \exp (\alpha_2)z_2 +
+\mu_2\)</span>. Compute <span class="math inline">\(\mu_3(x_1, x_2),
+\alpha_3(x_1, x_2)\)</span></li>
+</ul></li>
+<li>Sampling is sequential and slow (like autoregressive): <span
+class="math inline">\(\mathscr{O}(n)\)</span> time</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pSIWDJS"><img
+src="https://s1.ax1x.com/2023/02/13/pSIWDJS.md.png"
+alt="bwd.png" /></a></p>
+<ul>
+<li>Inverse mapping from <span class="math inline">\(x \mapsto
+z\)</span>:
+<ul>
+<li>Compute all <span class="math inline">\(\mu_i, \alpha_i\)</span>
+(can be done in parallel)</li>
+<li>Let <span class="math inline">\(z_1 = (x_1 - \mu_1) / \exp
+(\alpha_1)\)</span> (scale and shift)</li>
+<li>Let <span class="math inline">\(z_2 = (x_2 - \mu_2) / \exp
+(\alpha_2)\)</span></li>
+<li>Let <span class="math inline">\(z_3 = (x_3 - \mu_3) / \exp
+(\alpha_3)\)</span>...</li>
+</ul></li>
+<li>Jacobian is lower diagonal, hence efficient determinant
+computation</li>
+<li>Likelihood evaluation is easy and parallelizable (计算<span
+class="math inline">\(p(x_1),p(x_2|x_1),...,p(x_D|x_{1:D-1})\)</span>时可以并行)</li>
+<li>sampling autoregressive models is slow because you must wait for all
+previous <span class="math inline">\(x_{1:i−1}\)</span> to be computed
+before computing new <span class="math inline">\(x_i\)</span></li>
+<li>Layers with different variable orderings can be stacked</li>
+</ul>
+<h3 id="inverse-autoregressive-flow-iaf">Inverse Autoregressive Flow
+(IAF)</h3>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pSIxrMn"><img
+src="https://s1.ax1x.com/2023/02/13/pSIxrMn.md.png"
+alt="IAF.png" /></a></p>
+<ul>
+<li>Forward mapping <span class="math inline">\(z \mapsto x\)</span>
+(parallel):
+<ul>
+<li>Sample <span class="math inline">\(z_i \backsim \mathscr{N}
+(0,1)\)</span> for <span class="math inline">\(i=1,...,n\)</span></li>
+<li>Compute all <span class="math inline">\(\mu_i, \alpha_i\)</span>
+(can be done in parallel)</li>
+<li>Let <span class="math inline">\(x_1 = \exp (\alpha_1) z_1 +
+\mu_1\)</span></li>
+<li>Let <span class="math inline">\(x_2 = \exp (\alpha_2) z_2 +
+\mu_2\)</span>...</li>
+</ul></li>
+<li>Inverse mapping from <span class="math inline">\(x \mapsto
+z\)</span> (sequential):
+<ul>
+<li>Let <span class="math inline">\(z_1 = (x_1 − \mu_1)/ \exp
+(\alpha_1)\)</span>. Compute <span class="math inline">\(\mu_2(z_1),
+\alpha_2(z_1)\)</span></li>
+<li>Let <span class="math inline">\(z_2 = (x_2 − \mu_2)/ \exp
+(\alpha_2)\)</span>. Compute <span class="math inline">\(\mu_3(z_1,z_2),
+\alpha_3(z_1,z_2)\)</span></li>
+</ul></li>
+<li>Fast to sample from, slow to evaluate likelihoods of data points
+(train)</li>
+<li>Note: Fast to evaluate likelihoods of a generated point (cache <span
+class="math inline">\(z_1,z_2,..., z_n\)</span>)</li>
+</ul>
+<h3 id="iaf-vs.-maf">IAF vs. MAF</h3>
+<ul>
+<li>Computational tradeoffs
+<ul>
+<li>MAF: Fast likelihood evaluation, slow sampling</li>
+<li>IAF: Fast sampling, slow likelihood evaluation</li>
+</ul></li>
+<li>MAF more suited for training based on MLE, density estimation</li>
+<li>IAF more suited for real-time generation</li>
+</ul>
+<h1 id="energy-based-models-ebms">Energy-Based Models (EBMs)</h1>
+<h2 id="parameterizing-probability-distributions">Parameterizing
+probability distributions</h2>
+<ol type="1">
+<li>non-negative: <span class="math inline">\(p(x) \geq 0\)</span>
+<ul>
+<li><span class="math inline">\(g_\theta (\bf{x})
+=f_\theta(\bf{x})^2\)</span></li>
+<li><span class="math inline">\(g_\theta (\bf{x}) =\exp
+(f_\theta(\bf{x}))\)</span></li>
+<li><span class="math inline">\(g_\theta (\bf{x}) =|
+f_\theta(\bf{x})|\)</span></li>
+<li><span class="math inline">\(g_\theta (\bf{x}) = \log(1 + \exp (
+f_\theta(\bf{x})))\)</span></li>
+</ul></li>
+<li>sum-to-one: <span class="math inline">\(\sum_x p(x) = 1\)</span> (or
+<span class="math inline">\(\int p(x) dx = 1\)</span> for continuous
+variables) <span class="math display">\[p_\theta (\bf{x}) =
+\frac{1}{\rm{Volume} (g_\theta)} g_\theta (\bf{x}) = \frac{1}{\int
+g_\theta (\bf{x}) d\bf{x}} g_\theta (\bf{x})\]</span></li>
+</ol>
+<ul>
+<li>Example: choose <span
+class="math inline">\(g_\theta(\bf{x})\)</span> so that we know the
+volume analytically as a function of <span
+class="math inline">\(\theta\)</span>.
+<ul>
+<li><span class="math inline">\(g_{(\mu, \sigma)} (x) =
+e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span>. Volume: <span
+class="math inline">\(\int e^{-\frac{x-\mu}{2\sigma^2}}dx=\sqrt{2 \pi
+\sigma^2}\)</span>. (Gaussian)</li>
+<li><span class="math inline">\(g_\lambda (x) = e^{-\lambda x}\)</span>.
+Volume: <span class="math inline">\(\int^{+ \infty}_0 e^{+ \lambda x}
+dx=\frac{1}{\lambda}\)</span>. (Exponential)</li>
+<li><span class="math inline">\(g_\theta (x) = h(x) \exp \{ \theta \cdot
+T(x)\}\)</span>. Volume: <span class="math inline">\(\exp \{ A
+(\theta)\}\)</span> where <span class="math inline">\(A(\theta)=\log
+\int h(x) \exp \{\theta \cdot T(x) \} dx\)</span>. (Exponential family)
+<ul>
+<li>Normal, Poisson, exponential, Bernoulli</li>
+<li>beta, gamma, Dirichlet, Wishart, etc.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="likelihood-based-learning">Likelihood based learning</h2>
+<p>More complex models can be obtained by combining these building
+blocks.</p>
+<ol type="1">
+<li><p>Autoregressive: Products of normalized objects <span
+class="math inline">\(p_\theta (\bf{x}) p_{\theta^{&#39;}(\bf{x})}
+(\bf{y})\)</span>: <span class="math display">\[\int_x \int_y p_\theta
+(\bf{x}) p_{\theta^{&#39;}(\bf{x})} (\bf{y}) d \bf{x} d\bf{y} = \int_x
+p_\theta (\bf{x}) \underbrace{\int_y p_{\theta^{&#39;}} (\bf{y}) d
+\bf{y} }_{=1} d \bf{x}=\int_x p_{\theta} (\bf{x}) d\bf{x} =
+1\]</span></p></li>
+<li><p>Latent variables: Mixtures of normalized objects <span
+class="math inline">\(\alpha p_\theta (\bf{x}) + (1-\alpha)
+p_{\theta^{&#39;}} (\bf{x})\)</span> <span class="math display">\[\int_x
+\alpha p_{\theta} (\bf{x}) + (1- \alpha) p_{\theta^{&#39;}} (\bf{x}) d
+\bf{x} = \alpha + (1-\alpha) = 1\]</span> ## Energy-based model</p></li>
+</ol>
+<p><span class="math display">\[p_\theta(\bf{x}) = \frac{1}{\int \exp
+(f_\theta (\bf{x}))d \bf{x}} \exp (f_\theta (\bf{x})) =
+\frac{1}{Z(\theta)} \exp (f_\theta (\bf{x})) \]</span></p>
+<p>The volume/normalization constant (partition function)</p>
+<p><span class="math display">\[Z(\theta) = \int \exp (f_\theta
+(\bf{x}))d \bf{x}\]</span></p>
+<ul>
+<li><span class="math inline">\(-f_\theta(\bf{x})\)</span> is called the
+energy</li>
+<li>Intuitively, configurations <span
+class="math inline">\(\bf{x}\)</span> with low energy (high <span
+class="math inline">\(f_\theta(\bf{x})\)</span>) are more likely.</li>
+</ul>
+<p>Pros: + Very flexible model architectures. + Stable training. +
+Relatively high sample quality. + Flexible composition.</p>
+<p>Cons: + Sampling from <span class="math inline">\(p_\theta
+(\bf{x})\)</span> is hard + Evaluating and optimizing likelihood <span
+class="math inline">\(p_\theta (\bf{x})\)</span> is hard (learning is
+hard) + No feature learning (but can add latent variables)</p>
+<p><strong>Curse of dimensionality</strong>: The fundamental issue is
+that computing <span class="math inline">\(Z(\theta)\)</span>
+numerically (when no analytic solution is available) scales
+exponentially in the number of dimensions of <span
+class="math inline">\(\bf{x}\)</span>.</p>
+<p>Nevertheless, some tasks do not require knowing <span
+class="math inline">\(Z(\theta)\)</span>. Given a trained model, many
+applications require relative comparisons. Hence <span
+class="math inline">\(Z(\theta)\)</span> is not needed. Comparing the
+probability of two points is easy: <span class="math inline">\(p_\theta
+(\bf{x}&#39;)/p_\theta (\bf{x}) = \exp (f_\theta (\bf{x}&#39;) -
+f_\theta (\bf{x}))\)</span></p>
+<h2 id="sampling-from-energy-based-models">Sampling from energy-based
+models</h2>
+<ul>
+<li>Maximum likelihood training: <span
+class="math inline">\(\max_\theta{f_\theta(x_{\rm{train}})−\log
+Z(\theta)}\)</span>.
+<ul>
+<li>Contrastive divergence: <span
+class="math display">\[    \nabla_\theta f_\theta (\bf{x}_{\rm{train}})
+- \nabla_\theta \log Z(\theta) \approx \nabla_\theta f_\theta
+(\bf{x}_{\rm{train}}) - \nabla_\theta
+f_\theta(\bf{x}_{\rm{sample}})\]</span> where <span
+class="math inline">\(\bf{x}_{\rm{sample}} \backsim p_\theta
+(\bf{x})\)</span>.</li>
+</ul></li>
+<li>Unadjusted Langevin MCMC
+<ul>
+<li><span class="math inline">\(\bf{x}^0 \backsim \pi
+(\bf{x})\)</span></li>
+<li>Repeat for <span class="math inline">\(t=0,1,2,\cdots,T-1\)</span>
+<ul>
+<li><span class="math inline">\(\bf{z}^t \backsim \mathscr{N}
+(0,I)\)</span></li>
+<li><span class="math inline">\(\bf{x}^{t+1} = \bf{x}^t + \epsilon
+\nabla_x \log p_\theta (\bf{x})|_{\bf{x}=\bf{x}^t} + \sqrt{2 \epsilon}
+\bf{z}^t\)</span></li>
+</ul></li>
+</ul></li>
+<li>Properties:
+<ul>
+<li><span class="math inline">\(\bf{x}^{\top}\)</span> converges to
+<span class="math inline">\(p_\theta(\bf{x})\)</span> when <span
+class="math inline">\(T \rightarrow \infty\)</span> and <span
+class="math inline">\(\epsilon \rightarrow 0\)</span>.</li>
+<li><span class="math inline">\(\nabla_x \log p_\theta (\bf{x}) =
+\nabla_x f_\theta (\bf{x})\)</span> for continuous energy-based
+models.</li>
+<li>Convergence slows down as dimensionality grows.</li>
+</ul></li>
+</ul>
+<h2 id="training-without-sampling">Training without sampling</h2>
+<h3 id="score-function">Score Function</h3>
+<p><span class="math display">\[s_\theta (\bf{x}) := \nabla_x \log
+p_\theta (\bf{x}) = \nabla_x f_\theta (\bf{x}) - \underbrace{\nabla_x
+\log Z(\theta)}_{=0} = \nabla_x f_\theta (\bf{x}) \]</span></p>
+<p><span class="math inline">\(s_\theta (\bf{x})\)</span> is independent
+of the partition function <span
+class="math inline">\(Z(\theta)\)</span>.</p>
+<h3 id="score-matching">Score Matching</h3>
+<!-- Minimizing the Fisher divergence between $p_{\rm{data}}(\bf{x})$ and the EBM $p_\theta(\bf{x})$ -->
+<p>Minimizing the Fisher divergence between <span
+class="math inline">\(p_{data}(\bf{x})\)</span> and the EBM <span
+class="math inline">\(p_\theta(\bf{x})\)</span></p>
+<p><span class="math display">\[\frac{1}{2} E_{x \backsim p_{\rm{data}}}
+[|| \nabla_x \log p_{\rm{data}}(\bf{x}) - s_\theta (\bf{x}) ||^2_2] \\
+= \frac{1}{2} E_{x \backsim p_{\rm{data}}} [|| \nabla_x \log
+p_{\rm{data}}(\bf{x}) - \nabla_x f_\theta (\bf{x}) ||^2_2]\]</span></p>
+<ol type="1">
+<li>Sample a mini-batch of datapoints <span
+class="math inline">\(\{\bf{x}_1, \bf{x}_2,\cdots, \bf{x}_n \} \backsim
+p_{\rm{data}} (\bf{x})\)</span>.</li>
+<li>Estimate the score matching loss with the empirical mean <span
+class="math display">\[\frac{1}{n} \sum^n_{i=1} [\frac{1}{2} || \nabla_x
+\log p_\theta (\bf{x}_i) ||^2_2 + \rm{tr} (\nabla^2_x \log p_\theta
+(\bf{x}_i)) ] \\
+= \frac{1}{n} \sum^n_{i=1} [\frac{1}{2} || \nabla_x f_\theta (\bf{x}_i)
+||^2_2 + \rm{tr} (\nabla^2_x f_\theta (\bf{x}_i)) ]\]</span></li>
+<li>Stochastic gradient descent.</li>
+</ol>
+<h1 id="summary">Summary</h1>
+<ul>
+<li>Autoregressive models. <span class="math inline">\(p_\theta(x_1,
+x_2,\cdots, x_n) = \prod^n_{i=1} p_\theta(x_i | x&lt;i)\)</span></li>
+<li>Normalizing flow models. <span
+class="math inline">\(p_\theta(\bf{x}) = p(\bf{z})| \det J_{f_θ}
+(\bf{x})|\)</span>, where <span class="math inline">\(\bf{z} =
+f_θ(\bf{x})\)</span></li>
+<li>Variational autoencoders: <span
+class="math inline">\(p_\theta(\bf{x}) = \int p(\bf{z}) p_{\theta}
+(\bf{x}|\bf{z}) d\bf{z}\)</span>.</li>
+<li>Energy-based models: <span class="math inline">\(p_\theta (\bf{x}) =
+\frac{e^{f_\theta}}{Z(\theta)}\)</span></li>
+<li>Pros:
+<ul>
+<li>Maximum likelihood training</li>
+<li>Principled model comparison via likelihoods</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Model architectures are restricted.</li>
+<li>Special architectures or surrogate losses to deal with intractable
+partition functions</li>
+</ul></li>
+<li>Generative Adversarial Networks (GANs).
+<ul>
+<li>$ <em></em>E_{x∼p_{}} [D_(]$.</li>
+</ul></li>
+<li>Pros:
+<ul>
+<li>Two sample tests. Can optimize f-divergences and the Wasserstein
+distance.</li>
+<li>Very flexible model architectures.</li>
+<li>Samples typically have better quality</li>
+</ul></li>
+<li>Cons:
+<ul>
+<li>Require adversarial training. Training instability and mode
+collapse.</li>
+<li>No principled way to compare different models</li>
+<li>No principled termination criteria for training</li>
+</ul></li>
+</ul>
 <h1 id="reference">Reference</h1>
 <p>[1] 宏观理解Diffusion过程: <a
-target="_blank" rel="noopener" href="https://kexue.fm/archives/9119">DDPM = 拆楼 + 建楼</a> [2]
-DDPM原论文遵循Diffusion-Original: <a
-target="_blank" rel="noopener" href="https://kexue.fm/archives/9152">DDPM = 自回归式VAE</a> [3] 和score
-matching串联，和DDIM延续: <a target="_blank" rel="noopener" href="https://kexue.fm/archives/9164">DDPM
-= 贝叶斯 + 去噪</a></p>
+target="_blank" rel="noopener" href="https://kexue.fm/archives/9119">DDPM = 拆楼 + 建楼</a><br />
+[2] DDPM原论文遵循Diffusion-Original: <a
+target="_blank" rel="noopener" href="https://kexue.fm/archives/9152">DDPM = 自回归式VAE</a><br />
+[3] 和score matching串联，和DDIM延续: <a
+target="_blank" rel="noopener" href="https://kexue.fm/archives/9164">DDPM = 贝叶斯 + 去噪</a></p>
 
         
     
@@ -735,7 +1359,7 @@ matching串联，和DDIM延续: <a target="_blank" rel="noopener" href="https://
     <!-- Next Nav -->
     
         <a href="/2022/05/03/Summary-of-Self-Supervised-Learning/" id="post_nav-older" class="next-content">
-            Older
+            旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_forward</i>
@@ -808,7 +1432,7 @@ matching串联，和DDIM延续: <a target="_blank" rel="noopener" href="https://
                 
                     <i class="material-icons sidebar-material-icons">home</i>
                 
-                Home
+                主页
             </a>
         </li>
         
@@ -821,12 +1445,12 @@ matching串联，和DDIM延续: <a target="_blank" rel="noopener" href="https://
                 
                     <i class="material-icons sidebar-material-icons">inbox</i>
                 
-                    Archives
+                    归档
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">三月 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">五月 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -839,7 +1463,7 @@ matching串联，和DDIM延续: <a target="_blank" rel="noopener" href="https://
                 
                     <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
                 
-                Categories
+                分类
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -910,7 +1534,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            Theme - Material
+            主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
         </div>
     </a>
@@ -1114,6 +1738,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->

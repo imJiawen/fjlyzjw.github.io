@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="en">
+<html style="display: none;" lang="zh">
     <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <!--
@@ -68,7 +68,7 @@
         <link rel="stylesheet" href="/css/ie-blocker.css">
 
         
-            <script src="/js/ie-blocker.en.js"></script>
+            <script src="/js/ie-blocker.zhCN.js"></script>
         
     <![endif]-->
 
@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Tue May 03 2022 19:31:22 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 24 2023 22:06:11 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 26 2023 16:41:54 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html",
     "headline": "Summary of Self-Supervised Learning",
     "datePublished": "Tue May 03 2022 19:31:22 GMT+0800",
-    "dateModified": "Fri Mar 24 2023 22:06:11 GMT+0800",
+    "dateModified": "Sun Mar 26 2023 16:41:54 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Jiawen Zhang",
@@ -410,7 +410,7 @@ Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="pos
     <!-- Author Name & Date -->
     <div>
         <strong>Jiawen Zhang</strong>
-        <span>May 03, 2022</span>
+        <span>5月 03, 2022</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -453,7 +453,7 @@ Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="pos
     
         <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Summary of Self-Supervised Learning&url=http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html&pic=http://yoursite.com/img/web_icon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
-                Share to Weibo
+                分享到微博
             </li>
         </a>
     
@@ -462,7 +462,7 @@ Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="pos
     
         <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Summary of Self-Supervised Learning&url=http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html&via=Jiawen Zhang" target="_blank">
             <li class="mdl-menu__item">
-                Share to Twitter
+                分享到 Twitter
             </li>
         </a>
     
@@ -471,7 +471,7 @@ Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="pos
     
         <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html" target="_blank">
             <li class="mdl-menu__item">
-                Share to Facebook
+                分享到 Facebook
             </li>
         </a>
     
@@ -480,7 +480,7 @@ Learning</span></a></li><li class="post-toc-item post-toc-level-4"><a class="pos
     
         <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/index.html" target="_blank">
             <li class="mdl-menu__item">
-                Share to Google+
+                分享到 Google+
             </li>
         </a>
     
@@ -525,7 +525,7 @@ alt="IlFJGd.png" /></a></p>
 <p>InFoNCE: 选取<span class="math inline">\([k_1,...,k_{K+1}]\)</span>,
 含一个正样本<span class="math inline">\(k_+\)</span>, K个负样本<span
 class="math inline">\(k_i\)</span> (其他随便信号)。</p>
-<p><span class="math display">\[\mathcal{L}_q = - \rm{log}
+<p><span class="math display">\[\mathscr{L}_q = - \rm{log}
 \frac{\rm{exp}(q \cdot k_{+} / \tau)}{\sum^{K}_{i=0} \exp (q \cdot k_i /
 \tau)}\]</span></p>
 <p>Momentum Update</p>
@@ -564,10 +564,10 @@ class="math inline">\(\tau \in [0,
 1]\)</span>,在训练之后进行以下更新：</p>
 <p><span class="math display">\[\xi \leftarrow \tau \xi + (1- \tau)
 \theta\]</span></p>
-<p>A set of images: <span class="math inline">\(\mathcal{D}\)</span>, an
-image <span class="math inline">\(x~\mathcal{D}\)</span> sampled
-uniformly. 图像增强分布<span class="math inline">\(\mathcal{T}\)</span>
-and <span class="math inline">\(\mathcal{T}\)</span>.<br />
+<p>A set of images: <span class="math inline">\(\mathscr{D}\)</span>, an
+image <span class="math inline">\(x~\mathscr{D}\)</span> sampled
+uniformly. 图像增强分布<span class="math inline">\(\mathscr{T}\)</span>
+and <span class="math inline">\(\mathscr{T}\)</span>.<br />
 <span class="math inline">\(v \triangleq t(x)\)</span> and <span
 class="math inline">\(v&#39; \triangleq t&#39;(x)\)</span>: two
 augmented views from <span class="math inline">\(x\)</span>.</p>
@@ -585,23 +585,23 @@ class="math inline">\(\overline{z}_{\theta} \triangleq z&#39;_{\xi} /
 ||z&#39;_{\xi}||_2\)</span></p>
 <p>仅有online有predictor，两个branch之间是非对称的。</p>
 <p>计算online的prediction和target的projection的MSE。</p>
-<p><span class="math display">\[\mathcal{L}_{\theta , \xi} \triangleq ||
+<p><span class="math display">\[\mathscr{L}_{\theta , \xi} \triangleq ||
 \overline{q_{\theta}} - \overline{z_{\xi}}&#39; ||_2^2 = 2-2 \cdot
 \frac{&lt;q_{\theta}, z&#39;_{\xi}&gt;}{||q_{\theta}||_2 \cdot
 ||z&#39;_{\xi}||_2}\]</span></p>
 <p>分别将<span class="math inline">\(v&#39;\)</span>输入online
 network、<span class="math inline">\(v\)</span>输入target
-network计算<span class="math inline">\(\widetilde{\mathcal{L}}_{\theta ,
-\xi}\)</span>，使得loss <span class="math inline">\(\mathcal{L}_{\theta
+network计算<span class="math inline">\(\widetilde{\mathscr{L}}_{\theta ,
+\xi}\)</span>，使得loss <span class="math inline">\(\mathscr{L}_{\theta
 , \xi}\)</span>对称。</p>
 <p>在每个训练步进行随机优化，针对<span
 class="math inline">\(\theta\)</span>最小化<span
-class="math inline">\(\mathcal{L}^{BYOL}_{\theta,
-\xi}=\mathcal{L}_{\theta , \xi} + \widetilde{\mathcal{L}}_{\theta ,
+class="math inline">\(\mathscr{L}^{BYOL}_{\theta,
+\xi}=\mathscr{L}_{\theta , \xi} + \widetilde{\mathscr{L}}_{\theta ,
 \xi}\)</span>,而<span class="math inline">\(\xi\)</span>则采取stop
 gradient策略。</p>
 <p><span class="math display">\[\theta \leftarrow \rm{optimizer}(\theta,
-\nabla_{\theta} \mathcal{L}^{BYOL}_{\theta, \xi}, \eta) \xi \leftarrow
+\nabla_{\theta} \mathscr{L}^{BYOL}_{\theta, \xi}, \eta) \xi \leftarrow
 \tau \xi + (1-\tau) \theta\]</span> 其中<span
 class="math inline">\(\eta\)</span>是个可学习参数。</p>
 <h1
@@ -646,7 +646,7 @@ class="math inline">\(\bf{y}^{t2i}(T)\)</span>: ground-truth one-hot
 similarity</p>
 <p>对比损失被定义为<span class="math inline">\(\bf{p}\)</span>和<span
 class="math inline">\(\bf{y}\)</span>的交叉熵。</p>
-<p><span class="math display">\[\mathcal{L}_{itc} = \frac{1}{2}
+<p><span class="math display">\[\mathscr{L}_{itc} = \frac{1}{2}
 \rm{E}_{(I,T) \backsim D} [\rm{H}(\bf{p}^{i2t}(I), \bf{y}^{i2t}(I)) +
 \rm{H}(\bf{p}^{t2i}(T), \bf{y}^{t2i}(T))]\]</span></p>
 <h4 id="masked-language-modeling">Masked Language Modeling</h4>
@@ -656,19 +656,19 @@ class="math inline">\(\bf{y}\)</span>的交叉熵。</p>
 predicted probability for a masked token.</p>
 <p>MLM 最小化交叉熵:</p>
 <p><span
-class="math display">\[\mathcal{L}_{mlm}=\rm{E}_{(I,\hat{T})\backsim D}
+class="math display">\[\mathscr{L}_{mlm}=\rm{E}_{(I,\hat{T})\backsim D}
 \rm{H} (\bf{p}^{msk} (I, \hat{T}, \bf{y}^{msk})\]</span> <span
 class="math inline">\(\bf{y}^{msk}\)</span>: one-hot vocabulary
 distribution,真实token的概率是1</p>
 <h4 id="image-text-matching">Image-Text Matching</h4>
 <p>预测一组图文对为正（匹配）或负（不匹配）。仅采用[CLS]
 token的embedding。</p>
-<p><span class="math display">\[\mathcal{L}_{itm} = \rm{E}_{(I,T)
-\backsim D} \rm{H}(\bf{p}^{itm}(I, T), \bf{y}^{itm})\]</span><span
-class="math inline">\(\bf{y}^{itm}\)</span>: 2维one-hot ground-truth
-label向量表示</p>
-<p><span class="math display">\[\mathcal{L} = \mathcal{L}_{itc} +
-\mathcal{L}_{mlm} + \mathcal{L}_{itm}\]</span></p>
+<p><span class="math display">\[\mathscr{L}_{itm} = \rm{E}_{(I,T)
+\backsim D} \rm{H}(\bf{p}^{itm}(I, T), \bf{y}^{itm})\]</span></p>
+<p><span class="math inline">\(\bf{y}^{itm}\)</span>: 2维one-hot
+ground-truth label向量表示</p>
+<p><span class="math display">\[\mathscr{L} = \mathscr{L}_{itc} +
+\mathscr{L}_{mlm} + \mathscr{L}_{itm}\]</span></p>
 <h3 id="momentum-distillation">Momentum Distillation</h3>
 <p>正样本对往往弱相关，也会包含一些不相关的文本，或实体，而对于ITC学习来说，负文本可能也会包含一些匹配图片的信息。因此采用一个动量模型，它是一个exponential-moving-average
 versions of the unimodal and multimodal encoders。</p>
@@ -680,15 +680,15 @@ g_v&#39;(\bf{v}_{cls}&#39;)\)</span></p>
 <p>之后，计算soft pseudo-targets<span
 class="math inline">\(\bf{q}^{i2t}\)</span>和<span
 class="math inline">\(\bf{q}^{t2i}\)</span>,计算损失：</p>
-<p><span class="math display">\[\mathcal{L}^{\rm{mod}}_{\rm{itc}} =
-(1-\alpha) \mathcal{L}_{itc} + \frac{\alpha}{2} \rm{E}_{(I,T) \backsim
+<p><span class="math display">\[\mathscr{L}^{\rm{mod}}_{\rm{itc}} =
+(1-\alpha) \mathscr{L}_{itc} + \frac{\alpha}{2} \rm{E}_{(I,T) \backsim
 D} [\rm{KL}(\bf{p}^{i2t}(I), \bf{q}^{i2t}(I)) + \rm{KL}(\bf{p}^{t2i}(T),
 \bf{q}^{t2i}(T))]\]</span></p>
 <p>For MLM, <span
 class="math inline">\(\bf{q}^{msk}(I,\hat{T})\)</span>表示momentum
 model’s prediction probability for the masked token, 损失表示为：</p>
-<p><span class="math display">\[\mathcal{L}^{\rm{mod}}_{\rm{mlm}} =
-(1-\alpha) \mathcal{L}_{mlm} + {\alpha} \rm{E}_{(I,\hat{T}) \backsim D}
+<p><span class="math display">\[\mathscr{L}^{\rm{mod}}_{\rm{mlm}} =
+(1-\alpha) \mathscr{L}_{mlm} + {\alpha} \rm{E}_{(I,\hat{T}) \backsim D}
 \rm{KL}(\bf{p}^{msk}(I,\hat{T}),\bf{q}^{msk}(I,\hat{T}))\]</span></p>
 <h1 id="barlow-twins">Barlow Twins</h1>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/5XebBd"><img
@@ -734,7 +734,7 @@ alt="互相关矩阵" />
                 <i class="material-icons">arrow_back</i>
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
+            新篇
         </a>
     
 
@@ -744,7 +744,7 @@ alt="互相关矩阵" />
     <!-- Next Nav -->
     
         <a href="/2022/05/03/From-CNN-to-GCNN/" id="post_nav-older" class="next-content">
-            Older
+            旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_forward</i>
@@ -817,7 +817,7 @@ alt="互相关矩阵" />
                 
                     <i class="material-icons sidebar-material-icons">home</i>
                 
-                Home
+                主页
             </a>
         </li>
         
@@ -830,12 +830,12 @@ alt="互相关矩阵" />
                 
                     <i class="material-icons sidebar-material-icons">inbox</i>
                 
-                    Archives
+                    归档
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2023/03/">March 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">May 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/03/">三月 2023<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">五月 2022<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -848,7 +848,7 @@ alt="互相关矩阵" />
                 
                     <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
                 
-                Categories
+                分类
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -919,7 +919,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            Theme - Material
+            主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
         </div>
     </a>
@@ -1123,6 +1123,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="true?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->
