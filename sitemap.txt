@@ -1,3 +1,5 @@
+http://yoursite.com/cv/index.html
+http://yoursite.com/about/index.html
 http://yoursite.com/2023/03/24/Deep-Generative-Models/
 http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/
 http://yoursite.com/2022/05/03/Summary-of-Self-Supervised-Learning/
@@ -9,10 +11,8 @@ http://yoursite.com/2018/08/14/Dynamic-programming-%E5%8A%A8%E6%80%81%E8%A7%84%E
 http://yoursite.com/2018/09/14/Algorithm-Design-and-Analysis-Overview/
 http://yoursite.com/2018/10/18/Algorithm-Design-and-Analysis-Dynamic-programming/
 http://yoursite.com/2018/09/24/Algorithm-Design-and-Analysis-Divide-and-Conquer/
-http://yoursite.com/cv/index.html
 http://yoursite.com/2018/05/01/Hello-world/
 http://yoursite.com/project/index.html
-http://yoursite.com/about/index.html
 http://yoursite.com/categories/index.html
 http://yoursite.com/tags/index.html
 http://yoursite.com/
