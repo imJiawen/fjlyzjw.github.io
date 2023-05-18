@@ -17,11 +17,11 @@ http://yoursite.com/categories/index.html
 http://yoursite.com/tags/index.html
 http://yoursite.com/
 http://yoursite.com/tags/Algorithm-Design-and-Analysis/
+http://yoursite.com/tags/Course-summary/
+http://yoursite.com/tags/Overview/
 http://yoursite.com/tags/Basic-algorithm-design-technique/
 http://yoursite.com/tags/Dynamic-programming/
 http://yoursite.com/tags/Optimization/
-http://yoursite.com/tags/Course-summary/
-http://yoursite.com/tags/Overview/
 http://yoursite.com/tags/Algorithm-summary/
 http://yoursite.com/tags/Graph/
 http://yoursite.com/tags/GCN/
