@@ -171,20 +171,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Course-summary/</loc>
-    <lastmod>2023-05-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Overview/</loc>
-    <lastmod>2023-05-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/Basic-algorithm-design-technique/</loc>
     <lastmod>2023-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,6 +186,20 @@
   
   <url>
     <loc>http://yoursite.com/tags/Optimization/</loc>
+    <lastmod>2023-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Course-summary/</loc>
+    <lastmod>2023-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Overview/</loc>
     <lastmod>2023-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
