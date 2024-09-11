@@ -22,9 +22,9 @@ http://yoursite.com/tags/Dynamic-programming/
 http://yoursite.com/tags/Optimization/
 http://yoursite.com/tags/Course-summary/
 http://yoursite.com/tags/Overview/
-http://yoursite.com/tags/Algorithm-summary/
 http://yoursite.com/tags/Graph/
 http://yoursite.com/tags/GCN/
+http://yoursite.com/tags/Algorithm-summary/
 http://yoursite.com/tags/life/
 http://yoursite.com/tags/TheFirstPost/
 http://yoursite.com/tags/Knowledge-Graph/
