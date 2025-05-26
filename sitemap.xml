@@ -4,16 +4,7 @@
   <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2025-05-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/project/index.html</loc>
-    
-    <lastmod>2025-05-22</lastmod>
+    <lastmod>2025-05-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -21,6 +12,15 @@
   
   <url>
     <loc>http://yoursite.com/cv/index.html</loc>
+    
+    <lastmod>2025-05-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/project/index.html</loc>
     
     <lastmod>2025-05-22</lastmod>
     
