@@ -48,7 +48,7 @@
     
     <title>
         
-            My projects | 
+            My Projects | 
         
         Jiawen and her funny friends
     </title>
@@ -237,7 +237,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com/project/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="My projects | Jiawen and her funny friends">
+    <meta property="og:title" content="My Projects | Jiawen and her funny friends">
     <meta property="og:image" content="/img/web_icon.jpg">
     <meta property="og:description" content="">
     
@@ -307,20 +307,11 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 15 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/head_pic/Unsplash-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/project_head.jpg)">
     
             <p class="article-headline-p">
-                My projects
+                My Projects
             </p>
         </div>
 
@@ -339,7 +330,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Jiawen Zhang</strong>
-        <span>May 31, 2020</span>
+        <span>May 27, 2025</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -371,7 +362,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=My projects&url=http://yoursite.com/project/index.html&pic=http://yoursite.com/img/web_icon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=My Projects&url=http://yoursite.com/project/index.html&pic=http://yoursite.com/img/web_icon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -380,7 +371,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=My projects&url=http://yoursite.com/project/index.html&via=Jiawen Zhang" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=My Projects&url=http://yoursite.com/project/index.html&via=Jiawen Zhang" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -407,7 +398,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/project/index.html&title=My projects" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/project/index.html&title=My Projects" target="_blank">
             <li class="mdl-menu__item">
                 Share to LinkedIn
             </li>
@@ -429,27 +420,106 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <ul>
-<li><a href="#nature-language-processing">Nature Language Processing</a>
-<ul>
-<li><a href="#knowledge-graph">Knowledge Graph</a>
-<ul>
-<li><a href="#knowledge-graph-of-surgery-critical-events">Building and
-Iteratively Updating Medical Knowledge Graph</a></li>
-<li><a href="#recipe-related-question-answering-system">Recipe-related
-Question Answering System</a></li>
-</ul></li>
-<li><a href="#polyphone-disambiguation-in-mandarin-chinese">Polyphone
-Disambiguation in Mandarin Chinese</a></li>
-<li><a href="#text-sentiment-classiﬁcation">Text Sentiment
-Classiﬁcation</a></li>
-</ul></li>
-<li><a href="#human-computer-interaction">Human-Computer Interaction</a>
-<ul>
-<li><a href="#eye-tracking-study">Eye-tracking Study</a></li>
-<li><a href="#augmented-reality">Augmented Reality</a></li>
-</ul></li>
-</ul>
+        <p><a
+target="_blank" rel="noopener" href="https://openreview.net/pdf?id=PbhGeGBN7X"><strong>Cross-Domain
+Pre-Training for Time-Series Foundation Models</strong></a><br />
+<em>ICLR 2025, Foundation Models in the Wild Workshop</em><br />
+Despite the success of cross-domain pre-training in language models,
+time-series data pose unique challenges due to distinct temporal
+patterns and sampling discrepancies. This study systematically evaluates
+whether cross-domain pre-training benefits time-series foundation models
+(TSFMs). We reveal that while it can enhance performance in some
+domains, it also introduces negative transfer in others.
+Counterintuitively, unrelated domains can be helpful, while related ones
+may degrade performance. Our findings underscore the need for tailored
+pre-training strategies and provide actionable insights for developing
+effective TSFMs.</p>
+<p><a
+target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/55f2a27b1ac39dbfdd0fc83742dc87d7-Abstract-Datasets_and_Benchmarks_Track.html"><strong>Benchmarking
+Point and Distributional Forecasting across Diverse Prediction
+Horizons</strong></a><br />
+<em>NeurIPS 2024, Datasets and Benchmarks Track</em> [<a
+target="_blank" rel="noopener" href="https://github.com/microsoft/ProbTS">GitHub</a>]<br />
+Delivering precise point and distributional forecasts across a spectrum
+of predic- tion horizons represents a significant and enduring challenge
+in the application of time-series forecasting within various industries.
+While there is a rising trend in developing universal forecasting
+models, a thorough understanding of their advan- tages and drawbacks,
+especially regarding essential forecasting needs like point and
+distributional forecasts across short and long horizons, is still
+lacking. We introduce ProbTS, a comprehensive benchmark encompassing 26
+models and 16 datasets across domains. We dissect the distinctive data
+characteristics arising from disparate forecasting requirements and
+elucidate how these characteristics can skew methodological preferences
+in typical research trajectories, which often fail to fully accommodate
+essential forecasting needs. Building on this, we examine the latest
+models for universal time-series forecasting and discover that our
+analyses of methodological strengths and weaknesses are also applicable
+to these universal models.</p>
+<p><a
+target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/d7aa002885ccbe68cf6880da583761b2-Abstract-Conference.html"><strong>Towards
+Robust Varied-Horizon Forecasting with Elastic Time-Series
+Transformer</strong></a><br />
+<em>NeurIPS 2024</em> [<a
+target="_blank" rel="noopener" href="https://github.com/microsoft/ProbTS/tree/elastst">GitHub</a>]<br />
+Robust forecasting across varied horizons is essential yet underexplored
+in current time-series models. We introduce Elastic Time-Series
+Transformer (ElasTST), a non-autoregressive model with structured
+attention masks to ensure horizon-invariant outputs and tunable rotary
+position embeddings to facilitate extrapolation capability. Its
+multi-scale patch design captures both fine- and coarse-grained
+patterns, and a horizon reweighting strategy simulates multi-horizon
+training. Experiments show that ElasTST achieves up to 20% improvement
+in long-horizon accuracy (1024 steps).</p>
+<p><a
+target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3580305.3599543"><strong>Multi-Scale
+Modeling for Irregular-Sampled Time Series</strong></a><br />
+<em>SIGKDD 2023, Research Track</em> [<a
+target="_blank" rel="noopener" href="https://github.com/imJiawen/Warpformer">GitHub</a>]<br />
+Irregular sampling poses challenges in time-series modeling, especially
+when both intra-series and inter-series discrepancies. We present
+Warpformer, the first multi-scale architecture for irregular-sampled
+time series, with a learnable warping module to normalize sampling
+scales and custom attention layers for multi-scale representation
+learning. Warpformer achieves up to 7% accuracy improvement across
+downstream tasks on real-world clinical benchmarks.</p>
+<p><a
+target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3447548.3467438"><strong>Knowledge-Enhanced
+Domain Adaptation in Few-Shot Relation Classification</strong></a><br />
+<em>SIGKDD 2021, Research Track</em> [<a
+target="_blank" rel="noopener" href="https://github.com/imJiawen/KEFDA">GitHub</a>]<br />
+Relation classification (RC) is a key task in knowledge extraction but
+typically requires large annotated datasets. While few-shot RC models
+perform well in general domains, their effectiveness drops sharply when
+adapting to specialized fields like medicine. We propose KEFDA, a
+knowledge-enhanced few-shot RC model for domain adaptation, which
+integrates both general and domain-specific knowledge graphs to improve
+cross-domain generalization. By leveraging concept-level semantics,
+KEFDA captures relation types from limited examples and transfers this
+capability across domains. It combines a knowledge-augmented
+prototypical network for instance matching with a relation-meta learning
+module for implicit relation reasoning. On the FewRel 2.0 domain
+adaptation benchmark, KEFDA achieves state-of-the-art performance,
+ranking 1st in multiple subtasks with an average improvement of 6.63%
+over the runner-up.</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.isca-archive.org/interspeech_2020/zhang20o_interspeech.html"><strong>Distant
+Supervision for Polyphone Disambiguation in Mandarin
+Chinese.</strong></a><br />
+<em>INTERSPEECH 2020, Oral Presentation</em><br />
+Grapheme-to-phoneme (G2P) conversion is vital for Mandarin Chinese
+text-to-speech (TTS), where polyphone disambiguation is a key challenge.
+Existing models rely heavily on manually annotated data, which suffer
+from limited coverage and imbalanced distributions. We propose a
+distantly supervised framework that predicts character pronunciations
+using automatically aligned character-phoneme pairs to train a Seq2Seq
+model with attention. A phoneme-level language model is also introduced
+to mitigate noise in the generated data. Without relying on syntactic
+features or pre-trained embeddings, our method achieves competitive
+performance, particularly improving accuracy on imbalanced polyphonic
+characters. Overall classification accuracy increases from 88.39% to
+93.53%, with results more aligned with natural pronunciation
+patterns.</p>
 <!-- # Nature Language Processing
 
 <span id="nature-language-processing"></span>
@@ -735,6 +805,16 @@ We also recorded the teaching video of the real pepper robot and conducted a com
                     <i class="material-icons sidebar-material-icons">person</i>
                 
                 CV
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/project" title="My projects">
+                
+                    <i class="material-icons sidebar-material-icons">school</i>
+                
+                My projects
             </a>
         </li>
         
