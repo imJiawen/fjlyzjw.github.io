@@ -1,5 +1,5 @@
-http://yoursite.com/cv/index.html
 http://yoursite.com/project/index.html
+http://yoursite.com/cv/index.html
 http://yoursite.com/about/index.html
 http://yoursite.com/2023/03/24/Deep-Generative-Models/
 http://yoursite.com/2020/06/12/Overview-of-Few-shot-Learning/
